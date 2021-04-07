@@ -1,0 +1,20 @@
+{
+    "shortid": "BJlQ73sLGI",
+    "name": "CS-TransLogReport-xlsx-recipe",
+    "recipe": "xlsx",
+    "engine": "handlebars",
+    "chrome": {
+        "printBackground": true
+    },
+    "folder": {
+        "shortid": "THihHg0"
+    },
+    "creationDate": "2020-02-04T08:45:30.257Z",
+    "modificationDate": {
+        "$$date": 1588332185969
+    },
+    "_id": "ndCwBJ2e7NTX1RdF",
+    "$entitySet": "templates",
+    "data": null,
+    "xlsxTemplate": null
+}

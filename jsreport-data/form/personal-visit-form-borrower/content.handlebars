@@ -1,0 +1,252 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <style>
+    {#asset /asset/bootstrap.min.css @encoding=utf8}
+		{#asset /asset/main.css @encoding=utf8}
+
+		@font-face {
+				font-family: 'THSarabunNew';
+				src: url({#asset /asset/THSarabunNew.ttf @encoding=dataURI});
+				format('truetype');
+		}
+
+		* {
+				font-family: 'THSarabunNew';
+		}
+
+		.border-bottom {
+        	z-index: 10
+      	}
+
+		.text-header {
+			font-weight: bold;
+		}
+
+		.underline {
+			text-decoration: underline
+		}
+
+		.section-b {
+			/* min-height: 100px;
+			max-height: 150px; */
+			height: 120px;
+		}
+
+		.section-staff {
+			height: 180px;
+			/* overflow: hidden; */
+		}
+    </style>
+  </head>
+<body class="form-body">
+	<div class="container">
+		<div class="row mb-5">
+			<div class="col text-center">
+				<img src="{#asset /asset/logo.png @encoding=dataURI}" />
+				<h1>
+					แบบบันทึกความเป็นอยู่และตรวจสอบทรัพย์สินเบื้องต้นของ<span class="underline">ผู้กู้ยืม</span>
+				</h1>
+			</div> 
+		</div>
+		<div class="row mb-2">
+			<div class="col text-header">
+				1. ข้อมูลเบื้องต้น
+			</div> 
+		</div>
+		<div class="row mb-4">
+			<div class="col" style="text-align:justify">
+				ชื่อ-สกุล <div class="text-underline" style="width:75%">{{checkEmptyReturnDashed fullName}}</div> อายุ <div class="text-underline" style="width:10%">{{checkEmptyReturnDashed borrowerAge}}</div> ปี
+				ที่อยู่ปัจจุบัน เลขที่ <div class="text-underline" style="width:10%">{{checkEmptyReturnDashed borrowerAddress.houseNo}}</div> หมู่ที่ <div class="text-underline" style="width:7%">{{checkEmptyReturnDashed borrowerAddress.hmoo}}</div>
+				หมู่บ้าน <div class="text-underline" style="width:20%">{{checkEmptyReturnDashed borrowerAddress.buildingName}}</div> ถนน <div class="text-underline" style="width:22%">{{checkEmptyReturnDashed borrowerAddress.street}}</div><br/>
+				ตำบล/แขวง <div class="text-underline" style="width:22%">{{checkEmptyReturnDashed borrowerAddress.subDistrict}}</div> อำเภอ/เขต <div class="text-underline" style="width:24%">{{checkEmptyReturnDashed borrowerAddress.district}}</div> จังหวัด <div class="text-underline" style="width:20%">{{checkEmptyReturnDashed borrowerAddress.province}}</div><br/> 
+				รหัสไปรษณีย์ <div class="text-underline" style="width:18%">{{checkEmptyReturnDashed borrowerAddress.zipcode}}</div> โทรศัพท์/โทรศัพท์มือถือ <div class="text-underline" style="width:47%">{{checkEmptyReturnDashed borrowerTelephone}}</div><br/>
+				สัญญากู้ยืมเงินกองทุนผู้สูงอายุเลขที่ <div class="text-underline" style="width:24%">{{checkEmptyReturnDashed agreementDocumentNumber}}</div> ลงวันที่ <div class="text-underline" style="width:36%">{{formatThaiDate agreementDocumentDate}}</div><br/>
+				เป็นจำนวนเงิน <div class="text-underline" style="width:24%">{{currency loanAmount}}</div> บาท กู้ยืมเงินเพื่อประกอบอาชีพ <div class="text-underline" style="width:33%">{{checkEmptyReturnDashed requestOccupation.name}} {{requestOccupation.description}}</div><br/>
+				ค้างชำระเงินกู้ยืมทั้งหมดจำนวน <div class="text-underline" style="width:9.5%">{{checkEmptyReturnDashed overDueInstallmentTimes}}</div> งวด
+				เป็นจำนวนเงิน <div class="text-underline" style="width:39%">{{currency overDueBalance}}</div> บาท<br/>
+			</div> 
+		</div>
+		<div class="row mb-2">
+			<div class="col text-header">
+				2. ข้อมูลเกี่ยวกับความเป็นอยู่
+			</div> 
+		</div>
+		<div class="row mb-4">
+			<div class="col" style="text-align:justify">
+				ปัจจุบันประกอบอาชีพ <div class="text-underline" style="width:37%">{{checkEmptyReturnDashed occupationName}}</div> รายได้ต่อเดือน <div class="text-underline" style="width:24%">{{currency occupationSalary}}</div> บาท
+				รายได้อื่นๆ <div class="text-underline" style="width:27%">{{currency extraIncome}}</div> บาท จากการประกอบอาชีพ <div class="text-underline" style="width:36%">{{checkEmptyReturnDashed extraIncomeDescription}}</div> 
+				สมาชิกในครอบครัวจำนวน <div class="text-underline" style="width:8%">{{checkEmptyReturnDashed familyMember}}</div> คน ประกอบด้วย <div class="text-underline" style="width:51%">{{checkEmptyReturnDashed familyMemberDescription}}</div> 
+				ภาระที่ต้องรับผิดชอบค่าใช้จ่าย <div class="text-underline" style="width:72%">{{checkEmptyReturnDashed expenseDeclaration}}</div>
+			</div> 
+		</div>
+		<div class="row mb-2">
+			<div class="col text-header">
+				3. ปัญหา/อุปสรรค
+			</div> 
+		</div>
+		<div class="row mb-2">
+			<div class="col text-header">
+				3.1 สุขภาพ
+			</div> 
+		</div>
+		<div class="row mb-4">
+			<div class="col section-b" style="text-align:justify">
+				{{#if problem1}}
+					<div class="text-underline-inline">{{problem1}}</div>
+				{{else}}
+					<div class="text-underline" style="width:100%"></div>
+					<div class="text-underline" style="width:100%;height:44px"></div>
+					<div class="text-underline" style="width:100%;height:44px"></div>
+				{{/if}}
+			</div> 
+		</div>
+		<div class="row mb-2">
+			<div class="col text-header">
+				3.2 การประกอบอาชีพ
+			</div> 
+		</div>
+		<div class="row mb-4">
+			<div class="col section-b" style="text-align:justify">
+				{{#if problem2}}
+					<div class="text-underline-inline">{{problem2}}</div>
+				{{else}}
+					<div class="text-underline" style="width:100%"></div>
+					<div class="text-underline" style="width:100%;height:44px"></div>
+					<div class="text-underline" style="width:100%;height:44px"></div>
+				{{/if}}
+			</div> 
+		</div>
+		<div class="row mb-2">
+			<div class="col text-header">
+				3.3 อื่นๆ
+			</div> 
+		</div>
+		<div class="row mb-4">
+			<div class="col section-b" style="text-align:justify">
+				{{#if problem3}}
+					<div class="text-underline-inline">{{problem3}}</div>
+				{{else}}
+					<div class="text-underline" style="width:100%"></div>
+					<div class="text-underline" style="width:100%;height:44px"></div>
+					<div class="text-underline" style="width:100%;height:44px"></div>
+				{{/if}}
+			</div> 
+		</div>
+
+		<div style="page-break-before: always;"></div>
+
+		<div class="row mb-2">
+			<div class="col text-header">
+				4. การสืบหาทรัพย์สินและการตรวจสอบทรัพย์สิน
+			</div> 
+		</div>
+		<div class="row mb-2">
+			<div class="col text-header">
+				4.1 ภาระหนี้สิน
+			</div> 
+		</div>
+		<div class="row mb-4">
+			<div class="col section-b" style="text-align:justify">
+				{{#if inspection1}}
+					<div class="text-underline-inline">{{inspection1}}</div>
+				{{else}}
+					<div class="text-underline" style="width:100%"></div>
+					<div class="text-underline" style="width:100%;height:44px"></div>
+					<div class="text-underline" style="width:100%;height:44px"></div>
+				{{/if}}
+			</div> 
+		</div>
+		<div class="row mb-2">
+			<div class="col text-header">
+				4.2 ทรัพย์สินของผู้กู้ยืม
+			</div> 
+		</div>
+		<div class="row mb-4">
+			<div class="col section-b" style="text-align:justify">
+				{{#if inspection2}}
+					<div class="text-underline-inline">{{inspection2}}</div>
+				{{else}}
+					<div class="text-underline" style="width:100%"></div>
+					<div class="text-underline" style="width:100%;height:44px"></div>
+					<div class="text-underline" style="width:100%;height:44px"></div>
+				{{/if}}
+			</div> 
+		</div>
+		<div class="row mb-2">
+			<div class="col text-header">
+				4.3 สิทธิเรียกร้องจากบุคคลภายนอก
+			</div> 
+		</div>
+		<div class="row">
+			<div class="col section-b" style="text-align:justify">
+				{{#if inspection3}}
+					<div class="text-underline-inline">{{inspection3}}</div>
+				{{else}}
+					<div class="text-underline" style="width:100%"></div>
+					<div class="text-underline" style="width:100%;height:44px"></div>
+					<div class="text-underline" style="width:100%;height:44px"></div>
+				{{/if}}
+			</div> 
+		</div>
+		<br/><br/><br/>
+		<div class="row mb-5">
+			<div class="col-4"></div>
+			<div class="col-8">
+				<div>
+					ลงชื่อ <div class="d-inline-block border-bottom text-center"  style="width:82%">&nbsp</div> ผู้กู้ยืม
+				</div>
+				<div style="padding-left:48px">
+						(<div class="d-inline-block border-bottom text-center" style="width:89%">{{checkEmptyReturnDashed fullName}}</div>)
+				</div>
+				<div class="mt-4">
+					ลงชื่อ <div class="d-inline-block border-bottom text-center"  style="width:82%">&nbsp</div> พยาน
+				</div>
+				<div style="padding-left:48px">
+						(<div class="d-inline-block border-bottom text-center" style="width:89%">&nbsp</div>)
+				</div>
+			</div>
+		</div>
+		<br/>
+		<div class="row mb-2">
+			<div class="col text-header">
+				ข้อสังเกตของเจ้าหน้าที่เกี่ยวกับผู้กู้ยืม (ความสามารถในการชำระเงินคืนและอื่น ๆ)
+			</div> 
+		</div>
+		<div class="row mb-4">
+			<div class="col section-staff text-justify">
+				{{#if comments}}
+					<div class="text-underline-inline">{{comments}}</div>
+				{{else}}
+					<div class="text-underline" style="width:100%"></div>
+					<div class="text-underline" style="width:100%;height:44px"></div>
+					<div class="text-underline" style="width:100%;height:44px"></div>
+					<div class="text-underline" style="width:100%;height:44px"></div>
+				{{/if}}
+			</div> 
+		</div>
+		<br/>
+		<div class="row mb-4">
+			<div class="col-4"></div>
+			<div class="col-8">
+				<div>
+					<div class="d-inline">ลงชื่อ</div> 
+					<div class="d-inline-block border-bottom text-center"  style="width:65%">&nbsp</div>
+					<div class="d-inline">เจ้าหน้าที่ผู้รายงาน</div>
+				</div> 
+				<div class="mb-4" style="padding-left:48px">
+						(<div class="d-inline-block border-bottom text-center" style="width:70%">{{checkEmptyReturnDashed visitorName}}</div>)
+				</div>
+				<div class="mb-4">
+					<div class="d-inline">ตำแหน่ง </div> 
+					<div class="d-inline-block border-bottom text-center" style="width:61%">{{checkEmptyReturnDashed visitorPosition}}</div>
+				</div>
+				<div>
+					<div class="d-inline">วันที่</div> <div class="d-inline-block border-bottom text-center" style="width:66.5%">{{checkEmptyReturnDashed visitDate}}</div>
+				</div> 
+			</div>
+		</div>
+	</div>  
+	
+</body>
+</html>

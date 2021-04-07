@@ -1,0 +1,133 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <style>
+        {#asset /asset/bootstrap.min.css @encoding=utf8}
+		{#asset /asset/main.css @encoding=utf8}
+        @font-face {
+            font-family: 'THSarabunNew';
+            src: url({#asset /asset/THSarabunNew.ttf @encoding=dataURI});
+            format('truetype');
+        }
+        * {
+            font-family: 'THSarabunNew';
+        }
+    </style>
+  </head>
+<body class="form-body2">
+	<div class="container">
+		<div class="row mb-4">
+			<div class="col-3">
+            </div>
+			<div class="col-6 text-center">
+				<img src="{#asset /asset/logo.png @encoding=dataURI}" />
+				<h1>
+					แบบแจ้งข้อมูลการรับเงินโอนผ่านระบบ<br> KTB Corporate Online
+				</h1>
+			</div>
+			<div class="col-3">
+			</div> 
+		</div>
+		<div class="row mb-2 mt-2">
+            <div class="col-6 offset-6 text-left">
+                    วันที่ <div class="text-underline  text-center" style="width:85%" >&nbsp;</div> 
+            </div>
+        </div>
+	</div>
+	<div class="container">
+		<div class="row"> 
+			<div class="col">
+				<div class="mb-4">
+					เรียน อธิบดีกรมกิจการผู้สูงอายุ
+				</div> 
+			</div>
+		</div>
+		<div class="row"> 
+			{{!-- <div class="col indent2 mb-4"> --}}
+				<div class="col indent2 text-justify">
+					ข้าพเจ้า <div class="text-underline mb-2"  style="width:36%">{{checkEmptyReturnDashed partnerName}}</div>
+					เลขประจำตัวประชาชน <div class="text-underline mb-2 " style="width:24%" >{{checkEmptyReturnDashed partnerTaxNumber}}</div><span style="display: inline-block; width: 100%;"></span>
+                    ที่อยู่ <div class="text-underline mb-2  text-not-justify" style="width:94%; " >{{checkEmptyReturnDashed addressKTB1}}</div><span style="display: inline-block; width: 100%;"></span>
+					<div class="text-underline mb-2 text-not-justify" style="width:100%;" >{{#if addressKTB2}} {{addressKTB2}}  {{else}} &nbsp {{/if}}</div><span style="display: inline-block; width: 100%;"></span>
+				   <br/> 
+				</div> 
+		</div>
+		<div class="row mb-4"> 
+			<div class="col indent2 text-justify">
+				<span style="letter-spacing:0.2px;">ขอรับเงินกู้ยืมเงินทุนประกอบอาชีพผ่านระบบ KTB Corporate Online โดยได้แนบสำเนาหน้าสมุดบัญชี</span><span style="display: inline-block; width: 100%;"></span>
+				เงินฝากธนาคารและสำเนาบัตรประชาชนมาเพื่อเป็นหลักฐานด้วยแล้ว
+			</div>
+		</div>
+		{{!-- <div class="row mb-2">  --}}
+		<div class="row mb-2"> 
+			<div class="col-1" style="display: flex; justify-content: center; margin-top: 12px;">
+				<div style="border: 1px solid black; height:20px; width:20px;"></div>
+			</div>
+			<div class="col-11 text-justify">
+				<span>กรณีเป็นข้าราชการ ลูกจ้าง พนักงานราชการ ของหน่วยงาน เพื่อเข้าบัญชีเงินฝากธนาคาร</span><br/>
+				<span>ที่ใช้สำหรับเงินเดือน ค่าจ้าง หรือค่าตอบแทน</span><br/>
+				<span >บัญชีเงินฝากธนาคารกรุงไทย </span>
+				<span >สาขา </span><div class="text-underline mb-2 pull-right"  style="width:25%" >&nbsp</div>
+				<span >ประเภท </span><div class="text-underline mb-2 pull-right"  style="width:25%" >&nbsp</div><span style="display: inline-block; width: 100%;"></span>
+				<span >เลขที่บัญชี</span><div class="text-underline mb-2 pull-right"  style="width:40%" >&nbsp</div>
+				<span >ชื่อบัญชี</span><div class="text-underline mb-2 pull-right"  style="width:40%" >&nbsp</div><span style="display: inline-block; width: 100%;"></span> 
+			</div>
+		</div>
+		{{!-- <div class="row " style="padding-left:80px">  --}}
+		<div class="row "> 
+			<div class="col-1" style="display: flex; justify-content: center; margin-top: 12px;">
+				<div style="border: 1px solid black; height:20px; width:20px;"></div>
+			</div>
+			<div class="col-11 text-justify">
+				<span>กรณีเป็นบุคคลภายนอก เพื่อเข้าบัญชีเงินฝาก</span><br/>
+				<span >บัญชีเงินฝากธนาคาร </span><div class="text-underline mb-2 pull-right"  style="width:78%" >{{{checkEmptyReturnSpace toBankNameText}}}</div><span style="display: inline-block; width: 100%;"></span>
+				<span >สาขา </span><div class="text-underline mb-2 pull-right"  style="width:40%" >{{{checkEmptyReturnSpace toAccountBranch}}}</div>
+				<span >ประเภท </span><div class="text-underline mb-2 pull-right"  style="width:40%" >{{{checkEmptyReturnSpace toAccountType}}}</div><span style="display: inline-block; width: 100%;"></span>
+				<span >เลขที่บัญชี</span><div class="text-underline mb-2 pull-right"  style="width:40%" >{{{getAccountNo toAccountNo}}}</div>
+				<span >ชื่อบัญชี</span><div class="text-underline mb-2 pull-right"  style="width:40%" >{{{checkEmptyReturnSpace toAccountName}}}</div><span style="display: inline-block; width: 100%;"></span>
+			</div>
+		</div>
+		{{!-- <div class="row mb-4 mt-4">  --}}
+		<div class="row">
+			<div class="col">
+				และเมื่อกรมกิจการผู้สูงอายุโอนเงินกู้ยืมเงินทุนประกอบอาชีพผ่านระบบ KTB Corporate Online แล้ว<br/>
+				ให้ส่งข้อมูลการโอนเงินผ่านช่องทาง
+			</div>
+		</div>
+		<div class="row"> 
+			<div class="col-1" style="display: flex; align-items: center; justify-content: center">
+				<div style="border: 1px solid black; height:20px; width:20px;"></div>
+			</div>
+			<div class="col-11">
+				<span >ข้อความแจ้งเตือนผ่านโทรศัพท์มือถือ (SMS) ที่เบอร์โทรศัพท์</span><div class="text-underline mb-2 pull-right"  style="width:35%" >{{{checkEmptyReturnSpace toSms}}}</div>    
+			</div>
+		</div>
+		<div class="row"> 
+			<div class="col-1" style="display: flex; align-items: center; justify-content: center">
+				<div style="border: 1px solid black; height:20px; width:20px;"></div>
+			</div>
+			<div class="col-11">
+				<span >จดหมายอิเล็กทรอนิกส์ (e-mail) ตาม e-mail address</span><div class="text-underline mb-2 pull-right"  style="width:35%" >{{{checkEmptyReturnSpace toEmail}}}</div>    
+			</div>
+		</div>
+    </div>
+	<br/>
+	<br/>
+	<div class="container">
+		<div class="row">
+			<div class="col-4 text-center">
+			</div>
+			<div class="col-8 text-center">
+				<div>
+					ลงชื่อ<div class="text-underline mb-3" style="width:63%">
+						&nbsp
+					</div>ผู้มีสิทธิรับเงิน/ผู้กู้ยืม <br/>
+					(<div class="text-underline mb-3" style="width:80%">
+						{{checkEmptyReturnDashed partnerName}}
+					</div>)
+				</div>
+			</div>
+        </div>
+	</div>
+</body>
+</html>

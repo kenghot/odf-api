@@ -1,0 +1,6 @@
+web:
+  production: root@122.155.204.85 M@ssD20$19!
+  beta: mgubuntu@203.150.91.218 18Cloud@inet!
+api:
+  production: root@122.155.204.86 M@ssD20$19!
+  beta: mgubuntu@203.150.91.218 18Cloud@inet!

@@ -1,0 +1,28 @@
+version: 0.2
+
+env:
+  variables:
+    ACCOUNT_ID: "090973633865"
+
+phases:
+  install:
+    runtime-versions:
+      docker: 18
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - $(aws ecr get-login --no-include-email --region $AWS_REGION)
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Building the Docker image...
+      - docker build -t "$ACCOUNT_ID.dkr.ecr.ap-southeast-1.amazonaws.com/odf-api" .
+      - docker tag "$ACCOUNT_ID.dkr.ecr.ap-southeast-1.amazonaws.com/odf-api" "$ACCOUNT_ID.dkr.ecr.ap-southeast-1.amazonaws.com/odf-api"
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Pushing the Docker image...
+      - docker push "$ACCOUNT_ID.dkr.ecr.ap-southeast-1.amazonaws.com/odf-api"
+artifacts:
+  files:
+    - "**/*"

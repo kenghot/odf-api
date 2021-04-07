@@ -1,0 +1,107 @@
+{{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+<row r="1">
+    <c r="A1" t="inlineStr"><is><t>{{checkEmpty title1}}</t></is></c>
+</row>
+{{/xlsxAdd}}
+{{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+<row r="2">
+    <c r="A2" t="inlineStr"><is><t>{{checkEmpty title2}}</t></is></c>
+</row>
+{{/xlsxAdd}}
+{{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+<row r="3">
+    <c r="A3" t="inlineStr"><is><t>{{paymentTime}}</t></is></c>
+</row>
+{{/xlsxAdd}}
+
+{{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+<row r="4">
+    <c r="A4" t="inlineStr"><is><t>วันที่สร้าง</t></is></c>
+    <c r="B4" t="inlineStr"><is><t>ประเภท</t></is></c>
+    <c r="C4" t="inlineStr"><is><t>Operation</t></is></c>
+    <c r="D4" t="inlineStr"><is><t>TX_ID</t></is></c>
+    <c r="E4" t="inlineStr"><is><t>LOG_ID</t></is></c>
+    <c r="F4" t="inlineStr"><is><t>VENDOR_ID</t></is></c>
+    <c r="G4" t="inlineStr"><is><t>SERVICE_ID</t></is></c>
+    <c r="H4" t="inlineStr"><is><t>METHOD</t></is></c>
+    <c r="I4" t="inlineStr"><is><t>COUNTER_NO</t></is></c>
+    <c r="J4" t="inlineStr"><is><t>TERM_NO</t></is></c>
+    <c r="K4" t="inlineStr"><is><t>POS_TAX_ID</t></is></c>
+    <c r="L4" t="inlineStr"><is><t>SERVICE_RUN_NO</t></is></c>
+    <c r="M4" t="inlineStr"><is><t>RECORD_STATUS</t></is></c>
+    <c r="N4" t="inlineStr"><is><t>CLIENT_SERVICE_RUNNO</t></is></c>
+    <c r="O4" t="inlineStr"><is><t>AMOUNT_RECEIVED</t></is></c>
+    <c r="P4" t="inlineStr"><is><t>VAT_AMOUNT</t></is></c>
+    <c r="Q4" t="inlineStr"><is><t>BILL_TYPE</t></is></c>
+    <c r="R4" t="inlineStr"><is><t>REFERENCE_1</t></is></c>
+    <c r="S4" t="inlineStr"><is><t>REFERENCE_2</t></is></c>
+    <c r="T4" t="inlineStr"><is><t>REFERENCE_3</t></is></c>
+    <c r="U4" t="inlineStr"><is><t>REFERENCE_4</t></is></c>
+    <c r="V4" t="inlineStr"><is><t>CUSTOMER_NAME</t></is></c>
+    <c r="W4" t="inlineStr"><is><t>CUSTOMER_ADDR_1</t></is></c>
+    <c r="X4" t="inlineStr"><is><t>CUSTOMER_ADDR_2</t></is></c>
+    <c r="Y4" t="inlineStr"><is><t>CUSTOMER_ADDR_3</t></is></c>
+    <c r="Z4" t="inlineStr"><is><t>CUSTOMER_TEL_NO</t></is></c>
+    <c r="AA4" t="inlineStr"><is><t>ZONE</t></is></c>
+    <c r="AB4" t="inlineStr"><is><t>R_SERVICE_RUNNO</t></is></c>
+    <c r="AC4" t="inlineStr"><is><t>CANCEL_OPERATING</t></is></c>
+    <c r="AD4" t="inlineStr"><is><t>OPERATE_BY_STAFF</t></is></c>
+    <c r="AE4" t="inlineStr"><is><t>SYSTEM_DATE_TIME</t></is></c>
+    <c r="AF4" t="inlineStr"><is><t>SUCCESS</t></is></c>
+    <c r="AG4" t="inlineStr"><is><t>CODE</t></is></c>
+    <c r="AH4" t="inlineStr"><is><t>DESC</t></is></c>
+    <c r="AI4" t="inlineStr"><is><t>RETURN_1</t></is></c>
+    <c r="AJ4" t="inlineStr"><is><t>RETURN_2</t></is></c>
+    <c r="AK4" t="inlineStr"><is><t>RETURN_3</t></is></c>
+    <c r="AL4" t="inlineStr"><is><t>PRINT_SLIP</t></is></c>
+</row>
+{{/xlsxAdd}}
+
+{{#each data}}
+    {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+    <row>
+        <c t="inlineStr" s="1"><is><t>{{formatThaiDate createdDate}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{type}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty csMethod}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty TX_ID}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty LOG_ID}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty VENDOR_ID}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty SERVICE_ID}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty METHOD}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty COUNTER_NO}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty TERM_NO}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty POS_TAX_ID}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty SERVICE_RUN_NO}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty RECORD_STATUS}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty CLIENT_SERVICE_RUNNO}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{currency AMOUNT_RECEIVED true}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{currency VAT_AMOUNT true}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty BILL_TYPE}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty REFERENCE_1}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty REFERENCE_2}}</t></is></c>
+
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty REFERENCE_3}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty REFERENCE_4}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty CUSTOMER_NAME}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty CUSTOMER_ADDR_1}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty CUSTOMER_ADDR_2}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty CUSTOMER_ADDR_3}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty CUSTOMER_TEL_NO}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty ZONE}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty R_SERVICE_RUNNO}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty CANCEL_OPERATING}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty OPERATE_BY_STAFF}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{formatThaiDate SYSTEM_DATE_TIME}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty SUCCESS}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty CODE}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty DESC}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{currency RETURN1 true}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{currency RETURN2 true}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{currency RETURN3 true}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty PRINT_SLIP}}</t></is></c>
+    </row>
+    
+    {{/xlsxAdd}}
+{{/each}}
+
+{{{xlsxPrint}}}

@@ -1,0 +1,16 @@
+{
+    "name": "r3-data",
+    "shortid": "ryxgbFG7KH",
+    "folder": {
+        "shortid": "7m8H~ZG"
+    },
+    "creationDate": "2019-10-15T10:01:50.280Z",
+    "modificationDate": {
+        "$$date": 1573805806708
+    },
+    "_id": "440FfbOaX0rAslc0",
+    "$entitySet": "data",
+    "entitySet": "data",
+    "type": "entity",
+    "key": "440FfbOaX0rAslc0"
+}

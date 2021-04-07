@@ -1,0 +1,150 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <style>
+        {#asset /asset/bootstrap.min.css @encoding=utf8}
+		{#asset /asset/main.css @encoding=utf8}
+
+        @font-face {
+            font-family: 'THSarabunNew';
+            src: url({#asset /asset/THSarabunNew.ttf @encoding=dataURI});
+            format('truetype');
+        }
+
+        * {
+            font-family: 'THSarabunNew';
+        }
+
+		.border-fit-content {
+			display: inline-block;
+			border: 1px solid;
+			padding-left: 18px;
+			padding-right:18px;
+			padding-top: 40px;
+			padding-bottom: 40px;
+		}
+    </style>
+  </head>
+<body class="form-body">
+	<div class="container">
+		<div class="row mb-4">
+			<div class="col-4">
+				<div style="margin-top: 158px">ที่</div>
+				</div>
+			<div class="col-4 text-center no-margin-padding">
+				<img class="garuda-img" src="{#asset /asset/garuda_logo.png @encoding=dataURI}"/>
+			</div>
+			<div class="col-4">
+				<div class="border-fit-content" style="font-size:62px">
+					บอกผู้ค้ำประกัน
+				</div>
+				<div class="text-left" style="margin-top:32px">
+					<div style="width:100%">{{checkEmptyReturnDashed organization.address.buildingName}}</div>
+					อำเภอ <div class="text-underline" style="width:79%">{{checkEmptyReturnDashed organization.address.district}}</div>
+					จังหวัด <div class="text-underline" style="width:78%">{{checkEmptyReturnDashed organization.address.province}}</div>
+				</div>  
+			</div> 
+		</div>
+		<div class="row">
+			<div class="col-6"></div>
+			<div class="col-6" style="padding-left:35px">{{checkEmptyReturnDashed formDataDate}}</div>
+		</div>
+	</div>
+	<br/>
+	<div class="container mb-3">
+		<div class="row">
+			<div class="col">
+				เรื่อง แจ้งให้ผู้ค้ำประกันนำเงินมาชำระหนี้แทนผู้กู้ยืม
+			</div> 
+		</div>
+		<div class="row">
+			<div class="col">
+				เรียน <div class="text-underline" style="width:39.5%">{{checkEmptyReturnDashed guarantor.fullName}}</div>  
+			</div> 
+		</div>
+		<div class="row">
+			<div class="col">
+				อ้างถึง หนังสือสัญญาค้ำประกันเลขที่ <div class="text-underline" style="width:20%">{{checkEmptyReturnDashed guaranteeDocumentNumber}}</div>  
+				ลงวันที่ <div class="text-underline" style="width:20%">{{formatThaiDate guaranteeDocumentDate}}</div>  
+			</div> 
+		</div>
+		<div class="row">
+			<div class="col">
+				<div class="d-inline-block" style="width:16%">สิ่งที่ส่งมาด้วย</div>1. สำเนาสัญญากู้ยืมเลขที่ <div class="text-underline" style="width:20%">{{checkEmptyReturnDashed agreementDocumentNumber}}</div> 
+				ลงวันที่ <div class="text-underline" style="width:20%">{{formatThaiDate agreementDocumentDate}}</div>  
+			</div> 
+		</div>
+		<div class="row">
+			<div class="col">
+				<div class="indent text-justify">
+					2. สำเนาหนังสือจังหวัด <div class="text-underline" style="width:16%"></div>  
+					ที่ <div class="text-underline" style="width:14%"></div>  
+					ลงวันที่ <div class="text-underline" style="width:20%"></div>  
+				</div>
+			</div> 
+		</div>
+	</div>  
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<div class="indent text-justify">
+					<div>ตามหนังสือที่อ้างอิง ท่านได้ค้ำประกันการกู้ยืมเงินทุนประกอบอาชีพของ</div>
+					<div class="text-underline" style="width:30%">{{checkEmptyReturnDashed borrower.fullName}}</div> ตามสัญญากู้ยืมเลขที่ <div class="text-underline" style="width:22%">{{checkEmptyReturnDashed agreementDocumentNumber}}</div> ลงวันที่ <div class="text-underline" style="width:20%">{{formatThaiDate agreementDocumentDate}}</div>
+					เป็นเงินจำนวน <div class="text-underline" style="width:20%">{{currency loanAmount}}</div>บาท (<div class="text-underline" style="width:36%">{{dashed loanAmountText}}</div>) โดยท่านตกลงยินยอมรับผิด
+					ชำระหนี้ พร้อมค่าใช้จ่ายอย่างอื่นแทนผู้กู้ยืม เมื่อผู้กู้ยืมผิดนัดชำระหนี้ นั้น
+				</div>
+			</div>
+		</div>
+		<div class="row mb-3">
+			<div class="col">
+				<div class="indent text-justify">
+					<div> บัดนี้ ผู้กู้ยืมผิดนัดชำระกับกองทุนผู้สูงอายุ และจังหวัด <div class="text-underline" style="width:36%">{{checkEmptyReturnDashed organization.address.province}}</div></div>
+					ได้มีหนังสือบอกเลิกสัญญากับผู้กู้ยืมแล้ว จึงขอให้ท่านในฐานะผู้ค้ำประกันนำเงินจำนวน <div class="text-underline" style="width:20%">{{currency outstandingDebtBalance}}</div>บาท 
+					(<div class="text-underline text-center" style="width:36%">{{dashed outstandingDebtBalanceText}}</div>) มาชำระหนี้แทนผู้กู้ยืม ภายใน 15 วัน นับแต่วันที่ได้รับหนังสือนี้ หากพ้น
+					กำหนดแล้ว ท่านยังเพิกเฉยหรือไม่ชำระหนี้ จังหวัด <div class="text-underline" style="width:33%">{{checkEmptyReturnDashed organization.address.province}}</div>มีความจำเป็นต้องฟ้องร้อง
+					ดำเนินคดีตามขั้นตอนกฎหมาย เพื่อบังคับชำระหนี้ต่อไป
+				</div>
+			</div>
+		</div>
+		<div class="row mb-5">
+			<div class="col">
+				<div class="indent">
+					จึงเรียนมาเพื่อทราบและดำเนินการ
+				</div>
+			</div>
+		</div>
+		<div class="row" style="margin-bottom:120px">
+			<div class="col-6"></div>
+			<div class="col-6 text-left" style="padding:0">
+				ขอแสดงความนับถือ
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-6 text-center">
+					<div>
+						(<div class="text-underline"  style="width:95%">&nbsp</div>)
+					</div>
+					<div>
+							<div class="text-underline" style="width:100%;height:35px">&nbsp</div>
+					</div>
+					<div>
+							<div class="text-underline" style="width:100%;height:43px">&nbsp</div>
+					</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>
+
+	<div class="container footer">
+		<div class="row">
+			<div class="col-12">
+				<div>
+					<div class="text-underline">{{checkEmptyReturnDashed organization.orgName}}</div>
+					<br/>โทร <div class="text-underline" style="width:24%">{{checkEmptyReturnDashed organization.telephone}}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

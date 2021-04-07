@@ -1,0 +1,101 @@
+%YAML 1.1
+---
+# odf.occupations
+- id: 1
+  createdDate: "2019-07-13 06:07:52.298000"
+  updatedDate: "2019-07-18 05:07:13.000000"
+  createdByName: "system"
+  name: "เกษตรกรรม"
+  occupationType: 0
+  active: true
+- id: 2
+  createdDate: "2019-07-13 06:07:52.474000"
+  updatedDate: "2019-07-18 05:07:13.000000"
+  createdByName: "system"
+  name: "ค้าขาย"
+  occupationType: 0
+  active: true
+- id: 3
+  createdDate: "2019-07-13 06:07:52.646000"
+  updatedDate: "2019-07-18 05:07:13.000000"
+  createdByName: "system"
+  name: "ปศุสัตว์"
+  occupationType: 0
+  active: true
+- id: 4
+  createdDate: "2019-07-13 06:07:52.816000"
+  updatedDate: "2019-07-18 05:07:13.000000"
+  createdByName: "system"
+  name: "รับจ้าง"
+  occupationType: 0
+  active: true
+- id: 5
+  createdDate: "2019-07-14 15:21:39.830000"
+  updatedDate: "2019-07-14 15:21:44.000000"
+  createdByName: "system"
+  name: "หัตถกรรม"
+  occupationType: 0
+  active: true
+- id: 6
+  createdDate: "2019-07-14 15:21:55.800000"
+  updatedDate: "2019-07-14 15:21:55.800000"
+  createdByName: "system"
+  name: "ข้าราชการ"
+  occupationType: 1
+  active: true
+- id: 7
+  createdDate: "2019-07-18 04:53:17.069000"
+  updatedDate: "2019-07-18 05:07:13.000000"
+  createdByName: "system"
+  name: "ข้าราชการทางการเมือง"
+  occupationType: 1
+  active: true
+- id: 8
+  createdDate: "2019-07-19 08:09:02.453000"
+  updatedDate: "2019-07-19 08:09:02.453000"
+  createdByName: "system"
+  name: "ธุรกิจส่วนตัว"
+  occupationType: 1
+  active: true
+- id: 9
+  createdDate: "2019-07-19 08:09:02.453000"
+  updatedDate: "2019-07-19 08:09:02.453000"
+  createdByName: "system"
+  name: "นักการเมืองท้องถิ่น"
+  occupationType: 1
+  active: true
+- id: 10
+  createdDate: "2019-07-19 08:09:02.453000"
+  updatedDate: "2019-07-19 08:09:02.453000"
+  createdByName: "system"
+  name: "พนักงานของรัฐ"
+  occupationType: 1
+  active: true
+- id: 11
+  createdDate: "2019-07-19 08:09:02.453000"
+  updatedDate: "2019-07-19 08:09:02.453000"
+  createdByName: "system"
+  name: "พนักงานบริษัท"
+  occupationType: 1
+  active: true
+- id: 12
+  createdDate: "2019-07-19 08:09:02.453000"
+  updatedDate: "2019-07-19 08:09:02.453000"
+  createdByName: "system"
+  name: "พนักงานรัฐวิสาหกิจ"
+  occupationType: 1
+  active: true
+- id: 13
+  createdDate: "2019-07-19 08:09:02.453000"
+  updatedDate: "2019-07-19 08:09:02.453000"
+  createdByName: "system"
+  name: "ลูกจ้างทั่วไป"
+  occupationType: 1
+  active: true
+- id: 14
+  createdDate: "2019-07-19 08:09:02.453000"
+  updatedDate: "2019-07-19 08:09:02.453000"
+  createdByName: "system"
+  name: "พนักงานมหาวิทยาลัย"
+  occupationType: 1
+  active: true

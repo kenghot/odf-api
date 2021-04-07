@@ -1,0 +1,32 @@
+[
+    {
+        "key": 1,
+        "value": "1",
+        "label": "โสด",
+        "require_info": false
+    },
+    {
+        "key": 2,
+        "value": "2",
+        "label": "สมรส",
+        "require_info": true
+    },
+    {
+        "key": 3,
+        "value": "3",
+        "label": "อยู่ด้วยกันโดยไม่จดทะเบียน",
+        "require_info": false
+    },
+    {
+        "key": 4,
+        "value": "4",
+        "label": "หย่าร้าง",
+        "require_info": true
+    },
+    {
+        "key": 5,
+        "value": "5",
+        "label": "หม้าย",
+        "require_info": true
+    }
+]

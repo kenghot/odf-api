@@ -1,0 +1,16 @@
+{
+    "name": "r6-data",
+    "shortid": "SklcQPkjOH",
+    "folder": {
+        "shortid": "7m8H~ZG"
+    },
+    "creationDate": "2019-10-09T04:50:43.491Z",
+    "modificationDate": {
+        "$$date": 1573034549458
+    },
+    "_id": "izWWB61W1hbj2wXj",
+    "$entitySet": "data",
+    "entitySet": "data",
+    "type": "entity",
+    "key": "izWWB61W1hbj2wXj"
+}

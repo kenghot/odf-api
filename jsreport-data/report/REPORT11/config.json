@@ -1,0 +1,26 @@
+{
+    "name": "REPORT11",
+    "recipe": "html-to-xlsx",
+    "shortid": "BJjtA2FDr",
+    "folder": {
+        "shortid": "THihHg0"
+    },
+    "engine": "handlebars",
+    "chrome": {
+        "printBackground": true
+    },
+    "htmlToXlsx": {
+        "htmlEngine": "chrome",
+        "insertToXlsxTemplate": false,
+        "waitForJS": false
+    },
+    "creationDate": "2019-09-26T04:28:52.276Z",
+    "modificationDate": {
+        "$$date": 1576747641531
+    },
+    "data": {
+        "shortid": "SJgAsZWmYr"
+    },
+    "_id": "SyFMaqt9QHqCyy0V",
+    "$entitySet": "templates"
+}

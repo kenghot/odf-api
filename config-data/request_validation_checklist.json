@@ -1,0 +1,125 @@
+[
+    {
+        "id": 1,
+        "label": "คุณสมบัติผู้ขอกู้",
+        "checklist": [
+            {
+                "key": "isSenior",
+                "label": "อายุเกิน 60 ปี บริบูรณ์",
+                "supported_label": "อายุ",
+                "supported_value_type": "TEXT",
+                "supported_value": "borrower.age",
+                "value": null
+            },
+            {
+                "key": "isNeeded",
+                "label": "มีความจำเป็นในการกู้ยืมฯ",
+                "value": null
+            },
+            {
+                "key": "isOccupatable",
+                "label": "มีความสามารถในการประกอบอาชีพ",
+                "value": null
+            },
+            {
+                "key": "isStrong",
+                "label": "มีสภาพร่างการแข็งแรง",
+                "value": null
+            },
+            {
+                "key": "hasSupported",
+                "label": "มีปัจจัยสนับสนุนในการประกอบอาชีพ",
+                "value": null
+            },
+            {
+                "key": "isCorrectReqLocation",
+                "label": "มีสถานที่ในการประกอบอาชีพอยู่ภายในจังหวัดเดียวกันกับที่ผู้กู้ยืมได้ยื่อคำร้องขอกู้ยืมไว้",
+                "supported_label": "สถานะการกู้",
+                "supported_value_type": "MAP",
+                "supported_value": "request.request_occupation.address",
+                "value": null
+            },
+            {
+                "key": "isNotNPL",
+                "label": "ไม่เป็นผู้ค้างชำระเงินกองทุนฯ",
+                "supported_label": "สถานะการกู้",
+                "supported_value_type": "TEXT",
+                "supported_value": "borrower.loan_status",
+                "value": null
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "label": "คุณสมบัติผู้ค้ำประกัน",
+        "checklist": [
+            {
+                "key": "isInAgeRange",
+                "label": "มีอายุระหว่าง 20-59 ปีบริบูรณ์ (ขณะยื่นกู้)",
+                "supported_label": "สถานะการกู้",
+                "supported_value_type": "TEXT",
+                "supported_value": "guarantor.age",
+                "value": null
+            },
+            {
+                "key": "hasSalary",
+                "label": "มีรายได้หรือเงินเดือนประจำ แน่นอนไม่ต่ำกว่า 8000 บาท ต่อเดือน ไม่รวมโอที เบี๊ยขยัน หรือ รายได้พิเศษอื่นๆ",
+                "supported_label": "สถานะการกู้",
+                "supported_value_type": "TEXT",
+                "supported_value": "guarantor.salary",
+                "supported_subfix": "บาท/เดือน",
+                "value": null
+            },
+            {
+                "key": "isBorrowerNeighbour",
+                "label": "มีภูมิลำนำตามทะเบียนราษฎรในจังหวัดเดียวกันกับผู้ของกู้ยืมเงิน",
+                "supported_label": "ที่อยู่ตามทะเบียนบ้าน - จังหวัด",
+                "supported_value_type": "TEXT",
+                "supported_value": "guarantor.address.province.name",
+                "supported_subfix": "",
+                "value": null
+            },
+            {
+                "key": "isNotActiveGuantor",
+                "label": "ไม่อยู่ระหว่างการค้ำประกันให้กับลูกหนี้กองทุนผู้สูงอายุรายอื่นๆ",
+                "supported_label": "สถานะ",
+                "supported_value_type": "TEXT",
+                "supported_value": "guarantor.status",
+                "supported_subfix": "",
+                "value": null
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "label": "ความครบถ้วนของใบคำร้อง",
+        "checklist": [
+            {
+                "key": "hasSignedRequestDocument",
+                "label": "ตรวจสอบลายมือชื่อผู้ขอยืมและผู้ค้ำประกัน ต้องลงลายมือชื่อเหมือนกันทุกฉบับ",
+                "value": null
+            },
+            {
+                "key": "hasBuggetAllocation",
+                "label": "มีประมาณการค่าใช้จ่าย แจกแจงรายละเอียดครบถ้วน",
+                "value": null
+            },
+            {
+                "key": "hasCurrentAddressMap",
+                "label": "มีแผนผังที่อยู่อาศัยของผู้กู้ยืม",
+                "supported_label": "",
+                "supported_value_type": "MAP",
+                "supported_value": "borrower.current_address",
+                "value": null
+            },
+            {
+                "key": "hasOcupationAddressMap",
+                "label": "มีแผนผังสถานที่ประกอบอาชีพของผู้กู้ยืม",
+                "supported_label": "",
+                "supported_value_type": "MAP",
+                "supported_value": "borrower.current_address",
+                "value": null
+            }
+        ]
+    }
+]

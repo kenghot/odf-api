@@ -1,0 +1,10 @@
+node_modules
+.data*
+aws
+.doc
+build
+data
+data-backup
+mock-data
+logs
+__test__

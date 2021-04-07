@@ -1,0 +1,16 @@
+{
+    "name": "personal-visit-form-borrower-data",
+    "shortid": "Hkg8TTfRUS",
+    "folder": {
+        "shortid": "Xc3sVs8"
+    },
+    "creationDate": "2019-09-17T08:52:55.948Z",
+    "modificationDate": {
+        "$$date": 1577071608205
+    },
+    "_id": "T18nKUfhrdvD6MBU",
+    "$entitySet": "data",
+    "entitySet": "data",
+    "type": "entity",
+    "key": "T18nKUfhrdvD6MBU"
+}

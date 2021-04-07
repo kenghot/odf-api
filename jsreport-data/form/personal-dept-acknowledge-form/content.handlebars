@@ -1,0 +1,137 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <style>
+        {#asset /asset/bootstrap.min.css @encoding=utf8}
+		{#asset /asset/main.css @encoding=utf8}
+
+        @font-face {
+            font-family: 'THSarabunNew';
+            src: url({#asset /asset/THSarabunNew.ttf @encoding=dataURI});
+            format('truetype');
+        }
+
+        * {
+            font-family: 'THSarabunNew';
+        }
+    </style>
+  </head>
+<body class="form-body">
+	<div class="container">
+		<div class="row mg-2">
+			<div class="col-4">
+            </div>
+			<div class="col-4 text-center">
+				<img src="{#asset /asset/logo.png @encoding=dataURI}"/>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col text-center">
+				<h1>
+					หนังสือรับสภาพหนี้ <br/>
+					กองทุนผู้สูงอายุ
+				</h1>
+			</div> 
+		</div>
+		<div class="row">
+			<div class="col text-right mt-4" style="text-align:justify">
+				ทำที่ <div class="text-underline" style="width:45%">{{checkEmptyReturnDashed location}}</div>
+			</div> 
+		</div>
+		<div class="row mb-4" style="text-align:justify">
+			<div class="col text-right">
+				วันที่  <div class="text-underline" style="width:45%">{{checkEmptyReturnDashed acknowledgeDate}}</div>
+			</div> 
+		</div>
+	</div>  
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<div class="indent text-justify">
+					ข้าพเจ้า  <div class="text-underline" style="width:76%">{{checkEmptyReturnDashed fullName}}</div>  
+					บัตรประจำตัวประชาชน เลขที่ <div class="text-underline" style="width:32%">{{checkEmptyReturnDashed idCardNo}}</div>  โทรศัพท์ <div class="text-underline" style="width:30%">{{checkEmptyReturnDashed telephone}}</div> 
+					ยอมรับว่าได้กู้ยืมเงินกับกองทุนผู้สูงอายุ ตามสัญญากู้ยืมเลขที่<div class="text-underline" style="width:18%">{{checkEmptyReturnDashed documentNumber}}</div> ลงวันที่  <div class="text-underline" style="width:21%">{{checkEmptyReturnDashed documentDate}}</div>
+					เป็นจำนวนเงิน <div class="text-underline" style="width:25%">{{currency loanAmount}}</div>บาท (<div class="text-underline" style="width:42%">{{dashed loanAmountText}}</div>) และยังคงมีหนี้
+					ค้างชำระเป็นเงินจำนวนทั้งสิ้น <div class="text-underline" style="width:23%">{{currency outstandingDebtBalance}}</div>บาท (<div class="text-underline" style="width:40%">{{dashed outstandingDebtBalanceText}}</div>) จริง
+					โดยกองทุนผู้สูงอายุในฐานะเจ้าหนี้มีสิทธิเรียกร้องให้ข้าพเจ้าชำระหนี้ได้โดยชอบด้วยกฎหมาย
+				</div>  
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<div class="indent text-justify">
+					ข้อ 1 ข้าพเจ้าตกลงผ่อนชำระหนี้ตามเงื่อนไขสัญญากู้ยืมฉบับดังกล่าว คือ ผ่อนชำระเป็น รายเดือน เดือนละงวด ภายในวันที่ 5 ของแต่ละเดือน เป็นเงินงวดละ <div class="text-underline" style="width:45%">{{currency installmentAmount}}</div>บาท
+					(<div class="text-underline" style="width:35%">{{dashed installmentAmountText}}</div>) ต่อไปจนกว่าจะครบชำระครบถ้วน
+				</div>  
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<div class="indent text-justify">
+					ข้อ 2 หากข้าพเจ้าผิดนัดชำระหนี้งวดใดงวดหนึ่ง ให้ถือว่าผิดนัดชำระหนี้ส่วนที่เหลือทั้งหมด และ
+					ยินยอมให้ผู้กู้ยืมฟ้องร้องดำเนินคดี เพื่อบังคับให้ชำระหนี้ส่วนที่เหลือทั้งหมด รวมทั้งชำระค่าใช้จ่ายในการติดตามทวงถาม ค่าฤชาธรรมเนียม ค่าทนายความ ตลอดจนค่าใช้จ่ายในการดำเนินคดีกับข้าพเจ้าได้ทันที
+				</div>  
+			</div>
+		</div>
+       <div class="row">
+			<div class="col">
+				<div class="indent text-justify">
+					ข้อ 3 ผู้ค้ำประกันรับทราบและตกลงยินยอมผูกพันตนเป็นผู้ค้ำประกันตามสัญญากู้ยืมดังกล่าวและตามหนังสือรับสภาพหนี้ฉบับนี้ต่อไปจนกว่าผู้ให้กู้ยืมจะได้รับชำระหนี้เสร็จสิ้น
+				</div>  
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<div class="indent text-justify">
+					ข้าพเจ้าได้อ่านและเข้าใจข้อความในหนังสือรับสภาพหนี้ฉบับนี้โดยตลอดครบถ้วนแล้วจึงลงลายมือชื่อไว้เป็นหลักฐานต่อหน้าพยานอย่างน้อยสองคน ณ วัน เดือน ปี ที่ระบุข้างต้น
+				</div>  
+			</div>
+		</div>
+	</div>
+
+	<div class="row" style="margin-top:70px">
+		<div class="col-4"></div>
+		<div class="col-8">
+			<div>
+				ลงชื่อ <div class="text-underline"  style="width:72%"></div> ผู้รับสภาพหนี้
+			</div>
+			<div style="padding-left:47px">
+				(<div class="text-underline" style="width:77%">{{checkEmptyReturnDashed fullName}}</div>)
+			</div>
+		</div>
+	</div>
+	<div class="row mt-4">
+		<div class="col-4"></div>
+		<div class="col-8">
+			<div>
+				ลงชื่อ <div class="text-underline"  style="width:72%"></div> ผู้ค้ำประกัน
+			</div>
+			<div style="padding-left:47px">
+				(<div class="text-underline" style="width:77%">{{checkEmptyReturnDashed guarantor.fullName}}</div>)
+			</div>
+		</div>
+	</div>
+	<div class="row mt-4">
+		<div class="col-4"></div>
+		<div class="col-8">
+			<div>
+				ลงชื่อ <div class="text-underline"  style="width:72%"></div> พยาน
+			</div>
+			<div style="padding-left:47px">
+				(<div class="text-underline" style="width:77%"></div>)
+			</div>
+		</div>
+	</div>
+	<div class="row mt-4">
+		<div class="col-4"></div>
+		<div class="col-8">
+			<div>
+				ลงชื่อ <div class="text-underline"  style="width:72%"></div> พยาน
+			</div>
+			<div style="padding-left:47px">
+				(<div class="text-underline" style="width:77%"></div>)
+			</div>
+		</div>
+	</div>
+</body>
+</html>

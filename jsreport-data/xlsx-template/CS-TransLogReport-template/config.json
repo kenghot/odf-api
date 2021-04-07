@@ -1,0 +1,15 @@
+{
+    "name": "CS-TransLogReport-template",
+    "creationDate": {
+        "$$date": 1586177525939
+    },
+    "modificationDate": {
+        "$$date": 1586177550008
+    },
+    "shortid": "BpuqJ1J",
+    "_id": "DQvBX8lFZpfH567m",
+    "$entitySet": "xlsxTemplates",
+    "folder": {
+        "shortid": "Mb34RQ9"
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "name": "CounterServiceReport",
+    "recipe": "html-to-xlsx",
+    "shortid": "rkxB1VZhr",
+    "folder": {
+        "shortid": "THihHg0"
+    },
+    "engine": "handlebars",
+    "chrome": {
+        "printBackground": true
+    },
+    "htmlToXlsx": {
+        "htmlEngine": "chrome",
+        "insertToXlsxTemplate": false,
+        "waitForJS": false
+    },
+    "creationDate": "2019-11-19T09:04:41.459Z",
+    "modificationDate": {
+        "$$date": 1576755742601
+    },
+    "data": {
+        "shortid": "S1e4_lNbhB"
+    },
+    "_id": "piEAWbSiOKzQWFgq",
+    "$entitySet": "templates"
+}

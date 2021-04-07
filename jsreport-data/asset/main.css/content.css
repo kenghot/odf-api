@@ -1,0 +1,94 @@
+.form-body {
+    line-height: 44px;
+    font-size: 32px;
+}
+
+.form-body2 {
+    line-height: 42px;
+    font-size: 32px;
+    letter-spacing: 0.8px;
+}
+
+.text-underline {
+    display: inline-block;
+    border-bottom:1px solid #dee2e6!important;
+    text-align: center;
+    text-align-last: center;
+    height: 1.05em;
+    text-indent:0;  /* prevent unexpected indent from parent's indent */
+    padding: 0;
+    margin: 0;
+    /* text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden; */
+}
+
+.text-underline-fit {
+    display: inline-block;
+    border-bottom:1px solid #dee2e6!important;
+    text-align: center;
+    text-align-last: center;
+    height: 1.05em;
+}
+
+.text-underline-inline {
+    display: inline;
+    border-bottom:1px solid #dee2e6!important;
+    text-align: center;
+    text-align-last: center;
+    text-indent:0;  /* prevent unexpected indent from parent's indent */
+    padding: 0;
+    margin: 0;
+}
+
+
+.no-margin-padding {
+    padding:0;
+    margin:0;
+}
+
+.text-justify-last {
+    text-align-last: justify;
+
+}
+
+.text-not-justify {
+    display: inline-block;
+    text-align:left;
+    text-align-last: left;
+    text-indent:0; 
+    width: 100%;
+}
+.text-nowrap{
+    white-space: nowrap;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    /* padding-right: 15px;
+    padding-left: 15px; */
+    width: 100%
+}
+
+.garuda-img {
+    height:185px;
+    margin-top: 28px
+}
+
+.indent {
+    text-indent: 16%;
+}
+
+.indent2 {
+    text-indent: 72px;
+}
+
+
+.table.table-bordered-grey > thead > tr > th{
+	border:1px solid grey;
+}
+
+.table.table-bordered-grey > tbody > tr > td{
+    border:1px solid grey;
+}

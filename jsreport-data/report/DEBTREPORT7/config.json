@@ -1,0 +1,24 @@
+{
+    "name": "DEBTREPORT7",
+    "recipe": "xlsx",
+    "shortid": "HkgIyaITDD",
+    "folder": {
+        "shortid": "THihHg0"
+    },
+    "engine": "handlebars",
+    "chrome": {
+        "printBackground": true
+    },
+    "data": {
+        "shortid": "rJxT8ftK9B"
+    },
+    "creationDate": "2020-10-21T07:02:04.617Z",
+    "modificationDate": {
+        "$$date": 1604318600479
+    },
+    "xlsxTemplate": {
+        "shortid": "BzyoW4U"
+    },
+    "_id": "QwvXZQ2jKkT7ShyE",
+    "$entitySet": "templates"
+}

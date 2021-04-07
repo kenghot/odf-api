@@ -1,0 +1,22 @@
+{
+    "shortid": "rke2cU2LMI",
+    "name": "CS-Report-xlsx-recipe",
+    "recipe": "xlsx",
+    "engine": "handlebars",
+    "chrome": {
+        "printBackground": true
+    },
+    "folder": {
+        "shortid": "THihHg0"
+    },
+    "data": null,
+    "creationDate": "2020-02-04T09:26:55.955Z",
+    "modificationDate": {
+        "$$date": 1581656418585
+    },
+    "_id": "Fs22jwmn0xbhJ7rO",
+    "$entitySet": "templates",
+    "xlsxTemplate": {
+        "shortid": "c_3K6Jo"
+    }
+}

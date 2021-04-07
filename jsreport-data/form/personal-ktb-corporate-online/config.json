@@ -1,0 +1,28 @@
+{
+    "name": "personal-ktb-corporate-online",
+    "recipe": "chrome-pdf",
+    "shortid": "r1e8aFaPXL",
+    "folder": {
+        "shortid": "DhYcEel"
+    },
+    "engine": "handlebars",
+    "chrome": {
+        "printBackground": true,
+        "format": "A4",
+        "width": "21cm",
+        "height": "29.7cm",
+        "marginTop": "2.7cm",
+        "marginRight": "2.5cm",
+        "marginBottom": "2.7cm",
+        "marginLeft": "4.5cm"
+    },
+    "data": {
+        "shortid": "Bye9RRNGSH"
+    },
+    "creationDate": "2020-02-17T08:07:32.051Z",
+    "modificationDate": {
+        "$$date": 1606126949492
+    },
+    "_id": "PkYDFzFVkwvBH4Rr",
+    "$entitySet": "templates"
+}

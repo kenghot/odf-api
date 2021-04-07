@@ -1,0 +1,16 @@
+{
+    "name": "personal-debt-collection-borrower-data",
+    "shortid": "r1eJANWRLS",
+    "folder": {
+        "shortid": "Xc3sVs8"
+    },
+    "creationDate": "2019-09-17T07:02:25.618Z",
+    "modificationDate": {
+        "$$date": 1577078381565
+    },
+    "_id": "EJLn4lTEs7JWiKT9",
+    "$entitySet": "data",
+    "entitySet": "data",
+    "type": "entity",
+    "key": "EJLn4lTEs7JWiKT9"
+}

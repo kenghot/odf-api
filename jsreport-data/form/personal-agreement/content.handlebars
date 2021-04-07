@@ -1,0 +1,202 @@
+<html>
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<style>
+		{#asset /asset/bootstrap.min.css @encoding=utf8}
+		{#asset /asset/main.css @encoding=utf8}
+
+		@font-face {
+			font-family: 'THSarabunNew';
+			src: url({#asset /asset/THSarabunNew.ttf @encoding=dataURI});
+			format('truetype');
+		}
+
+		* {
+			font-family: 'THSarabunNew';
+		}
+
+	</style>
+</head>
+
+<body class="form-body2" >
+
+	<div class="container">
+
+		<div class="row mb-4">
+			<div class="col-3">
+
+			</div>
+			<div class="col-6 text-center">
+				<img src="{#asset /asset/logo.png @encoding=dataURI}" />
+				<h1>
+					สัญญากู้ยืมเงินทุนประกอบอาชีพ<br/> กองทุนผู้สูงอายุ ประเภทรายบุคคล
+				</h1>
+			</div>
+			<div class="col-3">
+			</div> 
+		</div>
+		<div class="row mb-5">
+			<div class="col-6">
+				
+			</div>
+			<div class="col-6  text-right" >
+				<div  style="padding-right:32px">
+					สัญญากู้เลขที่ <div class="text-underline" style="width:50%" >{{documentNumber}}</div> <br/>
+					วันที่ <div class="text-underline" style="width:67%" >{{formatThaiDate documentDate}}</div> 
+				</div>  
+			</div>
+		</div>
+	</div>
+	<div class="container" style="position:relative;overflow:hidden;">
+		<div class="row" ">
+			<div class="col">
+				<div  class= "indent2 text-justify"  >
+					สัญญานี้ทำขึ้น ณ <div class="text-underline" style="width:76%" >{{checkEmptyReturnDashed signLocation}}</div><span style="display: inline-block; width: 100%;"></span>
+					ตั้งอยู่เลขที่ <div class="text-underline" style="width:45%" >{{checkEmptyReturnDashed signLocationAddress.houseNo}}</div> ถนน <div class="text-underline" style="width:37%" >{{checkEmptyReturnDashed signLocationAddress.street}}</div><span style="display: inline-block; width: 100%;"></span>
+					แขวง/ตำบล <div class="text-underline" style="width:38%" >{{checkEmptyReturnDashed signLocationAddress.subDistrict}}</div> เขต/อำเภอ <div class="text-underline" style="width:37%" >{{checkEmptyReturnDashed signLocationAddress.district}}</div><span style="display: inline-block; width: 100%;"></span>
+					จังหวัด <div class="text-underline"style="width:24%" >{{checkEmptyReturnDashed signLocationAddress.province}}</div> ระหว่างกรมกิจการผู้สูงอายุ โดย <div class="text-underline" style="width:37%" >{{checkEmptyReturnDashed agreementAuthorizedFullName}}</div><span style="display: inline-block; width: 100%;"></span>
+                    ตำแหน่ง <div  class="text-underline" style="width:91%" >{{checkEmptyReturnDashed agreementAuthorizedPosition}}</div><span style="display: inline-block; width: 100%;"></span>
+					ผู้รับมอบอำนาจตามคำสั่งที่ <div class="text-underline"  style="width:34%" >{{checkEmptyReturnDashed agreementAuthorizedCommandNo}}</div> ลงวันที่ <div class="text-underline"  style="width:32%" >{{formatThaiDate agreementAuthorizedCommandDate}}</div><span style="display: inline-block; width: 100%;"></span>
+                    ซึ่งต่อไปในสัญญาเรียกว่า "ผู้ให้กู้ยืม" ฝ่ายหนึ่ง กับ <div class="text-underline" style="width:52%" >{{checkEmptyReturnDashed borrower.fullName}}</div><span style="display: inline-block; width: 100%;"></span>
+					เกิดวันที่ <div class="text-underline" style="width:21%" >{{formatThaiDate borrower.birthDate true borrower.isOnlyBirthYear}}</div> อายุ<div  class="text-underline"  style="width:7%" >{{checkEmptyReturnDashed borrower.age}}</div>ปี บัตรประจำตัวประชาชน เลขที่ <div  class="text-underline"  style="width:25%" >{{checkEmptyReturnDashed borrower.idCardNo}}</div><span style="display: inline-block; width: 100%;"></span>
+                    อยู่ตามทะเบียนบ้าน เลขที่ <div  class="text-underline"  style="width:14%" >{{checkEmptyReturnDashed borrowerRegisteredAddress.houseNo}}</div> หมู่ที่ <div class="text-underline"  style="width:8%" >{{checkEmptyReturnDashed borrowerRegisteredAddress.hmoo}}</div> ตรอก/ซอย <div class="text-underline"  style="width:34%" >{{checkEmptyReturnDashed borrowerRegisteredAddress.soi}}</div><span style="display: inline-block; width: 100%;"></span>
+					ถนน <div class="text-underline"  style="width:22%" >{{checkEmptyReturnDashed borrowerRegisteredAddress.street}}</div> แขวง/ตำบล <div class="text-underline" style="width:24%" >{{checkEmptyReturnDashed borrowerRegisteredAddress.subDistrict}}</div> เขต/อำเภอ <div class="text-underline"  style="width:24%" >{{checkEmptyReturnDashed borrowerRegisteredAddress.district}}</div><span style="display: inline-block; width: 100%;"></span>
+                    จังหวัด <div class="text-underline"  style="width:32%" >{{checkEmptyReturnDashed borrowerRegisteredAddress.province}}</div> โทรศัพท์ <div class="text-underline"  style="width:50%" >{{checkEmptyReturnDashed borrowerTelephone}}</div><span style="display: inline-block; width: 100%;"></span>
+					<div  class= "text-not-justify"  >
+					ซึ่งต่อไปในสัญญาเรียกว่า <span class="text-nowrap">"ผู้กู้ยืม"</span> อีกฝ่ายหนึ่ง
+					คู่สัญญาทั้งสองฝ่ายได้ตกลงกันมีข้อความดังต่อไปนี้
+					</div>
+					
+				</div>  
+				<div class= "indent2 text-justify">
+					ข้อ 1 <span style="letter-spacing:0.2px;">ผู้ให้กู้ยืมตกลงให้กู้ยืมและผู้กู้ยืมตกลงกู้ยืมเงินกองทุนผู้สูงอายุเป็นเงินจำนวน<div class="text-underline" style="width:17%" >{{currency loanAmount}}</div>บาท</span><span style="display: inline-block; width: 100%;"></span>
+                    <span style="letter-spacing:0.2px;">(<div class="text-underline" style="width:53%" >{{dashed loanAmountText}}</div>) เพื่อนำไปใช้ประกอบอาชีพ มีกำหนดเวลาผ่อนชำระ<span style="display: inline-block; width: 100%;"></span><div class="text-underline" style="width:5%" >{{checkEmptyReturnDashed loanDurationYear}}</div>ปี<div class="text-underline" style="width:5%" >{{checkEmptyReturnDashed loanDurationMonth}}</div>เดือน</span>
+					<span style="letter-spacing:0.6px;">(<div class="text-underline" style="width:20%" >{{checkYearMonthText loanDurationYearText loanDurationMonthText}}</div>) โดยผู้กู้ยืมได้รับเงินจำนวนดังกล่าวไปครบถ้วนแล้วในวันทำสัญญานี้</span>
+				</div>           
+				
+                <div class= "indent2 text-justify"  >
+					ข้อ 2 ในขณะทำสัญญานี้ ผู้กู้ยืมได้จัดให้ <div class="text-underline" style="width:55%" >{{checkEmptyReturnDashed guarantor.fullName}}</div><span style="display: inline-block; width: 100%;"></span>
+					เข้าทำหนังสือค้ำประกันการกู้ยืมเงินตามสัญญานี้ ปรากฏตามหนังสือค้ำประกันเลขที่ <div class="text-underline" style="width:21%" >{{checkEmptyReturnDashed guaranteeDocumentNumber}}</div><span style="display: inline-block; width: 100%;"></span>
+                    <div  class= "text-not-justify"  >
+					ลงวันที่ <div class="text-underline" style="width:40%" >{{formatThaiDate guaranteeDocumentDate}}</div> ตามวงเงินที่ผู้กู้ยืมได้รับอนุมัติให้กู้ยืม
+                    </div>
+				</div>
+				<div class= "indent2 text-justify"  >
+					ข้อ 3 <span style="letter-spacing:0.5px;">ผู้กู้ยืมต้องชำระหนี้เงินกู้ยืมตามข้อ 1 แก่ผู้ให้กู้ยืม ตามวิธีการที่ปรากฏในเอกสารแนบท้ายสัญญานี้</span><span style="display: inline-block; width: 100%;"></span>
+					โดยไม่มีดอกเบี้ย ณ <div  class="text-underline" style="width:81%" >{{checkEmptyReturnDashed loanPaymentLocation}}</div><span style="display: inline-block; width: 100%;"></span>
+                    <span style="letter-spacing:1.8px;">หรือสถานที่ที่ผู้ให้กู้ยืมกำหนด โดยผ่อนชำระเป็นรายเดือนภายในวันที่ 5 ของแต่ละเดือน เดือนละงวด</span><span style="display: inline-block; width: 100%;"></span>
+					เป็นเงินงวดละ <div class="text-underline" style="width:20%" >{{currency installmentAmount}}</div> บาท (<div class="text-underline" style="width:35%" >{{dashed installmentAmountText}}</div>) รวมทั้งสิ้น <div class="text-underline" style="width:5%" >{{checkEmptyReturnDashed installmentTimes}}</div>เดือน<span style="display: inline-block; width: 100%;"></span>
+					<span style="letter-spacing:1.1px;">หากวันถึงกำหนดชำระตรงกับวันหยุดทำการของผู้ให้กู้ยืมก็ให้เลื่อนไปชำระในวันเปิดทำการถัดไป โดยผู้กู้ยืม</span><span style="display: inline-block; width: 100%;"></span>
+					ตกลงผ่อนชำระผู้ให้กู้ยืมงวดแรกภายในวันที่ <div class="text-underline" style="width:31%" >{{formatThaiDate installmentFirstDate}}</div> และต้องชำระหนี้ตามสัญญานี้<span style="display: inline-block; width: 100%;"></span>
+					ให้เสร็จสิ้นภายในวันที่ <div class="text-underline" style="width:27%" >{{formatThaiDate installmentLastDate}}</div>
+				</div>
+				<br/>
+				<div  class="row  " style={{displayBarcode barcode}}><img src="data:image/png;base64, {{barcode}}"></img></div>	
+
+				{{!-- <div  class="row  " style={{displayBarcode barcode}}><img style="height:96px;width:420px;"  src="data:image/png;base64, {{barcode}}"></img></div>	 --}}
+
+				{{!-- <div  class="row  " style={{displayBarcode barcode}}><img style="height:96px;width:820px;" src="data:image/png;base64, {{barcode}}"></img></div>	 --}}
+
+				<div style="page-break-before: always;"></div>
+				<div class= "indent2 text-justify-last">
+					ข้อ 4 <span style="letter-spacing:1.8px;">ในระหว่างที่ผู้กู้ยืมยังเป็นหนี้เงินกู้ยืมกองทุนผู้สูงอายุ ห้ามผู้กู้ยืมยื่นคำร้องขอกู้ยืมเงินจาก</span><span style="display: inline-block; width: 100%;"></span>
+					กองทุนใดๆในความรับผิดชอบของกระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์
+				</div>
+				<div class= "indent2 text-justify">
+					ข้อ 5 <span style="letter-spacing:0.5px;">ผู้กู้ยืมจะต้องปฏิบัติตามกฎ ระเบียบ ประกาศ ข้อกำหนด และคำสั่งของผู้ให้กู้ยืมที่ใช้บังคับอยู่แล้ว</span><span style="display: inline-block; width: 100%;"></span>
+					ในวันทำสัญญานี้และที่ออกใช้บังคับในอนาคต รวมทั้งยินยอมให้เจ้าหน้าที่ของผู้ให้กู้ยืมเข้าตรวจสอบการใช้เงิน<span style="display: inline-block; width: 100%;"></span>
+					<span style="letter-spacing:0.9px;">กู้ยืมดังกล่าว และมีสิทธิ์สั่งให้ผู้กู้ยืมแสดงเอกสารและบัญชีต่างๆ ของผู้กู้ยืมที่เกี่ยวข้องกับเงินที่กู้ยืมโดยผู้กู้ยืม</span><span style="display: inline-block; width: 100%;"></span>
+					ต้องอำนวยความสะดวกในการเข้าตรวจสอบแก่เจ้าหน้าที่ตามสมควร
+				</div>
+				<div class= "indent2 text-justify">
+					ข้อ 6 หากผู้กู้ยืมผิดสัญญาข้อใดข้อหนึ่ง หรือผิดนัดชำระหนี้งวดใดงวดหนึ่งให้ถือว่าผิดนัดทั้งหมด หรือ<span style="display: inline-block; width: 100%;"></span>
+					<span style="letter-spacing:0.55px;">หากผู้กู้ยืมผิดคำรับรองตามที่ระบุในคำร้องขอกู้ยืมเงินทุนประกอบอาชีพจากกองทุนผู้สูงอายุและเอกสารประกอบ</span><span style="display: inline-block; width: 100%;"></span>
+					<span style="letter-spacing:1.7px;">คำร้องหรือเมื่อปรากฏภายหลังว่าผู้กู้ยืมไม่มีสิทธิขอกู้ยืมเงิน หรือได้แจ้ง หรือแสดงข้อความอันเป็นเท็จ</span><span style="display: inline-block; width: 100%;"></span>
+					<span style="letter-spacing:0.4px;">ในสาระสำคัญ หรือแสดง หรือส่งมอบเอกสารปลอมเกี่ยวกับการขอกู้ยืมเงินตามสัญญานี้ หรือผู้กู้ยืมเป็นผู้มีหนี้สิน</span><span style="display: inline-block; width: 100%;"></span>
+					<span style="letter-spacing:0.5px;">ล้นพ้นตัว หรือถูกพิทักษ์ทรัพย์ชั่วคราวหรือเด็ดขาด ผู้ให้กู้ยืมมีสิทธิบอกเลิกสัญญาและเรียกให้ผู้กู้ยืมชำระหนี้เงิน</span><span style="display: inline-block; width: 100%;"></span>
+					<span style="letter-spacing:0.6px;">ที่ยังค้างชำระทั้งหมดได้ทันที โดยผู้กู้ยืมต้องรับผิดชดใช้ค่าสินไหมทดแทน ค่าภาระติดพันอันเป็นอุปกรณ์แห่งหนี้</span><span style="display: inline-block; width: 100%;"></span>
+					<span>ค่าใช้จ่ายในการติดตาม ทวงถาม ค่าฤชาธรรมเนียม รวมทั้งค่าใช้จ่ายในการดำเนินคดี เพื่อบังคับให้ชำระหนี้</span><span style="display: inline-block; width: 100%;"></span>
+					ตามสัญญานี้
+				</div>
+				<div class= "indent2 text-justify">
+					ข้อ 7 <span style="letter-spacing:0.5px;">ที่อยู่ของผู้กู้ยืมที่ปรากฏในสัญญานี้ให้ถือเป็นภูมิลำเนาของผู้กู้ยืม การส่งหนังสือบอกกล่าวทวงถาม</span><span style="display: inline-block; width: 100%;"></span>
+					<span style="letter-spacing:0.6px;">จดหมาย หรือเอกสารอื่นใดไปยังผู้กู้ยืม ผู้ให้กู้ยืมจะส่งไปยังภูมิลำเนาของผู้กู้ยืมและให้ถือว่าเป็นการส่งโดยชอบ</span><span style="display: inline-block; width: 100%;"></span>
+					<span style="letter-spacing:0.6px;">โดยถือว่าผู้กู้ยืมได้ทราบข้อความในเอกสารดังกล่าวนับแต่วันที่หนังสือบอกกล่าวทวงถาม จดหมาย หรือเอกสาร</span><span style="display: inline-block; width: 100%;"></span>
+					<span style="letter-spacing:1.1px;">อื่นใดไปถึงภูมิลำเนาของผู้กู้ยืม ไม่ว่าผู้กู้ยืมหรือบุคคลอื่นใดที่พำนักอยู่ในภูมิลำเนาของผู้กู้ยืมจะได้รับหนังสือ</span><span style="display: inline-block; width: 100%;"></span>
+					บอกกล่าวทวงถาม จดหมาย หรือเอกสารนั้นไว้หรือไม่ก็ตาม
+				</div>
+				<div class= "indent2 text-justify">
+					หากผู้กู้ยืมเปลี่ยนแปลงภูมิลำเนา ผู้กู้ยืมต้องมีหนังสือแจ้งการเปลี่ยนแปลงภูมิลำเนามายังผู้ให้กู้ยืมหรือ<span style="display: inline-block; width: 100%;"></span>
+					<span style="letter-spacing:0.7px;">ได้บันทึกถ้อยคำการเปลี่ยนแปลงภูมิลำเนาไว้กับเจ้าหน้าที่ของผู้ให้กู้ยืม การละเลยไม่แจ้งเปลี่ยนแปลงภูมิลำเนา</span><span style="display: inline-block; width: 100%;"></span>
+					ให้ผู้ให้กู้ยืมทราบ หากผู้ให้กู้ยืมส่งหนังสือบอกกล่าวทวงถาม จดหมาย หรือเอกสารอื่นใด ไปยังผู้กู้ยืมตามที่อยู่<span style="display: inline-block; width: 100%;"></span>
+					ที่ปรากฏในสัญญานี้ ให้ถือเสมือนว่าผู้กู้ยืมได้ทราบข้อความในเอกสารดังกล่าวโดยชอบแล้ว
+				</div>
+				<div class= "indent2 text-justify">
+					ข้อ 8 <span style="letter-spacing:2.5px;">ขณะทำสัญญานี้ผู้กู้ยืมมีสติสัมปชัญญะสมบูรณ์พร้อม ไม่เป็นคนวิกลจริต จิตฟั่นเฟือน</span><span style="display: inline-block; width: 100%;"></span>
+					ไม่สมประกอบ คนไร้ความสามารถ	คนเสมือนไร้ความสามารถ หรือบุคคลล้มละลาย
+				</div>
+				<div class= "indent2 text-justify">
+					ข้อ 9 <span style="letter-spacing:0.5px;">ผู้กู้ยืมรับรองว่ามีคุณสมบัติตามประกาศคณะกรรมการบริหารกองทุนผู้สูงอายุ เรื่องหลักเกณฑ์และ</span><span style="display: inline-block; width: 100%;"></span>
+					<span style="letter-spacing:1px;">เงื่อนไขอื่นที่ให้การสนับสนุนทางการเงินจากกองทุนผู้สูงอายุ ลงวันที่ 7 มิถุนายน พ.ศ. 2549 และข้อกำหนด</span><span style="display: inline-block; width: 100%;"></span>
+					<span style="letter-spacing:0.3px;">สำนักงานส่งเสริมสวัสดิภาพและพิทักษ์เด็ก เยาวชน ผู้ด้อยโอกาสและผู้สูงอายุ ว่าด้วยคุณสมบัติผู้กู้ยืม ผู้ค้ำประกัน</span><span style="display: inline-block; width: 100%;"></span>
+					<span style="letter-spacing:0.6px;">และหลักเกณฑ์ในการพิจารณาให้กู้ยืมเงินทุนประกอบอาชีพประเภทรายบุคคลจากกองทุนผู้สูงอายุ พ.ศ.2556</span>
+				</div>
+				<div class= "indent2 text-justify">
+					<span style="letter-spacing:0.4px;">สัญญานี้ทำขึ้นสองฉบับมีข้อความถูกต้องตรงกัน คู่สัญญาทั้งสองฝ่ายได้อ่านและเข้าใจข้อความในสัญญานี้</span><span style="display: inline-block; width: 100%;"></span>
+					<span style="letter-spacing:1px;">โดยตลอดครบถ้วนแล้ว จึงได้ลงลายมือชื่อไว้เป็นสำคัญต่อหน้าพยานอย่างน้อยสองคน ณ วัน เดือน ปี ที่ระบุ</span><span style="display: inline-block; width: 100%;"></span>
+					ข้างต้น โดยมอบให้คู่สัญญาเก็บรักษาไว้ฝ่ายละหนึ่งฉบับ
+				</div>
+			</div>
+		</div>	
+		{{!-- <br/> --}}
+		<br/>
+		<div class="row text-right">
+			<div class="col-6 ">
+				<div>
+					ลงชื่อ<div class="text-underline" style="width:70% ;" >
+						&nbsp
+					</div>ผู้ให้กู้ยืม<br/>
+					(<div class="text-underline" style="width:96% ;" >
+						{{checkEmptyReturnDashed agreementAuthorizedFullName}}
+					</div>)
+				</div>
+			</div>
+			<div class="col-6">
+				<div>
+					ลงชื่อ<div class="text-underline" style="width:75% ;" >
+						&nbsp
+					</div>ผู้กู้ยืม<br/>
+					(<div class="text-underline" style="width:96% ;" >
+						{{checkEmptyReturnDashed borrower.fullName}}
+					</div>)
+				</div>
+			</div>
+		</div>
+		<br/>
+        <div class="row text-right">
+			<div class="col-6">
+				<div>
+					ลงชื่อ<div class="text-underline" style="width:78% ;" >
+						&nbsp
+					</div>พยาน <br/>
+					(<div class="text-underline" style="width:96% ;" >
+						{{checkEmptyReturnDashed witness1}}
+					</div>)
+				</div>
+			</div>
+			<div class="col-6">
+				<div>
+					ลงชื่อ<div class="text-underline" style="width:78% ;" >
+						&nbsp
+					</div>พยาน <br/>
+					(<div class="text-underline" style="width:96% ;" >
+						{{checkEmptyReturnDashed witness2}}
+					</div>)
+				</div>
+			</div>
+        </div>	
+	</div>
+</body>
+
+</html>

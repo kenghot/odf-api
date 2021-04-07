@@ -1,0 +1,22 @@
+{
+    "shortid": "HyxB-ZP9z8",
+    "name": "REPORT12-xlsx-recipe",
+    "recipe": "xlsx",
+    "engine": "handlebars",
+    "chrome": {
+        "printBackground": true
+    },
+    "creationDate": "2020-02-07T04:41:47.431Z",
+    "modificationDate": {
+        "$$date": 1599032759367
+    },
+    "_id": "yv955ErgIBirF28y",
+    "$entitySet": "templates",
+    "folder": {
+        "shortid": "THihHg0"
+    },
+    "data": null,
+    "xlsxTemplate": {
+        "shortid": "t3NehHF"
+    }
+}

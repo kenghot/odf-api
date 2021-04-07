@@ -1,0 +1,123 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <style>
+	    {#asset /asset/bootstrap.min.css @encoding=utf8}
+		{#asset /asset/main.css @encoding=utf8}
+        @font-face {
+            font-family: 'THSarabunNew';
+            src: url({#asset /asset/THSarabunNew.ttf @encoding=dataURI});
+            format('truetype');
+        }
+        * {
+            font-family: 'THSarabunNew';
+        }
+    </style>
+  </head>
+<body class="form-body2">
+	<div class="container">
+		<div class="row mb-4">
+			<div class="col-3">
+            </div>
+			<div class="col-6 text-center">
+				<img src="{#asset /asset/logo.png @encoding=dataURI}" />
+				<h1>
+					ใบสำคัญรับเงิน
+				</h1>
+			</div>
+			<div class="col-3">
+			</div> 
+		</div>
+		<div class="row mt-2">
+            <div class="col-9 offset-3">
+                    ที่ <div class="text-underline" style="width:96%" >{{organization.orgName}}</div><br/>
+            </div>
+        </div>
+		<div class="row mb-2 mt-2">
+            <div class="col-6 offset-6">
+                    วันที่ <div class="text-underline" style="width:60%" >&nbsp;</div> 
+            </div>
+        </div>
+	</div>
+	<br/>
+	<div class="container">
+		<div class="row"> 
+			<div class="col indent2 mb-4 text-justify">
+				ข้าพเจ้า <div class="text-underline mb-2"  style="width:32%" >{{checkEmptyReturnDashed partnerName}}</div>  
+					ที่อยู่ <div class="text-underline mb-2" style="width:46%; text-align:left" >{{checkEmptyReturnDashed address1}}</div><span style="display: inline-block; width: 100%;"></span>
+					<span style="letter-spacing:0px;"><div class="text-underline mb-2 text-not-justify" style="width:100%; text-align:left;" >{{#if address2}} {{address2}}  {{else}} &nbsp {{/if}}</div></span>
+					{{#if isAddressThirdLine}}<span class="text-underline" style="display: inline-block; width: 100%;"></span> {{/if}}
+                    ได้รับเงินจาก <div class="text-underline mb-2" style="width:87%" >{{checkEmptyReturnDashed organization.orgName}}</div><span style="display: inline-block; width: 100%;"></span>
+                    จังหวัด <div class="text-underline mb-2" style="width:40%" >{{checkEmptyReturnDashed organization.address.province}} </div> ดังต่อไปนี้<br/> 
+			</div> 
+		</div>
+		<div class="row mb-4"> 
+			<div class="col">
+				<table class="table table-bordered-grey form-body" >
+                    <thead>
+                        <tr >
+                            <th rowspan="2" style="text-align: center;vertical-align: middle;width: 75%;">รายการ</th>
+                            <th colspan="1" style="text-align: center;vertical-align: middle;width: 25%;">จำนวนเงิน</th>
+                        </tr>
+                        <th style="text-align: center" class="">บาท</th>
+                    </thead>
+                        <tbody>
+							{{#each voucherItems}}
+                            		<tr>
+										<td>{{this.description}}</td>
+										<td style="text-align: right">{{currency this.subtotal}}</td>
+                            		</tr>
+        					{{/each}}
+                        </tbody>
+                        <thead class="tbody-bordered-grey">
+                            <tr>
+                                <th style="border-bottom: hidden !important;border-left: hidden !important;"></th>
+                                <th style="text-align: right">{{currency totalAmount}}</th>
+                            </tr>
+                    </thead>
+            	</table>	
+			</div>
+		</div>
+    </div>
+	<br/>
+	<div class="container">
+		<div class="row">
+			<div class="col-1"></div>
+				<div class="col-10">
+					<div>จำนวนเงิน<div class="text-underline mb-3 text-center" style="width:80% ;" >{{dashed totalAmountText}}</div>
+				</div>
+			</div>
+            <div class="col-1"></div>
+        </div>
+		<br/>
+		<div class="row">
+			<div class="col-6 text-center p-4" style="border-style: solid">
+				<div>
+					จ่ายเงินแล้ว<br/><br/>
+					<span style="letter-spacing:0.2px;">ลงชื่อ<div class="text-underline mb-3 text-center" style="width:70% ;" >&nbsp</div>
+					ผู้จ่ายเงิน</span> <br/>
+					(<div class="text-underline mb-3 text-center" style="width:96% ;" >
+						&nbsp
+					</div>)
+					<span style="letter-spacing:0px;">ตำแหน่ง <div class="text-underline text-center mb-3" style="width:80% ;" >
+						&nbsp
+					</div></span><br/>
+					วันที่ <div class="text-underline text-center" style="width:88%; margin-bottom:5%" >&nbsp;</div>
+				</div>
+			</div>
+			<div class="col-6 text-center pt-4">
+				<div>
+					<br/><br/>
+					ลงชื่อ<div class="text-underline mb-3 text-center" style="width:70% ;" >
+						&nbsp
+					</div>ผู้รับเงิน <br/>
+					(<div class="text-underline mb-3 text-center" style="width:96% ;" >
+						{{checkEmptyReturnDashed partnerName}}
+					</div>)
+					วันที่ <div class="text-underline text-center" style="width:88%;" >&nbsp;</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{
+    "name": "personal-dept-acknowledge-form",
+    "recipe": "chrome-pdf",
+    "shortid": "HyxLcntD8r",
+    "folder": {
+        "shortid": "DhYcEel"
+    },
+    "engine": "handlebars",
+    "chrome": {
+        "printBackground": true,
+        "format": "A4",
+        "width": "21cm",
+        "height": "29.7cm",
+        "marginTop": "2.7cm",
+        "marginRight": "2.5cm",
+        "marginBottom": "2.7cm",
+        "marginLeft": "4.5cm"
+    },
+    "data": {
+        "shortid": "ryeb2yz0IS"
+    },
+    "creationDate": "2019-09-12T09:15:20.694Z",
+    "modificationDate": {
+        "$$date": 1585137549509
+    },
+    "_id": "lRAqCFEB8h1NSagw",
+    "$entitySet": "templates"
+}

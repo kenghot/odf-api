@@ -1,0 +1,13 @@
+{
+    "shortid": "BygE5S4QWB",
+    "name": "request-committee-data",
+    "creationDate": "2019-07-10T11:25:51.208Z",
+    "modificationDate": {
+        "$$date": 1566840870446
+    },
+    "_id": "vO2fN408zu0O8Ax5",
+    "$entitySet": "data",
+    "folder": {
+        "shortid": "Xc3sVs8"
+    }
+}

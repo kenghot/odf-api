@@ -1,0 +1,34 @@
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <style>
+    {#asset /asset/bootstrap.min.css @encoding=utf8}
+    {#asset /asset/header-footer.css @encoding=utf8}
+    @font-face {
+      font-family: 'THSarabunNew';
+      src: url({#asset /asset/THSarabunNew.ttf @encoding=dataURI});
+      format('truetype');
+    }
+    * {
+      font-family: 'THSarabunNew';
+    }
+  </style>
+</head>
+ <body>
+        {{#each $pdf.pages}}
+          {{#if @index}}
+            <div style="page-break-before: always;"></div>
+          {{/if}}
+          <main class="main"> 
+            <header class="header">
+              {{#with (lookup ../$pdf.pages @index)}}
+                {{group}}
+              {{/with}}  
+            </header>
+            <footer class="footer text-right">
+                <span>หน้า {{getPageNumber @index}} / {{getTotalPages ../$pdf.pages}}</span>
+            </footer>
+          </main>
+        {{/each}}
+    </body>
+</html>

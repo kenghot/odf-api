@@ -1,0 +1,57 @@
+{{#xlsxReplace "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row[0].c[0]"}}
+    <c t="inlineStr" s="1"><is><t>{{checkEmpty title1}}</t></is></c>
+{{/xlsxReplace}}
+{{#xlsxReplace "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row[1].c[0]"}}
+    <c t="inlineStr" s="1"><is><t>{{checkEmpty title2}}</t></is></c>
+{{/xlsxReplace}}
+{{#xlsxReplace "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row[2].c[0]"}}
+    <c t="inlineStr" s="1"><is><t>{{reportDataDate}}</t></is></c>
+{{/xlsxReplace}}
+
+{{#xlsxReplace "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row[3].c[9]"}}
+        <c t="inlineStr" s="2"><is><t>จ่ายชำระหนี้ในปีงบประมาณ {{fiscalYear}}</t></is></c>
+{{/xlsxReplace}}
+
+{{#each data}}
+    {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+    <row>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{getOrderNumber @index}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{checkEmpty documentNumber}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{checkEmpty borrowerName}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{checkEmpty borrowerIdCardNo}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{checkEmpty guarantorName}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{checkEmpty guarantorIdCardNo}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency loanAmount true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency installmentAmount true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency broughtForward true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidOctober true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidNovember true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidDecember true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidJanuary true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidFebruary true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidMarch true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidApril true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidMay true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidJune true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidJuly true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidAugust true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidSeptember true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidAllMonth true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency outstandingDebtBalance true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{formatThaiDate documentDate}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{formatThaiDate startDate}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{formatThaiDate endDate}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{checkEmpty installmentTimes}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency installmentLastAmount true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{formatThaiDate lastPaidDate}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{checkEmpty installmentsTimesDue}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency installmentsAmountDue true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{getInstallmentsTimesOverDue installmentsAmountDue totalPaidAllMonth installmentAmount loanAmount broughtForward}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{getInstallmentsAmountOverDue installmentsAmountDue totalPaidAllMonth loanAmount broughtForward}}</t></is></c>   
+
+
+    </row>
+    {{/xlsxAdd}}
+{{/each}}
+
+{{{xlsxPrint}}}

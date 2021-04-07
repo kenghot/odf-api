@@ -1,0 +1,109 @@
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        @font-face {
+            font-family: 'THSarabunNew';
+            src: url({#asset /asset/THSarabunNew.ttf @encoding=dataURI});
+            format('truetype');
+        }
+
+        * {
+            font-family: 'THSarabunNew';
+        }
+    </style>
+</head>
+
+<body>
+    <table class="table" style="line-height: 0">
+        <thead>
+            <tr >
+                <th colspan="2">คณะพิจารณา</th>
+                <th colspan="1">{{committeeNumber}}</th>
+                <th colspan="15">{{committeeName}}</th>
+            </tr>
+            <tr>
+                <th colspan="2">วันที่พิจารณา</th>
+                <th colspan="1">:</th>
+                <th colspan="15">{{meetingDate}}</th>
+            </tr>
+            <tr>
+                <th scope="col" rowspan="2">ที่</th>
+                <th scope="col" rowspan="2">เลขบัตรประชาชน</th>
+                <th scope="col" rowspan="2">ชื่อ-สกุล</th>
+                <th scope="col" rowspan="2">อายุ</th>
+                <th scope="col" rowspan="2">วัตถุประสงค์</th>
+                <th scope="col" rowspan="2">รายละเอียดอาชีพ</th>
+                <th scope="col" rowspan="2">สภาพครอบครัว</th>
+                <th scope="col" colspan="2">คุณสมบัติ</th>
+                <th scope="col" colspan="1"></th>
+                <th scope="col" colspan="1"></th>
+                <th scope="col" colspan="1"></th>
+                <th scope="col" colspan="1"></th>
+                <th scope="col" colspan="1"></th>
+                <th scope="col" colspan="1"></th>
+                <th scope="col" colspan="2">ความเห็นเจ้าหน้าที่</th>
+                <th scope="col" colspan="3">ความเห็นหัวหน้ากลุ่ม</th>
+                <th scope="col" colspan="3">มติคณะอนุกรรมการกลั่นกรองฯ</th>
+                <th scope="col" colspan="3">มติคณะกรรมการบริหารกองทุนฯ</th>    
+            </tr>
+            <tr>
+                <th scope="col">ผู้กู้ยืม(100)</th>
+                <th scope="col">ผู้ค้ำประกัน(100)</th>
+                <th scope="col">รายละเอียดค่าใช้จ่าย</th>
+                <th scope="col">ประมาณ คชจ</th>
+                <th scope="col">วงเงินขอสนับสนุน</th>
+                <th scope="col">วงเงินที่ควรพิจารณา</th>
+                <th scope="col">จังหวัด</th>
+                <th scope="col">กู้ครั้งที่</th>
+                <th scope="col">ผล</th>
+                <th scope="col">เหตุผลประกอบ</th>
+                <th scope="col">มติ </th>
+                <th scope="col">วงเงินอนุมัติ</th>
+                <th scope="col">หมายเหตุ</th>
+                <th scope="col">มติ </th>
+                <th scope="col">วงเงินอนุมัติ</th>
+                <th scope="col">หมายเหตุ</th>
+                <th scope="col">มติ </th>
+                <th scope="col">วงเงินอนุมัติ</th>
+                <th scope="col">หมายเหตุ</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each requests}}
+            <tr>
+                <td>{{getOrderNumber @index}}</td>
+                <td>{{borrower.idCardNo}}</td>
+                <td>{{borrower.title}}{{borrower.firstname}} {{borrower.lastname}}</td>
+                <td>{{borrower.age}}</td>
+                <td>{{requestOccupation.name}}</td>
+                <td>{{requestOccupation.description}}</td>
+                <td>{{factSheet.residenceWithDescription}}</td>
+                <td>{{factSheet.borrowerScore}}</td>
+                <td>{{factSheet.guarantorScore}}</td>
+                <td>{{requestBudgetDescription}}</td>
+                <td data-cell-type="number" data-cell-format-str="0.00">{{totalBudget}}</td>
+                <td data-cell-type="number" data-cell-format-str="0.00">{{requestBudget}}</td>
+                <td data-cell-type="number" data-cell-format-str="0.00">{{getApproveBudget status result1.approveBudget result2.approveBudget result3.approveBudget}}</td>
+                <td>{{organization.address.province}}</td>
+                <td>{{loanCount}}</td>
+                <td>{{isApproveFromFactsheet}}</td>
+                <td>{{factSheet.comments}}</td>
+                <td>{{result1.result}}</td>
+                <td>{{result1.approveBudget}}</td>
+                <td>{{result1.comments}}</td>
+                <td>{{result2.result}}</td>
+                <td>{{result2.approveBudget}}</td>
+                <td>{{result2comments}}</td>
+                <td>{{result3.result}}</td>
+                <td>{{result3.approveBudget}}</td>
+                <td>{{result3.comments}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</body>
+
+</html>

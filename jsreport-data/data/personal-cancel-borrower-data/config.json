@@ -1,0 +1,16 @@
+{
+    "name": "personal-cancel-borrower-data",
+    "shortid": "HkxdscfCUH",
+    "folder": {
+        "shortid": "Xc3sVs8"
+    },
+    "creationDate": "2019-09-17T08:36:11.332Z",
+    "modificationDate": {
+        "$$date": 1569311033357
+    },
+    "_id": "Xb1wiQnlBDd3HX7t",
+    "$entitySet": "data",
+    "entitySet": "data",
+    "type": "entity",
+    "key": "Xb1wiQnlBDd3HX7t"
+}

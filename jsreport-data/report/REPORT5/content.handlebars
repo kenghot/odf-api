@@ -1,0 +1,96 @@
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        {#asset /asset/table-style.css @encoding=utf8}
+
+        @font-face {
+            font-family: 'THSarabunNew';
+            src: url({#asset /asset/THSarabunNew.ttf @encoding=dataURI});
+            format('truetype');
+        }
+
+        .table-tr-color > th {
+            background-color: WhiteSmoke;
+        }
+
+         .table-tr-color > td {
+            background-color: WhiteSmoke;
+        }
+
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead> 
+            <tr>
+                <th colspan="8">{{title1}}</th>
+            </tr>
+            <tr>
+                <th colspan="8">{{title2}}</th>
+            </tr>
+            <tr>
+                <th colspan="8">ข้อมูล ณ วันที่ {{reportDataDate}}</th>
+            </tr>
+            <tr class="table-tr-bordered table-tr-color">
+                <th rowspan="2">ภาค</th>
+                <th rowspan="2">หน่วยงานที่รับผิดชอบ (จังหวัด)</th>
+                <th rowspan="2">วงเงินกู้ (บาท)</th>
+                <th colspan="3">จำนวนการปิดหนี้ (ราย)</th>
+                <th class="align-bottom border-bottom-0">ยอดรับชำระหนี้ทั้งหมด (บาท)</th>
+                <th class="align-bottom border-bottom-0">ยอดรับสภาพหนี้ (บาท)</th>
+                  {{!-- Cell นี้เอาไว้ทำ Border ให้ Cell สุดท้าย เพราะ Cell สุดท้ายบัค ไม่แสดงผล Border Right --}}
+                <th class="border-top-0 border-right-0 border-bottom-0" style="background-color:transparent"></th>
+            </tr>
+            <tr class="table-tr-bordered table-tr-color">
+                <th>ปิดหนี้</th>
+                <th>รับสภาพหนี้</th>
+                <th>รวม</th>
+                <th class="border-top-0"></th>
+                <th class="border-top-0"></th>
+            </tr>
+        </thead>
+        <tbody class="table-body-bordered">
+            {{#each data}}
+                {{calculateSummaryRow @root.data @index}}
+                <tr>
+                    <td>{{renderRegionText @root.data @index}}</td>
+                    <td>{{orgName}}</td>
+                    <td class="text-right">{{currency totalLoanAmount true}}</td>
+                    <td class="text-right">{{totalClose}}</td>
+                    <td class="text-right">{{totalAcknowledge}}</td>
+                    <td class="text-right">{{total}}</td>
+                    <td class="text-right">{{currency totalPaidAllMonth true}}</td>
+                    <td class="text-right">{{currency totalAcknowledgeAmount true}}</td>
+                </tr>
+
+                {{#if (isLastOfRegion @root.data @index)}}
+                <tr>
+                    <td colspan="2" class="text-center">รวม</td>
+                    <td class="text-right">{{currency (renderSummaryRow "totalLoanAmount") true}}</td>
+                    <td class="text-right">{{renderSummaryRow "totalClose"}}</td>
+                    <td class="text-right">{{renderSummaryRow "totalAcknowledge"}}</td>
+                    <td class="text-right">{{renderSummaryRow "total"}}</td>
+                    <td class="text-right">{{currency (renderSummaryRow "totalPaidAllMonth") true}}</td>
+                    <td class="text-right">{{currency (renderSummaryRow "totalAcknowledgeAmount") true}}</td>
+                </tr>
+                {{/if}}
+                {{resetSummaryData @root.data @index}}
+            {{/each}}     
+            <tr class="table-tr-color">
+                <td class="text-center" colspan="2">รวมทั้งหมด</td>
+                <td class="text-right">{{currency total.totalAllLoanAmount true}}</td>
+                <td class="text-right">{{total.totalAllClose}}</td>
+                <td class="text-right">{{total.totalAllAcknowledge}}</td>
+                <td class="text-right">{{total.totalAll}}</td>
+                <td class="text-right">{{currency total.totalAllPaidAllMonth true}}</td>
+                <td class="text-right">{{currency total.totalAllAcknowledgeAmount true}}</td>
+            </tr>     
+        </tbody>
+    </table>
+</body>
+
+</html>

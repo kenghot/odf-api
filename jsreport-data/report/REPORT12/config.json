@@ -1,0 +1,26 @@
+{
+    "name": "REPORT12",
+    "recipe": "html-to-xlsx",
+    "shortid": "rkl4xbe9Pr",
+    "folder": {
+        "shortid": "THihHg0"
+    },
+    "engine": "handlebars",
+    "chrome": {
+        "printBackground": true
+    },
+    "htmlToXlsx": {
+        "htmlEngine": "chrome",
+        "insertToXlsxTemplate": false,
+        "waitForJS": false
+    },
+    "creationDate": "2019-09-26T08:12:01.475Z",
+    "modificationDate": {
+        "$$date": 1576728425932
+    },
+    "data": {
+        "shortid": "SyGsI8ydH"
+    },
+    "_id": "WGviThWtTgLNtM6m",
+    "$entitySet": "templates"
+}

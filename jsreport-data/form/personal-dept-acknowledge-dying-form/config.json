@@ -1,0 +1,28 @@
+{
+    "name": "personal-dept-acknowledge-dying-form",
+    "recipe": "chrome-pdf",
+    "shortid": "rygGPn5wIr",
+    "folder": {
+        "shortid": "DhYcEel"
+    },
+    "engine": "handlebars",
+    "chrome": {
+        "printBackground": true,
+        "format": "A4",
+        "width": "21cm",
+        "height": "29.7cm",
+        "marginTop": "2.7cm",
+        "marginRight": "2.5cm",
+        "marginBottom": "2.7cm",
+        "marginLeft": "4.5cm"
+    },
+    "data": {
+        "shortid": "H1xnyQM08r"
+    },
+    "creationDate": "2019-09-12T10:22:24.433Z",
+    "modificationDate": {
+        "$$date": 1585137278199
+    },
+    "_id": "esnqoYC8DWa5ueYg",
+    "$entitySet": "templates"
+}

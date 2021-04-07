@@ -1,0 +1,22 @@
+{
+    "name": "REPORT3-acc-xlsx",
+    "recipe": "xlsx",
+    "shortid": "SkeNPAZGED",
+    "folder": {
+        "shortid": "THihHg0"
+    },
+    "engine": "handlebars",
+    "chrome": {
+        "printBackground": true
+    },
+    "data": null,
+    "creationDate": "2020-09-06T07:26:18.117Z",
+    "modificationDate": {
+        "$$date": 1600185699264
+    },
+    "xlsxTemplate": {
+        "shortid": "fPHsga8"
+    },
+    "_id": "I1oZhZxOPD3d7X96",
+    "$entitySet": "templates"
+}

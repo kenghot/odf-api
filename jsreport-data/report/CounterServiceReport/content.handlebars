@@ -1,0 +1,76 @@
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        {#asset /asset/table-style.css @encoding=utf8}
+
+        @font-face {
+            font-family: 'THSarabunNew';
+            src: url({#asset /asset/THSarabunNew.ttf @encoding=dataURI});
+            format('truetype');
+        }
+
+        .table-th-lightgrey {
+            background-color: #ebebeb;
+        }
+
+    </style>
+</head>
+
+<body>
+    <table>
+         <thead>
+            <tr>
+                <th colspan="14">{{title1}}</th>
+            </tr>
+            <tr>
+                <th colspan="14">{{title2}}</th>
+            </tr>
+            <tr>
+                <th colspan="14">{{paymentTime}}</th>
+            </tr>
+        </thead>
+        <thead class="table-thread-bordered">
+            <tr>
+                <th class="table-th-lightgrey">ลำดับ</th>
+                <th class="table-th-lightgrey">วันเดือนปีที่ชำระเงิน</th>
+                <th class="table-th-lightgrey">ชื่อ - สกุล</th>
+                <th class="table-th-lightgrey">เลขบัตรประชาชน</th>
+                <th class="table-th-lightgrey">รหัสผู้กู้</th>
+                <th class="table-th-lightgrey">เลขที่สัญญา</th>
+                <th class="table-th-lightgrey">ปีสัญญา</th>
+                <th class="table-th-lightgrey">รหัสจังหวัด</th>
+                <th class="table-th-lightgrey">ลูกหนี้จังหวัด</th>
+                <th class="table-th-lightgrey">พื้นที่ที่ชำระเงิน</th>
+                <th class="table-th-lightgrey">รหัสสาขา</th>
+                <th class="table-th-lightgrey">เลขที่ใบเสร็จ</th>
+                <th class="table-th-lightgrey">รหัสเครื่อง</th>
+                <th class="table-th-lightgrey">จำนวนเงิน</th>
+            </tr>
+        </thead>
+        <tbody class="table-body-bordered">
+            {{#each data}}
+            <tr>
+                <td class="text-center">{{getOrderNumber @index}}</td>
+                <td class="text-center">{{formatThaiDate paidDate}}</td>
+                <td class="text-left">{{checkEmpty name}}</td>
+                <td class="text-center">{{checkEmpty reference1}}</td>
+                <td class="text-center">{{checkEmpty reference2}}</td>
+                <td class="text-center">{{checkEmpty documentNumber}}</td>
+                <td class="text-center">{{checkEmpty fiscalYear}}</td>
+                <td class="text-center">{{checkEmpty orgCode}}</td>
+                <td class="text-center">{{checkEmpty addressProvince}}</td>
+                <td class="text-center">{{checkEmpty paymentAreaType}}</td>
+                <td class="text-center">{{checkEmpty counterNo}}</td>
+                <td class="text-center">{{checkEmpty serviceRunNo}}</td>
+                <td class="text-center">{{checkEmpty termNo}}</td>
+                <td class="text-right">{{currency amount true}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</body>
+
+</html>

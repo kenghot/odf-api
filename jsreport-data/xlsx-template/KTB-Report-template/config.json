@@ -1,0 +1,15 @@
+{
+    "name": "KTB-Report-template",
+    "creationDate": {
+        "$$date": 1585330079565
+    },
+    "modificationDate": {
+        "$$date": 1585332003945
+    },
+    "shortid": "rgJ3rNL",
+    "_id": "MMeIPDmOitO3SysG",
+    "$entitySet": "xlsxTemplates",
+    "folder": {
+        "shortid": "Mb34RQ9"
+    }
+}

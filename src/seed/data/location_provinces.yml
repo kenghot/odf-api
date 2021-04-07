@@ -1,0 +1,312 @@
+%YAML 1.1
+---
+# odf.location_provinces
+-
+  refCode: 10
+  thName: "กรุงเทพมหานคร"
+  enName: "Bangkok"
+-
+  refCode: 11
+  thName: "สมุทรปราการ"
+  enName: "Samut Prakarn"
+-
+  refCode: 12
+  thName: "นนทบุรี"
+  enName: "Nonthaburi"
+-
+  refCode: 13
+  thName: "ปทุมธานี"
+  enName: "Pathum Thani"
+-
+  refCode: 14
+  thName: "พระนครศรีอยุธยา"
+  enName: "Phra Nakhon Si Ayutthaya"
+-
+  refCode: 15
+  thName: "อ่างทอง"
+  enName: "Ang Thong"
+-
+  refCode: 16
+  thName: "ลพบุรี"
+  enName: "Lop Buri"
+-
+  refCode: 17
+  thName: "สิงห์บุรี"
+  enName: "Sing Buri"
+-
+  refCode: 18
+  thName: "ชัยนาท"
+  enName: "Chai Nat"
+-
+  refCode: 19
+  thName: "สระบุรี"
+  enName: "Saraburi"
+-
+  refCode: 20
+  thName: "ชลบุรี"
+  enName: "Chon Buri"
+-
+  refCode: 21
+  thName: "ระยอง"
+  enName: "Rayong"
+-
+  refCode: 22
+  thName: "จันทบุรี"
+  enName: "Chanthaburi"
+-
+  refCode: 23
+  thName: "ตราด"
+  enName: "Trat"
+-
+  refCode: 24
+  thName: "ฉะเชิงเทรา"
+  enName: "Chachoengsao"
+-
+  refCode: 25
+  thName: "ปราจีนบุรี"
+  enName: "Prachin Buri"
+-
+  refCode: 26
+  thName: "นครนายก"
+  enName: "Nakhon Nayok"
+-
+  refCode: 27
+  thName: "สระแก้ว"
+  enName: "Sa kaeo"
+-
+  refCode: 30
+  thName: "นครราชสีมา"
+  enName: "Nakhon Ratchasima"
+-
+  refCode: 31
+  thName: "บุรีรัมย์"
+  enName: "Buri Ram"
+-
+  refCode: 32
+  thName: "สุรินทร์"
+  enName: "Surin"
+-
+  refCode: 33
+  thName: "ศรีสะเกษ"
+  enName: "Si Sa Ket"
+-
+  refCode: 34
+  thName: "อุบลราชธานี"
+  enName: "Ubon Ratchathani"
+-
+  refCode: 35
+  thName: "ยโสธร"
+  enName: "Yasothon"
+-
+  refCode: 36
+  thName: "ชัยภูมิ"
+  enName: "Chaiyaphum"
+-
+  refCode: 37
+  thName: "อำนาจเจริญ"
+  enName: "Amnat Charoen"
+-
+  refCode: 38
+  thName: "บึงกาฬ"
+  enName: "Bueng Kan"
+-
+  refCode: 39
+  thName: "หนองบัวลำภู"
+  enName: "Nong Bua Lam Phu"
+-
+  refCode: 40
+  thName: "ขอนแก่น"
+  enName: "Khon Kaen"
+-
+  refCode: 41
+  thName: "อุดรธานี"
+  enName: "Udon Thani"
+-
+  refCode: 42
+  thName: "เลย"
+  enName: "Loei"
+-
+  refCode: 43
+  thName: "หนองคาย"
+  enName: "Nong Khai"
+-
+  refCode: 44
+  thName: "มหาสารคาม"
+  enName: "Maha Sarakham"
+-
+  refCode: 45
+  thName: "ร้อยเอ็ด"
+  enName: "Roi Et"
+-
+  refCode: 46
+  thName: "กาฬสินธุ์"
+  enName: "Kalasin"
+-
+  refCode: 47
+  thName: "สกลนคร"
+  enName: "Sakon Nakhon"
+-
+  refCode: 48
+  thName: "นครพนม"
+  enName: "Nakhon Phanom"
+-
+  refCode: 49
+  thName: "มุกดาหาร"
+  enName: "Mukdahan"
+-
+  refCode: 50
+  thName: "เชียงใหม่"
+  enName: "Chiang Mai"
+-
+  refCode: 51
+  thName: "ลำพูน"
+  enName: "Lamphun"
+-
+  refCode: 52
+  thName: "ลำปาง"
+  enName: "Lampang"
+-
+  refCode: 53
+  thName: "อุตรดิตถ์"
+  enName: "Uttaradit"
+-
+  refCode: 54
+  thName: "แพร่"
+  enName: "Phrae"
+-
+  refCode: 55
+  thName: "น่าน"
+  enName: "Nan"
+-
+  refCode: 56
+  thName: "พะเยา"
+  enName: "Phayao"
+-
+  refCode: 57
+  thName: "เชียงราย"
+  enName: "Chiang Rai"
+-
+  refCode: 58
+  thName: "แม่ฮ่องสอน"
+  enName: "Mae Hong Son"
+-
+  refCode: 60
+  thName: "นครสวรรค์"
+  enName: "Nakhon Sawan"
+-
+  refCode: 61
+  thName: "อุทัยธานี"
+  enName: "Uthai Thani"
+-
+  refCode: 62
+  thName: "กำแพงเพชร"
+  enName: "Kamphaeng Phet"
+-
+  refCode: 63
+  thName: "ตาก"
+  enName: "Tak"
+-
+  refCode: 64
+  thName: "สุโขทัย"
+  enName: "Sukhothai"
+-
+  refCode: 65
+  thName: "พิษณุโลก"
+  enName: "Phitsanulok"
+-
+  refCode: 66
+  thName: "พิจิตร"
+  enName: "Phichit"
+-
+  refCode: 67
+  thName: "เพชรบูรณ์"
+  enName: "Phetchabun"
+-
+  refCode: 70
+  thName: "ราชบุรี"
+  enName: "Ratchaburi"
+-
+  refCode: 71
+  thName: "กาญจนบุรี"
+  enName: "Kanchanaburi"
+-
+  refCode: 72
+  thName: "สุพรรณบุรี"
+  enName: "Suphan Buri"
+-
+  refCode: 73
+  thName: "นครปฐม"
+  enName: "Nakhon Pathom"
+-
+  refCode: 74
+  thName: "สมุทรสาคร"
+  enName: "Samut Sakhon"
+-
+  refCode: 75
+  thName: "สมุทรสงคราม"
+  enName: "Samut Songkhram"
+-
+  refCode: 76
+  thName: "เพชรบุรี"
+  enName: "Phetchaburi"
+-
+  refCode: 77
+  thName: "ประจวบคีรีขันธ์"
+  enName: "Prachuap Khiri Khan"
+-
+  refCode: 80
+  thName: "นครศรีธรรมราช"
+  enName: "Nakhon Si Thammarat"
+-
+  refCode: 81
+  thName: "กระบี่"
+  enName: "Krabi"
+-
+  refCode: 82
+  thName: "พังงา"
+  enName: "Phang-nga"
+-
+  refCode: 83
+  thName: "ภูเก็ต"
+  enName: "Phuket"
+-
+  refCode: 84
+  thName: "สุราษฎร์ธานี"
+  enName: "Surat Thani"
+-
+  refCode: 85
+  thName: "ระนอง"
+  enName: "Ranong"
+-
+  refCode: 86
+  thName: "ชุมพร"
+  enName: "Chumphon"
+-
+  refCode: 90
+  thName: "สงขลา"
+  enName: "Songkhla"
+-
+  refCode: 91
+  thName: "สตูล"
+  enName: "Satun"
+-
+  refCode: 92
+  thName: "ตรัง"
+  enName: "Trang"
+-
+  refCode: 93
+  thName: "พัทลุง"
+  enName: "Phatthalung"
+-
+  refCode: 94
+  thName: "ปัตตานี"
+  enName: "Pattani"
+-
+  refCode: 95
+  thName: "ยะลา"
+  enName: "Yala"
+-
+  refCode: 96
+  thName: "นราธิวาส"
+  enName: "Narathiwat"
+...

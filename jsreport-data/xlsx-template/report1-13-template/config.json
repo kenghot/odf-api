@@ -1,0 +1,15 @@
+{
+    "name": "report1-13-template",
+    "creationDate": {
+        "$$date": 1598872188315
+    },
+    "modificationDate": {
+        "$$date": 1598872224970
+    },
+    "shortid": "K53pt~x",
+    "_id": "pyYTTmPSYHGz8tME",
+    "$entitySet": "xlsxTemplates",
+    "folder": {
+        "shortid": "Mb34RQ9"
+    }
+}

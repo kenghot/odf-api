@@ -1,0 +1,589 @@
+[
+  {
+    "icon": "home",
+    "color": "yellow",
+    "title": "ทั้งระบบ",
+    "description": "ทั้งระบบ",
+    "permissions": [
+      {
+        "code": "DATA.ALL.ORG",
+        "description": "ดูข้อมูลทุกหน่วยงาน"
+      },
+      {
+        "code": "DATA.ALL.EDIT",
+        "description": "แก้ไขข้อมูลเอกสารโดยไม่สนใจสถานะ"
+      }
+    ]
+  },
+  {
+    "icon": "address card outline",
+    "color": "pink",
+    "title": "ระบบการขอกู้ยืมเงิน",
+    "description": "ระบบการขอกู้ยืมเงิน",
+    "permissions": [
+      {
+        "code": "REQUEST.ACCESS",
+        "description": "เข้าถึงระบบงานคำร้องขอกู้ยืมฯ"
+      },
+      { "code": "REQUEST.CREATE", "description": "สร้างคำร้อง" },
+      {
+        "code": "REQUEST.VIEW",
+        "description": "ดูข้้อมูลคำร้อง"
+      },
+      {
+        "code": "REQUEST.EDIT",
+        "description": "แก้ไขข้อมูลคำร้อง"
+      },
+      {
+        "code": "REQUEST.EDIT.DOCUMENTDATE",
+        "description": "แก้ไขข้อมูลคำร้อง - วันที่ยื่นคำร้อง"
+      },
+      {
+        "code": "REQUEST.DEL",
+        "description": "ลบคำร้อง"
+      },
+      {
+        "code": "REQUEST.CANCEL",
+        "description": "ยกเลิกร้อง"
+      },
+      {
+        "code": "REQUEST.VALIDATE",
+        "description": "ตรวจสอบคุณสมบัติ"
+      },
+      {
+        "code": "REQUEST.FACTSHEET",
+        "description": "แบบสอบข้อเท็จจริง"
+      },
+      {
+        "code": "REQUEST.CONSOLIDATION",
+        "description": "ผลการอนุมัติ"
+      },
+      {
+        "code": "REQUEST.REPORT.COMMITTEE",
+        "description": "สร้างใบพิจารณาเข้าคณะฯ"
+      },
+      {
+        "code": "REQUEST.GENERATE.AGREEMENT",
+        "description": "ส่งทำสัญญา"
+      },
+      {
+        "code": "AGREEMENT.ACCESS",
+        "description": "เข้าถึงระบบงานสัญญากู้ยืมฯ"
+      },
+      {
+        "code": "AGREEMENT.CREATE",
+        "description": "สร้างสัญญาโดยไม่ผ่านใบคำร้อง"
+      },
+      {
+        "code": "AGREEMENT.VIEW",
+        "description": "ดูข้อมููลสัญญา"
+      },
+      {
+        "code": "AGREEMENT.EDIT",
+        "description": "แก้ไขข้อมูลสัญญา"
+      },
+      {
+        "code": "AGREEMENT.EDIT.REQUEST",
+        "description": "แก้ไขข้อมูลสัญญา - เลือกเปลี่ยน Request ที่ผูกกับสัญญา"
+      },
+      {
+        "code": "AGREEMENT.DEL",
+        "description": "ลบสัญญา"
+      },
+      {
+        "code": "AGREEMENT.CANCEL",
+        "description": "ยกเลิกสัญญา"
+      },
+      {
+        "code": "AGREEMENT.GENERATE.GUARANTEE",
+        "description": "สร้างหรือเปลี่ยนสัญญาค้ำจากสัญญาหลัก ระบบจะยกเลิกสัญญาค้ำประกันฉบับเก่าและสร้างฉบับใหม่ให้"
+      },
+      {
+        "code": "AGREEMENT.GENERATE.VOUCHER",
+        "description": "สร้างใบสำคัญจ่าย"
+      },
+      {
+        "code": "GUANRANTEE.ACCESS",
+        "description": "เข้าถึงระบบงานหนังสือสัญญาค้ำประกันการกู้ยืมฯ"
+      },
+      {
+        "code": "GUANRANTEE.CREATE",
+        "description": "สร้างหนังสือสัญญาค้ำประกันการกู้ยืมฯ"
+      },
+      {
+        "code": "GUANRANTEE.VIEW",
+        "description": "ดูข้อมูลผู้ใช้งานสัญญาค้ำประกันการกู้ยืมฯ"
+      },
+      {
+        "code": "GUANRANTEE.EDIT",
+        "description": "แก้ไขข้อมูลสัญญาค้ำประกันการกู้ยืม"
+      },
+      {
+        "code": "GUANRANTEE.EDIT.REQUEST",
+        "description": "แก้ไขข้อมูลสัญญาค้ำประกันการกู้ยืม- เลือกเปลี่ยน Request ที่ผูกกับสัญญา"
+      },
+      {
+        "code": "GUANRANTEE.EDIT.AGREEMENT",
+        "description": "แก้ไขข้อมูลสัญญากู้ในสัญญาคำ้ประกัน"
+      },
+      {
+        "code": "GUANRANTEE.DEL",
+        "description": "ลบสัญญาค้ำประกันการกู้ยืมฯ"
+      },
+      {
+        "code": "GUANRANTEE.CANCEL",
+        "description": "ยกเลิกสัญญาค้ำประกันการกู้ยืมฯ"
+      }
+    ]
+  },
+  {
+    "icon": "users",
+    "color": "orange",
+    "title": "ระบบบัญชีลูกหนี้",
+    "description": "ระบบบัญชีลูกหนี้",
+    "permissions": [
+      {
+        "code": "AR.ACCESS",
+        "description": "เข้าถึงระบบบัญชีลูกหนี้"
+      },
+      {
+        "code": "AR.CREATE",
+        "description": "สร้างบัญชีลูกหนี้โดยไม่ผ่านสัญญา"
+      },
+      {
+        "code": "AR.VIEW",
+        "description": "ดูข้อมูลบัญชีลูกหนี้"
+      },
+      {
+        "code": "AR.EDIT",
+        "description": "แก้ไขบัญชีลูกหนี้"
+      },
+      {
+        "code": "AR.DEL",
+        "description": "ลบบัญชีลูกหนี้"
+      },
+      {
+        "code": "AR.CLOSE",
+        "description": "ปิดบัญชี"
+      },
+      {
+        "code": "AR.LOANPAYMENT",
+        "description": "ทำรายการชำระเงินกู้"
+      },
+      {
+        "code": "AR.TRANSACTION.VIEW",
+        "description": "ดูรายการชำระเงินกู้ย้อนหลัง"
+      },
+      {
+        "code": "AR.TRANSACTION.GEN.RECIEPT",
+        "description": "ออกใบเสร็จจากรายการชำระเงิน"
+      }
+    ]
+  },
+  {
+    "icon": "crosshairs",
+    "color": "purple",
+    "title": "ระบบติดตามหนี้สินเงินกู้ยืม",
+    "description": "ระบบติดตามหนี้สินเงินกู้ยืม",
+    "permissions": [
+      {
+        "code": "DEBTCOLLECTION.ACCESS",
+        "description": "เข้าถึงระบบติดตามหนี้สินเงินกู้ยืม"
+      },
+      {
+        "code": "DEBTCOLLECTION.CREATE",
+        "description": "เริ่มกระบวนการติดตามหนี้สิน"
+      },
+      {
+        "code": "DEBTCOLLECTION.VIEW",
+        "description": "ดูข้อมูลการติดตามหนี้สิน"
+      },
+      {
+        "code": "DEBTCOLLECTION.EDIT",
+        "description": "แก้ไขข้อมูลการติดตามหนี้สิน"
+      },
+      {
+        "code": "DEBTCOLLECTION.DEBTACKNOWLEDGE",
+        "description": "รับสภาพหนี้"
+      },
+      {
+        "code": "DEBTCOLLECTION.LETTER.VIEW",
+        "description": "ดูข้อมูลหนังสือทวงถามผู้กู้/ผู้ค้ำ"
+      },
+      {
+        "code": "DEBTCOLLECTION.LETTER.EDIT",
+        "description": "แก้ไขข้อมูลหนังสือทวงถามผู้กู้/ผู้ค้ำ"
+      },
+      {
+        "code": "DEBTCOLLECTION.LETTER.CREATE",
+        "description": "สร้างหนังสือทวงถามผู้กู้/ผู้ค้ำ"
+      },
+      {
+        "code": "DEBTCOLLECTION.LETTER.DEL",
+        "description": "ลบหนังสือทวงถามผู้กู้/ผู้ค้ำ"
+      },
+      {
+        "code": "DEBTCOLLECTION.VISIT.VIEW",
+        "description": "ดูรายงานการลงเยี่ยมบ้านผู้กู้หรือผู้ค้ำประกัน"
+      },
+      {
+        "code": "DEBTCOLLECTION.VISIT.EDIT",
+        "description": "แก้ไขข้อมูลรายงานการลงเยี่ยมบ้านผู้กู้หรือผู้ค้ำประกัน"
+      },
+      {
+        "code": "DEBTCOLLECTION.VISIT.CREATE",
+        "description": "สร้างรายงานการลงเยี่ยมบ้าน"
+      },
+      {
+        "code": "DEBTCOLLECTION.VISIT.DEL",
+        "description": "ลบรายงานการลงเยี่ยมบ้าน"
+      },
+      {
+        "code": "DEBTCOLLECTION.MEMO.VIEW",
+        "description": "ดูข้อมูลบันทึกถ้อยคำ"
+      },
+      {
+        "code": "DEBTCOLLECTION.MEMO.EDIT",
+        "description": "แก้ไขข้อมูลบันทึกถ้อยคำ"
+      },
+      {
+        "code": "DEBTCOLLECTION.MEMO.CREATE",
+        "description": "สร้างข้อมูลบันทึกถ้อยคำ"
+      },
+      {
+        "code": "DEBTCOLLECTION.MEMO.DEL",
+        "description": "ลบบันทึกถ้อยคำ"
+      },
+      {
+        "code": "DEBTCOLLECTION.CASEOFDEATH.DETECT.LETTER.VIEW",
+        "description": "ดูข้อมูลหนังสือสืบหา"
+      },
+      {
+        "code": "DEBTCOLLECTION.CASEOFDEATH.DETECT.LETTER.EDIT",
+        "description": "แก้ไขข้อมูลหนังสือสืบหา"
+      },
+      {
+        "code": "DEBTCOLLECTION.CASEOFDEATH.DETECT.LETTER.CREATE",
+        "description": "สร้างข้อมููลหนังสือสืบหา"
+      },
+      {
+        "code": "DEBTCOLLECTION.CASEOFDEATH.DETECT.LETTER.DEL",
+        "description": "ลบข้อมููลหนังสือสืบหา"
+      },
+      {
+        "code": "DEBTCOLLECTION.CASEOFDEATH.LETTER.VIEW",
+        "description": "ดูข้อมูลหนังสือแจ้งทายาทฯ"
+      },
+      {
+        "code": "DEBTCOLLECTION.CASEOFDEATH.LETTER.EDIT",
+        "description": "แก้ไขข้อมูลหนังสือแจ้งทายาทฯ"
+      },
+      {
+        "code": "DEBTCOLLECTION.CASEOFDEATH.LETTER.CREATE",
+        "description": "สร้างข้อมููลหนังสือแจ้งทายาทฯ"
+      },
+      {
+        "code": "DEBTCOLLECTION.CASEOFDEATH.LETTER.DEL",
+        "description": "ลบข้อมููลหนังสือแจ้งทายาทฯ"
+      },
+      {
+        "code": "DEBTCOLLECTION.LEGAL.VIEW",
+        "description": "ดูข้อมูลการฟ้องร้องดำเนินคดี"
+      },
+      {
+        "code": "DEBTCOLLECTION.LEGAL.RESULT.VIEW",
+        "description": "ดูข้อมูลผลการดำเนินคดี"
+      },
+      {
+        "code": "DEBTCOLLECTION.LEGAL.PRINT.CANCELLETTER",
+        "description": "พิมหนังสือบอกเลิกสัญญากู้ยืม"
+      },
+      {
+        "code": "DEBTCOLLECTION.LEGAL.PRINT.GUARANTORLETTER",
+        "description": "พิมหนังสือเรียกให้ผู้ค้ำประกันชำระหนี้ฯ"
+      },
+      {
+        "code": "DEBTCOLLECTION.LEGAL.EDIT",
+        "description": "แก้ไขข้อมูลการฟ้องร้องดำเนินคดี"
+      },
+      {
+        "code": "DEBTCOLLECTION.LEGAL.RESULT.EDIT",
+        "description": "แก้ไขข้อมูลผู้ลการดำเนินคดี"
+      }
+    ]
+  },
+  {
+    "icon": "money bill alternate outline",
+    "color": "blue",
+    "title": "ระบบการรับชำระเงิน",
+    "description": "ระบบการรับชำระเงิน",
+    "permissions": [
+      {
+        "code": "POS.USAGE.ACCESS",
+        "description": "เข้าใช้งานจุดรับชำระ"
+      },
+      {
+        "code": "POS.USAGE.SALE",
+        "description": "รับชำระเงิน"
+      },
+      {
+        "code": "POS.USAGE.RECEIPTS",
+        "description": "ดูข้อมูลใบเสร็จย้อนหลัง"
+      },
+      {
+        "code": "POS.USAGE.CONTROL",
+        "description": "บริหารจุดรับชำระ"
+      },
+      {
+        "code": "POS.USAGE.CONTROL.SHIFT",
+        "description": "เปิด/ปิดจุดรับชำระ"
+      },
+      {
+        "code": "POS.SHIFTHISTORY.VIEW",
+        "description": "ดูประวัติรอบการทำงาน"
+      },
+      {
+        "code": "POS.USAGE.SWAPMANAGER",
+        "description": "เปลี่ยนผู้ดูแลจุดรับชำระ"
+      },
+      {
+        "code": "POS.ACCESS",
+        "description": "เข้าใช้้งานการจัดการจุดรับชำระ"
+      },
+      {
+        "code": "POS.CREATE",
+        "description": "สร้างจุดรับชำระ"
+      },
+      {
+        "code": "POS.EDIT",
+        "description": "แก้ไขข้อมูลจุดรับชำระ"
+      },
+      {
+        "code": "POS.EDIT.VAT",
+        "description": "แก้ไขข้อมูลการใช้งานภาษีมูลค่าเพิ่ม"
+      },
+      {
+        "code": "POS.EDIT.PRINTERSETTING",
+        "description": "แก้ไขข้อมูล printer"
+      },
+      {
+        "code": "POS.EDIT.DOCUMENTSEQ",
+        "description": "แก้ไขข้อมูลการจัดการเลขที่เอกสาร"
+      },
+      {
+        "code": "POS.DEL",
+        "description": "ลบจุดรับชำระ"
+      },
+      {
+        "code": "POS.RECEIPTS.ACCESS",
+        "description": "เข้าใช้งานข้อมูลใบเสร็จรับเงิน"
+      },
+      {
+        "code": "POS.RECEIPTCONTROLS.ACCESS",
+        "description": "เข้าใช้งานระบบเบิก/จ่ายใบเสร็จ"
+      },
+      {
+        "code": "POS.RECEIPTCONTROLS.REQUEST",
+        "description": "เบิก/จ่าย กระดาษใบเสร็จ"
+      },
+      {
+        "code": "POS.RECEIPTCONTROLS.APPROVE",
+        "description": "อนุมัติการเบิก/จ่าย กระดาษใบเสร็จ"
+      }
+    ]
+  },
+  {
+    "icon": "dollar sign",
+    "color": "teal",
+    "title": "ระบบการเงิน",
+    "description": "ระบบการเงิน",
+    "permissions": [
+      {
+        "code": "VOUCHER.ACCESS",
+        "description": "เข้าถึงระบบงานจ่ายเงินกู้ยืมฯ"
+      },
+      {
+        "code": "VOUCHER.GEN.KTB.PAYMENT",
+        "description": "สร้างไฟล์สำหรับทำรายการจ่ายเงินผ่าน KTB ONLINE"
+      },
+      {
+        "code": "VOUCHER.SUBMIT.KTB.RESULT",
+        "description": "นำเข้าข้อมูผลผลการชำระเงินจาก KTB ONLINE"
+      },
+      {
+        "code": "VOUCHER.VIEW",
+        "description": "ดูข้อมูลใบสำคัญ"
+      },
+      {
+        "code": "VOUCHER.EDIT",
+        "description": "แก้ไขข้อมูลใบสำคัญ"
+      },
+      {
+        "code": "VOUCHER.CANCEL",
+        "description": "ยกเลิกใบสำคัญ"
+      },
+      {
+        "code": "VOUCHER.EDIT.TOTALAMOUNT",
+        "description": "แก้ไขข้อมูลใบสำคัญ - ยอดเงิน"
+      }
+    ]
+  },
+  {
+    "icon": "file alternate outline",
+    "color": "brown",
+    "title": "ระบบรายงาน",
+    "description": "ระบบรายงาน",
+    "permissions": [
+      {
+        "code": "REPORT.AR.ACESS",
+        "description": "เข้าดูรายงานข้อมูลลูกหนี้"
+      },
+      {
+        "code": "REPORT.CS.ACCESS",
+        "description": "เข้าดููรายงานเคาน์เตอร์เซอร์วิส"
+      },
+      {
+        "code": "REPORT.KTB.ACCESS",
+        "description": "เข้าดูรายงานธนาคารกรุงไทย"
+      },
+      {
+        "code": "REPORT.BIGC.ACCESS",
+        "description": "เข้าดูรายงานบิ๊กซี"
+      },
+      {
+        "code": "REPORT.DEBTCOLLECTION.ACCESS",
+        "description": "เข้าดูรายงานการติดตามหนี้สิน"
+      },
+      {
+        "code": "REPORT.POS.RECIEPT.ACCESS",
+        "description": "เข้าดูรายงานการชำระหนี้ ณ จุดรับชำระ"
+      },
+      {
+        "code": "REPORT.DONATE.ACCESS",
+        "description": "เข้าดูรายงานการรับบริจาคเงิน"
+      }
+    ]
+  },
+  {
+    "icon": "setting",
+    "color": "green",
+    "title": "ระบบจัดการ",
+    "description": "ระบบจัดการ",
+    "permissions": [
+      {
+        "code": "USER.ACCESS",
+        "description": "เข้าถึงระบบจัดการข้อมูลผู้ใช้งาน"
+      },
+      { "code": "USER.CREATE", "description": "เพิ่มผู้ใช้" },
+      {
+        "code": "USER.VIEW",
+        "description": "ดูข้อมูลผู้ใช้งาน"
+      },
+      { "code": "USER.EDIT", "description": "แก้ไขข้อมูลผู้ใช้งาน" },
+      {
+        "code": "USER.DEL",
+        "description": "ลบข้อมูลผู้ใช้งาน"
+      },
+      {
+        "code": "ROLE.ACCESS",
+        "description": "เข้าถึงระบบจัดการข้อมูลกลุ่มผู้ใช้งานและสิทธิ์การใช้งาน"
+      },
+      {
+        "code": "ROLE.CREATE",
+        "description": "เพิ่มกลุ่มผู้ใช้งาน"
+      },
+      {
+        "code": "ROLE.EDIT",
+        "description": "แก้ไขข้อมูลกลุ่มผู้ใช้งาน"
+      },
+      {
+        "code": "ROLE.DEL",
+        "description": "ลบข้อมููลกลุ่มผู้ใช้งาน"
+      },
+      {
+        "code": "ROLE.PERMISSION.VIEW",
+        "description": "ดูสิทธิ์การใช้งานของกลุ่มผู้ใช้"
+      },
+      {
+        "code": "ROLE.PERMISSION.EDIT",
+        "description": "กำหนดสิทธิ์การใช้งานของกลุ่มผู้ใช้"
+      },
+      {
+        "code": "ROLE.ACCESS.PRIVATELIST",
+        "description": "ใช้งานกลุ่มผู้ใช้ภายใน"
+      },
+      {
+        "code": "ORG.ACCESS",
+        "description": "เข้าถึงระบบจัดการข้อมูลหน่วยงาน"
+      },
+      {
+        "code": "ORG.CREATE",
+        "description": "เพิ่มหน่วยงาน"
+      },
+      {
+        "code": "ORG.EDIT",
+        "description": "แก้ไขข้อมูลหน่วยงาน"
+      },
+      {
+        "code": "ORG.DEL",
+        "description": "ลบข้อมูลหน่วยงาน"
+      },
+      {
+        "code": "DOC.ACCESS",
+        "description": "เข้าถึงระบบจัดการเลขที่เอกสาร"
+      },
+      {
+        "code": "DOC.CREATE",
+        "description": "เพิ่มรายการคุมเลขที่เอกสาร"
+      },
+      {
+        "code": "DOC.EDIT",
+        "description": "แก้ไขข้อมูลการคุมเลขที่เอกสาร"
+      },
+      {
+        "code": "DOC.DEL",
+        "description": "ลบข้อมูลการคุมเลขที่เอกสาร"
+      },
+      {
+        "code": "OCCUPATION.ACCESS",
+        "description": "เข้าถึงระบบจัดการข้อมูลอาชีพ"
+      },
+      {
+        "code": "OCCUPATION.CREATE",
+        "description": "เพิ่มอาชีพ"
+      },
+      {
+        "code": "OCCUPATION.EDIT",
+        "description": "แก้ไขข้อมูลอาชีพ"
+      },
+      {
+        "code": "OCCUPATION.DEL",
+        "description": "ลบอาชีพ"
+      }
+    ]
+  },
+  {
+    "icon": "heart",
+    "color": "red",
+    "title": "ระบบเงินบริจาค",
+    "description": "ระบบเงินบริจาค",
+    "permissions": [
+      {
+        "code": "DONATE.ACCESS",
+        "description": "เข้าใช้้งานระบบรับบริจาค"
+      },
+      {
+        "code": "DONATE.ALLOWANCE.ACCESS",
+        "description": "เข้าใช้้งานระบบรับบริจาคเบี้ยยังชีพผู้สูงอายุ"
+      },
+      {
+        "code": "DONATE.DIRECT.ACCESS",
+        "description": "เข้าใช้้งานระบบรับบริจาคเข้ากองทุน"
+      },
+      {
+        "code": "DONATE.ANALYSIS.ACCESS",
+        "description": "เข้าใช้้งานระบบวิเคราะข้อมูลการบริจาคเข้ากองทุน"
+      }
+    ]
+  }
+]

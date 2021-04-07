@@ -1,0 +1,59 @@
+{
+    "organization": { "id": 1 },
+    "fiscalYear": "2562",
+    "documentDate": "2019-06-30",
+    "agreementType": "P",
+    "status": "NW",
+    "signLocation": "",
+    "signLocationAddress": {
+        "houseNo": "",
+        "street": "",
+        "subDistrict": "",
+        "district": "",
+        "province": ""
+    },
+    "agreementAuthorizedTitle": "",
+    "agreementAuthorizedFirstname": "",
+    "agreementAuthorizedLastname": "",
+    "agreementAuthorizedPosition": "",
+    "agreementAuthorizedCommandNo": "",
+    "agreementAuthorizedCommandDate": "",
+    "agreementItems": [
+        {
+            "borrower": {
+                "title": "",
+                "firstname": "",
+                "lastname": "",
+                "birthDate": "",
+                "idCardNo": "",
+                "idCardIssuer": "",
+                "idCardIssuedDate": "",
+                "idCardExpireDate": "",
+                "idCardLifetime": ""
+            },
+            "borrowerRegisteredAddress": "",
+            "borrowerTelephone": "",
+            "guarantor": {
+                "title": "",
+                "firstname": "",
+                "lastname": "",
+                "birthDate": "",
+                "idCardNo": "",
+                "idCardIssuer": "",
+                "idCardIssuedDate": "",
+                "idCardExpireDate": "",
+                "idCardLifetime": ""
+            }
+        }
+    ],
+    "loanAmount": 0,
+    "loanAmountText": "",
+    "loanDurationYear": "",
+    "loanDurationMonth": "",
+    "loanDurationText": "",
+    "loanPaymentLocation": "",
+    "installmentAmount": 0,
+    "installmentAmountText": "",
+    "installmentDurationMonth": "",
+    "agreementCancelReason": ""
+}

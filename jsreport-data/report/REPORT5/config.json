@@ -1,0 +1,24 @@
+{
+    "name": "REPORT5",
+    "recipe": "html-to-xlsx",
+    "shortid": "S1l22ShtPH",
+    "folder": {
+        "shortid": "THihHg0"
+    },
+    "engine": "handlebars",
+    "chrome": {
+        "printBackground": true
+    },
+    "htmlToXlsx": {
+        "htmlEngine": "chrome",
+        "insertToXlsxTemplate": false,
+        "waitForJS": false
+    },
+    "creationDate": "2019-09-26T03:51:16.898Z",
+    "modificationDate": {
+        "$$date": 1599219566857
+    },
+    "data": null,
+    "_id": "8ocgK2W6QfFzEqos",
+    "$entitySet": "templates"
+}

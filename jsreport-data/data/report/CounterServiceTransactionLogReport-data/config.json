@@ -1,0 +1,15 @@
+{
+    "name": "CounterServiceTransactionLogReport-data",
+    "shortid": "S1l4VbyNnH",
+    "folder": {
+        "shortid": "7m8H~ZG"
+    },
+    "creationDate": {
+        "$$date": 1574330671409
+    },
+    "modificationDate": {
+        "$$date": 1574330671409
+    },
+    "_id": "gS9lP82hltSJQERA",
+    "$entitySet": "data"
+}

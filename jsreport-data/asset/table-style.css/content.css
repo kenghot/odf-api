@@ -1,0 +1,33 @@
+*   {
+    line-height: 25px;
+    font-family: 'THSarabunNew';
+}
+
+th  {
+    text-align: center;
+    padding-left: 25px;
+    padding-right: 25px;
+    overflow: scroll;
+}
+
+td {
+    vertical-align: top;
+    overflow: scroll;
+}
+
+.table-thread-bordered > tr > th {
+    border:1px solid black;
+}
+
+
+.table-tr-bordered > th {
+    border:1px solid black;
+}
+
+.table-body-bordered > tr > td {
+    border:1px solid black;
+}
+
+.border-bottom-cell {
+    border-bottom: 1px solid black;
+}

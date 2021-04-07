@@ -1,0 +1,13 @@
+{
+    "name": "r2-data",
+    "shortid": "rJxT8ftK9B",
+    "folder": {
+        "shortid": "7m8H~ZG"
+    },
+    "creationDate": "2019-11-01T10:00:58.227Z",
+    "modificationDate": {
+        "$$date": 1577265885975
+    },
+    "_id": "giuzJ7JkbdPoJbvd",
+    "$entitySet": "data"
+}

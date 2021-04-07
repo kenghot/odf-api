@@ -1,0 +1,42 @@
+{{#xlsxReplace "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row[0].c[0]"}}
+    <c t="inlineStr" s="1"><is><t>{{checkEmpty title1}}</t></is></c>
+{{/xlsxReplace}}
+{{#xlsxReplace "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row[1].c[0]"}}
+    <c t="inlineStr" s="1"><is><t>{{checkEmpty title2}}</t></is></c>
+{{/xlsxReplace}}
+{{#xlsxReplace "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row[2].c[0]"}}
+    <c t="inlineStr" s="1"><is><t>{{reportDataDate}}</t></is></c>
+{{/xlsxReplace}}
+
+{{#each data}}
+{{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+{{calculateSummaryRow @root.data @index}}
+<row>
+<c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{checkEmpty documentNumber}}</t></is></c>
+<c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{checkEmpty borrowerName}}</t></is></c>
+<c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{checkEmpty guarantorName}}</t></is></c>
+<c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency loanAmount true}}</t></is></c>
+<c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency outstandingDebtBalance true}}</t></is></c>
+<c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{formatThaiDate submitDate}}</t></is></c>
+<c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{formatThaiDate judgementDate}}</t></is></c>
+<c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{formatThaiDate interestStartDate}}</t></is></c>
+<c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency judgementBalance true}}</t></is></c>
+<c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency lawyerFee true}}</t></is></c>
+<c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency fee true}}</t></is></c>
+<c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency otherExpense true}}</t></is></c>
+<c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency judgementInterestAmount true}}</t></is></c>
+<c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{checkEmpty fiscalYear}}</t></is></c>
+</row>
+{{/xlsxAdd}}
+{{/each}}
+
+{{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+<row>
+    <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{reportDataDate}}</t></is></c>
+</row>
+{{/xlsxAdd}}
+
+
+
+
+{{{xlsxPrint}}}

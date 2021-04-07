@@ -1,0 +1,13 @@
+%YAML 1.1
+---
+# odf.voucher_sequencies
+- id: 1
+  createdDate: "2019-07-13 06:17:56.864000"
+  updatedDate: "2019-07-13 06:17:56.864000"
+  createdByName: ""
+  updatedByName: ""
+  sequenceNumber: 0
+  paddingSize: 4
+  paddingChar: 0
+  prefixCode: "กท"
+  prefixYear: 2563

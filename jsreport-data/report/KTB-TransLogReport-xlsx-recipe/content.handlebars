@@ -1,0 +1,47 @@
+{{#xlsxReplace "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row[0].c[0]"}}
+    <c t="inlineStr" s="1"><is><t>{{checkEmpty title1}}</t></is></c>
+{{/xlsxReplace}}
+{{#xlsxReplace "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row[1].c[0]"}}
+    <c t="inlineStr" s="1"><is><t>{{checkEmpty title2}}</t></is></c>
+{{/xlsxReplace}}
+{{#xlsxReplace "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row[2].c[0]"}}
+    <c t="inlineStr" s="1"><is><t>{{paymentTime}}</t></is></c>
+{{/xlsxReplace}}
+
+{{#each data}}
+    {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+    <row>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{formatThaiDate createdDate}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[1].$.s}}"><is><t>{{type}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[2].$.s}}"><is><t>{{checkEmpty command}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[3].$.s}}"><is><t>{{checkEmpty bankRef}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[4].$.s}}"><is><t>{{checkEmpty comCode}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[5].$.s}}"><is><t>{{checkEmpty prodCode}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[6].$.s}}"><is><t>{{checkEmpty bankCode}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[7].$.s}}"><is><t>{{checkEmpty dateTime}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[8].$.s}}"><is><t>{{checkEmpty effDate}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[9].$.s}}"><is><t>{{checkEmpty channel}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[10].$.s}}"><is><t>{{checkEmpty tranxId}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[11].$.s}}"><is><t>{{checkEmpty respCode}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[12].$.s}}"><is><t>{{checkEmpty respMsg}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[13].$.s}}"><is><t>{{currency balance true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[14].$.s}}"><is><t>{{currency amount true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[15].$.s}}"><is><t>{{checkEmpty ref1}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[16].$.s}}"><is><t>{{checkEmpty ref2}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[17].$.s}}"><is><t>{{checkEmpty ref3}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[18].$.s}}"><is><t>{{checkEmpty ref4}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[19].$.s}}"><is><t>{{checkEmpty cusName}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[20].$.s}}"><is><t>{{checkEmpty print1}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[21].$.s}}"><is><t>{{checkEmpty print2}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[22].$.s}}"><is><t>{{checkEmpty print3}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[23].$.s}}"><is><t>{{checkEmpty print4}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[24].$.s}}"><is><t>{{checkEmpty print5}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[25].$.s}}"><is><t>{{checkEmpty print6}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[26].$.s}}"><is><t>{{checkEmpty print7}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[27].$.s}}"><is><t>{{checkEmpty info}}</t></is></c>
+    </row>
+    
+    {{/xlsxAdd}}
+{{/each}}
+
+{{{xlsxPrint}}}

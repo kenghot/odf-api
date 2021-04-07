@@ -1,0 +1,57 @@
+{{#xlsxReplace "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row[0].c[0]"}}
+    <c t="inlineStr" s="2"><is><t>{{checkEmpty title1}}</t></is></c>
+{{/xlsxReplace}}
+{{#xlsxReplace "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row[1].c[0]"}}
+    <c t="inlineStr" s="2"><is><t>{{checkEmpty title2}}</t></is></c>
+{{/xlsxReplace}}
+{{#xlsxReplace "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row[2].c[0]"}}
+    <c t="inlineStr" s="2"><is><t>{{reportDataDate}}</t></is></c>
+{{/xlsxReplace}}
+
+{{#each data}}
+{{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+{{calculateSummaryRow @root.data @index}}
+
+<row>
+<c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{getOrderNumber @index}}</t></is></c>
+<c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{partnerName}}</t></is></c>
+
+<c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{formatThaiDate paidDate}}</t></is></c>
+<c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t></t></is></c>
+<c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{refDocumentNumber}}</t></is></c>
+<c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{loanAmount}}</t></is></c>
+<c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{getBankName toBankName @root.bankObj}}</t></is></c>
+<c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{toAccountNo}}</t></is></c>
+<c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{checkEmpty documentNumber}}</t></is></c>
+<c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t></t></is></c>
+<c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{telephone}}</t></is></c>
+<c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{payByName}}</t></is></c>
+
+</row>
+{{/xlsxAdd}}
+{{/each}}
+
+
+{{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+<row>
+<c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t></t></is></c>
+<c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t></t></is></c>
+
+<c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t></t></is></c>
+<c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t></t></is></c>
+<c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>รวม</t></is></c>
+<c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{renderSummaryRow "loanAmount"}}</t></is></c>
+
+</row>
+
+{{/xlsxAdd}}
+{{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+<row>
+    <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{reportDataDate}}</t></is></c>
+</row>
+{{/xlsxAdd}}
+
+
+
+
+{{{xlsxPrint}}}

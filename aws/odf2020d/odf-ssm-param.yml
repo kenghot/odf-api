@@ -1,0 +1,195 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: "Environment variables for odf"
+Resources:
+  OdfKey:
+    Type: "AWS::SSM::Parameter"
+    Properties:
+      Name: "ODF_KEY"
+      Type: "String"
+      Value: "odf2020d"
+  OdfVpc:
+    Type: "AWS::SSM::Parameter"
+    Properties:
+      Name: "ODF_VPC"
+      Type: "String"
+      Value: "odf-vpc"
+  OdfSg:
+    Type: "AWS::SSM::Parameter"
+    Properties:
+      Name: "ODF_SG"
+      Type: "String"
+      Value: "odf-sg"
+  OdfDBType:
+    Type: "AWS::SSM::Parameter"
+    Properties:
+      Name: "TYPEORM_CONNECTION"
+      Type: "String"
+      Value: "mysql"
+  OdfDBHost:
+    Type: "AWS::SSM::Parameter"
+    Properties:
+      Name: "TYPEORM_HOST"
+      Type: "String"
+      Value: "odf.cljujz3c0aon.ap-southeast-1.rds.amazonaws.com"
+  OdfDBUser:
+    Type: "AWS::SSM::Parameter"
+    Properties:
+      Name: "TYPEORM_USERNAME"
+      Type: "String"
+      Value: "admin"
+  OdfDBPassword:
+    Type: "AWS::SSM::Parameter"
+    Properties:
+      Name: "TYPEORM_PASSWORD"
+      Type: "String"
+      Value: "odf2020d"
+  OdfDBName:
+    Type: "AWS::SSM::Parameter"
+    Properties:
+      Name: "TYPEORM_DATABASE"
+      Type: "String"
+      Value: "odf"
+  OdfDBPort:
+    Type: "AWS::SSM::Parameter"
+    Properties:
+      Name: "TYPEORM_PORT"
+      Type: "String"
+      Value: "3306"
+  OdfDBSync:
+    Type: "AWS::SSM::Parameter"
+    Properties:
+      Name: "TYPEORM_SYNCHRONIZE"
+      Type: "String"
+      Value: "false"
+  OdfDBEntities:
+    Type: "AWS::SSM::Parameter"
+    Properties:
+      Name: "TYPEORM_ENTITIES"
+      Type: "String"
+      Value: "build/src/entities/**/*.js"
+  OdfDBMigrations:
+    Type: "AWS::SSM::Parameter"
+    Properties:
+      Name: "TYPEORM_MIGRATIONS"
+      Type: "String"
+      Value: "build/src/migration/**/*.js"
+  OdfDBSubscribers:
+    Type: "AWS::SSM::Parameter"
+    Properties:
+      Name: "TYPEORM_SUBSCRIBERS"
+      Type: "String"
+      Value: "build/src/subscriber/**/*.js"
+  OdfDBEntitiesDir:
+    Type: "AWS::SSM::Parameter"
+    Properties:
+      Name: "TYPEORM_ENTITIES_DIR"
+      Type: "String"
+      Value: "build/src/entities"
+  OdfDBMigrationsDir:
+    Type: "AWS::SSM::Parameter"
+    Properties:
+      Name: "TYPEORM_MIGRATIONS_DIR"
+      Type: "String"
+      Value: "build/src/migration"
+  odfDBSubscribersDir:
+    Type: "AWS::SSM::Parameter"
+    Properties:
+      Name: "TYPEORM_SUBSCRIBERS_DIR"
+      Type: "String"
+      Value: "build/src/subscriber"
+  OdfJwtSecretKey:
+    Type: "AWS::SSM::Parameter"
+    Properties:
+      Name: "WEBSITE_JWT_SECRET_KEY"
+      Type: "String"
+      Value: "sitron-odf-2020"
+  OdfRefreshJwtSecretKey:
+    Type: "AWS::SSM::Parameter"
+    Properties:
+      Name: "WEBSITE_REFRESH_JWT_SECRET_KEY"
+      Type: "String"
+      Value: "refresh-sitron-odf-2020"
+  OdfJwtExpiredIn:
+    Type: "AWS::SSM::Parameter"
+    Properties:
+      Name: "JWT_EXPIRED_IN"
+      Type: "String"
+      Value: "4h"
+  OdfRefreshJwtExpiredIn:
+    Type: "AWS::SSM::Parameter"
+    Properties:
+      Name: "REFRESH_JWT_EXPIRED_IN"
+      Type: "String"
+      Value: "7 days"
+  OdfSaltRounds:
+    Type: "AWS::SSM::Parameter"
+    Properties:
+      Name: "SALT_ROUNDS"
+      Type: "String"
+      Value: "10"
+  OdfAppEmail:
+    Type: "AWS::SSM::Parameter"
+    Properties:
+      Name: "APP_EMAIL"
+      Type: "String"
+      Value: "olderfund@dop.mail.go.th"
+  OdfAppEmailPassword:
+    Type: "AWS::SSM::Parameter"
+    Properties:
+      Name: "APP_EMAIL_PASS"
+      Type: "String"
+      Value: "Of1234567891"
+  OdfAppEmailHost:
+    Type: "AWS::SSM::Parameter"
+    Properties:
+      Name: "APP_EMAIL_HOST"
+      Type: "String"
+      Value: "outgoing.mail.go.th"
+  OdfAppEmailPort:
+    Type: "AWS::SSM::Parameter"
+    Properties:
+      Name: "APP_EMAIL_PORT"
+      Type: "String"
+      Value: "465"
+  OdfRootUploadPath:
+    Type: "AWS::SSM::Parameter"
+    Properties:
+      Name: "ROOT_UPLOAD_PATH"
+      Type: "String"
+      Value: "public/uploads"
+  OdfAdmin:
+    Type: "AWS::SSM::Parameter"
+    Properties:
+      Name: "USER_ADMIN"
+      Type: "String"
+      Value: "admin"
+  OdfAdminEmail:
+    Type: "AWS::SSM::Parameter"
+    Properties:
+      Name: "USER_ADMIN_EMAIL"
+      Type: "String"
+      Value: "admin@example.com"
+  OdfAdminPassword:
+    Type: "AWS::SSM::Parameter"
+    Properties:
+      Name: "USER_ADMIN_PASSWORD"
+      Type: "String"
+      Value: "12345678"
+  OdfTaxId:
+    Type: "AWS::SSM::Parameter"
+    Properties:
+      Name: "TAX_ID"
+      Type: "String"
+      Value: "0994001013314"
+  OdfServiceNo:
+    Type: "AWS::SSM::Parameter"
+    Properties:
+      Name: "SERVICE_NO"
+      Type: "String"
+      Value: "00"
+  # OdfVersion:
+  #   Type: "AWS::SSM::Parameter"
+  #   Properties:
+  #     Name: "VERSION"
+  #     Type: "String"
+  #     Value: "0.3.3-alpha.2"

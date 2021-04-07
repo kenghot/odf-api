@@ -1,0 +1,65 @@
+{
+    "id": "1",
+    "documentDate": "24 มิถุนายน 2562",
+    "payByName": "นายพล เอก",
+    "payByPosition": "พลเอกทหาร",
+    "organization": {
+        "id": "1",
+        "orgName": "สำนักงานพัฒนาสังคมและความมั่นคงของมนุษย์จังหวัดพระนครศรีอยุธยา",
+        "orgCode": "oa",
+        "refReportCode": "",
+        "agreementAuthorizedTitle": "นาย",
+        "agreementAuthorizedFirstname": "พล",
+        "agreementAuthorizedLastname": "เอก",
+        "agreementAuthorizedPosition": "หัวหน้าหน่วย",
+        "agreementAuthorizedCommandNo": "22/12342",
+        "agreementAuthorizedCommandDate": "2019-01-01",
+        "active": true,
+        "telephone": "1111111111",
+        "address": {
+            "houseNo": "111/111",
+            "buildingName": "",
+            "roomNo": "",
+            "floor": "",
+            "hmoo": "",
+            "soi": "",
+            "street": "",
+            "subDistrictCode": "100101",
+            "subDistrict": "พระบรมมหาราชวัง",
+            "districtCode": "1001",
+            "district": "พระนคร",
+            "provinceCode": "10",
+            "province": "กรุงเทพมหานคร",
+            "zipcode": "10200",
+            "latitude": "",
+            "longitude": ""
+        }
+    },
+    "totalAmount":1400,
+    "totalAmountText":"ห้าล้านบาทถ้วน",
+    "partnerName": "นายเชษฐา วราฤทธิ์",
+    "partnerAddress":"111/111 พระบรมมหาราชวัง พระนคร กรุงเทพมหานคร",
+    "address1": "บ้านเลขที่ 39/1 หมู่ 8",
+    "address2": "ตำบล/แขวง พุทเลา อำเภอ/เขต บางปะหัน จังหวัด พระนครศรีอยุธยา 11120",
+    "voucherItems":[
+        {  
+            "voucherId":1,
+            "description":"เงินกู้ยืมทุนประกอบอาชีพสัญญาเลขที่ 899/62",
+            "subtotal":"300"
+        },
+        {
+            "voucherId":2,
+            "description":"เงินกู้ยืมสัญญาเลขที่ 899/62",
+            "subtotal":"500"
+        },
+        {
+            "voucherId":3,
+            "description":"เงินกู้ยืมสัญญาเลขที่ 899/62",
+            "subtotal":"600"
+        }
+    ],
+    "toAccountBranch": "สะพานควาย",
+    "toAccountType": "ออมทรัพย์",
+    "toAccountName": "นายเชษฐา วราฤทธิ์",
+    "toAccountNo": "91234567898"
+}

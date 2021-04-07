@@ -1,0 +1,26 @@
+{
+    "name": "CounterServiceTransactionLogReport",
+    "recipe": "html-to-xlsx",
+    "shortid": "SkejOCa7nS",
+    "folder": {
+        "shortid": "THihHg0"
+    },
+    "engine": "handlebars",
+    "chrome": {
+        "printBackground": true
+    },
+    "htmlToXlsx": {
+        "htmlEngine": "chrome",
+        "insertToXlsxTemplate": false,
+        "waitForJS": false
+    },
+    "creationDate": "2019-11-21T08:48:17.929Z",
+    "modificationDate": {
+        "$$date": 1576554414456
+    },
+    "data": {
+        "shortid": "S1l4VbyNnH"
+    },
+    "_id": "ZFVw6gZkSvLJGChY",
+    "$entitySet": "templates"
+}

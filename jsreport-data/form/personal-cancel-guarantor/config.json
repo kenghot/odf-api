@@ -1,0 +1,28 @@
+{
+    "name": "personal-cancel-guarantor",
+    "recipe": "chrome-pdf",
+    "shortid": "ryg4bgRO8r",
+    "folder": {
+        "shortid": "DhYcEel"
+    },
+    "engine": "handlebars",
+    "chrome": {
+        "printBackground": true,
+        "format": "A4",
+        "width": "21cm",
+        "height": "29.7cm",
+        "marginTop": "2.7cm",
+        "marginRight": "2.5cm",
+        "marginBottom": "2.7cm",
+        "marginLeft": "4.5cm"
+    },
+    "data": {
+        "shortid": "rJeQ8DfALS"
+    },
+    "creationDate": "2019-09-13T08:32:31.890Z",
+    "modificationDate": {
+        "$$date": 1585135100491
+    },
+    "_id": "2W2ZoSYl4XELMB2N",
+    "$entitySet": "templates"
+}

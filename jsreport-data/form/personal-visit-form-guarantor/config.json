@@ -1,0 +1,36 @@
+{
+    "name": "personal-visit-form-guarantor",
+    "recipe": "chrome-pdf",
+    "shortid": "Hyx7r4gF8r",
+    "folder": {
+        "shortid": "DhYcEel"
+    },
+    "engine": "handlebars",
+    "chrome": {
+        "printBackground": true,
+        "format": "A4",
+        "width": "21cm",
+        "height": "29.7cm",
+        "marginTop": "2.7cm",
+        "marginRight": "2.5cm",
+        "marginBottom": "2.7cm",
+        "marginLeft": "4.5cm"
+    },
+    "data": {
+        "shortid": "rJgh_xE0IB"
+    },
+    "creationDate": "2019-09-13T10:49:34.559Z",
+    "modificationDate": {
+        "$$date": 1585141715335
+    },
+    "_id": "AiMF8HbxUt1IO8Ha",
+    "$entitySet": "templates",
+    "pdfOperations": [
+        {
+            "type": "merge",
+            "templateShortid": "Bye_Jd2sAN",
+            "mergeWholeDocument": true,
+            "renderForEveryPage": false
+        }
+    ]
+}

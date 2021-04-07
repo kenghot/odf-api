@@ -1,0 +1,15 @@
+{
+    "name": "KTB-TransLogReport-template",
+    "creationDate": {
+        "$$date": 1586178767416
+    },
+    "modificationDate": {
+        "$$date": 1586178791694
+    },
+    "shortid": "TdHUZP6",
+    "_id": "YKUhafSi1vRcM0AO",
+    "$entitySet": "xlsxTemplates",
+    "folder": {
+        "shortid": "Mb34RQ9"
+    }
+}

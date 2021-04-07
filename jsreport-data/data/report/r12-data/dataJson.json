@@ -1,0 +1,41 @@
+{
+    "reportDataDate": "19 ธันวาคม 2562",
+    "data": [
+        {
+            "documentDate": "2018-09-27T17:00:00.000Z",
+            "documentNumber": "คร.มค/2561/0020",
+            "requestBudget": "30000.00",
+            "guarantorCompanyName": "AIA จำกัด",
+            "guarantorPosition": "ตัวแทนบริการ",
+            "facesheetBorrowerScore": 100,
+            "facesheetGuarantorScore": 75,
+            "organization": "พมจ. มหาสารคาม",
+            "borrowerIdCardNo": "3440900988003",
+            "borrowerFullName": "นางทอง ทุมสุด",
+            "borrowerBirthDate": "1942-12-07T17:00:00.000Z",
+            "borrowerAge": 75,
+            "borrowerRegisteredAddressProvince": "มหาสารคาม",
+            "borrowerOccupationName": "ปศุสัตว์",
+            "borrowerOccupationDescription": "เลี้ยงวัว",
+            "borrowerOccupationSalary": "4000.00",
+            "guarantorIdCardNo": "3440900983842",
+            "guarantorFullName": "น.ส.มาลัย วงษ์หาญ",
+            "guarantorBirthDate": "1976-10-09T17:00:00.000Z",
+            "guarantorAge": 41,
+            "guarantorRegisteredAddressProvince": "มหาสารคาม",
+            "guarantorOccupationName": "พนักงานบริษัท",
+            "guarantorOccupationDescription": "ตัวแทนประกันชีวิต",
+            "guarantorOccupationSalary": "15000.00",
+            "requestOccupation": "ปศุสัตว์ เลี้ยงวัว",
+            "status": "ไม่ผ่านคุณสมบัติ",
+            "borrowerMarriageStatus": "หม้าย",
+            "guarantorBorrowerRelationship": "บุตร",
+            "guarantorMarriageStatus": "แต่งงานแล้ว",
+            "totalBudget": "30000.00",
+            "qualification": "ผ่าน",
+            "factSheetComments": "ไม่สมควรให้กู้ ตรวจสอบแล้วพบว่ามีแนวโน้มนำเงินกู้ไปใช้ผิดวัตถุประสงค์ ผู้สูงอายุสุขภาพแข็งแรง ยังสามารถประกอบอาชีพได้ มีความเป็นไปได้ในการชำระคืน และยังเป็นผู้กู้รายเก่าที่เคยรับบริการกองทุนแล้ว",
+            "considerationResult": "ยังไม่เข้าคณะพิจารณา",
+            "resultComments": "-"
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "name": "r7-data",
+    "shortid": "BygTZRM2iB",
+    "folder": {
+        "shortid": "7m8H~ZG"
+    },
+    "creationDate": "2019-11-15T12:45:59.326Z",
+    "modificationDate": {
+        "$$date": 1573831635287
+    },
+    "_id": "VWV9zKVT8VFUlNNq",
+    "$entitySet": "data",
+    "entitySet": "data",
+    "type": "entity",
+    "key": "VWV9zKVT8VFUlNNq"
+}

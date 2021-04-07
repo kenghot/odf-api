@@ -1,0 +1,199 @@
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        {#asset /asset/table-style.css @encoding=utf8}
+
+        @font-face {
+            font-family: 'THSarabunNew';
+            src: url({#asset /asset/THSarabunNew.ttf @encoding=dataURI});
+            format('truetype');
+        }
+
+        
+        .table-th-lightgrey {
+            background-color: #ebebeb;
+        }
+
+        .table-th-darkgrey {
+            background-color: #d9d9d9; 
+        }
+
+        .table-th-green {
+            background-color: #d1e6c9; 
+        }
+
+        .table-th-blue {
+            background-color: #bed0f6;
+        }
+
+        .table-th-yellow {
+            background-color: #fff2cc;
+        }
+
+        .table-th-red {
+            background-color: #f0c0c1;
+        }
+
+        .row-color-grey > td {
+            background-color: WhiteSmoke;
+        }
+
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="24">{{title1}}</th>
+            </tr>
+            <tr>
+                <th colspan="24">{{title2}}</th>
+            </tr>
+            <tr>
+                <th colspan="24">ข้อมูล ณ วันที่ {{reportDataDate}}</th>
+            </tr>
+        </thead>
+        <thead class="table-thread-bordered">
+            <tr>
+                <th class="table-th-lightgrey" rowspan="3">ภาค</th>
+                <th class="table-th-lightgrey" rowspan="3">หน่วยงานที่รับผิดชอบ (จังหวัด)</th>
+                <th class="table-th-yellow" colspan="5">คำร้องทั้งหมด</th>
+                <th class="table-th-green" colspan="4">คำร้องที่พิจารณาโดยที่ประชุม หัวหน้างาน/กลุ่ม</th>
+                <th class="table-th-green" colspan="4">คำร้องที่พิจารณาโดยที่ประชุม คณะอนุกรรมการกลั่นกรองฯ</th>
+                <th class="table-th-green" colspan="4">คำร้องที่พิจารณาโดยที่ประชุม คณะกรรมการบริหารกองทุนฯ</th>
+                <th class="table-th-blue" colspan="5">จำนวนคำร้องทั้งหมดแยกตามเกณฑ์คุณสมบัติ</th>
+            </tr>
+            <tr>
+                <th class="table-th-yellow" rowspan="2">จำนวนเงินที่ขอ (บาท)</th>
+                <th class="table-th-yellow" rowspan="2">สมควรให้กู้ยืม (ราย)</th>
+                <th class="table-th-yellow" rowspan="2">ไม่สมควรให้กู้ยืม (ราย)</th>
+                <th class="table-th-yellow" rowspan="2">รอการตรวจสอบข้อเท็จจริง (ราย)</th>
+                <th class="table-th-yellow" rowspan="2">รวม (ราย)</th>
+
+                <th class="table-th-green" rowspan="2">จำนวนเงินที่อนุมัติ (บาท)</th>
+                <th class="table-th-green" rowspan="2">อนุมัติ (ราย)</th>
+                <th class="table-th-green" rowspan="2">ไม่อนุมัติ (ราย)</th>
+                <th class="table-th-green" rowspan="2">รวม (ราย)</th>
+                 <th class="table-th-green" rowspan="2">จำนวนเงินที่อนุมัติ (บาท)</th>
+                <th class="table-th-green" rowspan="2">อนุมัติ (ราย)</th>
+                <th class="table-th-green" rowspan="2">ไม่อนุมัติ (ราย)</th>
+                <th class="table-th-green" rowspan="2">รวม (ราย)</th>
+                 <th class="table-th-green" rowspan="2">จำนวนเงินที่อนุมัติ (บาท)</th>
+                <th class="table-th-green" rowspan="2">อนุมัติ (ราย)</th>
+                <th class="table-th-green" rowspan="2">ไม่อนุมัติ (ราย)</th>
+                <th class="table-th-green" rowspan="2">รวม (ราย)</th>
+
+                <th class="table-th-blue" rowspan="2">ที่ผ่านเกณฑ์ 65:65 (ราย)</th>
+                <th class="table-th-blue" colspan="3">ไม่ผ่านเกณฑ์</th>
+                <th class="table-th-blue" rowspan="2">รวม (ราย)</th>
+            </tr>
+            <tr>
+                <th class="table-th-blue">คุณสมบัติผู้กู้ (ราย)</th>
+                <th class="table-th-blue">คุณสมบัติผู้ค้ำ (ราย)</th>
+                <th class="table-th-blue">รวม (ราย)</th>
+            </tr>
+        </thead>
+        <tbody class="table-body-bordered">
+            {{#each data}}
+            {{calculateTotalSummaryRow @root.data @index}}
+                {{calculateSummaryRow @root.data @index}}
+                <tr>
+                    <td>{{renderRegionText @root.data @index}}</td>
+                    <td>{{checkEmpty province}}</td>
+                    <td class="text-right">{{currency totalRequestBudget true}}</td>
+                    <td class="text-right">{{checkEmpty totalPassedQualification}}</td>
+                    <td class="text-right">{{checkEmpty totalNotPassedQualification}}</td>
+                    <td class="text-right">{{checkEmpty totalNotCheckedQualification}}</td>
+                    <td class="text-right">{{checkEmpty totalRequest}}</td>
+
+                    <td class="text-right">{{currency result1ToTalApproveBudget true}}</td>
+                    <td class="text-right">{{checkEmpty result1TotalApprove}}</td>
+                    <td class="text-right">{{checkEmpty result1TotalReject}}</td>
+                    <td class="text-right">{{checkEmpty result1Total}}</td>
+                    <td class="text-right">{{currency result2ToTalApproveBudget true}}</td>
+                    <td class="text-right">{{checkEmpty result2TotalApprove}}</td>
+                    <td class="text-right">{{checkEmpty result2TotalReject}}</td>
+                    <td class="text-right">{{checkEmpty result2Total}}</td>
+                    <td class="text-right">{{currency result3ToTalApproveBudget true}}</td>
+                    <td class="text-right">{{checkEmpty result3TotalApprove}}</td>
+                    <td class="text-right">{{checkEmpty result3TotalReject}}</td>
+                    <td class="text-right">{{checkEmpty result3Total}}</td>
+                    
+                    <td class="text-right">{{checkEmpty totalPassed65and65}}</td>
+                    <td class="text-right">{{checkEmpty totalNotPassedBorrower}}</td>
+                    <td class="text-right">{{checkEmpty totalNotPassedGuarantor}}</td>
+                    <td class="text-right">{{checkEmpty totalNotPassed}}</td>
+                    <td class="text-right">{{checkEmpty totalFacesheet}}</td>
+                </tr>
+
+                {{#if (isLastOfRegion @root.data @index)}}
+                    <tr class="row-color-grey">
+                        <td colspan="2" class="text-right">รวม</td>
+                        <td class="text-right">{{currency (renderSummaryRow "totalRequestBudget") true}}</td>
+                        <td class="text-right">{{renderSummaryRow "totalPassedQualification"}}</td>
+                        <td class="text-right">{{renderSummaryRow "totalNotPassedQualification"}}</td>
+                        <td class="text-right">{{renderSummaryRow "totalNotCheckedQualification"}}</td>
+                        <td class="text-right">{{renderSummaryRow "totalRequest"}}</td>
+
+                        <td class="text-right">{{currency (renderSummaryRow "result1ToTalApproveBudget") true}}</td>
+                        <td class="text-right">{{renderSummaryRow "result1TotalApprove"}}</td>
+                        <td class="text-right">{{renderSummaryRow "result1TotalReject"}}</td>
+                        <td class="text-right">{{renderSummaryRow "result1Total"}}</td>
+                        <td class="text-right">{{currency (renderSummaryRow "result2ToTalApproveBudget") true}}</td>
+                        <td class="text-right">{{renderSummaryRow "result2TotalApprove"}}</td>
+                        <td class="text-right">{{renderSummaryRow "result2TotalReject"}}</td>
+                        <td class="text-right">{{renderSummaryRow "result2Total"}}</td>
+                        <td class="text-right">{{currency (renderSummaryRow "result3ToTalApproveBudget") true}}</td>
+                        <td class="text-right">{{renderSummaryRow "result3TotalApprove"}}</td>
+                        <td class="text-right">{{renderSummaryRow "result3TotalReject"}}</td>
+                        <td class="text-right">{{renderSummaryRow "result3Total"}}</td>
+
+                        <td class="text-right">{{renderSummaryRow "totalPassed65and65"}}</td>
+                        <td class="text-right">{{renderSummaryRow "totalNotPassedBorrower"}}</td>
+                        <td class="text-right">{{renderSummaryRow "totalNotPassedGuarantor"}}</td>
+                        <td class="text-right">{{renderSummaryRow "totalNotPassed"}}</td>
+                        <td class="text-right">{{renderSummaryRow "totalFacesheet"}}</td>
+                    </tr>
+                {{/if}}
+                {{resetSummaryData @root.data @index}}
+            {{/each}}
+
+            {{#if (isShowTotal)}}
+            <tr class="row-color-grey">
+                <td colspan="2" class="text-right">รวมทั้งหมด</td>
+                <td class="text-right">{{currency (renderTotalSummaryRow "totalRequestBudget") true}}</td>
+                <td class="text-right">{{renderTotalSummaryRow "totalPassedQualification"}}</td>
+                <td class="text-right">{{renderTotalSummaryRow "totalNotPassedQualification"}}</td>
+                <td class="text-right">{{renderTotalSummaryRow "totalNotCheckedQualification"}}</td>
+                <td class="text-right">{{renderTotalSummaryRow "totalRequest"}}</td>
+
+                <td class="text-right">{{currency (renderTotalSummaryRow "result1ToTalApproveBudget") true}}</td>
+                <td class="text-right">{{renderTotalSummaryRow "result1TotalApprove"}}</td>
+                <td class="text-right">{{renderTotalSummaryRow "result1TotalReject"}}</td>
+                <td class="text-right">{{renderTotalSummaryRow "result1Total"}}</td>
+                <td class="text-right">{{currency (renderTotalSummaryRow "result2ToTalApproveBudget") true}}</td>
+                <td class="text-right">{{renderTotalSummaryRow "result2TotalApprove"}}</td>
+                <td class="text-right">{{renderTotalSummaryRow "result2TotalReject"}}</td>
+                <td class="text-right">{{renderTotalSummaryRow "result2Total"}}</td>
+                <td class="text-right">{{currency (renderTotalSummaryRow "result3ToTalApproveBudget") true}}</td>
+                <td class="text-right">{{renderTotalSummaryRow "result3TotalApprove"}}</td>
+                <td class="text-right">{{renderTotalSummaryRow "result3TotalReject"}}</td>
+                <td class="text-right">{{renderTotalSummaryRow "result3Total"}}</td>
+
+                <td class="text-right">{{renderTotalSummaryRow "totalPassed65and65"}}</td>
+                <td class="text-right">{{renderTotalSummaryRow "totalNotPassedBorrower"}}</td>
+                <td class="text-right">{{renderTotalSummaryRow "totalNotPassedGuarantor"}}</td>
+                <td class="text-right">{{renderTotalSummaryRow "totalNotPassed"}}</td>
+                <td class="text-right">{{renderTotalSummaryRow "totalFacesheet"}}</td>
+            </tr>
+
+            {{/if}}
+        </tbody>
+    </table>
+</body>
+
+</html>

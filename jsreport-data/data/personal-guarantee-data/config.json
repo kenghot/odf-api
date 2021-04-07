@@ -1,0 +1,13 @@
+{
+    "shortid": "Bkg4RbkM-S",
+    "name": "personal-guarantee-data",
+    "creationDate": "2019-07-09T09:43:42.623Z",
+    "modificationDate": {
+        "$$date": 1591704614268
+    },
+    "_id": "jihzwVahnOh67mjj",
+    "$entitySet": "data",
+    "folder": {
+        "shortid": "Xc3sVs8"
+    }
+}

@@ -1,0 +1,42 @@
+{
+    "name": "personal-agreement",
+    "recipe": "chrome-pdf",
+    "shortid": "HygcErAHWB",
+    "engine": "handlebars",
+    "chrome": {
+        "printBackground": true,
+        "marginTop": "2.7cm",
+        "marginRight": "2.5cm",
+        "marginBottom": "2.7cm",
+        "marginLeft": "4.5cm",
+        "width": "21cm",
+        "height": "29.7cm",
+        "format": "A4",
+        "displayHeaderFooter": false
+    },
+    "creationDate": "2019-07-12T09:40:09.108Z",
+    "modificationDate": {
+        "$$date": 1604377756241
+    },
+    "pdfOperations": [
+        {
+            "type": "merge",
+            "templateShortid": "Bye_Jd2sAN",
+            "mergeWholeDocument": true,
+            "renderForEveryPage": false,
+            "enabled": true
+        },
+        {
+            "type": "append",
+            "templateShortid": "r1xD5O1OXU"
+        }
+    ],
+    "data": {
+        "shortid": "Skl0NWFWWS"
+    },
+    "_id": "sm1uEOrfbO8FQZaG",
+    "$entitySet": "templates",
+    "folder": {
+        "shortid": "DhYcEel"
+    }
+}

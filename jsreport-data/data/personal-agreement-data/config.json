@@ -1,0 +1,16 @@
+{
+    "shortid": "Skl0NWFWWS",
+    "name": "personal-agreement-data",
+    "creationDate": "2019-07-09T02:51:36.698Z",
+    "modificationDate": {
+        "$$date": 1604377784362
+    },
+    "_id": "QdjGFe7FbNPxJxVi",
+    "$entitySet": "data",
+    "folder": {
+        "shortid": "Xc3sVs8"
+    },
+    "entitySet": "data",
+    "type": "entity",
+    "key": "QdjGFe7FbNPxJxVi"
+}

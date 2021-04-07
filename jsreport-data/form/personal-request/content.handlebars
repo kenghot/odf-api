@@ -1,0 +1,358 @@
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <style>
+       	{#asset /asset/bootstrap.min.css @encoding=utf8}
+		{#asset /asset/main.css @encoding=utf8}
+
+		@font-face {
+			font-family: 'THSarabunNew';
+			src: url({#asset /asset/THSarabunNew.ttf @encoding=dataURI});
+			format('truetype');
+		}
+
+		* {
+			font-family: 'THSarabunNew';
+		}
+
+    </style>
+</head>
+
+<body class="form-body">
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+                <div class="alert alert-secondary text-center"  style="width:300px; height: 100px;">
+                    <b>การกู้ยืมเงิน <br />ไม่เสียค่าใช้จ่ายใดๆทั้งสิ้น</b>
+                </div>
+            </div>
+            <div class="col-8 text-center">
+                <img src="{#asset /asset/logo.png @encoding=dataURI}" />
+                <h1 class="mt-2">
+                    คำร้องขอกู้ยืมเงินทุนประกอบอาชีพจากกองทุนผู้สูงอายุ<br/> ประเภทรายบุคคล
+                </h1>
+            </div>
+            <div class="col-2">
+                {{!-- <div class="btn btn-outline-secondary  w-100 mb-3" >
+                    <h3>แบบฟอร์มหมายเลข 7</h3>
+                </div> --}}
+                <div class="btn btn-outline-secondary " style="float:right; color: black;" >
+                   <h1><b>รหัสเคส: {{documentNumber}}</b> </h1>
+                </div>
+            </div> 
+        </div>
+        <div class="row mb-2 mt-2">
+            <div class="col-6 offset-6 text-right">
+                <div >
+                    เขียนที่ <div class="d-inline-block border-bottom text-center" style="width:80%" >{{organization.address.province}}</div> <br/>
+                    วันที่ <div class="d-inline-block border-bottom  text-center" style="width:85%" >{{documentDate}}</div> 
+                </div>  
+            </div>
+        </div>
+        <div class="row mt-2 mb-2" >
+            <div class="col">
+                <p>เรื่อง ขอกู้ยืมเงินกองทุนผู้สูงอายุ <br/>
+                    เรียน ประธานคณะกรรมการบริหารกองทุนผู้สูงอายุ
+                </p>    
+                <div style="font-size:28px"  >
+                    <div class="row" >
+                        <div class="col-2" style="font-size:32px" >
+                            สิ่งที่ส่งมาด้วย
+                        </div>
+                        <div class="col">
+                            1. สำเนาบัตรประจำตัวประชาชนของผู้กู้ยืมฯ และผู้ค้ำประกัน
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2" ></div>
+                        <div class="col">
+                            2.  สำเนาทะเบียนบ้านของผู้กู้ยืมฯ และผู้ค้ำประกัน
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2"></div>
+                        <div class="col">
+                            3. สำเนาบัตรประจำตัวคู่สมรส และทะเบียนบ้าน (ถ้ามี)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2"></div>
+                        <div class="col">
+                            4. หนังสือรับรองเงินเดือนผู้ค้ำประกัน (ออกให้ไม่เกิน 90 วัน) หรือสลิปเงินเดือนย้อนหลัง 3 เดือน
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+   
+    <div class="container">
+        <div class="row" ">
+            <div class="col">
+                <b>ข้อมูลผู้ขอกู้ (กรุณากรอกข้อมูลให้ครบทุกช่อง)</b>
+                <div  class= "indent text-justify">
+                    ด้วยข้าพเจ้า
+                    <div class="text-underline"  style="width:40% ;" >
+                        {{checkEmptyReturnDashed borrower.fullName}}
+                    </div> 
+                    อายุ
+                    <div class="text-underline"  style="width:10% ;" >
+                        {{checkEmptyReturnDashed borrower.age}}
+                    </div> ปี สัญชาติไทย <br/>
+                    เลขประจำตัวประชาชน ที่
+                    <div class="text-underline"  style="width:30% ;" >
+                        {{checkEmptyReturnDashed borrower.idCardNo}}
+                    </div>
+                    หมดอายุวันที่
+                    <div  class="text-underline" style="width:30% ;" >
+                        {{checkEmptyReturnDashed borrower.idCardExpireDate}}
+                    </div>
+                </div>             
+                <div>
+                    <u class="mr-2">สถานะภาพ</u>
+                    <input name="marriage" value="1" type="radio" {{checkType borrower.marriageStatus 0}} ><span class="pl-2">โสด </span>
+                    <input name="marriage" value="2" type="radio"  {{checkType borrower.marriageStatus 1}}><span class="pl-2">สมรส </span>
+                    <input name="marriage" value="3" type="radio"  {{checkType borrower.marriageStatus 2}}><span class="pl-2">อยู่ด้วยกันโดยไม่จดทะเบียนสมรส  </span>
+                    <input name="marriage" value="4" type="radio"  {{checkType borrower.marriageStatus 3}}><span class="pl-2">หย่าร้าง  </span>
+                    <input name="marriage" value="5" type="radio"  {{checkType borrower.marriageStatus 4}}><span class="pl-2">หม้าย </span>
+                </div>
+                สามีหรือภรรยาชื่อ
+                <div class="text-underline"  style="width:35%" >
+                    {{checkEmptyReturnDashed spouse.fullName}}
+                </div> 
+                เลขประจำตัวประชาชน ที่
+                <div class="text-underline" style="width:20%" >
+                    {{checkEmptyReturnDashed spouse.idCardNo}}
+                </div> <br/>
+                หมดอายุวันที่
+                <div class="text-underline" style="width:25%" >
+                    {{checkEmptyReturnDashed spouse.idCardExpireDate}}
+                </div> <br/>
+                <div  class= "text-justify" >
+                    <u class="mr-2">ที่อยู่ตามทะเบียนบ้าน</u>
+                    <input name="borrower_registed_address" value="1"type="radio" {{checkType borrower.registeredAddressType 0}} ><span class="pl-2">ที่เดียวกับบัตรประชาชน </span>
+                    <input name="borrower_registed_address" value="2"type="radio" {{checkType borrower.registeredAddressType 99}} ><span class="pl-2">อื่นๆ โปรดระบุ </span>
+                    บ้านเลขที่<div class="text-underline" style="width:29%" >{{checkEmptyReturnDashed borrower.registeredAddress.houseNo}}</div> <br/>
+                    หมู่บ้าน/อาคาร<div class="text-underline" style="width: 20.5%" >{{checkEmptyReturnDashed borrower.registeredAddress.buildingName}}</div> 
+                    เลขที่ห้อง<div class="text-underline" style="width:10%" >{{checkEmptyReturnDashed borrower.registeredAddress.roomNo}}</div> 
+                    ชั้น<div class="text-underline" style="width:12%" >{{checkEmptyReturnDashed borrower.registeredAddress.floor}}</div> 
+                    หมู่ที่<div class="text-underline" style="width:25%" >{{checkEmptyReturnDashed borrower.registeredAddress.hmoo}}</div>  <br/>
+                    ซอย<div class="text-underline" style="width:20%" >{{checkEmptyReturnDashed borrower.registeredAddress.soi}}</div> 
+                    ถนน<div class="text-underline" style="width:25%" >{{checkEmptyReturnDashed borrower.registeredAddress.street}}</div> 
+                    ตำบล/แขวง<div class="text-underline" style="width:35%" >{{checkEmptyReturnDashed borrower.registeredAddress.subDistrict}}</div>  <br/>
+                    อำเภอ/เขต<div class="text-underline" style="width:25%" >{{checkEmptyReturnDashed borrower.registeredAddress.district}}</div> 
+                    จังหวัด<div class="text-underline" style="width:25%" >{{checkEmptyReturnDashed borrower.registeredAddress.province}}</div> 
+                    รหัสไปรษณีย์<div class="text-underline" style="width:20%" >{{checkEmptyReturnDashed borrower.registeredAddress.zipcode}}</div> <br/> 
+                </div>
+                <div>
+                    <u class="mr-2">ที่อยู่ปัจจุบันของผู้กู้</u>
+                    <input name="borrow_current_address" value="1"type="radio" {{checkType borrower.currentAddressType 0}}><span class="pl-2">ที่เดียวกับบัตรประชาชน </span>
+                    <input name="borrow_current_address" value="2"type="radio" {{checkType borrower.currentAddressType 1}}><span class="pl-2">ที่เดียวกับที่อยู่ตามทะเบียนบ้าน </span>
+                    <input name="borrow_current_address" value="3"type="radio" {{checkType borrower.currentAddressType 99}}><span class="pl-2">อื่นๆ โปรดระบุ </span> <br/>
+                    บ้านเลขที่<div class="text-underline"  style="width:15%" >{{checkEmptyReturnDashed borrower.currentAddress.houseNo}}</div>
+                    หมู่บ้าน/อาคาร<div class="text-underline"  style="width:30%" >{{checkEmptyReturnDashed borrower.currentAddress.buildingName}}</div> 
+                    เลขที่ห้อง<div class="text-underline"  style="width:23%" >{{checkEmptyReturnDashed borrower.currentAddress.roomNo}}</div> <br/>
+                    ชั้น<div class="text-underline"  style="width:15%" >{{checkEmptyReturnDashed borrower.currentAddress.floor}}</div> 
+                    หมู่ที่<div class="text-underline"  style="width:15%" >{{checkEmptyReturnDashed borrower.currentAddress.hmoo}}</div>  
+                    ซอย<div class="text-underline"  style="width:20%" >{{checkEmptyReturnDashed borrower.currentAddress.soi}}</div> 
+                    ถนน<div class="text-underline"  style="width:32%" >{{checkEmptyReturnDashed borrower.currentAddress.street}}</div> <br/>
+                    ตำบล/แขวง<div class="text-underline"  style="width:35%" >{{checkEmptyReturnDashed borrower.currentAddress.subDistrict}}</div> 
+                    อำเภอ/เขต<div class="text-underline"  style="width:43%" >{{checkEmptyReturnDashed borrower.currentAddress.district}}</div> <br/>
+                    จังหวัด<div class="text-underline"  style="width:25%" >{{checkEmptyReturnDashed borrower.currentAddress.province}}</div> 
+                    รหัสไปรษณีย์<div class="text-underline"  style="width:15%" >{{checkEmptyReturnDashed borrower.currentAddress.zipcode}}</div> 
+                    โทรศัพท์<div class="text-underline"  style="width:20%" >{{checkEmptyReturnDashed borrower.telephone}}</div> 
+                </div>
+                <div>
+                    <u class="mr-2">ประเภทที่อยู่</u>
+                    <input name="borrower_resident_type" value="1"type="radio" {{checkType borrower.residenceType 0}} ><span class="pl-2">บ้าน </span>
+                    <input name="borrower_resident_type" value="2"type="radio"  {{checkType borrower.residenceType 1}}><span class="pl-2">ทาวน์เฮาส์ </span>
+                    <input name="borrower_resident_type" value="3"type="radio"  {{checkType borrower.residenceType 2}}><span class="pl-2">คอนโดมิเนียม </span>
+                    <input name="borrower_resident_type" value="4"type="radio"  {{checkType borrower.residenceType 3}}><span class="pl-2">อพาร์ทเม้นท์/หอพัก/แฟลต </span><br/>
+                    <input name="borrower_resident_type" value="5"type="radio"  {{checkType borrower.residenceType 99}}><span class="pl-2">อื่นๆ (ระบุ) </span>
+                    <div  class="text-underline" style="width:25%" > {{checkEmptyReturnDashed borrower.residenceTypeDescription}}</div> 
+                </div>
+                <div>
+                    <u class="mr-2">สถานะการอยู่อาศัย</u>
+                    <input name="borrower_resident_status" value="0"type="radio" {{checkType borrower.residenceStatusType 0}}><span class="pl-2">เช่า </span>
+                    <div  class="text-underline" style="width:20%" >{{getResidentType0Description borrower.residenceStatusType borrower.residenceStatusTypeDescription}}</div> บาท/เดือน
+                    <input name="borrower_resident_status" value="1"type="radio" {{checkType borrower.residenceStatusType 1}}><span class="pl-2">ผ่อน </span>
+                    <div  class="text-underline" style="width:20%" >{{getResidentType1Description borrower.residenceStatusType borrower.residenceStatusTypeDescription}}</div> บาท/เดือน<br/>
+                    <input name="borrower_resident_status" value="2"type="radio" {{checkType borrower.residenceStatusType 2}}><span class="pl-2">เป็นของตนเองปลอดภาระ </span>
+                    <input name="borrower_resident_status" value="3"type="radio" {{checkType borrower.residenceStatusType 3}}><span class="pl-2">เป็นของบุคคลอื่น</span>
+                    <input name="borrower_resident_status" value="4"type="radio" {{checkType borrower.residenceStatusType 4}}><span class="pl-2">อาศัยอยู่ กับบุตรหลาน/ญาติ</span>
+                    <input name="borrower_resident_status" value="5"type="radio" {{checkType borrower.residenceStatusType 5}}><span class="pl-2">บ้านพักสวัสดิการ</span><br/>
+                    <input name="borrower_resident_status" value="6"type="radio" {{checkType borrower.residenceStatusType 99}}><span class="pl-2">อื่นๆ (ระบุ) </span>
+                    <div  class="text-underline" style="width:23%" >{{getResidentType99Description borrower.residenceStatusType borrower.residenceStatusTypeDescription}}</div> 
+                </div>
+               
+                <div>
+                    <u class="mr-2">ปัจจุบันประกอบอาชีพ</u>
+                    <div  class="text-underline" style="width:20%" >{{checkOccupationDescription borrower.occupation.name borrower.occupation.description}}</div>
+                    รายได้<div  class="text-underline" style="width:20%" >{{currency borrower.occupation.salary}}</div> บาท/เดือน
+                    <input name="occupation" value="1"type="radio" {{checkIsWorking borrower.isWorking}}><span class="pl-2">ไม่ได้ประกอบอาชีพ </span>
+                </div>
+                <div>
+                    ประสงค์จะขอกู้ยืมเงินกองทุนผู้สูงอายุเป็นจำนวนเงิน<div  class="text-underline" style="width:20%" >{{currency requestBudget}}</div>บาท/เดือน<br/>
+                    (<div  class="text-underline" style="width:43%" >{{dashed requestBudgetText}}</div> )
+                    เพื่อนำไปประกอบอาชีพ<div  class="text-underline" style="width:32%" >{{checkOccupationDescription requestOccupation.name requestOccupation.description}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2" >
+            <div class="col">
+                <b>ข้อมูลผู้ค้ำประกัน</b>
+                <div class= "indent text-justify">
+                    ข้าพเจ้า
+                    <div class="text-underline" style="width:40% ;" >
+                        {{checkEmptyReturnDashed guarantor.fullName}}
+                    </div> 
+                    อายุ
+                    <div  class="text-underline" style="width:10% ;" >
+                        {{checkEmptyReturnDashed guarantor.age}}
+                    </div> ปี สัญชาติไทย <br/>
+                    เลขประจำตัวประชาชน ที่
+                    <div  class="text-underline" style="width:40% ;" >
+                        {{checkEmptyReturnDashed guarantor.idCardNo}}
+                    </div>
+                    หมดอายุวันที่
+                    <div  class="text-underline" style="width:20% ;" >
+                        {{checkEmptyReturnDashed guarantor.idCardExpireDate}}
+                    </div>
+                </div> 
+                 <div  class= "text-justify" >
+                    <u class="mr-2">ที่อยู่ตามทะเบียนบ้าน</u>
+                    <input name="guarantor_registed_address" value="1"type="radio" {{checkType guarantor.registeredAddressType 0}} ><span class="pl-2">ที่เดียวกับบัตรประชาชน </span>
+                    <input name="guarantor_registed_address" value="2"type="radio" {{checkType guarantor.registeredAddressType 99}} ><span class="pl-2">อื่นๆ โปรดระบุ </span>
+                    บ้านเลขที่<div class="text-underline" style="width:29%" >{{checkEmptyReturnDashed guarantor.registeredAddress.houseNo}}</div> <br/>
+                    หมู่บ้าน/อาคาร<div class="text-underline" style="width: 20.5%" >{{checkEmptyReturnDashed guarantor.registeredAddress.buildingName}}</div> 
+                    เลขที่ห้อง<div class="text-underline" style="width:10%" >{{checkEmptyReturnDashed guarantor.registeredAddress.roomNo}}</div> 
+                    ชั้น<div class="text-underline" style="width:12%" >{{checkEmptyReturnDashed guarantor.registeredAddress.floor}}</div> 
+                    หมู่ที่<div class="text-underline" style="width:25%" >{{checkEmptyReturnDashed guarantor.registeredAddress.hmoo}}</div>  <br/>
+                    ซอย<div class="text-underline" style="width:20%" >{{checkEmptyReturnDashed guarantor.registeredAddress.soi}}</div> 
+                    ถนน<div class="text-underline" style="width:25%" >{{checkEmptyReturnDashed guarantor.registeredAddress.street}}</div> 
+                    ตำบล/แขวง<div class="text-underline" style="width:35%" >{{checkEmptyReturnDashed guarantor.registeredAddress.subDistrict}}</div>  <br/>
+                    อำเภอ/เขต<div class="text-underline" style="width:25%" >{{checkEmptyReturnDashed guarantor.registeredAddress.district}}</div> 
+                    จังหวัด<div class="text-underline" style="width:25%" >{{checkEmptyReturnDashed guarantor.registeredAddress.province}}</div> 
+                    รหัสไปรษณีย์<div class="text-underline" style="width:20%" >{{checkEmptyReturnDashed guarantor.registeredAddress.zipcode}}</div> <br/> 
+                </div>
+                <div>
+                    <u class="mr-2">ที่อยู่ปัจจุบันของผู้ค้ำ</u>
+                    <input name="guarantor_current_address" value="1"type="radio" {{checkType guarantor.currentAddressType 0}}><span class="pl-2">ที่เดียวกับบัตรประชาชน </span>
+                    <input name="guarantor_current_address" value="2"type="radio" {{checkType guarantor.currentAddressType 1}}><span class="pl-2">ที่เดียวกับที่อยู่ตามทะเบียนบ้าน </span>
+                    <input name="guarantor_current_address" value="3"type="radio" {{checkType guarantor.currentAddressType 99}}><span class="pl-2">อื่นๆ โปรดระบุ </span> <br/>
+                    บ้านเลขที่<div class="text-underline"  style="width:15%" >{{checkEmptyReturnDashed guarantor.currentAddress.houseNo}}</div>
+                    หมู่บ้าน/อาคาร<div class="text-underline"  style="width:30%" >{{checkEmptyReturnDashed guarantor.currentAddress.buildingName}}</div> 
+                    เลขที่ห้อง<div class="text-underline"  style="width:23%" >{{checkEmptyReturnDashed guarantor.currentAddress.roomNo}}</div> <br/>
+                    ชั้น<div class="text-underline"  style="width:15%" >{{checkEmptyReturnDashed guarantor.currentAddress.floor}}</div> 
+                    หมู่ที่<div class="text-underline"  style="width:15%" >{{checkEmptyReturnDashed guarantor.currentAddress.hmoo}}</div>  
+                    ซอย<div class="text-underline"  style="width:20%" >{{checkEmptyReturnDashed guarantor.currentAddress.soi}}</div> 
+                    ถนน<div class="text-underline"  style="width:32%" >{{checkEmptyReturnDashed guarantor.currentAddress.street}}</div> <br/>
+                    ตำบล/แขวง<div class="text-underline"  style="width:35%" >{{checkEmptyReturnDashed guarantor.currentAddress.subDistrict}}</div> 
+                    อำเภอ/เขต<div class="text-underline"  style="width:43%" >{{checkEmptyReturnDashed guarantor.currentAddress.district}}</div> <br/>
+                    จังหวัด<div class="text-underline"  style="width:25%" >{{checkEmptyReturnDashed guarantor.currentAddress.province}}</div> 
+                    รหัสไปรษณีย์<div class="text-underline"  style="width:15%" >{{checkEmptyReturnDashed guarantor.currentAddress.zipcode}}</div> 
+                    โทรศัพท์<div class="text-underline"  style="width:20%" >{{checkEmptyReturnDashed guarantor.telephone}}</div> 
+                </div>  
+                <div>
+                    <u class="mr-2">ประเภทที่อยู่</u>
+                    <input name="guarantor_resident_type" value="1"type="radio" {{checkType guarantor.residenceType 0}} ><span class="pl-2">บ้าน </span>
+                    <input name="guarantor_resident_type" value="2"type="radio"  {{checkType guarantor.residenceType 1}}><span class="pl-2">ทาวน์เฮาส์ </span>
+                    <input name="guarantor_resident_type" value="3"type="radio"  {{checkType guarantor.residenceType 2}}><span class="pl-2">คอนโดมิเนียม </span>
+                    <input name="guarantor_resident_type" value="4"type="radio"  {{checkType guarantor.residenceType 3}}><span class="pl-2">อพาร์ทเม้นท์/หอพัก/แฟลต </span><br/>
+                    <input name="guarantor_resident_type" value="5"type="radio"  {{checkType guarantor.residenceType 99}}><span class="pl-2">อื่นๆ (ระบุ) </span>
+                    <div  class="text-underline" style="width:25%" > {{checkEmptyReturnDashed guarantor.residenceTypeDescription}}</div> 
+                </div>
+                <div>
+                    <u class="mr-2">สถานะการอยู่อาศัย</u>
+                    <input name="guarantor_resident_status" value="0"type="radio" {{checkType guarantor.residenceStatusType 0}}><span class="pl-2">เช่า </span>
+                    <div  class="text-underline" style="width:20%" >{{getResidentType0Description guarantor.residenceStatusType guarantor.residenceStatusTypeDescription}}</div> บาท/เดือน
+                    <input name="guarantor_resident_status" value="1"type="radio" {{checkType guarantor.residenceStatusType 1}}><span class="pl-2">ผ่อน </span>
+                    <div  class="text-underline" style="width:20%" >{{getResidentType1Description guarantor.residenceStatusType guarantor.residenceStatusTypeDescription}}</div> บาท/เดือน<br/>
+                    <input name="guarantor_resident_status" value="2"type="radio" {{checkType guarantor.residenceStatusType 2}}><span class="pl-2">เป็นของตนเองปลอดภาระ </span>
+                    <input name="guarantor_resident_status" value="3"type="radio" {{checkType guarantor.residenceStatusType 3}}><span class="pl-2">เป็นของบุคคลอื่น</span>
+                    <input name="guarantor_resident_status" value="4"type="radio" {{checkType guarantor.residenceStatusType 4}}><span class="pl-2">อาศัยอยู่ กับบุตรหลาน/ญาติ</span>
+                    <input name="guarantor_resident_status" value="5"type="radio" {{checkType guarantor.residenceStatusType 5}}><span class="pl-2">บ้านพักสวัสดิการ</span><br/>
+                    <input name="guarantor_resident_status" value="6"type="radio" {{checkType guarantor.residenceStatusType 99}}><span class="pl-2">อื่นๆ (ระบุ) </span>
+                    <div  class="text-underline" style="width:23%" >{{getResidentType99Description guarantor.residenceStatusType guarantor.residenceStatusTypeDescription}}</div> 
+                </div>
+                <div>
+                    <u class="mr-2">ความสัมพันธ์กับผู้กู้</u>
+                    <input name="relation" value="0"type="radio" {{checkType guarantorBorrowerRelationship 0}}><span class="pl-2">บุตร </span>
+                    <input name="relation" value="1"type="radio" {{checkType guarantorBorrowerRelationship 1}}><span class="pl-2">ญาติ (พี่น้อง, หลาน, ป้า, น้า, อา) </span>
+                    <input name="relation" value="2"type="radio" {{checkType guarantorBorrowerRelationship 2}}><span class="pl-2">คนรู้จัก/เพื่อนบ้าน</span><br/>
+                </div>
+                <div>
+                    <u class="mr-2">อาชีพ</u>(ระบุให้ชัดเจน)
+                    <div class="text-underline"  style="width:75%" >{{checkOccupationDescription guarantor.occupation.name guarantor.occupation.description}}</div> </br/>
+                    ตำแหน่ง<div class="text-underline"  style="width:40%" >{{checkEmptyReturnDashed guarantorPosition}}</div>
+                    รายได้<div class="text-underline"  style="width:20%" >{{currency guarantor.occupation.salary}}</div> บาท/เดือน
+                </div>
+                <div>
+                    ชื่อบริษัท/สำนักงาน <div  class="text-underline" style="width:25%" >{{checkEmptyReturnDashed guarantorCompanyName}}</div>
+                    เลขที่ <div  class="text-underline" style="width:15%" >{{checkEmptyReturnDashed guarantorCompanyAddress.houseNo}}</div>
+                    หมู่บ้าน/อาคาร <div  class="text-underline" style="width:20%" >{{checkEmptyReturnDashed guarantorCompanyAddress.buildingName}}</div> <br/>
+                    เลขที่ห้อง <div  class="text-underline" style="width:8%" >{{checkEmptyReturnDashed guarantorCompanyAddress.roomNo}}</div> 
+                    ชั้น <div  class="text-underline" style="width:8%" >{{checkEmptyReturnDashed guarantorCompanyAddress.floor}}</div> 
+                    หมู่ที่ <div  class="text-underline" style="width:10%" >{{checkEmptyReturnDashed guarantorCompanyAddress.hmoo}}</div>  
+                    ซอย <div  class="text-underline" style="width:15%" >{{checkEmptyReturnDashed guarantorCompanyAddress.soi}}</div> 
+                    ถนน <div  class="text-underline" style="width:27%" >{{checkEmptyReturnDashed guarantorCompanyAddress.street}}</div> <br/>
+                    ตำบล/แขวง <div  class="text-underline" style="width:22%" >{{checkEmptyReturnDashed guarantorCompanyAddress.subDistrict}}</div> 
+                    อำเภอ/เขต <div  class="text-underline" style="width:25%" >{{checkEmptyReturnDashed guarantorCompanyAddress.district}}</div> 
+                    จังหวัด <div  class="text-underline" style="width:21%" >{{checkEmptyReturnDashed guarantorCompanyAddress.province}}</div> <br/>
+                    รหัสไปรษณีย์ <div  class="text-underline" style="width:25%" >{{checkEmptyReturnDashed guarantorCompanyAddress.zipcode}}</div> 
+                    โทรศัพท์ <div  class="text-underline" style="width:30%" >{{checkEmptyReturnDashed guarantorCompanyTelephone}}</div> 
+                    เป็นผู้ค้ำประกัน
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row mt-2">
+            <div class="col-12" >
+                <div class="btn btn-outline-secondary mb-2 w-100" style="color:black; font-size: 20px">
+                    หากข้าพเจ้าได้รับอนุมัติให้กู้ยืมเงินกองทุนผู้สูงอายุ
+                    ข้าพเจ้ายินยอมผ่อนชำระคืนเป็นรายงวด ภายในระยะเวลาไม่เกิน 3 ปี </br/>
+                    นับตั้งแต่วันที่ได้ทำสัญญาเป็นต้นไป และข้าพเจ้าขอรับรองว่าจะนำไปใช้จ่ายตามวัตถุประสงค์ที่ได้ร้องขอ </br/>
+                    และจะปฏิบัติตามระเบียบการกู้ยืมเงินและสัญญากู้ยืมเงินกองทุนผู้สูงอายุทุกประการ
+                </div>
+            </div>
+        </div>
+
+        <div class="row text-right" style="margin-top:100px;">
+            <div class="col-6">
+                <div>
+                    ลงชื่อ<div class="text-underline" style="width:70% ;" >
+                        &nbsp
+                    </div>ผู้ขอกู้ยืม
+                    <br/>
+                    (<div class="text-underline" style="width:95% ;" >
+                        {{checkEmptyReturnDashed borrower.fullName}}
+                    </div>)
+                </div>
+            </div>
+            <div class="col-6 ">
+                <div>
+                    ลงชื่อ<div class="text-underline" style="width:65% ;" >
+                        &nbsp
+                    </div>ผู้ค้ำประกัน <br/>
+                    (<div class="text-underline" style="width:95% ;" >
+                        {{checkEmptyReturnDashed guarantor.fullName}}
+                    </div>)
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5">
+             <div class="col-12" >
+                <div class="btn btn-outline-secondary" style="color:black; width:100%; font-size: 20px" >
+                    กองทุนผู้สูงอายุ เลขที่ 255 อาคารพิชเยนทรโยธิน 
+                    ถนนราชวิถี แขวงทุ่งพญาไท เขตราชเทวี กรุงเทพมหานคร 10400 <br/>
+                    โทร : 02-354-6100  ต่อ 101, 103 
+                    โทรสาร : 02-354-6107
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

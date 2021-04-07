@@ -1,0 +1,15 @@
+{
+    "name": "report2489-template",
+    "creationDate": {
+        "$$date": 1600095920938
+    },
+    "modificationDate": {
+        "$$date": 1600095942650
+    },
+    "shortid": "mesSqhd",
+    "_id": "B9tYxBSG0NLW6kqH",
+    "$entitySet": "xlsxTemplates",
+    "folder": {
+        "shortid": "Mb34RQ9"
+    }
+}

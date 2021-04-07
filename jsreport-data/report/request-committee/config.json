@@ -1,0 +1,26 @@
+{
+    "shortid": "HJl9wfZ7ZB",
+    "name": "request-committee",
+    "recipe": "html-to-xlsx",
+    "engine": "handlebars",
+    "chrome": {
+        "printBackground": true
+    },
+    "htmlToXlsx": {
+        "htmlEngine": "chrome",
+        "insertToXlsxTemplate": false,
+        "waitForJS": false
+    },
+    "creationDate": "2019-07-10T06:18:44.723Z",
+    "modificationDate": {
+        "$$date": 1579842446304
+    },
+    "_id": "vrIZ6noivkC5TGUz",
+    "$entitySet": "templates",
+    "data": {
+        "shortid": "BygE5S4QWB"
+    },
+    "folder": {
+        "shortid": "THihHg0"
+    }
+}

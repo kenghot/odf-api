@@ -1,0 +1,124 @@
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        {#asset /asset/table-style.css @encoding=utf8}
+
+        @font-face {
+            font-family: 'THSarabunNew';
+            src: url({#asset /asset/THSarabunNew.ttf @encoding=dataURI});
+            format('truetype');
+        }
+
+        .table-th-lightgrey {
+            background-color: #ebebeb;
+        }
+
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+             <tr>
+                <th colspan="38">{{title1}}</th>
+            </tr>
+            <tr>
+                <th colspan="38">{{title2}}</th>
+            </tr>
+            <tr>
+                <th colspan="38">{{paymentTime}}</th>
+            </tr>
+        </thead>
+        <thead class="table-thread-bordered">
+            <tr>
+                <th class="table-th-lightgrey">วันที่สร้าง</th>
+                <th class="table-th-lightgrey">ประเภท</th>
+                <th class="table-th-lightgrey">Operation</th>
+                <th class="table-th-lightgrey">TX_ID</th>
+                <th class="table-th-lightgrey">LOG_ID</th>
+                <th class="table-th-lightgrey">VENDOR_ID</th>
+                <th class="table-th-lightgrey">SERVICE_ID</th>
+                <th class="table-th-lightgrey">METHOD</th>
+                <th class="table-th-lightgrey">COUNTER_NO</th>
+                <th class="table-th-lightgrey">TERM_NO</th>
+                <th class="table-th-lightgrey">POS_TAX_ID</th>
+                <th class="table-th-lightgrey">SERVICE_RUN_NO</th>
+                <th class="table-th-lightgrey">RECORD_STATUS</th>
+                <th class="table-th-lightgrey">CLIENT_SERVICE_RUNNO</th>
+                <th class="table-th-lightgrey">AMOUNT_RECEIVED</th>
+                <th class="table-th-lightgrey">VAT_AMOUNT</th>
+                <th class="table-th-lightgrey">BILL_TYPE</th>
+                <th class="table-th-lightgrey">REFERENCE_1</th>
+                <th class="table-th-lightgrey">REFERENCE_2</th>
+                <th class="table-th-lightgrey">REFERENCE_3</th>
+                <th class="table-th-lightgrey">REFERENCE_4</th>
+                <th class="table-th-lightgrey">CUSTOMER_NAME</th>
+                <th class="table-th-lightgrey">CUSTOMER_ADDR_1</th>
+                <th class="table-th-lightgrey">CUSTOMER_ADDR_2</th>
+                <th class="table-th-lightgrey">CUSTOMER_ADDR_3</th>
+                <th class="table-th-lightgrey">CUSTOMER_TEL_NO</th>
+                <th class="table-th-lightgrey">ZONE</th>
+                <th class="table-th-lightgrey">R_SERVICE_RUNNO</th>
+                <th class="table-th-lightgrey">CANCEL_OPERATING</th>
+                <th class="table-th-lightgrey">OPERATE_BY_STAFF</th>
+                <th class="table-th-lightgrey">SYSTEM_DATE_TIME</th>
+                <th class="table-th-lightgrey">SUCCESS</th>
+                <th class="table-th-lightgrey">CODE</th>
+                <th class="table-th-lightgrey">DESC</th>
+                <th class="table-th-lightgrey">RETURN_1</th>
+                <th class="table-th-lightgrey">RETURN_2</th>
+                <th class="table-th-lightgrey">RETURN_3</th>
+                <th class="table-th-lightgrey">PRINT_SLIP</th>
+            </tr>
+        </thead>
+        <tbody class="table-body-bordered">
+            {{#each data}}
+            <tr>
+                <td class="text-left">{{formatThaiDate createdDate}}</td>
+                <td class="text-center">{{type}}</td>
+                <td class="text-center">{{checkEmpty csMethod}}</td>
+                <td class="text-center">{{checkEmpty TX_ID}}</td>
+                <td class="text-center">{{checkEmpty LOG_ID}}</td>
+                <td class="text-center">{{checkEmpty VENDOR_ID}}</td>
+                <td class="text-center">{{checkEmpty SERVICE_ID}}</td>
+                <td class="text-center">{{checkEmpty METHOD}}</td>
+                <td class="text-center">{{checkEmpty COUNTER_NO}}</td>
+                <td class="text-center">{{checkEmpty TERM_NO}}</td>
+                <td class="text-center">{{checkEmpty POS_TAX_ID}}</td>
+                <td class="text-center">{{checkEmpty SERVICE_RUN_NO}}</td>
+                <td class="text-center">{{checkEmpty RECORD_STATUS}}</td>
+                <td class="text-center">{{checkEmpty CLIENT_SERVICE_RUNNO}}</td>
+                <td class="text-center">{{currency AMOUNT_RECEIVED true}}</td>
+                <td class="text-center">{{currency VAT_AMOUNT true}}</td>
+                <td class="text-center">{{checkEmpty BILL_TYPE}}</td>
+                <td class="text-center">{{checkEmpty REFERENCE_1}}</td>
+                <td class="text-center">{{checkEmpty REFERENCE_2}}</td>
+                <td class="text-center">{{checkEmpty REFERENCE_3}}</td>
+                <td class="text-center">{{checkEmpty REFERENCE_4}}</td>
+                <td class="text-center">{{checkEmpty CUSTOMER_NAME}}</td>
+                <td class="text-center">{{checkEmpty CUSTOMER_ADDR_1}}</td>
+                <td class="text-center">{{checkEmpty CUSTOMER_ADDR_2}}</td>
+                <td class="text-center">{{checkEmpty CUSTOMER_ADDR_3}}</td>
+                <td class="text-center">{{checkEmpty CUSTOMER_TEL_NO}}</td>
+                <td class="text-center">{{checkEmpty ZONE}}</td>
+                <td class="text-center">{{checkEmpty R_SERVICE_RUNNO}}</td>
+                <td class="text-center">{{checkEmpty CANCEL_OPERATING}}</td>
+                <td class="text-center">{{checkEmpty OPERATE_BY_STAFF}}</td>
+                <td class="text-center">{{formatThaiDate SYSTEM_DATE_TIME}}</td>
+                <td class="text-center">{{checkEmpty SUCCESS}}</td>
+                <td class="text-center">{{checkEmpty CODE}}</td>
+                <td class="text-center">{{checkEmpty DESC}}</td>
+                <td class="text-center">{{currency RETURN1 true}}</td>
+                <td class="text-center">{{currency RETURN2 true}}</td>
+                <td class="text-center">{{currency RETURN3 true}}</td>
+                <td class="text-center">{{checkEmpty PRINT_SLIP}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</body>
+
+</html>

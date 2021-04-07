@@ -1,0 +1,40 @@
+{
+    "folder": {
+        "shortid": "DhYcEel"
+    },
+    "shortid": "SJxkInQfHS",
+    "name": "personal-money-receipt",
+    "recipe": "chrome-pdf",
+    "engine": "handlebars",
+    "chrome": {
+        "printBackground": true,
+        "format": "A4",
+        "width": "21cm",
+        "height": "29.7cm",
+        "marginTop": "2.7cm",
+        "marginRight": "2.5cm",
+        "marginBottom": "2.7cm",
+        "marginLeft": "4.5cm"
+    },
+    "data": {
+        "shortid": "Bye9RRNGSH"
+    },
+    "creationDate": "2019-08-27T05:14:21.789Z",
+    "modificationDate": {
+        "$$date": 1606458063279
+    },
+    "_id": "GTilVSa7pWZE6rJp",
+    "$entitySet": "templates",
+    "pdfOperations": [
+        {
+            "type": "append",
+            "templateShortid": "r1e8aFaPXL"
+        },
+        {
+            "type": "merge",
+            "templateShortid": "BygfTuWYcv",
+            "renderForEveryPage": true,
+            "mergeWholeDocument": false
+        }
+    ]
+}

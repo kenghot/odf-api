@@ -1,0 +1,39 @@
+{
+    "title1": "รายงานการยกเลิกการชำระเงินผ่านเคาเตอร์เซอร์วิส",
+    "title2": "บัญชีลูกหนี้ของ พมจ. กรุงเทพมหานคร",
+    "paymentTime": "เวลาที่ชำระ ประจำเดือน พฤศจิกายน",
+    "data": [
+        {
+            "paidDate": "2019-11-14T17:00:00.000Z",
+            "counterNo": "06087",
+            "termNo": "2",
+            "serviceRunNo": "073049",
+            "amount": "-20",
+            "reference1": "3101701609448",
+            "reference2": "00140844",
+            "name": "นาย สุทิน เลขมาศ",
+            "fiscalYear": "2562",
+            "documentNumber": "กท/2562/1088",
+            "orgName": "พมจ. กรุงเทพมหานคร",
+            "orgCode": "10",
+            "addressProvince": "กรุงเทพมหานคร",
+            "paymentAreaType": "นครหลวง"
+        },
+        {
+            "paidDate": "2019-11-26T17:00:00.000Z",
+            "counterNo": "05311",
+            "termNo": "2",
+            "serviceRunNo": "129370",
+            "amount": "-20",
+            "reference1": "3342000033883",
+            "reference2": "00134153",
+            "name": "นางสาว ทิพวรรณ อ้วนผิว",
+            "fiscalYear": "2562",
+            "documentNumber": "กท/2562/0302",
+            "orgName": "พมจ. กรุงเทพมหานคร",
+            "orgCode": "10",
+            "addressProvince": "กรุงเทพมหานคร",
+            "paymentAreaType": "นครหลวง"
+        }
+    ]
+}

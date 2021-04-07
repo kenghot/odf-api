@@ -1,0 +1,36 @@
+{
+    "name": "personal-guarantee",
+    "recipe": "chrome-pdf",
+    "shortid": "SJlXY_CBZS",
+    "engine": "handlebars",
+    "chrome": {
+        "printBackground": true,
+        "marginTop": "2.7cm",
+        "marginRight": "2.5cm",
+        "marginBottom": "2.7cm",
+        "marginLeft": "4.5cm",
+        "format": "A4",
+        "width": "21cm",
+        "height": "29.7cm"
+    },
+    "creationDate": "2019-07-12T09:53:40.790Z",
+    "modificationDate": {
+        "$$date": 1593689870954
+    },
+    "pdfOperations": [
+        {
+            "type": "merge",
+            "templateShortid": "Bye_Jd2sAN",
+            "mergeWholeDocument": true,
+            "renderForEveryPage": false
+        }
+    ],
+    "data": {
+        "shortid": "Bkg4RbkM-S"
+    },
+    "_id": "DWwdowawidrt279J",
+    "$entitySet": "templates",
+    "folder": {
+        "shortid": "DhYcEel"
+    }
+}

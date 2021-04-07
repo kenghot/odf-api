@@ -1,0 +1,216 @@
+{{#xlsxReplace "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row[0].c[0]"}}
+    <c t="inlineStr" s="3"><is><t>{{checkEmpty title1}}</t></is></c>
+{{/xlsxReplace}}
+{{#xlsxReplace "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row[1].c[0]"}}
+    <c t="inlineStr" s="3"><is><t>{{checkEmpty title2}}</t></is></c>
+{{/xlsxReplace}}
+{{#xlsxReplace "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row[2].c[0]"}}
+    <c t="inlineStr" s="3"><is><t>{{reportDataDate}}</t></is></c>
+{{/xlsxReplace}}
+
+{{#xlsxReplace "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row[3].c[2]"}}
+        <c t="inlineStr" s="5"><is><t>จ่ายชำระหนี้ในปีงบประมาณ {{fiscalYear}}</t></is></c>
+{{/xlsxReplace}}
+
+{{#each data}}
+    {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+    {{calculateSummaryRow @root.data @index}}
+    <row>
+        <c t="inlineStr"><is><t>{{renderRegionText @root.data @index}}</t></is></c>
+        {{!-- <c t="inlineStr"><is><t>{{renderFirstProvinceText @root.data @index}}</t></is></c> --}}
+        <c t="inlineStr"><is><t>{{renderFirstOrgNameText @root.data @index}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidOctoberOFFICE true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidOctoberKTB true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidOctoberCS true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidOctoberSYSTEM true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidOctober true}}</t></is></c>
+
+
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidNovemberOFFICE true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidNovemberKTB true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidNovemberCS true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidNovemberSYSTEM true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidNovember true}}</t></is></c>
+
+
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidDecemberOFFICE true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidDecemberKTB true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidDecemberCS true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidDecemberSYSTEM true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidDecember true}}</t></is></c>
+
+
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidJanuaryOFFICE true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidJanuaryKTB true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidJanuaryCS true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidJanuarySYSTEM true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidJanuary true}}</t></is></c>
+
+
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidFebruaryOFFICE true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidFebruaryKTB true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidFebruaryCS true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidFebruarySYSTEM true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidFebruary true}}</t></is></c>
+
+
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidMarchOFFICE true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidMarchKTB true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidMarchCS true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidMarchSYSTEM true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidMarch true}}</t></is></c>
+
+
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidAprilOFFICE true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidAprilKTB true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidAprilCS true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidAprilSYSTEM true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidApril true}}</t></is></c>
+
+
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidMayOFFICE true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidMayKTB true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidMayCS true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidMaySYSTEM true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidMay true}}</t></is></c>
+
+
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidJuneOFFICE true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidJuneKTB true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidJuneCS true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidJuneSYSTEM true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidJune true}}</t></is></c>
+
+
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidJulyOFFICE true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidJulyKTB true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidJulyCS true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidJulySYSTEM true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidJuly true}}</t></is></c>
+
+
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidAugustOFFICE true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidAugustKTB true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidAugustCS true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidAugustSYSTEM true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidAugust true}}</t></is></c>
+
+
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidSeptemberOFFICE true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidSeptemberKTB true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidSeptemberCS true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidSeptemberSYSTEM true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidSeptember true}}</t></is></c>
+
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidAllMonthOFFICE true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidAllMonthKTB true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidAllMonthCS true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidAllMonthSYSTEM true}}</t></is></c>
+
+
+        <c t="n" s="{{@root.$removedItem.c.[0].$.s}}"><v>{{totalPaidAllMonth }}</v></c>        
+    </row>    
+    {{/xlsxAdd}}
+{{/each}}
+
+{{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+    <row>
+        <c t="inlineStr"><is><t></t></is></c>
+        <c t="inlineStr"><is><t>รวม</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidOctoberOFFICE") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidOctoberKTB") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidOctoberCS") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidOctoberSYSTEM") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidOctober") true}}</t></is></c>
+
+
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidNovemberOFFICE") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidNovemberKTB") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidNovemberCS") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidNovemberSYSTEM") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidNovember") true}}</t></is></c>
+
+
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidDecemberOFFICE") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidDecemberKTB") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidDecemberCS") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidDecemberSYSTEM") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidDecember") true}}</t></is></c>
+
+
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidJanuaryOFFICE") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidJanuaryKTB") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidJanuaryCS") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidJanuarySYSTEM") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidJanuary") true}}</t></is></c>
+
+
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidFebruaryOFFICE") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidFebruaryKTB") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidFebruaryCS") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidFebruarySYSTEM") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidFebruary") true}}</t></is></c>
+
+
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidMarchOFFICE") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidMarchKTB") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidMarchCS") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidMarchSYSTEM") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidMarch") true}}</t></is></c>
+
+
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidAprilOFFICE") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidAprilKTB") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidAprilCS") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidAprilSYSTEM") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidApril") true}}</t></is></c>
+
+
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidMayOFFICE") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidMayKTB") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidMayCS") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidMaySYSTEM") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidMay") true}}</t></is></c>
+
+
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidJuneOFFICE") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidJuneKTB") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidJuneCS") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidJuneSYSTEM") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidJune") true}}</t></is></c>
+
+
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidJulyOFFICE") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidJulyKTB") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidJulyCS") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidJulySYSTEM") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidJuly") true}}</t></is></c>
+
+
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidAugustOFFICE") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidAugustKTB") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidAugustCS") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidAugustSYSTEM") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidAugust") true}}</t></is></c>
+
+
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidSeptemberOFFICE") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidSeptemberKTB") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidSeptemberCS") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidSeptemberSYSTEM") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidSeptember") true}}</t></is></c>
+
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidAllMonthOFFICE") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidAllMonthKTB") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidAllMonthCS") true}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidAllMonthSYSTEM") true}}</t></is></c>
+
+
+        {{!-- <c t="n" s="{{@root.$removedItem.c.[0].$.s}}"><v>{{currency (renderSummaryRow "totalPaidAllMonth") true }}</v></c>   --}}
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency (renderSummaryRow "totalPaidAllMonth") true }}</t></is></c>        
+
+    </row>    
+
+{{/xlsxAdd}}
+
+{{{xlsxPrint}}}

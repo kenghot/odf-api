@@ -1,0 +1,58 @@
+[
+    {
+        "key": 1,
+        "value": "1",
+        "label": "เช่า",
+        "require_info": true,
+        "info": "",
+        "info_subfix": "บาท/เดือน"
+    },
+    {
+        "key": 2,
+        "value": "2",
+        "label": "ผ่อน",
+        "require_info": true,
+        "info": "",
+        "info_subfix": "บาท/เดือน"
+    },
+    {
+        "key": 3,
+        "value": "3",
+        "label": "เป็นของตนเองปลอดภาระ",
+        "require_info": false,
+        "info": "",
+        "info_subfix": ""
+    },
+    {
+        "key": 4,
+        "value": "4",
+        "label": "เป็นของบุคคลอื่น",
+        "require_info": false,
+        "info": "",
+        "info_subfix": ""
+    },
+    {
+        "key": 5,
+        "value": "5",
+        "label": "อาศัยอยู่กับบุตรหลาน / ญาติ",
+        "require_info": false,
+        "info": "",
+        "info_subfix": ""
+    },
+    {
+        "key": 6,
+        "value": "6",
+        "label": "บ้านพักสวัสดิการ",
+        "require_info": false,
+        "info": "",
+        "info_subfix": ""
+    },
+    {
+        "key": 7,
+        "value": "7",
+        "label": "อื่นๆ(ระบุ)",
+        "require_info": true,
+        "info": "",
+        "info_subfix": ""
+    }
+]

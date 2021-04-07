@@ -1,0 +1,36 @@
+{
+    "name": "personal-visit-form-borrower",
+    "recipe": "chrome-pdf",
+    "shortid": "Hkl7g8ktUS",
+    "folder": {
+        "shortid": "DhYcEel"
+    },
+    "engine": "handlebars",
+    "chrome": {
+        "printBackground": true,
+        "format": "A4",
+        "width": "21cm",
+        "height": "29.7cm",
+        "marginTop": "2.7cm",
+        "marginRight": "2.5cm",
+        "marginBottom": "2.7cm",
+        "marginLeft": "4.5cm"
+    },
+    "data": {
+        "shortid": "Hkg8TTfRUS"
+    },
+    "creationDate": "2019-09-13T09:48:30.895Z",
+    "modificationDate": {
+        "$$date": 1585141486917
+    },
+    "_id": "fIwD18fNxXKX56P5",
+    "$entitySet": "templates",
+    "pdfOperations": [
+        {
+            "type": "merge",
+            "templateShortid": "Bye_Jd2sAN",
+            "mergeWholeDocument": true,
+            "renderForEveryPage": false
+        }
+    ]
+}

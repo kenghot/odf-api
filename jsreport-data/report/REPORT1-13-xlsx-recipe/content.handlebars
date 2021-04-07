@@ -1,0 +1,39 @@
+{{#xlsxReplace "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row[0].c[0]"}}
+    <c t="inlineStr" s="2"><is><t>{{checkEmpty title1}}</t></is></c>
+{{/xlsxReplace}}
+{{#xlsxReplace "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row[1].c[0]"}}
+    <c t="inlineStr" s="2"><is><t>{{checkEmpty title2}}</t></is></c>
+{{/xlsxReplace}}
+{{#xlsxReplace "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row[2].c[0]"}}
+    <c t="inlineStr" s="2"><is><t>ข้อมูล ณ วันที่ {{reportDataDate}}</t></is></c>
+{{/xlsxReplace}}
+
+
+{{#each data}}
+    {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+    <row>
+        <c t="inlineStr" s="1"><is><t>{{getOrderNumber @index}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty documentNumber}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty orgName}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty borrowerIdCardNo}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty borrowerFullName}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty borrowerAge}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty requestOccupation}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty borrowerScore}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty guarantorScore}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{qualification}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{factSheetComments}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{currency totalBudget true}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{currency requestBudget true}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{currency considerationBudget true}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty loanTimes}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty status}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty considerationResult}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{currency approveBudget true}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty resultComments}}</t></is></c>
+    </row>
+    
+    {{/xlsxAdd}}
+{{/each}}
+
+{{{xlsxPrint}}}

@@ -1,0 +1,206 @@
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        {#asset /asset/table-style.css @encoding=utf8}
+
+        @font-face {
+            font-family: 'THSarabunNew';
+            src: url({#asset /asset/THSarabunNew.ttf @encoding=dataURI});
+            format('truetype');
+        }
+
+        
+        .table-th-lightgrey {
+            background-color: #ebebeb;
+        }
+
+        .table-th-darkgrey {
+            background-color: #d9d9d9; 
+        }
+
+        .table-th-green {
+            background-color: #d1e6c9; 
+        }
+
+        .table-th-light-blue-1 {
+            background-color: #cfe2f3;
+        }
+
+        .table-th-light-blue-2 {
+            background-color: #9fc5e8;
+        }
+
+        .table-th-blue {
+            background-color: #6fa8dc;
+        }
+
+        .table-th-dark-blue-1 {
+            background-color: #3d85c6;
+        }
+
+        .table-th-dark-blue-2 {
+            background-color: #0b5394;
+        }
+
+        .table-th-light-yellow {
+            background-color: #fff2cc;
+        }
+
+        .table-th-yellow {
+            background-color: #ffd966;
+        }
+
+        .table-th-dark-yellow {
+            background-color: #f1c232;
+        }
+
+        .table-th-red {
+            background-color: #f0c0c1;
+        }
+
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="41">{{title1}}</th>
+            </tr>
+            <tr>
+                <th colspan="41">{{title2}}</th>
+            </tr>
+            <tr>
+                <th colspan="41">ข้อมูล ณ วันที่ {{reportDataDate}}</th>
+            </tr>
+        </thead>
+        <thead class="table-thread-bordered">
+            <tr>
+                <th class="table-th-lightgrey" rowspan="3">ที่</th>
+                <th class="table-th-lightgrey" rowspan="3">วันที่ยืนคำร้อง</th>
+                <th class="table-th-lightgrey" rowspan="3">วันที่สัมภาษณ์ (วันที่เยี่ยม)</th>
+                <th class="table-th-lightgrey" colspan="3">ข้อมูลผู้กู้</th>
+                <th class="table-th-lightgrey" rowspan="3">วัตถุประสงค์</th>
+                <th class="table-th-lightgrey" colspan="3">ข้อมูลผู้ค้ำฯ</th>
+                <th class="table-th-lightgrey border-bottom-0"></th>  
+                <th class="table-th-lightgrey border-bottom-0"></th>  
+                <th class="table-th-dark-yellow" colspan="14">คุณสมบัติ</th>
+                <th class="table-th-dark-blue-2" colspan="15">ผลการพิจารณา</th>
+            </tr>
+            <tr>
+                <th class="table-th-lightgrey" rowspan="2">เลขบัตรประชาชน</th>
+                <th class="table-th-lightgrey" rowspan="2">ชื่อ-สกุล</th>
+                <th class="table-th-lightgrey" rowspan="2">อายุ</th>
+                
+                <th class="table-th-lightgrey" rowspan="2">เลขบัตรประชาชน</th>
+                <th class="table-th-lightgrey" rowspan="2">ชื่อ-สกุล</th>
+                <th class="table-th-lightgrey" rowspan="2">อายุ</th>
+
+                <th class="table-th-lightgrey border-top-0 border-bottom-0">ประมาณ คชจ (บาท)</th> 
+                <th class="table-th-lightgrey border-top-0 border-bottom-0">วงเงินขอกู้ (บาท)</th>  
+                
+                <th class="table-th-light-yellow" colspan="6">ความจำเป็นและความสามารถของผู้กู้ฯ</th>
+                <th class="table-th-yellow" colspan="7">ความสามารถในการชำระคืน</th>
+                <th class="table-th-dark-yellow align-bottom border-bottom-0">ผลสอบคุณสมบัติ</th>
+
+                <th class="table-th-light-blue-1" colspan="2">ความเห็นเจ้าหน้าที่สอบข้อเท็จจริง</th>
+                <th class="table-th-light-blue-2" colspan="3">ความเห็นหัวหน้ากลุ่ม</th>
+                <th class="table-th-blue" colspan="5">มติคณะอนุกรรมการกลั่นกรองฯ</th>
+                <th class="table-th-dark-blue-1" colspan="5">มติคณะกรรมการบริหารกองทุนฯ</th>
+            </tr>
+            <tr>
+                <th class="table-th-lightgrey border-top-0"></th>  
+                <th class="table-th-lightgrey border-top-0"></th>  
+
+                <th class="table-th-light-yellow">ภาระ ดำรงชีพ (10)</th>
+                <th class="table-th-light-yellow">หนี้สิน (10)</th>
+                <th class="table-th-light-yellow">สภาพร่างกาย (25)</th>
+                <th class="table-th-light-yellow">ทักษะประกอบอาชีพ (30)</th>
+                <th class="table-th-light-yellow">ปัจจัยสนับสนุน(20)</th>
+                <th class="table-th-light-yellow">รวม (100)</th>
+
+                <th class="table-th-yellow">อาชีพผู้ค้ำ (30)</th>
+                <th class="table-th-yellow">รายได้ผู้ค้ำ (30)</th>
+                <th class="table-th-yellow">หนี้สินผู้ค้ำ (10)</th>
+                <th class="table-th-yellow">ที่อยู่ผู้ค้ำ (20)</th>
+                <th class="table-th-yellow">อายุผู้ค้ำ (5)</th>
+                <th class="table-th-yellow">ความสัมพันธ์ผู้ค้ำ (5)</th>
+                <th class="table-th-yellow">รวม (100)</th>
+
+                <th class="table-th-dark-yellow border-top-0"></th>
+
+                <th class="table-th-light-blue-1">ผลการพิจารณา</th>
+                <th class="table-th-light-blue-1">หมายเหตุ</th>
+                <th class="table-th-light-blue-2">ผลการพิจารณา</th>
+                <th class="table-th-light-blue-2">วงเงินอนุมัติ</th>
+                <th class="table-th-light-blue-2">หมายเหตุ</th>
+
+                <th class="table-th-blue">วันที่ประชุม</th>
+                <th class="table-th-blue">ครั้งที่ประชุม</th>
+                <th class="table-th-blue">ผลการพิจารณา</th>
+                <th class="table-th-blue">วงเงินอนุมัติ</th>
+                <th class="table-th-blue">หมายเหตุ</th>
+
+                <th class="table-th-dark-blue-1">วันที่ประชุม</th>
+                <th class="table-th-dark-blue-1">ครั้งที่ประชุม</th>
+                <th class="table-th-dark-blue-1">ผลการพิจารณา</th>
+                <th class="table-th-dark-blue-1">วงเงินอนุมัติ</th>
+                <th class="table-th-dark-blue-1">หมายเหตุ</th>
+            </tr>
+        </thead>
+        <tbody class="table-body-bordered">
+            {{#each data}}
+            {{setFactSheetItems faceSheetItems}}
+
+            <tr>
+                <td class="text-right">{{getOrderNumber @index}}</td>
+                <td>{{formatThaiDate documentDate}}</td>
+                <td>{{formatThaiDate interviewDate}}</td>
+                <td class="text-right">{{checkEmpty borrowerIdCardNo}}</td>
+                <td>{{checkEmpty borrowerFullName}}</td>
+                <td class="text-right">{{checkEmpty borrowerAge}}</td>
+                <td>{{checkEmpty requestOccupation}}</td>
+                <td class="text-right">{{checkEmpty guarantorIdCardNo}}</td>
+                <td>{{checkEmpty guarantorFullName}}</td>
+                <td class="text-right">{{checkEmpty guarantorAge}}</td>
+                <td class="text-right">{{currency totalBudget true}}</td>
+                <td class="text-right">{{currency requestBudget true}}</td>
+                <td class="text-center">{{checkEmpty (renderPropertiesGroup 0 0)}}</td>
+                <td class="text-center">{{checkEmpty (renderPropertiesGroup 0 1)}}</td>
+                <td class="text-center">{{checkEmpty (renderPropertiesGroup 0 2)}}</td>
+                <td class="text-center">{{checkEmpty (renderPropertiesGroup 0 3)}}</td>
+                <td class="text-center">{{checkEmpty (renderPropertiesGroup 0 4)}}</td>
+                <td class="text-center">{{checkEmpty factSheetBorrowerScore}}</td>
+                <td class="text-center">{{checkEmpty (renderPropertiesGroup 1 0)}}</td>
+                <td class="text-center">{{checkEmpty (renderPropertiesGroup 1 1)}}</td>
+                <td class="text-center">{{checkEmpty (renderPropertiesGroup 1 2)}}</td>
+                <td class="text-center">{{checkEmpty (renderPropertiesGroup 1 3)}}</td>
+                <td class="text-center">{{checkEmpty (renderPropertiesGroup 1 4)}}</td>
+                <td class="text-center">{{checkEmpty (renderPropertiesGroup 1 5)}}</td>
+                <td class="text-center">{{checkEmpty factSheetGuarantorScore}}</td>
+                <td class="text-center">{{checkEmpty qualification}}</td>
+                <td>{{checkEmpty factSheetResult}}</td>
+                <td>{{checkEmpty faceSheetComments}}</td>
+                <td>{{checkEmpty result1Result}}</td>
+                <td class="text-right">{{currency result1ApproveBudget true}}</td>
+                <td>{{checkEmpty result1Comments}}</td>
+                <td>{{formatThaiDate result2MeetingDate}}</td>
+                <td class="text-center">{{checkEmpty result2MeetingNumber}}</td>
+                <td>{{checkEmpty result2Result}}</td>
+                <td class="text-right">{{currency result2ApproveBudget true}}</td>
+                <td>{{checkEmpty result2Comments}}</td>
+                <td>{{formatThaiDate result3MeetingDate}}</td>
+                <td>{{checkEmpty result3MeetingNumber}}</td>
+                <td>{{checkEmpty result3Result}}</td>
+                <td class="text-right">{{currency result3ApproveBudget true}}</td>
+                <td>{{checkEmpty result3Comments}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+{
+    "name": "DebtReport7-template",
+    "creationDate": {
+        "$$date": 1603263673443
+    },
+    "modificationDate": {
+        "$$date": 1603263683750
+    },
+    "shortid": "BzyoW4U",
+    "_id": "xIKbe7rg2CdQ6LiR",
+    "$entitySet": "xlsxTemplates",
+    "folder": {
+        "shortid": "Mb34RQ9"
+    }
+}

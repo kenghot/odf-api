@@ -1,0 +1,16 @@
+{
+    "name": "personal-debt-acknowledge-form-data",
+    "shortid": "ryeb2yz0IS",
+    "folder": {
+        "shortid": "Xc3sVs8"
+    },
+    "creationDate": "2019-09-17T07:47:54.254Z",
+    "modificationDate": {
+        "$$date": 1576058160886
+    },
+    "_id": "oHBJfrAd3mmXpIHk",
+    "$entitySet": "data",
+    "entitySet": "data",
+    "type": "entity",
+    "key": "oHBJfrAd3mmXpIHk"
+}

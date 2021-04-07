@@ -1,0 +1,4644 @@
+%YAML 1.1
+---
+# odf.location_districts
+-
+  refCode: 1001
+  thName: "พระนคร"
+  enName: "Phra Nakhon"
+  province: 10
+-
+  refCode: 1002
+  thName: "ดุสิต"
+  enName: "Dusit"
+  province: 10
+-
+  refCode: 1003
+  thName: "หนองจอก"
+  enName: "Nong Chok"
+  province: 10
+-
+  refCode: 1004
+  thName: "บางรัก"
+  enName: "Bang Rak"
+  province: 10
+-
+  refCode: 1005
+  thName: "บางเขน"
+  enName: "Bang Khen"
+  province: 10
+-
+  refCode: 1006
+  thName: "บางกะปิ"
+  enName: "Bang Kapi"
+  province: 10
+-
+  refCode: 1007
+  thName: "ปทุมวัน"
+  enName: "Pathum Wan"
+  province: 10
+-
+  refCode: 1008
+  thName: "ป้อมปราบศัตรูพ่าย"
+  enName: "Pom Prap Sattruphai"
+  province: 10
+-
+  refCode: 1009
+  thName: "พระโขนง"
+  enName: "Phra Khanong"
+  province: 10
+-
+  refCode: 1010
+  thName: "มีนบุรี"
+  enName: "Min Buri"
+  province: 10
+-
+  refCode: 1011
+  thName: "ลาดกระบัง"
+  enName: "Lat Krabang"
+  province: 10
+-
+  refCode: 1012
+  thName: "ยานนาวา"
+  enName: "Yannawa"
+  province: 10
+-
+  refCode: 1013
+  thName: "สัมพันธวงศ์"
+  enName: "Samphanthawong"
+  province: 10
+-
+  refCode: 1014
+  thName: "พญาไท"
+  enName: "Phaya Thai"
+  province: 10
+-
+  refCode: 1015
+  thName: "ธนบุรี"
+  enName: "Thon Buri"
+  province: 10
+-
+  refCode: 1016
+  thName: "บางกอกใหญ่"
+  enName: "Bangkok Yai"
+  province: 10
+-
+  refCode: 1017
+  thName: "ห้วยขวาง"
+  enName: "Huai Khwang"
+  province: 10
+-
+  refCode: 1018
+  thName: "คลองสาน"
+  enName: "Khlong San"
+  province: 10
+-
+  refCode: 1019
+  thName: "ตลิ่งชัน"
+  enName: "Taling Chan"
+  province: 10
+-
+  refCode: 1020
+  thName: "บางกอกน้อย"
+  enName: "Bangkok Noi"
+  province: 10
+-
+  refCode: 1021
+  thName: "บางขุนเทียน"
+  enName: "Bang Khun Thian"
+  province: 10
+-
+  refCode: 1022
+  thName: "ภาษีเจริญ"
+  enName: "Phasi Charoen"
+  province: 10
+-
+  refCode: 1023
+  thName: "หนองแขม"
+  enName: "Nong Khaem"
+  province: 10
+-
+  refCode: 1024
+  thName: "ราษฎร์บูรณะ"
+  enName: "Rat Burana"
+  province: 10
+-
+  refCode: 1025
+  thName: "บางพลัด"
+  enName: "Bang Phlat"
+  province: 10
+-
+  refCode: 1026
+  thName: "ดินแดง"
+  enName: "Din Daeng"
+  province: 10
+-
+  refCode: 1027
+  thName: "บึงกุ่ม"
+  enName: "Bung Kum"
+  province: 10
+-
+  refCode: 1028
+  thName: "สาทร"
+  enName: "Sa Thon"
+  province: 10
+-
+  refCode: 1029
+  thName: "บางซื่อ"
+  enName: "Bang Su"
+  province: 10
+-
+  refCode: 1030
+  thName: "จตุจักร"
+  enName: "Chatuchak"
+  province: 10
+-
+  refCode: 1031
+  thName: "บางคอแหลม"
+  enName: "Bang Kho Laem"
+  province: 10
+-
+  refCode: 1032
+  thName: "ประเวศ"
+  enName: "Prawet"
+  province: 10
+-
+  refCode: 1033
+  thName: "คลองเตย"
+  enName: "Khlong Toei"
+  province: 10
+-
+  refCode: 1034
+  thName: "สวนหลวง"
+  enName: "Suan Luang"
+  province: 10
+-
+  refCode: 1035
+  thName: "จอมทอง"
+  enName: "Chom Thong"
+  province: 10
+-
+  refCode: 1036
+  thName: "ดอนเมือง"
+  enName: "Don Mueang"
+  province: 10
+-
+  refCode: 1037
+  thName: "ราชเทวี"
+  enName: "Rat Thewi"
+  province: 10
+-
+  refCode: 1038
+  thName: "ลาดพร้าว"
+  enName: "Lat Phrao"
+  province: 10
+-
+  refCode: 1039
+  thName: "วัฒนา"
+  enName: "Watthana"
+  province: 10
+-
+  refCode: 1040
+  thName: "บางแค"
+  enName: "Bang Khae"
+  province: 10
+-
+  refCode: 1041
+  thName: "หลักสี่"
+  enName: "Lak Si"
+  province: 10
+-
+  refCode: 1042
+  thName: "สายไหม"
+  enName: "Sai Mai"
+  province: 10
+-
+  refCode: 1043
+  thName: "คันนายาว"
+  enName: "Khanna Yao"
+  province: 10
+-
+  refCode: 1044
+  thName: "สะพานสูง"
+  enName: "Saphan Sung"
+  province: 10
+-
+  refCode: 1045
+  thName: "วังทองหลาง"
+  enName: "Wang Thong Lang"
+  province: 10
+-
+  refCode: 1046
+  thName: "คลองสามวา"
+  enName: "Khlong Sam Wa"
+  province: 10
+-
+  refCode: 1047
+  thName: "บางนา"
+  enName: "Bang Na"
+  province: 10
+-
+  refCode: 1048
+  thName: "ทวีวัฒนา"
+  enName: "Thawi Watthana"
+  province: 10
+-
+  refCode: 1049
+  thName: "ทุ่งครุ"
+  enName: "Thung Khu"
+  province: 10
+-
+  refCode: 1050
+  thName: "บางบอน"
+  enName: "Bang Bon"
+  province: 10
+-
+  refCode: 1101
+  thName: "เมืองสมุทรปราการ"
+  enName: "Mueang Samut Prakan"
+  province: 11
+-
+  refCode: 1102
+  thName: "บางบ่อ"
+  enName: "Bang Bo"
+  province: 11
+-
+  refCode: 1103
+  thName: "บางพลี"
+  enName: "Bang Phli"
+  province: 11
+-
+  refCode: 1104
+  thName: "พระประแดง"
+  enName: "Phra Pradaeng"
+  province: 11
+-
+  refCode: 1105
+  thName: "พระสมุทรเจดีย์"
+  enName: "Phra Samut Chedi"
+  province: 11
+-
+  refCode: 1106
+  thName: "บางเสาธง"
+  enName: "Bang Sao Thong"
+  province: 11
+-
+  refCode: 1201
+  thName: "เมืองนนทบุรี"
+  enName: "Mueang Nonthaburi"
+  province: 12
+-
+  refCode: 1202
+  thName: "บางกรวย"
+  enName: "Bang Kruai"
+  province: 12
+-
+  refCode: 1203
+  thName: "บางใหญ่"
+  enName: "Bang Yai"
+  province: 12
+-
+  refCode: 1204
+  thName: "บางบัวทอง"
+  enName: "Bang Bua Thong"
+  province: 12
+-
+  refCode: 1205
+  thName: "ไทรน้อย"
+  enName: "Sai Noi"
+  province: 12
+-
+  refCode: 1206
+  thName: "ปากเกร็ด"
+  enName: "Pak Kret"
+  province: 12
+-
+  refCode: 1301
+  thName: "เมืองปทุมธานี"
+  enName: "Mueang Pathum Thani"
+  province: 13
+-
+  refCode: 1302
+  thName: "คลองหลวง"
+  enName: "khlong Luang"
+  province: 13
+-
+  refCode: 1303
+  thName: "ธัญบุรี"
+  enName: "Thanyaburi"
+  province: 13
+-
+  refCode: 1304
+  thName: "หนองเสือ"
+  enName: "Nong Suea"
+  province: 13
+-
+  refCode: 1305
+  thName: "ลาดหลุมแก้ว"
+  enName: "Lat Lum Kaeo"
+  province: 13
+-
+  refCode: 1306
+  thName: "ลำลูกกา"
+  enName: "Lam Luk Ka"
+  province: 13
+-
+  refCode: 1307
+  thName: "สามโคก"
+  enName: "Sam Khok"
+  province: 13
+-
+  refCode: 1401
+  thName: "พระนครศรีอยุธยา"
+  enName: "Phra Nakhon Si Ayutthaya"
+  province: 14
+-
+  refCode: 1402
+  thName: "ท่าเรือ"
+  enName: "Tha Ruea"
+  province: 14
+-
+  refCode: 1403
+  thName: "นครหลวง"
+  enName: "Nakhon Luang"
+  province: 14
+-
+  refCode: 1404
+  thName: "บางไทร"
+  enName: "Bang Sai"
+  province: 14
+-
+  refCode: 1405
+  thName: "บางบาล"
+  enName: "Bang Ban"
+  province: 14
+-
+  refCode: 1406
+  thName: "บางปะอิน"
+  enName: "Bang Pa-in"
+  province: 14
+-
+  refCode: 1407
+  thName: "บางปะหัน"
+  enName: "Bang Pahan"
+  province: 14
+-
+  refCode: 1408
+  thName: "ผักไห่"
+  enName: "Phak Hai"
+  province: 14
+-
+  refCode: 1409
+  thName: "ภาชี"
+  enName: "Phachi"
+  province: 14
+-
+  refCode: 1410
+  thName: "ลาดบัวหลวง"
+  enName: "Lat Bua Luang"
+  province: 14
+-
+  refCode: 1411
+  thName: "วังน้อย"
+  enName: "Wang Noi"
+  province: 14
+-
+  refCode: 1412
+  thName: "เสนา"
+  enName: "Sena"
+  province: 14
+-
+  refCode: 1413
+  thName: "บางซ้าย"
+  enName: "Bang Sai"
+  province: 14
+-
+  refCode: 1414
+  thName: "อุทัย"
+  enName: "Uthai"
+  province: 14
+-
+  refCode: 1415
+  thName: "มหาราช"
+  enName: "Maha Rat"
+  province: 14
+-
+  refCode: 1416
+  thName: "บ้านแพรก"
+  enName: "Ban Phraek"
+  province: 14
+-
+  refCode: 1501
+  thName: "เมืองอ่างทอง"
+  enName: "Mueang Ang Thong"
+  province: 15
+-
+  refCode: 1502
+  thName: "ไชโย"
+  enName: "Chaiyo"
+  province: 15
+-
+  refCode: 1503
+  thName: "ป่าโมก"
+  enName: "Pa Mok"
+  province: 15
+-
+  refCode: 1504
+  thName: "โพธิ์ทอง"
+  enName: "Pho Thong"
+  province: 15
+-
+  refCode: 1505
+  thName: "แสวงหา"
+  enName: "Sawaeng Ha"
+  province: 15
+-
+  refCode: 1506
+  thName: "วิเศษชัยชาญ"
+  enName: "Wiset Chai Chan"
+  province: 15
+-
+  refCode: 1507
+  thName: "สามโก้"
+  enName: "Samko"
+  province: 15
+-
+  refCode: 1601
+  thName: "เมืองลพบุรี"
+  enName: "Mueang Lop Buri"
+  province: 16
+-
+  refCode: 1602
+  thName: "พัฒนานิคม"
+  enName: "Phatthana Nikhom"
+  province: 16
+-
+  refCode: 1603
+  thName: "โคกสำโรง"
+  enName: "Khok Samrong"
+  province: 16
+-
+  refCode: 1604
+  thName: "ชัยบาดาล"
+  enName: "Chai Badan"
+  province: 16
+-
+  refCode: 1605
+  thName: "ท่าวุ้ง"
+  enName: "Tha Wung"
+  province: 16
+-
+  refCode: 1606
+  thName: "บ้านหมี่"
+  enName: "Ban Mi"
+  province: 16
+-
+  refCode: 1607
+  thName: "ท่าหลวง"
+  enName: "Tha Luang"
+  province: 16
+-
+  refCode: 1608
+  thName: "สระโบสถ์"
+  enName: "Sa Bot"
+  province: 16
+-
+  refCode: 1609
+  thName: "โคกเจริญ"
+  enName: "Khok Charoen"
+  province: 16
+-
+  refCode: 1610
+  thName: "ลำสนธิ"
+  enName: "Lam Sonthi"
+  province: 16
+-
+  refCode: 1611
+  thName: "หนองม่วง"
+  enName: "Nong Muang"
+  province: 16
+-
+  refCode: 1701
+  thName: "เมืองสิงห์บุรี"
+  enName: "Mueang Sing Buri"
+  province: 17
+-
+  refCode: 1702
+  thName: "บางระจัน"
+  enName: "Bang Rachan"
+  province: 17
+-
+  refCode: 1703
+  thName: "ค่ายบางระจัน"
+  enName: "Khai Bang Rachan"
+  province: 17
+-
+  refCode: 1704
+  thName: "พรหมบุรี"
+  enName: "Phrom Buri"
+  province: 17
+-
+  refCode: 1705
+  thName: "ท่าช้าง"
+  enName: "Tha Chang"
+  province: 17
+-
+  refCode: 1706
+  thName: "อินทร์บุรี"
+  enName: "In Buri"
+  province: 17
+-
+  refCode: 1801
+  thName: "เมืองชัยนาท"
+  enName: "Mueang Chai Nat"
+  province: 18
+-
+  refCode: 1802
+  thName: "มโนรมย์"
+  enName: "Manorom"
+  province: 18
+-
+  refCode: 1803
+  thName: "วัดสิงห์"
+  enName: "Wat Sing"
+  province: 18
+-
+  refCode: 1804
+  thName: "สรรพยา"
+  enName: "Sapphaya"
+  province: 18
+-
+  refCode: 1805
+  thName: "สรรคบุรี"
+  enName: "Sankhaburi"
+  province: 18
+-
+  refCode: 1806
+  thName: "หันคา"
+  enName: "Hankha"
+  province: 18
+-
+  refCode: 1807
+  thName: "หนองมะโมง"
+  enName: "Nong Mamong"
+  province: 18
+-
+  refCode: 1808
+  thName: "เนินขาม"
+  enName: "Noen Kham"
+  province: 18
+-
+  refCode: 1901
+  thName: "เมืองสระบุรี"
+  enName: "Mueang Saraburi"
+  province: 19
+-
+  refCode: 1902
+  thName: "แก่งคอย"
+  enName: "Kaeng Khoi"
+  province: 19
+-
+  refCode: 1903
+  thName: "หนองแค"
+  enName: "Nong Khae"
+  province: 19
+-
+  refCode: 1904
+  thName: "วิหารแดง"
+  enName: "Wihan Daeng"
+  province: 19
+-
+  refCode: 1905
+  thName: "หนองแซง"
+  enName: "Nong Saeng"
+  province: 19
+-
+  refCode: 1906
+  thName: "บ้านหมอ"
+  enName: "Ban Mo"
+  province: 19
+-
+  refCode: 1907
+  thName: "ดอนพุด"
+  enName: "Don Phut"
+  province: 19
+-
+  refCode: 1908
+  thName: "หนองโดน"
+  enName: "Nong Don"
+  province: 19
+-
+  refCode: 1909
+  thName: "พระพุทธบาท"
+  enName: "Phra Phutthabat"
+  province: 19
+-
+  refCode: 1910
+  thName: "เสาไห้"
+  enName: "Sao Hai"
+  province: 19
+-
+  refCode: 1911
+  thName: "มวกเหล็ก"
+  enName: "Muak Lek"
+  province: 19
+-
+  refCode: 1912
+  thName: "วังม่วง"
+  enName: "Wang Muang"
+  province: 19
+-
+  refCode: 1913
+  thName: "เฉลิมพระเกียรติ"
+  enName: "Chaloem Phra Kiet"
+  province: 19
+-
+  refCode: 2001
+  thName: "เมืองชลบุรี"
+  enName: "Mueang Chon Buri"
+  province: 20
+-
+  refCode: 2002
+  thName: "บ้านบึง"
+  enName: "Ban Bueng"
+  province: 20
+-
+  refCode: 2003
+  thName: "หนองใหญ่"
+  enName: "Nong Yai"
+  province: 20
+-
+  refCode: 2004
+  thName: "บางละมุง"
+  enName: "Bang Lamung"
+  province: 20
+-
+  refCode: 2005
+  thName: "พานทอง"
+  enName: "Phan Thong"
+  province: 20
+-
+  refCode: 2006
+  thName: "พนัสนิคม"
+  enName: "Phanat Nikhom"
+  province: 20
+-
+  refCode: 2007
+  thName: "ศรีราชา"
+  enName: "Si Racha"
+  province: 20
+-
+  refCode: 2008
+  thName: "เกาะสีชัง"
+  enName: "Ko Sichang"
+  province: 20
+-
+  refCode: 2009
+  thName: "สัตหีบ"
+  enName: "Sattahip"
+  province: 20
+-
+  refCode: 2010
+  thName: "บ่อทอง"
+  enName: "Bo Thong"
+  province: 20
+-
+  refCode: 2011
+  thName: "เกาะจันทร์"
+  enName: "Ko Chan"
+  province: 20
+-
+  refCode: 2101
+  thName: "เมืองระยอง"
+  enName: "Mueang Rayong"
+  province: 21
+-
+  refCode: 2102
+  thName: "บ้านฉาง"
+  enName: "Ban Chang"
+  province: 21
+-
+  refCode: 2103
+  thName: "แกลง"
+  enName: "Klaeng"
+  province: 21
+-
+  refCode: 2104
+  thName: "วังจันทร์"
+  enName: "Wang Chan"
+  province: 21
+-
+  refCode: 2105
+  thName: "บ้านค่าย"
+  enName: "Ban Khai"
+  province: 21
+-
+  refCode: 2106
+  thName: "ปลวกแดง"
+  enName: "Pluak Daeng"
+  province: 21
+-
+  refCode: 2107
+  thName: "เขาชะเมา"
+  enName: "Khao Chamao"
+  province: 21
+-
+  refCode: 2108
+  thName: "นิคมพัฒนา"
+  enName: "Nikhom Phatthana"
+  province: 21
+-
+  refCode: 2201
+  thName: "เมืองจันทบุรี"
+  enName: "Mueang Chanthaburi"
+  province: 22
+-
+  refCode: 2202
+  thName: "ขลุง"
+  enName: "Khlung"
+  province: 22
+-
+  refCode: 2203
+  thName: "ท่าใหม่"
+  enName: "Tha Mai"
+  province: 22
+-
+  refCode: 2204
+  thName: "โป่งน้ำร้อน"
+  enName: "Pong Nam Ron"
+  province: 22
+-
+  refCode: 2205
+  thName: "มะขาม"
+  enName: "Makham"
+  province: 22
+-
+  refCode: 2206
+  thName: "แหลมสิงห์"
+  enName: "Laem Sing"
+  province: 22
+-
+  refCode: 2207
+  thName: "สอยดาว"
+  enName: "Soi Dao"
+  province: 22
+-
+  refCode: 2208
+  thName: "แก่งหางแมว"
+  enName: "Kaeng Hang Maeo"
+  province: 22
+-
+  refCode: 2209
+  thName: "นายายอาม"
+  enName: "Na Yai Am"
+  province: 22
+-
+  refCode: 2210
+  thName: "เขาคิชฌกูฏ"
+  enName: "Khao Khitchakut"
+  province: 22
+-
+  refCode: 2301
+  thName: "เมืองตราด"
+  enName: "Mueang Trat"
+  province: 23
+-
+  refCode: 2302
+  thName: "คลองใหญ่"
+  enName: "Khlong Yai"
+  province: 23
+-
+  refCode: 2303
+  thName: "เขาสมิง"
+  enName: "Khao Saming"
+  province: 23
+-
+  refCode: 2304
+  thName: "บ่อไร่"
+  enName: "Bo Rai"
+  province: 23
+-
+  refCode: 2305
+  thName: "แหลมงอบ"
+  enName: "Laem Ngop"
+  province: 23
+-
+  refCode: 2306
+  thName: "เกาะกูด"
+  enName: "Ko Kut"
+  province: 23
+-
+  refCode: 2307
+  thName: "เกาะช้าง"
+  enName: "Ko Chang"
+  province: 23
+-
+  refCode: 2401
+  thName: "เมืองฉะเชิงเทรา"
+  enName: "Mueang Chachoengsao"
+  province: 24
+-
+  refCode: 2402
+  thName: "บางคล้า"
+  enName: "Bang Khla"
+  province: 24
+-
+  refCode: 2403
+  thName: "บางน้ำเปรี้ยว"
+  enName: "Bang Nam Priao"
+  province: 24
+-
+  refCode: 2404
+  thName: "บางปะกง"
+  enName: "Bang Pakong"
+  province: 24
+-
+  refCode: 2405
+  thName: "บ้านโพธิ์"
+  enName: "Ban Pho"
+  province: 24
+-
+  refCode: 2406
+  thName: "พนมสารคาม"
+  enName: "Phanom Sarakham"
+  province: 24
+-
+  refCode: 2407
+  thName: "ราชสาส์น"
+  enName: "Ratchasan"
+  province: 24
+-
+  refCode: 2408
+  thName: "สนามชัยเขต"
+  enName: "Sanam Chai Khet"
+  province: 24
+-
+  refCode: 2409
+  thName: "แปลงยาว"
+  enName: "Pleang Yao"
+  province: 24
+-
+  refCode: 2410
+  thName: "ท่าตะเกียบ"
+  enName: "Tha Takiap"
+  province: 24
+-
+  refCode: 2411
+  thName: "คลองเขื่อน"
+  enName: "Khlong Khuean"
+  province: 24
+-
+  refCode: 2501
+  thName: "เมืองปราจีนบุรี"
+  enName: "Mueang Prachin Buri"
+  province: 25
+-
+  refCode: 2502
+  thName: "กบินทร์บุรี"
+  enName: "Kabin Buri"
+  province: 25
+-
+  refCode: 2503
+  thName: "นาดี"
+  enName: "Na Di"
+  province: 25
+-
+  refCode: 2506
+  thName: "บ้านสร้าง"
+  enName: "Ban Sang"
+  province: 25
+-
+  refCode: 2507
+  thName: "ประจันตคาม"
+  enName: "Prachantakham"
+  province: 25
+-
+  refCode: 2508
+  thName: "ศรีมหาโพธิ"
+  enName: "Si Maha Phot"
+  province: 25
+-
+  refCode: 2509
+  thName: "ศรีมโหสถ"
+  enName: "Si Mahosot"
+  province: 25
+-
+  refCode: 2601
+  thName: "เมืองนครนายก"
+  enName: "Mueang Nakhon Nayok"
+  province: 26
+-
+  refCode: 2602
+  thName: "ปากพลี"
+  enName: "Pak Phli"
+  province: 26
+-
+  refCode: 2603
+  thName: "บ้านนา"
+  enName: "Ban Na"
+  province: 26
+-
+  refCode: 2604
+  thName: "องครักษ์"
+  enName: "Ongkharak"
+  province: 26
+-
+  refCode: 2701
+  thName: "เมืองสระแก้ว"
+  enName: "Mueang Sa Kaeo"
+  province: 27
+-
+  refCode: 2702
+  thName: "คลองหาด"
+  enName: "Khlong Hat"
+  province: 27
+-
+  refCode: 2703
+  thName: "ตาพระยา"
+  enName: "Ta Phraya"
+  province: 27
+-
+  refCode: 2704
+  thName: "วังน้ำเย็น"
+  enName: "Wang Nam Yen"
+  province: 27
+-
+  refCode: 2705
+  thName: "วัฒนานคร"
+  enName: "Watthana Nakhon"
+  province: 27
+-
+  refCode: 2706
+  thName: "อรัญประเทศ"
+  enName: "Aranyaprathet"
+  province: 27
+-
+  refCode: 2707
+  thName: "เขาฉกรรจ์"
+  enName: "Khao Chakan"
+  province: 27
+-
+  refCode: 2708
+  thName: "โคกสูง"
+  enName: "Khok Sung"
+  province: 27
+-
+  refCode: 2709
+  thName: "วังสมบูรณ์"
+  enName: "Wang Sombun"
+  province: 27
+-
+  refCode: 3001
+  thName: "เมืองนครราชสีมา"
+  enName: "Mueang Nakhon Ratchasima"
+  province: 30
+-
+  refCode: 3002
+  thName: "ครบุรี"
+  enName: "Khon Buri"
+  province: 30
+-
+  refCode: 3003
+  thName: "เสิงสาง"
+  enName: "Soeng Sang"
+  province: 30
+-
+  refCode: 3004
+  thName: "คง"
+  enName: "Khong"
+  province: 30
+-
+  refCode: 3005
+  thName: "บ้านเหลื่อม"
+  enName: "Ban Lueam"
+  province: 30
+-
+  refCode: 3006
+  thName: "จักราช"
+  enName: "Chakkarat"
+  province: 30
+-
+  refCode: 3007
+  thName: "โชคชัย"
+  enName: "Chok Chai"
+  province: 30
+-
+  refCode: 3008
+  thName: "ด่านขุนทด"
+  enName: "Dan Khun Thot"
+  province: 30
+-
+  refCode: 3009
+  thName: "โนนไทย"
+  enName: "Non Thai"
+  province: 30
+-
+  refCode: 3010
+  thName: "โนนสูง"
+  enName: "Non Sung"
+  province: 30
+-
+  refCode: 3011
+  thName: "ขามสะแกแสง"
+  enName: "Kham Sakaesaeng"
+  province: 30
+-
+  refCode: 3012
+  thName: "บัวใหญ่"
+  enName: "Bua Yai"
+  province: 30
+-
+  refCode: 3013
+  thName: "ประทาย"
+  enName: "Prathai"
+  province: 30
+-
+  refCode: 3014
+  thName: "ปักธงชัย"
+  enName: "Pak Thong Chai"
+  province: 30
+-
+  refCode: 3015
+  thName: "พิมาย"
+  enName: "Phimai"
+  province: 30
+-
+  refCode: 3016
+  thName: "ห้วยแถลง"
+  enName: "Huai Thalaeng"
+  province: 30
+-
+  refCode: 3017
+  thName: "ชุมพวง"
+  enName: "Chum Phuang"
+  province: 30
+-
+  refCode: 3018
+  thName: "สูงเนิน"
+  enName: "Sung Noen"
+  province: 30
+-
+  refCode: 3019
+  thName: "ขามทะเลสอ"
+  enName: "Kham Thale So"
+  province: 30
+-
+  refCode: 3020
+  thName: "สีคิ้ว"
+  enName: "Si Khio"
+  province: 30
+-
+  refCode: 3021
+  thName: "ปากช่อง"
+  enName: "Pak Chong"
+  province: 30
+-
+  refCode: 3022
+  thName: "หนองบุญมาก"
+  enName: "Nong Bunmak"
+  province: 30
+-
+  refCode: 3023
+  thName: "แก้งสนามนาง"
+  enName: "Kaeng Sanam Nang"
+  province: 30
+-
+  refCode: 3024
+  thName: "โนนแดง"
+  enName: "Non Daeng"
+  province: 30
+-
+  refCode: 3025
+  thName: "วังน้ำเขียว"
+  enName: "Wang Nam Khiao"
+  province: 30
+-
+  refCode: 3026
+  thName: "เทพารักษ์"
+  enName: "Thepharak"
+  province: 30
+-
+  refCode: 3027
+  thName: "เมืองยาง"
+  enName: "Mueang Yang"
+  province: 30
+-
+  refCode: 3028
+  thName: "พระทองคำ"
+  enName: "Phra Thong Kham"
+  province: 30
+-
+  refCode: 3029
+  thName: "ลำทะเมนชัย"
+  enName: "Lamtaman Chai"
+  province: 30
+-
+  refCode: 3030
+  thName: "บัวลาย"
+  enName: "Bua Lai"
+  province: 30
+-
+  refCode: 3031
+  thName: "สีดา"
+  enName: "Sida"
+  province: 30
+-
+  refCode: 3032
+  thName: "เฉลิมพระเกียรติ"
+  enName: "Chaloem Phra Kiet"
+  province: 30
+-
+  refCode: 3101
+  thName: "เมืองบุรีรัมย์"
+  enName: "Mueang Buri Ram"
+  province: 31
+-
+  refCode: 3102
+  thName: "คูเมือง"
+  enName: "Khu Mueang"
+  province: 31
+-
+  refCode: 3103
+  thName: "กระสัง"
+  enName: "Krasang"
+  province: 31
+-
+  refCode: 3104
+  thName: "นางรอง"
+  enName: "Nang Rong"
+  province: 31
+-
+  refCode: 3105
+  thName: "หนองกี่"
+  enName: "Nong Ki"
+  province: 31
+-
+  refCode: 3106
+  thName: "ละหานทราย"
+  enName: "Lahan Sai"
+  province: 31
+-
+  refCode: 3107
+  thName: "ประโคนชัย"
+  enName: "Prakhon Chai"
+  province: 31
+-
+  refCode: 3108
+  thName: "บ้านกรวด"
+  enName: "Ban Kruat"
+  province: 31
+-
+  refCode: 3109
+  thName: "พุทไธสง"
+  enName: "Phutthaisong"
+  province: 31
+-
+  refCode: 3110
+  thName: "ลำปลายมาศ"
+  enName: "Lam Plai Mat"
+  province: 31
+-
+  refCode: 3111
+  thName: "สตึก"
+  enName: "Satuek"
+  province: 31
+-
+  refCode: 3112
+  thName: "ปะคำ"
+  enName: "Pakham"
+  province: 31
+-
+  refCode: 3113
+  thName: "นาโพธิ์"
+  enName: "Na Pho"
+  province: 31
+-
+  refCode: 3114
+  thName: "หนองหงส์"
+  enName: "Nong Hong"
+  province: 31
+-
+  refCode: 3115
+  thName: "พลับพลาชัย"
+  enName: "Phlapphla Chai"
+  province: 31
+-
+  refCode: 3116
+  thName: "ห้วยราช"
+  enName: "Huai Rat"
+  province: 31
+-
+  refCode: 3117
+  thName: "โนนสุวรรณ"
+  enName: "Non Din Daeng"
+  province: 31
+-
+  refCode: 3118
+  thName: "ชำนิ"
+  enName: "Chamni"
+  province: 31
+-
+  refCode: 3119
+  thName: "บ้านใหม่ไชยพจน์"
+  enName: "Ban Mai Chaiyaphot"
+  province: 31
+-
+  refCode: 3120
+  thName: "โนนดินแดง"
+  enName: "Non Din Daeng"
+  province: 31
+-
+  refCode: 3121
+  thName: "บ้านด่าน"
+  enName: "Ban Dan"
+  province: 31
+-
+  refCode: 3122
+  thName: "แคนดง"
+  enName: "Khaen Dong"
+  province: 31
+-
+  refCode: 3123
+  thName: "เฉลิมพระเกียรติ"
+  enName: "Chaloem Phra Kiet"
+  province: 31
+-
+  refCode: 3201
+  thName: "เมืองสุรินทร์"
+  enName: "Mueang Surin"
+  province: 32
+-
+  refCode: 3202
+  thName: "ชุมพลบุรี"
+  enName: "Chumphon Buri"
+  province: 32
+-
+  refCode: 3203
+  thName: "ท่าตูม"
+  enName: "Tha Tum"
+  province: 32
+-
+  refCode: 3204
+  thName: "จอมพระ"
+  enName: "Chom Phra"
+  province: 32
+-
+  refCode: 3205
+  thName: "ปราสาท"
+  enName: "Prasat"
+  province: 32
+-
+  refCode: 3206
+  thName: "กาบเชิง"
+  enName: "Kap Choeng"
+  province: 32
+-
+  refCode: 3207
+  thName: "รัตนบุรี"
+  enName: "Rattanaburi"
+  province: 32
+-
+  refCode: 3208
+  thName: "สนม"
+  enName: "Sanom"
+  province: 32
+-
+  refCode: 3209
+  thName: "ศีขรภูมิ"
+  enName: "Sikhoraphum"
+  province: 32
+-
+  refCode: 3210
+  thName: "สังขะ"
+  enName: "Sangkha"
+  province: 32
+-
+  refCode: 3211
+  thName: "ลำดวน"
+  enName: "Lamduan"
+  province: 32
+-
+  refCode: 3212
+  thName: "สำโรงทาบ"
+  enName: "Samrong Thap"
+  province: 32
+-
+  refCode: 3213
+  thName: "บัวเชด"
+  enName: "Buachet"
+  province: 32
+-
+  refCode: 3214
+  thName: "พนมดงรัก"
+  enName: "Phanom Dong Rak"
+  province: 32
+-
+  refCode: 3215
+  thName: "ศรีณรงค์"
+  enName: "Si Narong"
+  province: 32
+-
+  refCode: 3216
+  thName: "เขวาสินรินทร์"
+  enName: "Khwao Sinarin"
+  province: 32
+-
+  refCode: 3217
+  thName: "โนนนารายณ์"
+  enName: "Non Narai"
+  province: 32
+-
+  refCode: 3301
+  thName: "เมืองศรีสะเกษ"
+  enName: "Mueang Si Sa Ket"
+  province: 33
+-
+  refCode: 3302
+  thName: "ยางชุมน้อย"
+  enName: "Yang Chum Noi"
+  province: 33
+-
+  refCode: 3303
+  thName: "กันทรารมย์"
+  enName: "Kanthararom"
+  province: 33
+-
+  refCode: 3304
+  thName: "กันทรลักษ์"
+  enName: "Kantharalak"
+  province: 33
+-
+  refCode: 3305
+  thName: "ขุขันธ์"
+  enName: "Khukhan"
+  province: 33
+-
+  refCode: 3306
+  thName: "ไพรบึง"
+  enName: "Phrai Bueng"
+  province: 33
+-
+  refCode: 3307
+  thName: "ปรางค์กู่"
+  enName: "Prang Ku"
+  province: 33
+-
+  refCode: 3308
+  thName: "ขุนหาญ"
+  enName: "Khun Han"
+  province: 33
+-
+  refCode: 3309
+  thName: "ราษีไศล"
+  enName: "Rasi Salai"
+  province: 33
+-
+  refCode: 3310
+  thName: "อุทุมพรพิสัย"
+  enName: "Uthumphon Phisai"
+  province: 33
+-
+  refCode: 3311
+  thName: "บึงบูรพ์"
+  enName: "Bueng Bun"
+  province: 33
+-
+  refCode: 3312
+  thName: "ห้วยทับทัน"
+  enName: "Huai Thap Than"
+  province: 33
+-
+  refCode: 3313
+  thName: "โนนคูณ"
+  enName: "Non Khun"
+  province: 33
+-
+  refCode: 3314
+  thName: "ศรีรัตนะ"
+  enName: "Si Rattana"
+  province: 33
+-
+  refCode: 3315
+  thName: "น้ำเกลี้ยง"
+  enName: "Nam Kliang"
+  province: 33
+-
+  refCode: 3316
+  thName: "วังหิน"
+  enName: "Wang Hin"
+  province: 33
+-
+  refCode: 3317
+  thName: "ภูสิงห์"
+  enName: "Phu Sing"
+  province: 33
+-
+  refCode: 3318
+  thName: "เมืองจันทร์"
+  enName: "Mueang Chan"
+  province: 33
+-
+  refCode: 3319
+  thName: "เบญจลักษ์"
+  enName: "Benchalak"
+  province: 33
+-
+  refCode: 3320
+  thName: "พยุห์"
+  enName: "Phayu"
+  province: 33
+-
+  refCode: 3321
+  thName: "โพธิ์ศรีสุวรรณ"
+  enName: "Pho Si Suwan"
+  province: 33
+-
+  refCode: 3322
+  thName: "ศิลาลาด"
+  enName: "Sila Lat"
+  province: 33
+-
+  refCode: 3401
+  thName: "เมืองอุบลราชธานี"
+  enName: "Mueang Ubon Ratchathani"
+  province: 34
+-
+  refCode: 3402
+  thName: "ศรีเมืองใหม่"
+  enName: "Si Mueang Mai"
+  province: 34
+-
+  refCode: 3403
+  thName: "โขงเจียม"
+  enName: "Khong Chiam"
+  province: 34
+-
+  refCode: 3404
+  thName: "เขื่องใน"
+  enName: "Khueang Nai"
+  province: 34
+-
+  refCode: 3405
+  thName: "เขมราฐ"
+  enName: "Khemarat"
+  province: 34
+-
+  refCode: 3407
+  thName: "เดชอุดม"
+  enName: "Det Udom"
+  province: 34
+-
+  refCode: 3408
+  thName: "นาจะหลวย"
+  enName: "Na Chaluai"
+  province: 34
+-
+  refCode: 3409
+  thName: "น้ำยืน"
+  enName: "Nam Yuen"
+  province: 34
+-
+  refCode: 3410
+  thName: "บุณฑริก"
+  enName: "Boontharik"
+  province: 34
+-
+  refCode: 3411
+  thName: "ตระการพืชผล"
+  enName: "Trakan Phuet Phon"
+  province: 34
+-
+  refCode: 3412
+  thName: "กุดข้าวปุ้น"
+  enName: "Kut Khaopun"
+  province: 34
+-
+  refCode: 3414
+  thName: "ม่วงสามสิบ"
+  enName: "Muang Sam Sip"
+  province: 34
+-
+  refCode: 3415
+  thName: "วารินชำราบ"
+  enName: "Warin Chamrap"
+  province: 34
+-
+  refCode: 3419
+  thName: "พิบูลมังสาหาร"
+  enName: "Phibun Mangsahan"
+  province: 34
+-
+  refCode: 3420
+  thName: "ตาลสุม"
+  enName: "Tan Sum"
+  province: 34
+-
+  refCode: 3421
+  thName: "โพธิ์ไทร"
+  enName: "Pho Sai"
+  province: 34
+-
+  refCode: 3422
+  thName: "สำโรง"
+  enName: "Samrong"
+  province: 34
+-
+  refCode: 3424
+  thName: "ดอนมดแดง"
+  enName: "Don Mot Daeng"
+  province: 34
+-
+  refCode: 3425
+  thName: "สิรินธร"
+  enName: "Sirindhorn"
+  province: 34
+-
+  refCode: 3426
+  thName: "ทุ่งศรีอุดม"
+  enName: "Thung Si Udom"
+  province: 34
+-
+  refCode: 3429
+  thName: "นาเยีย"
+  enName: "Na Yia"
+  province: 34
+-
+  refCode: 3430
+  thName: "นาตาล"
+  enName: "Na Tan"
+  province: 34
+-
+  refCode: 3431
+  thName: "เหล่าเสือโก้ก"
+  enName: "Lao Suea Kok"
+  province: 34
+-
+  refCode: 3432
+  thName: "สว่างวีระวงศ์"
+  enName: "Sawang Wirawong"
+  province: 34
+-
+  refCode: 3433
+  thName: "น้ำขุ่น"
+  enName: "Nam Khun"
+  province: 34
+-
+  refCode: 3501
+  thName: "เมืองยโสธร"
+  enName: "Mueang Yasothon"
+  province: 35
+-
+  refCode: 3502
+  thName: "ทรายมูล"
+  enName: "Sai Mun"
+  province: 35
+-
+  refCode: 3503
+  thName: "กุดชุม"
+  enName: "Kut Chum"
+  province: 35
+-
+  refCode: 3504
+  thName: "คำเขื่อนแก้ว"
+  enName: "Kham Khuean Kaeo"
+  province: 35
+-
+  refCode: 3505
+  thName: "ป่าติ้ว"
+  enName: "Pa Tio"
+  province: 35
+-
+  refCode: 3506
+  thName: "มหาชนะชัย"
+  enName: "Maha Chana Chai"
+  province: 35
+-
+  refCode: 3507
+  thName: "ค้อวัง"
+  enName: "Kho Wang"
+  province: 35
+-
+  refCode: 3508
+  thName: "เลิงนกทา"
+  enName: "Loeng Nok Tha"
+  province: 35
+-
+  refCode: 3509
+  thName: "ไทยเจริญ"
+  enName: "Thai Charoen"
+  province: 35
+-
+  refCode: 3601
+  thName: "เมืองชัยภูมิ"
+  enName: "Mueang Chaiyaphum"
+  province: 36
+-
+  refCode: 3602
+  thName: "บ้านเขว้า"
+  enName: "Ban Khwao"
+  province: 36
+-
+  refCode: 3603
+  thName: "คอนสวรรค์"
+  enName: "Khon Sawan"
+  province: 36
+-
+  refCode: 3604
+  thName: "เกษตรสมบูรณ์"
+  enName: "Kaset Sombun"
+  province: 36
+-
+  refCode: 3605
+  thName: "หนองบัวแดง"
+  enName: "Nong Bua Daeng"
+  province: 36
+-
+  refCode: 3606
+  thName: "จัตุรัส"
+  enName: "Chatturat"
+  province: 36
+-
+  refCode: 3607
+  thName: "บำเหน็จณรงค์"
+  enName: "Bamnet Narong"
+  province: 36
+-
+  refCode: 3608
+  thName: "หนองบัวระเหว"
+  enName: "Nong Bua Rawe"
+  province: 36
+-
+  refCode: 3609
+  thName: "เทพสถิต"
+  enName: "Thep Sathit"
+  province: 36
+-
+  refCode: 3610
+  thName: "ภูเขียว"
+  enName: "Phu Khiao"
+  province: 36
+-
+  refCode: 3611
+  thName: "บ้านแท่น"
+  enName: "Ban Thaen"
+  province: 36
+-
+  refCode: 3612
+  thName: "แก้งคร้อ"
+  enName: "Kaeng Khro"
+  province: 36
+-
+  refCode: 3613
+  thName: "คอนสาร"
+  enName: "Khon San"
+  province: 36
+-
+  refCode: 3614
+  thName: "ภักดีชุมพล"
+  enName: "Phakdi Chumphon"
+  province: 36
+-
+  refCode: 3615
+  thName: "เนินสง่า"
+  enName: "Noen Sa-nga"
+  province: 36
+-
+  refCode: 3616
+  thName: "ซับใหญ่"
+  enName: "Sap Yai"
+  province: 36
+-
+  refCode: 3701
+  thName: "เมืองอำนาจเจริญ"
+  enName: "Mueang Amnat Charoen"
+  province: 37
+-
+  refCode: 3702
+  thName: "ชานุมาน"
+  enName: "Chanuman"
+  province: 37
+-
+  refCode: 3703
+  thName: "ปทุมราชวงศา"
+  enName: "Pathum Ratchawongsa"
+  province: 37
+-
+  refCode: 3704
+  thName: "พนา"
+  enName: "Phana"
+  province: 37
+-
+  refCode: 3705
+  thName: "เสนางคนิคม"
+  enName: "Senangkhanikhom"
+  province: 37
+-
+  refCode: 3706
+  thName: "หัวตะพาน"
+  enName: "Hua Taphan"
+  province: 37
+-
+  refCode: 3707
+  thName: "ลืออำนาจ"
+  enName: "Lue Amnat"
+  province: 37
+-
+  refCode: 3801
+  thName: "บึงกาฬ"
+  enName: "Bueng Kan"
+  province: 38
+-
+  refCode: 3802
+  thName: "พรเจริญ"
+  enName: "Phon Charoen"
+  province: 38
+-
+  refCode: 3803
+  thName: "โซ่พิสัย"
+  enName: "So Phisai"
+  province: 38
+-
+  refCode: 3804
+  thName: "เซกา"
+  enName: "Seka"
+  province: 38
+-
+  refCode: 3805
+  thName: "ปากคาด"
+  enName: "Pak Khat"
+  province: 38
+-
+  refCode: 3806
+  thName: "บึงโขงหลง"
+  enName: "Bueng Khong Long"
+  province: 38
+-
+  refCode: 3807
+  thName: "ศรีวิไล"
+  enName: "Si Wilai"
+  province: 38
+-
+  refCode: 3808
+  thName: "บุ่งคล้า"
+  enName: "Bung Khla"
+  province: 38
+-
+  refCode: 3901
+  thName: "เมืองหนองบัวลำภู"
+  enName: "Mueang Nong Bua Lam Phu"
+  province: 39
+-
+  refCode: 3902
+  thName: "นากลาง"
+  enName: "Na Klang"
+  province: 39
+-
+  refCode: 3903
+  thName: "โนนสัง"
+  enName: "Non Sang"
+  province: 39
+-
+  refCode: 3904
+  thName: "ศรีบุญเรือง"
+  enName: "Si Bun Rueang"
+  province: 39
+-
+  refCode: 3905
+  thName: "สุวรรณคูหา"
+  enName: "Suwannakhuha"
+  province: 39
+-
+  refCode: 3906
+  thName: "นาวัง"
+  enName: "Na Wang"
+  province: 39
+-
+  refCode: 4001
+  thName: "เมืองขอนแก่น"
+  enName: "Mueang Khon Kaen"
+  province: 40
+-
+  refCode: 4002
+  thName: "บ้านฝาง"
+  enName: "Ban Fang"
+  province: 40
+-
+  refCode: 4003
+  thName: "พระยืน"
+  enName: "Phra Yuen"
+  province: 40
+-
+  refCode: 4004
+  thName: "หนองเรือ"
+  enName: "Nong Ruea"
+  province: 40
+-
+  refCode: 4005
+  thName: "ชุมแพ"
+  enName: "Chum Phae"
+  province: 40
+-
+  refCode: 4006
+  thName: "สีชมพู"
+  enName: "Si Chomphu"
+  province: 40
+-
+  refCode: 4007
+  thName: "น้ำพอง"
+  enName: "Nam Phong"
+  province: 40
+-
+  refCode: 4008
+  thName: "อุบลรัตน์"
+  enName: "Ubolratana"
+  province: 40
+-
+  refCode: 4009
+  thName: "กระนวน"
+  enName: "Kranuan"
+  province: 40
+-
+  refCode: 4010
+  thName: "บ้านไผ่"
+  enName: "Ban Phai"
+  province: 40
+-
+  refCode: 4011
+  thName: "เปือยน้อย"
+  enName: "Pueai Noi"
+  province: 40
+-
+  refCode: 4012
+  thName: "พล"
+  enName: "Phon"
+  province: 40
+-
+  refCode: 4013
+  thName: "แวงใหญ่"
+  enName: "Waeng Yai"
+  province: 40
+-
+  refCode: 4014
+  thName: "แวงน้อย"
+  enName: "Waeng Noi"
+  province: 40
+-
+  refCode: 4015
+  thName: "หนองสองห้อง"
+  enName: "Nong Song Hong"
+  province: 40
+-
+  refCode: 4016
+  thName: "ภูเวียง"
+  enName: "Phu Wiang"
+  province: 40
+-
+  refCode: 4017
+  thName: "มัญจาคีรี"
+  enName: "Mancha Khiri"
+  province: 40
+-
+  refCode: 4018
+  thName: "ชนบท"
+  enName: "Chonnabot"
+  province: 40
+-
+  refCode: 4019
+  thName: "เขาสวนกวาง"
+  enName: "Khao Suan Kwang"
+  province: 40
+-
+  refCode: 4020
+  thName: "ภูผาม่าน"
+  enName: "Phu Phaman"
+  province: 40
+-
+  refCode: 4021
+  thName: "ซำสูง"
+  enName: "Sam Sung"
+  province: 40
+-
+  refCode: 4022
+  thName: "โคกโพธิ์ไชย"
+  enName: "Khok Pho Chai"
+  province: 40
+-
+  refCode: 4023
+  thName: "หนองนาคำ"
+  enName: "Nong Na Kham"
+  province: 40
+-
+  refCode: 4024
+  thName: "บ้านแฮด"
+  enName: "Ban Haet"
+  province: 40
+-
+  refCode: 4025
+  thName: "โนนศิลา"
+  enName: "Non Sila"
+  province: 40
+-
+  refCode: 4026
+  thName: "เวียงเก่า"
+  enName: "Wiang Kao"
+  province: 40
+-
+  refCode: 4101
+  thName: "เมืองอุดรธานี"
+  enName: "Mueang Udon Thani"
+  province: 41
+-
+  refCode: 4102
+  thName: "กุดจับ"
+  enName: "Kut Chap"
+  province: 41
+-
+  refCode: 4103
+  thName: "หนองวัวซอ"
+  enName: "Nong Wua So"
+  province: 41
+-
+  refCode: 4104
+  thName: "กุมภวาปี"
+  enName: "Kumphawapi"
+  province: 41
+-
+  refCode: 4105
+  thName: "โนนสะอาด"
+  enName: "Non Sa-at"
+  province: 41
+-
+  refCode: 4106
+  thName: "หนองหาน"
+  enName: "Nong Saeng"
+  province: 41
+-
+  refCode: 4107
+  thName: "ทุ่งฝน"
+  enName: "Thung Fon"
+  province: 41
+-
+  refCode: 4108
+  thName: "ไชยวาน"
+  enName: "Chai Wan"
+  province: 41
+-
+  refCode: 4109
+  thName: "ศรีธาตุ"
+  enName: "Si That"
+  province: 41
+-
+  refCode: 4110
+  thName: "วังสามหมอ"
+  enName: "Wang Sam Mo"
+  province: 41
+-
+  refCode: 4111
+  thName: "บ้านดุง"
+  enName: "Ban Dung"
+  province: 41
+-
+  refCode: 4117
+  thName: "บ้านผือ"
+  enName: "Ban Phue"
+  province: 41
+-
+  refCode: 4118
+  thName: "น้ำโสม"
+  enName: "Nam Som"
+  province: 41
+-
+  refCode: 4119
+  thName: "เพ็ญ"
+  enName: "Phen"
+  province: 41
+-
+  refCode: 4120
+  thName: "สร้างคอม"
+  enName: "Sang Khom"
+  province: 41
+-
+  refCode: 4121
+  thName: "หนองแสง"
+  enName: "Nong Saeng"
+  province: 41
+-
+  refCode: 4122
+  thName: "นายูง"
+  enName: "Na Yung"
+  province: 41
+-
+  refCode: 4123
+  thName: "พิบูลย์รักษ์"
+  enName: "Phibun Rak"
+  province: 41
+-
+  refCode: 4124
+  thName: "กู่แก้ว"
+  enName: "Ku Kaeo"
+  province: 41
+-
+  refCode: 4125
+  thName: "ประจักษ์ศิลปาคม"
+  enName: "Prachaksinlapakhom"
+  province: 41
+-
+  refCode: 4201
+  thName: "เมืองเลย"
+  enName: "Mueang Loei"
+  province: 42
+-
+  refCode: 4202
+  thName: "นาด้วง"
+  enName: "Na Duang"
+  province: 42
+-
+  refCode: 4203
+  thName: "เชียงคาน"
+  enName: "Chiang Khan"
+  province: 42
+-
+  refCode: 4204
+  thName: "ปากชม"
+  enName: "Pak Chom"
+  province: 42
+-
+  refCode: 4205
+  thName: "ด่านซ้าย"
+  enName: "Dan Sai"
+  province: 42
+-
+  refCode: 4206
+  thName: "นาแห้ว"
+  enName: "Na Haeo"
+  province: 42
+-
+  refCode: 4207
+  thName: "ภูเรือ"
+  enName: "Phu Ruea"
+  province: 42
+-
+  refCode: 4208
+  thName: "ท่าลี่"
+  enName: "Tha Li"
+  province: 42
+-
+  refCode: 4209
+  thName: "วังสะพุง"
+  enName: "Wang Saphung"
+  province: 42
+-
+  refCode: 4210
+  thName: "ภูกระดึง"
+  enName: "Phu Kradueng"
+  province: 42
+-
+  refCode: 4211
+  thName: "ภูหลวง"
+  enName: "Phu Luang"
+  province: 42
+-
+  refCode: 4212
+  thName: "ผาขาว"
+  enName: "Pha Khao"
+  province: 42
+-
+  refCode: 4213
+  thName: "เอราวัณ"
+  enName: "Erawan"
+  province: 42
+-
+  refCode: 4214
+  thName: "หนองหิน"
+  enName: "Nong Hin"
+  province: 42
+-
+  refCode: 4301
+  thName: "เมืองหนองคาย"
+  enName: "Mueang Nong Khai"
+  province: 43
+-
+  refCode: 4302
+  thName: "ท่าบ่อ"
+  enName: "Tha Bo"
+  province: 43
+-
+  refCode: 4305
+  thName: "โพนพิสัย"
+  enName: "Phon Phisai"
+  province: 43
+-
+  refCode: 4307
+  thName: "ศรีเชียงใหม่"
+  enName: "Si Chiang Mai"
+  province: 43
+-
+  refCode: 4308
+  thName: "สังคม"
+  enName: "Sangkhom"
+  province: 43
+-
+  refCode: 4314
+  thName: "สระใคร"
+  enName: "Sakhrai"
+  province: 43
+-
+  refCode: 4315
+  thName: "เฝ้าไร่"
+  enName: "Fao Rai"
+  province: 43
+-
+  refCode: 4316
+  thName: "รัตนวาปี"
+  enName: "Rattanawapi"
+  province: 43
+-
+  refCode: 4317
+  thName: "โพธิ์ตาก"
+  enName: "Pho Tak"
+  province: 43
+-
+  refCode: 4401
+  thName: "เมืองมหาสารคาม"
+  enName: "Mueang Maha Sarakham"
+  province: 44
+-
+  refCode: 4402
+  thName: "แกดำ"
+  enName: "Kae Dam"
+  province: 44
+-
+  refCode: 4403
+  thName: "โกสุมพิสัย"
+  enName: "Kosum Phisai"
+  province: 44
+-
+  refCode: 4404
+  thName: "กันทรวิชัย"
+  enName: "Kantharawichai"
+  province: 44
+-
+  refCode: 4405
+  thName: "เชียงยืน"
+  enName: "Chiang Yuen"
+  province: 44
+-
+  refCode: 4406
+  thName: "บรบือ"
+  enName: "Borabue"
+  province: 44
+-
+  refCode: 4407
+  thName: "นาเชือก"
+  enName: "Na Chueak"
+  province: 44
+-
+  refCode: 4408
+  thName: "พยัคฆภูมิพิสัย"
+  enName: "Phayakkhaphum Phisai"
+  province: 44
+-
+  refCode: 4409
+  thName: "วาปีปทุม"
+  enName: "Wapi Pathum"
+  province: 44
+-
+  refCode: 4410
+  thName: "นาดูน"
+  enName: "Na Dun"
+  province: 44
+-
+  refCode: 4411
+  thName: "ยางสีสุราช"
+  enName: "Yang Sisurat"
+  province: 44
+-
+  refCode: 4412
+  thName: "กุดรัง"
+  enName: "Kut Rang"
+  province: 44
+-
+  refCode: 4413
+  thName: "ชื่นชม"
+  enName: "Chuen Chom"
+  province: 44
+-
+  refCode: 4501
+  thName: "เมืองร้อยเอ็ด"
+  enName: "Mueang Roi Et"
+  province: 45
+-
+  refCode: 4502
+  thName: "เกษตรวิสัย"
+  enName: "Kaset Wisai"
+  province: 45
+-
+  refCode: 4503
+  thName: "ปทุมรัตต์"
+  enName: "Pathum Rat"
+  province: 45
+-
+  refCode: 4504
+  thName: "จตุรพักตรพิมาน"
+  enName: "Chaturaphak Phiman"
+  province: 45
+-
+  refCode: 4505
+  thName: "ธวัชบุรี"
+  enName: "Thawat Buri"
+  province: 45
+-
+  refCode: 4506
+  thName: "พนมไพร"
+  enName: "Phanom Phrai"
+  province: 45
+-
+  refCode: 4507
+  thName: "โพนทอง"
+  enName: "Phon Thong"
+  province: 45
+-
+  refCode: 4508
+  thName: "โพธิ์ชัย"
+  enName: "Pho Chai"
+  province: 45
+-
+  refCode: 4509
+  thName: "หนองพอก"
+  enName: "Nong Phok"
+  province: 45
+-
+  refCode: 4510
+  thName: "เสลภูมิ"
+  enName: "Selaphum"
+  province: 45
+-
+  refCode: 4511
+  thName: "สุวรรณภูมิ"
+  enName: "Suwannaphum"
+  province: 45
+-
+  refCode: 4512
+  thName: "เมืองสรวง"
+  enName: "Mueang Suang"
+  province: 45
+-
+  refCode: 4513
+  thName: "โพนทราย"
+  enName: "Phon Sai"
+  province: 45
+-
+  refCode: 4514
+  thName: "อาจสามารถ"
+  enName: "At Samat"
+  province: 45
+-
+  refCode: 4515
+  thName: "เมยวดี"
+  enName: "Moei Wadi"
+  province: 45
+-
+  refCode: 4516
+  thName: "ศรีสมเด็จ"
+  enName: "Si Somdet"
+  province: 45
+-
+  refCode: 4517
+  thName: "จังหาร"
+  enName: "Changhan"
+  province: 45
+-
+  refCode: 4518
+  thName: "เชียงขวัญ"
+  enName: "Chiang Khwan"
+  province: 45
+-
+  refCode: 4519
+  thName: "หนองฮี"
+  enName: "Nong Hi"
+  province: 45
+-
+  refCode: 4520
+  thName: "ทุ่งเขาหลวง"
+  enName: "Thung Khao Luang"
+  province: 45
+-
+  refCode: 4601
+  thName: "เมืองกาฬสินธุ์"
+  enName: "Mueang Kalasin"
+  province: 46
+-
+  refCode: 4602
+  thName: "นามน"
+  enName: "Na Mon"
+  province: 46
+-
+  refCode: 4603
+  thName: "กมลาไสย"
+  enName: "Kamalasai"
+  province: 46
+-
+  refCode: 4604
+  thName: "ร่องคำ"
+  enName: "Rong Kham"
+  province: 46
+-
+  refCode: 4605
+  thName: "กุฉินารายณ์"
+  enName: "Kuchinarai"
+  province: 46
+-
+  refCode: 4606
+  thName: "เขาวง"
+  enName: "Khao Wong"
+  province: 46
+-
+  refCode: 4607
+  thName: "ยางตลาด"
+  enName: "Yang Talat"
+  province: 46
+-
+  refCode: 4608
+  thName: "ห้วยเม็ก"
+  enName: "Huai Mek"
+  province: 46
+-
+  refCode: 4609
+  thName: "สหัสขันธ์"
+  enName: "Sahatsakhan"
+  province: 46
+-
+  refCode: 4610
+  thName: "คำม่วง"
+  enName: "Kham Muang"
+  province: 46
+-
+  refCode: 4611
+  thName: "ท่าคันโท"
+  enName: "Tha Khantho"
+  province: 46
+-
+  refCode: 4612
+  thName: "หนองกุงศรี"
+  enName: "Nong Kung Si"
+  province: 46
+-
+  refCode: 4613
+  thName: "สมเด็จ"
+  enName: "Somdet"
+  province: 46
+-
+  refCode: 4614
+  thName: "ห้วยผึ้ง"
+  enName: "Huai Phueng"
+  province: 46
+-
+  refCode: 4615
+  thName: "สามชัย"
+  enName: "Sam Chai"
+  province: 46
+-
+  refCode: 4616
+  thName: "นาคู"
+  enName: "Na Khu"
+  province: 46
+-
+  refCode: 4617
+  thName: "ดอนจาน"
+  enName: "Don Chan"
+  province: 46
+-
+  refCode: 4618
+  thName: "ฆ้องชัย"
+  enName: "Khong Chai"
+  province: 46
+-
+  refCode: 4701
+  thName: "เมืองสกลนคร"
+  enName: "Mueang Sakon Nakhon"
+  province: 47
+-
+  refCode: 4702
+  thName: "กุสุมาลย์"
+  enName: "Kusuman"
+  province: 47
+-
+  refCode: 4703
+  thName: "กุดบาก"
+  enName: "Kut Bak"
+  province: 47
+-
+  refCode: 4704
+  thName: "พรรณานิคม"
+  enName: "Phanna Nikhom"
+  province: 47
+-
+  refCode: 4705
+  thName: "พังโคน"
+  enName: "Phanh khon"
+  province: 47
+-
+  refCode: 4706
+  thName: "วาริชภูมิ"
+  enName: "Waritchaphum"
+  province: 47
+-
+  refCode: 4707
+  thName: "นิคมน้ำอูน"
+  enName: "Nikhom Nam un"
+  province: 47
+-
+  refCode: 4708
+  thName: "วานรนิวาส"
+  enName: "Wanon Niwat"
+  province: 47
+-
+  refCode: 4709
+  thName: "คำตากล้า"
+  enName: "Kham Ta Kla"
+  province: 47
+-
+  refCode: 4710
+  thName: "บ้านม่วง"
+  enName: "Ban Muang"
+  province: 47
+-
+  refCode: 4711
+  thName: "อากาศอำนวย"
+  enName: "Akat Amnuai"
+  province: 47
+-
+  refCode: 4712
+  thName: "สว่างแดนดิน"
+  enName: "Sawang Daen Din"
+  province: 47
+-
+  refCode: 4713
+  thName: "ส่องดาว"
+  enName: "Song Dao"
+  province: 47
+-
+  refCode: 4714
+  thName: "เต่างอย"
+  enName: "Tao Ngoi"
+  province: 47
+-
+  refCode: 4715
+  thName: "โคกศรีสุพรรณ"
+  enName: "Khok Si Suphan"
+  province: 47
+-
+  refCode: 4716
+  thName: "เจริญศิลป์"
+  enName: "Charoen Sin"
+  province: 47
+-
+  refCode: 4717
+  thName: "โพนนาแก้ว"
+  enName: "Phon Na Kaeo"
+  province: 47
+-
+  refCode: 4718
+  thName: "ภูพาน"
+  enName: "Phu Phan"
+  province: 47
+-
+  refCode: 4801
+  thName: "เมืองนครพนม"
+  enName: "Mueang Nakhon Phanom"
+  province: 48
+-
+  refCode: 4802
+  thName: "ปลาปาก"
+  enName: "Pla Pak"
+  province: 48
+-
+  refCode: 4803
+  thName: "ท่าอุเทน"
+  enName: "Tha Uthen"
+  province: 48
+-
+  refCode: 4804
+  thName: "บ้านแพง"
+  enName: "Ban Phaeng"
+  province: 48
+-
+  refCode: 4805
+  thName: "ธาตุพนม"
+  enName: "That Phanom"
+  province: 48
+-
+  refCode: 4806
+  thName: "เรณูนคร"
+  enName: "Renu Nakhon"
+  province: 48
+-
+  refCode: 4807
+  thName: "นาแก"
+  enName: "Na Kae"
+  province: 48
+-
+  refCode: 4808
+  thName: "ศรีสงคราม"
+  enName: "Si Songkhram"
+  province: 48
+-
+  refCode: 4809
+  thName: "นาหว้า"
+  enName: "Na Wa"
+  province: 48
+-
+  refCode: 4810
+  thName: "โพนสวรรค์"
+  enName: "Phon Sawan"
+  province: 48
+-
+  refCode: 4811
+  thName: "นาทม"
+  enName: "Na Thom"
+  province: 48
+-
+  refCode: 4812
+  thName: "วังยาง"
+  enName: "Wang Yang"
+  province: 48
+-
+  refCode: 4901
+  thName: "เมืองมุกดาหาร"
+  enName: "Mueang Mukdahan"
+  province: 49
+-
+  refCode: 4902
+  thName: "นิคมคำสร้อย"
+  enName: "Nikhom Kham Soi"
+  province: 49
+-
+  refCode: 4903
+  thName: "ดอนตาล"
+  enName: "Don Tan"
+  province: 49
+-
+  refCode: 4904
+  thName: "ดงหลวง"
+  enName: "Don Tan"
+  province: 49
+-
+  refCode: 4905
+  thName: "คำชะอี"
+  enName: "Khamcha-i"
+  province: 49
+-
+  refCode: 4906
+  thName: "ว่านใหญ่"
+  enName: "Wan Yai"
+  province: 49
+-
+  refCode: 4907
+  thName: "หนองสูง"
+  enName: "Nong Sung"
+  province: 49
+-
+  refCode: 5001
+  thName: "เมืองเชียงใหม่"
+  enName: "Mueang Chiang Mai"
+  province: 50
+-
+  refCode: 5002
+  thName: "จอมทอง"
+  enName: "Chom Thong"
+  province: 50
+-
+  refCode: 5003
+  thName: "แม่แจ่ม"
+  enName: "Mae Chaem"
+  province: 50
+-
+  refCode: 5004
+  thName: "เชียงดาว"
+  enName: "Chiang Dao"
+  province: 50
+-
+  refCode: 5005
+  thName: "ดอยสะเก็ด"
+  enName: "Doi Saket"
+  province: 50
+-
+  refCode: 5006
+  thName: "แม่แตง"
+  enName: "Mae Taeng"
+  province: 50
+-
+  refCode: 5007
+  thName: "แม่ริม"
+  enName: "Mae Rim"
+  province: 50
+-
+  refCode: 5008
+  thName: "สะเมิง"
+  enName: "Samoeng"
+  province: 50
+-
+  refCode: 5009
+  thName: "ฝาง"
+  enName: "Fang"
+  province: 50
+-
+  refCode: 5010
+  thName: "แม่อาย"
+  enName: "Mae Ai"
+  province: 50
+-
+  refCode: 5011
+  thName: "พร้าว"
+  enName: "Phrao"
+  province: 50
+-
+  refCode: 5012
+  thName: "สันป่าตอง"
+  enName: "San Pa Tong"
+  province: 50
+-
+  refCode: 5013
+  thName: "สันกำแพง"
+  enName: "San Kamphaeng"
+  province: 50
+-
+  refCode: 5014
+  thName: "สันทราย"
+  enName: "San Sai"
+  province: 50
+-
+  refCode: 5015
+  thName: "หางดง"
+  enName: "Hang Dong"
+  province: 50
+-
+  refCode: 5016
+  thName: "ฮอด"
+  enName: "Hot"
+  province: 50
+-
+  refCode: 5017
+  thName: "ดอยเต่า"
+  enName: "Doi Tao"
+  province: 50
+-
+  refCode: 5018
+  thName: "อมก๋อย"
+  enName: "Omkoi"
+  province: 50
+-
+  refCode: 5019
+  thName: "สารภี"
+  enName: "Saraphi"
+  province: 50
+-
+  refCode: 5020
+  thName: "เวียงแหง"
+  enName: "Wiang Haeng"
+  province: 50
+-
+  refCode: 5021
+  thName: "ไชยปราการ"
+  enName: "Chai Prakan"
+  province: 50
+-
+  refCode: 5022
+  thName: "แม่วาง"
+  enName: "Mae Wang"
+  province: 50
+-
+  refCode: 5023
+  thName: "แม่ออน"
+  enName: "Mae On"
+  province: 50
+-
+  refCode: 5024
+  thName: "ดอยหล่อ"
+  enName: "Doi Lo"
+  province: 50
+-
+  refCode: 5025
+  thName: "กัลยาณิวัฒนา"
+  enName: "Kanlayaniwatthana"
+  province: 50
+-
+  refCode: 5101
+  thName: "เมืองลำพูน"
+  enName: "Mueang Lamphun"
+  province: 51
+-
+  refCode: 5102
+  thName: "แม่ทา"
+  enName: "Mae Tha"
+  province: 51
+-
+  refCode: 5103
+  thName: "บ้านโฮ่ง"
+  enName: "Ban Hong"
+  province: 51
+-
+  refCode: 5104
+  thName: "ลี้"
+  enName: "Li"
+  province: 51
+-
+  refCode: 5105
+  thName: "ทุ่งหัวช้าง"
+  enName: "Thung Hua Chang"
+  province: 51
+-
+  refCode: 5106
+  thName: "ป่าซาง"
+  enName: "Pa Sang"
+  province: 51
+-
+  refCode: 5107
+  thName: "บ้านธิ"
+  enName: "Ban Thi"
+  province: 51
+-
+  refCode: 5108
+  thName: "เวียงหนองล่อง"
+  enName: "Wiang Nong Long"
+  province: 51
+-
+  refCode: 5201
+  thName: "เมืองลำปาง"
+  enName: "Mueang Lampang"
+  province: 52
+-
+  refCode: 5202
+  thName: "แม่เมาะ"
+  enName: "Mae Mo"
+  province: 52
+-
+  refCode: 5203
+  thName: "เกาะคา"
+  enName: "Ko kha"
+  province: 52
+-
+  refCode: 5204
+  thName: "เสริมงาม"
+  enName: "Soem Ngam"
+  province: 52
+-
+  refCode: 5205
+  thName: "งาว"
+  enName: "Ngao"
+  province: 52
+-
+  refCode: 5206
+  thName: "แจ้ห่ม"
+  enName: "Chae Hom"
+  province: 52
+-
+  refCode: 5207
+  thName: "วังเหนือ"
+  enName: "Wang Nuea"
+  province: 52
+-
+  refCode: 5208
+  thName: "เถิน"
+  enName: "Thoen"
+  province: 52
+-
+  refCode: 5209
+  thName: "แม่พริก"
+  enName: "Mae Phrik"
+  province: 52
+-
+  refCode: 5210
+  thName: "แม่ทะ"
+  enName: "Mae Tha"
+  province: 52
+-
+  refCode: 5211
+  thName: "สบปราบ"
+  enName: "Sop Prap"
+  province: 52
+-
+  refCode: 5212
+  thName: "ห้างฉัตร"
+  enName: "Hang Chat"
+  province: 52
+-
+  refCode: 5213
+  thName: "เมืองปาน"
+  enName: "Mueang Pan"
+  province: 52
+-
+  refCode: 5301
+  thName: "เมืองอุตรดิตถ์"
+  enName: "Mueang Uttaradit"
+  province: 53
+-
+  refCode: 5302
+  thName: "ตรอน"
+  enName: "Tron"
+  province: 53
+-
+  refCode: 5303
+  thName: "ท่าปลา"
+  enName: "Tha Pla"
+  province: 53
+-
+  refCode: 5304
+  thName: "น้ำปาด"
+  enName: "Nam Pat"
+  province: 53
+-
+  refCode: 5305
+  thName: "ฟากท่า"
+  enName: "Fak Tha"
+  province: 53
+-
+  refCode: 5306
+  thName: "บ้านโคก"
+  enName: "Ban Khok"
+  province: 53
+-
+  refCode: 5307
+  thName: "พิชัย"
+  enName: "Phichai"
+  province: 53
+-
+  refCode: 5308
+  thName: "ลับแล"
+  enName: "Laplae"
+  province: 53
+-
+  refCode: 5309
+  thName: "ทองแสนขัน"
+  enName: "Thong Saen Khan"
+  province: 53
+-
+  refCode: 5401
+  thName: "เมืองแพร่"
+  enName: "Mueang Phrae"
+  province: 54
+-
+  refCode: 5402
+  thName: "ร้องกวาง"
+  enName: "Mueang Phrae"
+  province: 54
+-
+  refCode: 5403
+  thName: "ลอง"
+  enName: "Long"
+  province: 54
+-
+  refCode: 5404
+  thName: "สูงเม่น"
+  enName: "Sung Men"
+  province: 54
+-
+  refCode: 5405
+  thName: "เด่นชัย"
+  enName: "Den Chai"
+  province: 54
+-
+  refCode: 5406
+  thName: "สอง"
+  enName: "Song"
+  province: 54
+-
+  refCode: 5407
+  thName: "วังชิ้น"
+  enName: "Wang Chin"
+  province: 54
+-
+  refCode: 5408
+  thName: "หนองม่วงไข่"
+  enName: "Nong Muang Khai"
+  province: 54
+-
+  refCode: 5501
+  thName: "เมืองน่าน"
+  enName: "Mueang Nan"
+  province: 55
+-
+  refCode: 5502
+  thName: "แม่จริม"
+  enName: "Mae Charim"
+  province: 55
+-
+  refCode: 5503
+  thName: "บ้านหลวง"
+  enName: "Ban Luang"
+  province: 55
+-
+  refCode: 5504
+  thName: "นาน้อย"
+  enName: "Na Noi"
+  province: 55
+-
+  refCode: 5505
+  thName: "ปัว"
+  enName: "Pua"
+  province: 55
+-
+  refCode: 5506
+  thName: "ท่าวังผา"
+  enName: "Tha Wang Pha"
+  province: 55
+-
+  refCode: 5507
+  thName: "เวียงสา"
+  enName: "Wiang Sa"
+  province: 55
+-
+  refCode: 5508
+  thName: "ทุ่งช้าง"
+  enName: "Thung Chang"
+  province: 55
+-
+  refCode: 5509
+  thName: "เชียงกลาง"
+  enName: "Chiang Klang"
+  province: 55
+-
+  refCode: 5510
+  thName: "นาหมื่น"
+  enName: "Na Muen"
+  province: 55
+-
+  refCode: 5511
+  thName: "สันติสุข"
+  enName: "Santi Suk"
+  province: 55
+-
+  refCode: 5512
+  thName: "บ่อเกลือ"
+  enName: "Bo Kluea"
+  province: 55
+-
+  refCode: 5513
+  thName: "สองแคว"
+  enName: "Song Khwae"
+  province: 55
+-
+  refCode: 5514
+  thName: "ภูเพียง"
+  enName: "Phu Phiang"
+  province: 55
+-
+  refCode: 5515
+  thName: "เฉลิมพระเกียรติ"
+  enName: "Chaloem Phra Kiet"
+  province: 55
+-
+  refCode: 5601
+  thName: "เมืองพะเยา"
+  enName: "Mueang Phayao"
+  province: 56
+-
+  refCode: 5602
+  thName: "จุน"
+  enName: "Mueang Phayao"
+  province: 56
+-
+  refCode: 5603
+  thName: "เชียงคำ"
+  enName: "Mueang Phayao"
+  province: 56
+-
+  refCode: 5604
+  thName: "เชียงม่วน"
+  enName: "Mueang Phayao"
+  province: 56
+-
+  refCode: 5605
+  thName: "ดอกคำใต้"
+  enName: "Mueang Phayao"
+  province: 56
+-
+  refCode: 5606
+  thName: "ปง"
+  enName: "Mueang Phayao"
+  province: 56
+-
+  refCode: 5607
+  thName: "แม่ใจ"
+  enName: "Mueang Phayao"
+  province: 56
+-
+  refCode: 5608
+  thName: "ภูซาง"
+  enName: "Mueang Phayao"
+  province: 56
+-
+  refCode: 5609
+  thName: "ภูกามยาว"
+  enName: "Mueang Phayao"
+  province: 56
+-
+  refCode: 5701
+  thName: "เมืองเชียงราย"
+  enName: "Mueang Chiang Rai"
+  province: 57
+-
+  refCode: 5702
+  thName: "เวียงชัย"
+  enName: "Wiang Chai"
+  province: 57
+-
+  refCode: 5703
+  thName: "เชียงของ"
+  enName: "Chiang Khong"
+  province: 57
+-
+  refCode: 5704
+  thName: "เทิง"
+  enName: "Thoeng"
+  province: 57
+-
+  refCode: 5705
+  thName: "พาน"
+  enName: "Phan"
+  province: 57
+-
+  refCode: 5706
+  thName: "ป่าแดด"
+  enName: "Pa Daet"
+  province: 57
+-
+  refCode: 5707
+  thName: "แม่จัน"
+  enName: "Mae Chan"
+  province: 57
+-
+  refCode: 5708
+  thName: "เชียงแสน"
+  enName: "Chiang Saen"
+  province: 57
+-
+  refCode: 5709
+  thName: "แม่สาย"
+  enName: "Mae Sai"
+  province: 57
+-
+  refCode: 5710
+  thName: "แม่สรวย"
+  enName: "Mae Suai"
+  province: 57
+-
+  refCode: 5711
+  thName: "เวียงป่าเป้า"
+  enName: "Wiang Pa Pao"
+  province: 57
+-
+  refCode: 5712
+  thName: "พญาเม็งราย"
+  enName: "Phaya Mengrai"
+  province: 57
+-
+  refCode: 5713
+  thName: "เวียงแก่น"
+  enName: "Wiang Kaen"
+  province: 57
+-
+  refCode: 5714
+  thName: "ขุนตาล"
+  enName: "Khun Tan"
+  province: 57
+-
+  refCode: 5715
+  thName: "แม่ฟ้าหลวง"
+  enName: "Mae Fa Luang"
+  province: 57
+-
+  refCode: 5716
+  thName: "แม่ลาว"
+  enName: "Mae Lao"
+  province: 57
+-
+  refCode: 5717
+  thName: "เวียงเชียงรุ้ง"
+  enName: "Wiang Chiang Rung"
+  province: 57
+-
+  refCode: 5718
+  thName: "ดอยหลวง"
+  enName: "Doi Luang"
+  province: 57
+-
+  refCode: 5801
+  thName: "เมืองแม่ฮ่องสอน"
+  enName: "Mueang Mae Hong Son"
+  province: 58
+-
+  refCode: 5802
+  thName: "ขุนยวม"
+  enName: "Khun Yuam"
+  province: 58
+-
+  refCode: 5803
+  thName: "ปาย"
+  enName: "Pai"
+  province: 58
+-
+  refCode: 5804
+  thName: "แม่สะเรียง"
+  enName: "Mae Sariang"
+  province: 58
+-
+  refCode: 5805
+  thName: "แม่ลาน้อย"
+  enName: "Mae La Noi"
+  province: 58
+-
+  refCode: 5806
+  thName: "สบเมย"
+  enName: "Sop Moei"
+  province: 58
+-
+  refCode: 5807
+  thName: "ปางมะผ้า"
+  enName: "Pang Mapha"
+  province: 58
+-
+  refCode: 6001
+  thName: "เมืองนครสวรรค์"
+  enName: "Mueang Nakhon Sawan"
+  province: 60
+-
+  refCode: 6002
+  thName: "โกรกพระ"
+  enName: "Krok Phra"
+  province: 60
+-
+  refCode: 6003
+  thName: "ชุมแสง"
+  enName: "Chum Saeng"
+  province: 60
+-
+  refCode: 6004
+  thName: "หนองบัว"
+  enName: "Nong Bua"
+  province: 60
+-
+  refCode: 6005
+  thName: "บรรพตพิสัย"
+  enName: "Banphot Phisai"
+  province: 60
+-
+  refCode: 6006
+  thName: "เก้าเลี้ยว"
+  enName: "Kao Liao"
+  province: 60
+-
+  refCode: 6007
+  thName: "ตาคลี"
+  enName: "Takhli"
+  province: 60
+-
+  refCode: 6008
+  thName: "ท่าตะโก"
+  enName: "Tha Tako"
+  province: 60
+-
+  refCode: 6009
+  thName: "ไพศาลี"
+  enName: "Phaisali"
+  province: 60
+-
+  refCode: 6010
+  thName: "พยุหะคีรี"
+  enName: "Phayuha Hkiri"
+  province: 60
+-
+  refCode: 6011
+  thName: "ลาดยาว"
+  enName: "Lat Yao"
+  province: 60
+-
+  refCode: 6012
+  thName: "ตากฟ้า"
+  enName: "Tak Fa"
+  province: 60
+-
+  refCode: 6013
+  thName: "แม่วงก์"
+  enName: "Mae Wong"
+  province: 60
+-
+  refCode: 6014
+  thName: "แม่เปิน"
+  enName: "Mae Pern"
+  province: 60
+-
+  refCode: 6015
+  thName: "ชุมตาบง"
+  enName: "Chum Ta Bong"
+  province: 60
+-
+  refCode: 6101
+  thName: "เมืองอุทัยธานี"
+  enName: "Mueang Uthai Thani"
+  province: 61
+-
+  refCode: 6102
+  thName: "ทัพทัน"
+  enName: "Thap Than"
+  province: 61
+-
+  refCode: 6103
+  thName: "สว่างอารมณ์"
+  enName: "Sawang Arom"
+  province: 61
+-
+  refCode: 6104
+  thName: "หนองฉาง"
+  enName: "Nong Chang"
+  province: 61
+-
+  refCode: 6105
+  thName: "หนองขาหย่าง"
+  enName: "Nong Khayang"
+  province: 61
+-
+  refCode: 6106
+  thName: "บ้านไร่"
+  enName: "Ban Rai"
+  province: 61
+-
+  refCode: 6107
+  thName: "ลานสัก"
+  enName: "Lan Sak"
+  province: 61
+-
+  refCode: 6108
+  thName: "ห้วยคต"
+  enName: "Huai Khot"
+  province: 61
+-
+  refCode: 6201
+  thName: "เมืองกำแพงเพชร"
+  enName: "Mueang Kamphaeng Phet"
+  province: 62
+-
+  refCode: 6202
+  thName: "ไทรงาม"
+  enName: "Sai Ngam"
+  province: 62
+-
+  refCode: 6203
+  thName: "คลองลาน"
+  enName: "Khlong Lan"
+  province: 62
+-
+  refCode: 6204
+  thName: "ขาณุวรลักษบุรี"
+  enName: "Khanu Woralaksaburi"
+  province: 62
+-
+  refCode: 6205
+  thName: "คลองขลุง"
+  enName: "Khlong Khlung"
+  province: 62
+-
+  refCode: 6206
+  thName: "พรานกระต่าย"
+  enName: "Phran Kratai"
+  province: 62
+-
+  refCode: 6207
+  thName: "ลานกระบือ"
+  enName: "Lan Krabue"
+  province: 62
+-
+  refCode: 6208
+  thName: "ทรายทองวัฒนา"
+  enName: "Sai Thong Watthana"
+  province: 62
+-
+  refCode: 6209
+  thName: "ปางศิลาทอง"
+  enName: "Pang Sila Thong"
+  province: 62
+-
+  refCode: 6210
+  thName: "บึงสามัคคี"
+  enName: "Bueng Samakkhi"
+  province: 62
+-
+  refCode: 6211
+  thName: "โกสัมพีนคร"
+  enName: "Kosamphi Nakhon"
+  province: 62
+-
+  refCode: 6301
+  thName: "เมืองตาก"
+  enName: "Mueang Tak"
+  province: 63
+-
+  refCode: 6302
+  thName: "บ้านตาก"
+  enName: "Ban Tak"
+  province: 63
+-
+  refCode: 6303
+  thName: "สามเงา"
+  enName: "Sam Ngao"
+  province: 63
+-
+  refCode: 6304
+  thName: "แม่ระมาด"
+  enName: "Mae Ramat"
+  province: 63
+-
+  refCode: 6305
+  thName: "ท่าสองยาง"
+  enName: "Tha Song Yang"
+  province: 63
+-
+  refCode: 6306
+  thName: "แม่สอด"
+  enName: "Mae Sot"
+  province: 63
+-
+  refCode: 6307
+  thName: "พบพระ"
+  enName: "Phop Phra"
+  province: 63
+-
+  refCode: 6308
+  thName: "อุ้มผาง"
+  enName: "Um Phang"
+  province: 63
+-
+  refCode: 6309
+  thName: "วังเจ้า"
+  enName: "Wang Chao"
+  province: 63
+-
+  refCode: 6401
+  thName: "เมืองสุโขทัย"
+  enName: "Mueang Sukhothai"
+  province: 64
+-
+  refCode: 6402
+  thName: "บ้านด่านลานหอย"
+  enName: "Ban Dan Lan Hoi"
+  province: 64
+-
+  refCode: 6403
+  thName: "คีรีมาศ"
+  enName: "Khiri Mat"
+  province: 64
+-
+  refCode: 6404
+  thName: "กงไกรลาศ"
+  enName: "Kong Krailat"
+  province: 64
+-
+  refCode: 6405
+  thName: "ศรีสัชนาลัย"
+  enName: "Si Satchanalai"
+  province: 64
+-
+  refCode: 6406
+  thName: "ศรีสำโรง"
+  enName: "Si Samrong"
+  province: 64
+-
+  refCode: 6407
+  thName: "สวรรคโลก"
+  enName: "Sawankhalok"
+  province: 64
+-
+  refCode: 6408
+  thName: "ศรีนคร"
+  enName: "Si Nakhon"
+  province: 64
+-
+  refCode: 6409
+  thName: "ทุ่งเสลี่ยม"
+  enName: "Thung Saliam"
+  province: 64
+-
+  refCode: 6501
+  thName: "เมืองพิษณุโลก"
+  enName: "Mueang Phitsanulok"
+  province: 65
+-
+  refCode: 6502
+  thName: "นครไทย"
+  enName: "Nakhon Thai"
+  province: 65
+-
+  refCode: 6503
+  thName: "ชาติตระการ"
+  enName: "Chat Trakan"
+  province: 65
+-
+  refCode: 6504
+  thName: "บางระกำ"
+  enName: "Bang Rakam"
+  province: 65
+-
+  refCode: 6505
+  thName: "บางกระทุ่ม"
+  enName: "Bang Krathum"
+  province: 65
+-
+  refCode: 6506
+  thName: "พรหมพิราม"
+  enName: "Phrom Phiram"
+  province: 65
+-
+  refCode: 6507
+  thName: "วัดโบสถ์"
+  enName: "Wat Bot"
+  province: 65
+-
+  refCode: 6508
+  thName: "วังทอง"
+  enName: "Wang Thong"
+  province: 65
+-
+  refCode: 6509
+  thName: "เนินมะปราง"
+  enName: "Noen Maprang"
+  province: 65
+-
+  refCode: 6601
+  thName: "เมืองพิจิตร"
+  enName: "Mueang Phichit"
+  province: 66
+-
+  refCode: 6602
+  thName: "วังทรายพูน"
+  enName: "Wang Sai Phun"
+  province: 66
+-
+  refCode: 6603
+  thName: "โพธิ์ประทับช้าง"
+  enName: "Pho Prathap Chang"
+  province: 66
+-
+  refCode: 6604
+  thName: "ตะพานหิน"
+  enName: "Taphan Hin"
+  province: 66
+-
+  refCode: 6605
+  thName: "บางมูลนาก"
+  enName: "Bang Mun Nak"
+  province: 66
+-
+  refCode: 6606
+  thName: "โพทะเล"
+  enName: "Pho Thale"
+  province: 66
+-
+  refCode: 6607
+  thName: "สามง่าม"
+  enName: "Sam Ngam"
+  province: 66
+-
+  refCode: 6608
+  thName: "ทับคล้อ"
+  enName: "Tap Khlo"
+  province: 66
+-
+  refCode: 6609
+  thName: "สากเหล็ก"
+  enName: "Sak Lek"
+  province: 66
+-
+  refCode: 6610
+  thName: "บึงนาราง"
+  enName: "Bueng Na Rang"
+  province: 66
+-
+  refCode: 6611
+  thName: "ดงเจริญ"
+  enName: "Dong Charoen"
+  province: 66
+-
+  refCode: 6612
+  thName: "วชิรบารมี"
+  enName: "Wachirabarami"
+  province: 66
+-
+  refCode: 6701
+  thName: "เมืองเพชรบูรณ์"
+  enName: "Mueang Phetchabun"
+  province: 67
+-
+  refCode: 6702
+  thName: "ชนแดน"
+  enName: "Chon Daen"
+  province: 67
+-
+  refCode: 6703
+  thName: "หล่มสัก"
+  enName: "Lom Sak"
+  province: 67
+-
+  refCode: 6704
+  thName: "หล่มเก่า"
+  enName: "Lom Kao"
+  province: 67
+-
+  refCode: 6705
+  thName: "วิเชียรบุรี"
+  enName: "Wichian Buri"
+  province: 67
+-
+  refCode: 6706
+  thName: "ศรีเทพ"
+  enName: "Si Thep"
+  province: 67
+-
+  refCode: 6707
+  thName: "หนองไผ่"
+  enName: "Nong Phai"
+  province: 67
+-
+  refCode: 6708
+  thName: "บึงสามพัน"
+  enName: "Bueng Sam Phan"
+  province: 67
+-
+  refCode: 6709
+  thName: "น้ำหนาว"
+  enName: "Nam Nao"
+  province: 67
+-
+  refCode: 6710
+  thName: "วังโป่ง"
+  enName: "Wang Pong"
+  province: 67
+-
+  refCode: 6711
+  thName: "เขาค้อ"
+  enName: "Khao kho"
+  province: 67
+-
+  refCode: 7001
+  thName: "เมืองราชบุรี"
+  enName: "Mueang Ratchaburi"
+  province: 70
+-
+  refCode: 7002
+  thName: "จอมบึง"
+  enName: "Chom Bueng"
+  province: 70
+-
+  refCode: 7003
+  thName: "สวนผึ้ง"
+  enName: "Suan Phueng"
+  province: 70
+-
+  refCode: 7004
+  thName: "ดำเนินสะดวก"
+  enName: "Damnoen Saduak"
+  province: 70
+-
+  refCode: 7005
+  thName: "บ้านโป่ง"
+  enName: "Ban Pong"
+  province: 70
+-
+  refCode: 7006
+  thName: "บางแพ"
+  enName: "Bang Phae"
+  province: 70
+-
+  refCode: 7007
+  thName: "โพธาราม"
+  enName: "Photharam"
+  province: 70
+-
+  refCode: 7008
+  thName: "ปากท่อ"
+  enName: "Pak Tho"
+  province: 70
+-
+  refCode: 7009
+  thName: "วัดเพลง"
+  enName: "Wat Phleng"
+  province: 70
+-
+  refCode: 7010
+  thName: "บ้านคา"
+  enName: "Ban Kha"
+  province: 70
+-
+  refCode: 7101
+  thName: "เมืองกาญจนบุรี"
+  enName: "Mueang Kanchanaburi"
+  province: 71
+-
+  refCode: 7102
+  thName: "ไทรโยค"
+  enName: "Sai Yok"
+  province: 71
+-
+  refCode: 7103
+  thName: "บ่อพลอย"
+  enName: "Bo Phloi"
+  province: 71
+-
+  refCode: 7104
+  thName: "ศรีสวัสดิ์"
+  enName: "Si Sawat"
+  province: 71
+-
+  refCode: 7105
+  thName: "ท่ามะกา"
+  enName: "Tha Maka"
+  province: 71
+-
+  refCode: 7106
+  thName: "ท่าม่วง"
+  enName: "Tha Muang"
+  province: 71
+-
+  refCode: 7107
+  thName: "ทองผาภูมิ"
+  enName: "Thong Pha Phum"
+  province: 71
+-
+  refCode: 7108
+  thName: "สังขละบุรี"
+  enName: "Sangkhla Buri"
+  province: 71
+-
+  refCode: 7109
+  thName: "พนมทวน"
+  enName: "Phanom Thuan"
+  province: 71
+-
+  refCode: 7110
+  thName: "เลาขวัญ"
+  enName: "Lao Khwan"
+  province: 71
+-
+  refCode: 7111
+  thName: "ด่านมะขามเตี้ย"
+  enName: "Dan Makham Tia"
+  province: 71
+-
+  refCode: 7112
+  thName: "หนองปรือ"
+  enName: "Nong Prue"
+  province: 71
+-
+  refCode: 7113
+  thName: "ห้วยกระเจา"
+  enName: "Huai Krachao"
+  province: 71
+-
+  refCode: 7201
+  thName: "เมืองสุพรรณบุรี"
+  enName: "Mueang Saphan Buri"
+  province: 72
+-
+  refCode: 7202
+  thName: "เดิมบางนางบวช"
+  enName: "Doem Bang Nang Buat"
+  province: 72
+-
+  refCode: 7203
+  thName: "ด่านช้าง"
+  enName: "Dan Chang"
+  province: 72
+-
+  refCode: 7204
+  thName: "บางปลาม้า"
+  enName: "Bang Pla Ma"
+  province: 72
+-
+  refCode: 7205
+  thName: "ศรีประจันต์"
+  enName: "Si Prachan"
+  province: 72
+-
+  refCode: 7206
+  thName: "ดอนเจดีย์"
+  enName: "Don Chedi"
+  province: 72
+-
+  refCode: 7207
+  thName: "สองพี่น้อง"
+  enName: "Song Phi Nong"
+  province: 72
+-
+  refCode: 7208
+  thName: "สามชุก"
+  enName: "Sam Chuk"
+  province: 72
+-
+  refCode: 7209
+  thName: "อู่ทอง"
+  enName: "U Thong"
+  province: 72
+-
+  refCode: 7210
+  thName: "หนองหญ้าไซ"
+  enName: "Nong Ya Sai"
+  province: 72
+-
+  refCode: 7301
+  thName: "เมืองนครปฐม"
+  enName: "mueang Nakhon Pathom"
+  province: 73
+-
+  refCode: 7302
+  thName: "กำแพงแสน"
+  enName: "Kamphaeng Saen"
+  province: 73
+-
+  refCode: 7303
+  thName: "นครชัยศรี"
+  enName: "Nakhon Chai Si"
+  province: 73
+-
+  refCode: 7304
+  thName: "ดอนตูม"
+  enName: "Don Tum"
+  province: 73
+-
+  refCode: 7305
+  thName: "บางเลน"
+  enName: "Bang Len"
+  province: 73
+-
+  refCode: 7306
+  thName: "สามพราน"
+  enName: "Sam Phran"
+  province: 73
+-
+  refCode: 7307
+  thName: "พุทธมณฑล"
+  enName: "Phutthamonthon"
+  province: 73
+-
+  refCode: 7401
+  thName: "เมืองสมุทรสาคร"
+  enName: "Mueang Samut Sakhon"
+  province: 74
+-
+  refCode: 7402
+  thName: "กระทุ่มแบน"
+  enName: "Krathum Baen"
+  province: 74
+-
+  refCode: 7403
+  thName: "บ้านแพ้ว"
+  enName: "Ban Phaeo"
+  province: 74
+-
+  refCode: 7501
+  thName: "เมืองสมุทรสงคราม"
+  enName: "Mueang Samut Songkhram"
+  province: 75
+-
+  refCode: 7502
+  thName: "บางคนที"
+  enName: "Bang Khonthi"
+  province: 75
+-
+  refCode: 7503
+  thName: "อัมพวา"
+  enName: "Amphawa"
+  province: 75
+-
+  refCode: 7601
+  thName: "เมืองเพชรบุรี"
+  enName: "Mueang Phetchaburi"
+  province: 76
+-
+  refCode: 7602
+  thName: "เขาย้อย"
+  enName: "Khao Yoi"
+  province: 76
+-
+  refCode: 7603
+  thName: "หนองหญ้าปล้อง"
+  enName: "Nong Ya Plong"
+  province: 76
+-
+  refCode: 7604
+  thName: "ชะอำ"
+  enName: "Cha-am"
+  province: 76
+-
+  refCode: 7605
+  thName: "ท่ายาง"
+  enName: "Tha Yang"
+  province: 76
+-
+  refCode: 7606
+  thName: "บ้านลาด"
+  enName: "Ban Lat"
+  province: 76
+-
+  refCode: 7607
+  thName: "บ้านแหลม"
+  enName: "Ban Laem"
+  province: 76
+-
+  refCode: 7608
+  thName: "แก่งกระจาน"
+  enName: "Kaeng Krachan"
+  province: 76
+-
+  refCode: 7701
+  thName: "เมืองประจวบคีรีขันธ์"
+  enName: "Mueang Prachuap Khiri Khan"
+  province: 77
+-
+  refCode: 7702
+  thName: "กุยบุรี"
+  enName: "Kui Buri"
+  province: 77
+-
+  refCode: 7703
+  thName: "ทับสะแก"
+  enName: "Thap Sakae"
+  province: 77
+-
+  refCode: 7704
+  thName: "บางสะพาน"
+  enName: "Bang Saphan"
+  province: 77
+-
+  refCode: 7705
+  thName: "บางสะพานน้อย"
+  enName: "Bang Saphan Noi"
+  province: 77
+-
+  refCode: 7706
+  thName: "ปราณบุรี"
+  enName: "Pran Buri"
+  province: 77
+-
+  refCode: 7707
+  thName: "หัวหิน"
+  enName: "Hua Hin"
+  province: 77
+-
+  refCode: 7708
+  thName: "สามร้อยยอด"
+  enName: "Sam Roi Yot"
+  province: 77
+-
+  refCode: 8001
+  thName: "เมืองนครศรีธรรมราช"
+  enName: "Mueang Nakhon Si Thammarat"
+  province: 80
+-
+  refCode: 8002
+  thName: "พรหมคีรี"
+  enName: "Phrom Khiri"
+  province: 80
+-
+  refCode: 8003
+  thName: "ลานสกา"
+  enName: "Lan Saka"
+  province: 80
+-
+  refCode: 8004
+  thName: "ฉวาง"
+  enName: "Chawang"
+  province: 80
+-
+  refCode: 8005
+  thName: "พิปูน"
+  enName: "Phipun"
+  province: 80
+-
+  refCode: 8006
+  thName: "เชียรใหญ่"
+  enName: "Chian Yai"
+  province: 80
+-
+  refCode: 8007
+  thName: "ชะอวด"
+  enName: "Cha-uat"
+  province: 80
+-
+  refCode: 8008
+  thName: "ท่าศาลา"
+  enName: "Tha Sala"
+  province: 80
+-
+  refCode: 8009
+  thName: "ทุ่งสง"
+  enName: "Thung Song"
+  province: 80
+-
+  refCode: 8010
+  thName: "นาบอน"
+  enName: "Na Bon"
+  province: 80
+-
+  refCode: 8011
+  thName: "ทุ่งใหญ่"
+  enName: "Thung Yai"
+  province: 80
+-
+  refCode: 8012
+  thName: "ปากพนัง"
+  enName: "Pak Phanang"
+  province: 80
+-
+  refCode: 8013
+  thName: "ร่อนพิบูลย์"
+  enName: "Ron Phibun"
+  province: 80
+-
+  refCode: 8014
+  thName: "สิชล"
+  enName: "Sichon"
+  province: 80
+-
+  refCode: 8015
+  thName: "ขนอม"
+  enName: "Khanom"
+  province: 80
+-
+  refCode: 8016
+  thName: "หัวไทร"
+  enName: "Hua Sai"
+  province: 80
+-
+  refCode: 8017
+  thName: "บางขัน"
+  enName: "Bang Khan"
+  province: 80
+-
+  refCode: 8018
+  thName: "ถ้ำพรรณรา"
+  enName: "Tham Phannara"
+  province: 80
+-
+  refCode: 8019
+  thName: "จุฬาภรณ์"
+  enName: "Chulabhorn"
+  province: 80
+-
+  refCode: 8020
+  thName: "พระพรหม"
+  enName: "Phra Phrom"
+  province: 80
+-
+  refCode: 8021
+  thName: "นบพิตำ"
+  enName: "Nopphitam"
+  province: 80
+-
+  refCode: 8022
+  thName: "ช้างกลาง"
+  enName: "Chang Klang"
+  province: 80
+-
+  refCode: 8023
+  thName: "เฉลิมพระเกียรติ"
+  enName: "Chaloem Phra Kiet"
+  province: 80
+-
+  refCode: 8101
+  thName: "เมืองกระบี่"
+  enName: "Mueang Krabi"
+  province: 81
+-
+  refCode: 8102
+  thName: "เขาพนม"
+  enName: "Khao Phanom"
+  province: 81
+-
+  refCode: 8103
+  thName: "เกาะลันตา"
+  enName: "Ko Lanta"
+  province: 81
+-
+  refCode: 8104
+  thName: "คลองท่อม"
+  enName: "Khlong Thom"
+  province: 81
+-
+  refCode: 8105
+  thName: "อ่าวลึก"
+  enName: "Ao Luek"
+  province: 81
+-
+  refCode: 8106
+  thName: "ปลายพระยา"
+  enName: "Plai Phraya"
+  province: 81
+-
+  refCode: 8107
+  thName: "ลำทับ"
+  enName: "Lam Thap"
+  province: 81
+-
+  refCode: 8108
+  thName: "เหนือคลอง"
+  enName: "Nuea Khlong"
+  province: 81
+-
+  refCode: 8201
+  thName: "เมืองพังงา"
+  enName: "Mueang Phang-nga"
+  province: 82
+-
+  refCode: 8202
+  thName: "เกาะยาว"
+  enName: "Ko Yao"
+  province: 82
+-
+  refCode: 8203
+  thName: "กะปง"
+  enName: "Kapong"
+  province: 82
+-
+  refCode: 8204
+  thName: "ตะกั่วทุ่ง"
+  enName: "Takua Thung"
+  province: 82
+-
+  refCode: 8205
+  thName: "ตะกั่วป่า"
+  enName: "Takua Pa"
+  province: 82
+-
+  refCode: 8206
+  thName: "คุระบุรี"
+  enName: "Khura Buri"
+  province: 82
+-
+  refCode: 8207
+  thName: "ทับปุด"
+  enName: "Thap Put"
+  province: 82
+-
+  refCode: 8208
+  thName: "ท้ายเหมือง"
+  enName: "Thai Mueang"
+  province: 82
+-
+  refCode: 8301
+  thName: "เมืองภูเก็ต"
+  enName: "Mueang Phuket"
+  province: 83
+-
+  refCode: 8302
+  thName: "กะทู้"
+  enName: "Kathu"
+  province: 83
+-
+  refCode: 8303
+  thName: "ถลาง"
+  enName: "Thalang"
+  province: 83
+-
+  refCode: 8401
+  thName: "เมืองสุราษฎร์ธานี"
+  enName: "Mueang Surat Thani"
+  province: 84
+-
+  refCode: 8402
+  thName: "กาญจนดิษฐ์"
+  enName: "Kanchanadit"
+  province: 84
+-
+  refCode: 8403
+  thName: "ดอนสัก"
+  enName: "Don Sak"
+  province: 84
+-
+  refCode: 8404
+  thName: "เกาะสมุย"
+  enName: "Ko Samui"
+  province: 84
+-
+  refCode: 8405
+  thName: "เกาะพะงัน"
+  enName: "Ko Pha-ngan"
+  province: 84
+-
+  refCode: 8406
+  thName: "ไชยา"
+  enName: "Chaiya"
+  province: 84
+-
+  refCode: 8407
+  thName: "ท่าชนะ"
+  enName: "Tha Chana"
+  province: 84
+-
+  refCode: 8408
+  thName: "คีรีรัฐนิคม"
+  enName: "Khiri Rat Nikhom"
+  province: 84
+-
+  refCode: 8409
+  thName: "บ้านตาขุน"
+  enName: "Ban Ta Khun"
+  province: 84
+-
+  refCode: 8410
+  thName: "พนม"
+  enName: "Phanom"
+  province: 84
+-
+  refCode: 8411
+  thName: "ท่าฉาง"
+  enName: "Tha Chang"
+  province: 84
+-
+  refCode: 8412
+  thName: "บ้านนาสาร"
+  enName: "Ban Na San"
+  province: 84
+-
+  refCode: 8413
+  thName: "บ้านนาเดิม"
+  enName: "Ban Na Doem"
+  province: 84
+-
+  refCode: 8414
+  thName: "เคียนซา"
+  enName: "Khian Sa"
+  province: 84
+-
+  refCode: 8415
+  thName: "เวียงสระ"
+  enName: "Wiang Sa"
+  province: 84
+-
+  refCode: 8416
+  thName: "พระแสง"
+  enName: "Phrasaeng"
+  province: 84
+-
+  refCode: 8417
+  thName: "พุนพิน"
+  enName: "Phunphin"
+  province: 84
+-
+  refCode: 8418
+  thName: "ชัยบุรี"
+  enName: "Chai Buri"
+  province: 84
+-
+  refCode: 8419
+  thName: "วิภาวดี"
+  enName: "Chai Buri"
+  province: 84
+-
+  refCode: 8501
+  thName: "เมืองระนอง"
+  enName: "Mueang Ranong"
+  province: 85
+-
+  refCode: 8502
+  thName: "ละอุ่น"
+  enName: "La-un"
+  province: 85
+-
+  refCode: 8503
+  thName: "กะเปอร์"
+  enName: "Papoe"
+  province: 85
+-
+  refCode: 8504
+  thName: "กระบุรี"
+  enName: "Kra Buri"
+  province: 85
+-
+  refCode: 8505
+  thName: "สุขสำราญ"
+  enName: "Suk Samran"
+  province: 85
+-
+  refCode: 8601
+  thName: "เมืองชุมพร"
+  enName: "Mueang Chumphon"
+  province: 86
+-
+  refCode: 8602
+  thName: "ท่าแซะ"
+  enName: "Tha Sae"
+  province: 86
+-
+  refCode: 8603
+  thName: "ปะทิว"
+  enName: "Pathio"
+  province: 86
+-
+  refCode: 8604
+  thName: "หลังสวน"
+  enName: "Lang Suan"
+  province: 86
+-
+  refCode: 8605
+  thName: "ละแม"
+  enName: "Lamae"
+  province: 86
+-
+  refCode: 8606
+  thName: "พะโต๊ะ"
+  enName: "Phato"
+  province: 86
+-
+  refCode: 8607
+  thName: "สวี"
+  enName: "Sawi"
+  province: 86
+-
+  refCode: 8608
+  thName: "ทุ่งตะโก"
+  enName: "Thung Tako"
+  province: 86
+-
+  refCode: 9001
+  thName: "เมืองสงขลา"
+  enName: "Muaeng Songkhla"
+  province: 90
+-
+  refCode: 9002
+  thName: "สทิงพระ"
+  enName: "Sathing Phra"
+  province: 90
+-
+  refCode: 9003
+  thName: "จะนะ"
+  enName: "Chana"
+  province: 90
+-
+  refCode: 9004
+  thName: "นาทวี"
+  enName: "Na Thawi"
+  province: 90
+-
+  refCode: 9005
+  thName: "เทพา"
+  enName: "Thepha"
+  province: 90
+-
+  refCode: 9006
+  thName: "สะบ้าย้อย"
+  enName: "Saba Yoi"
+  province: 90
+-
+  refCode: 9007
+  thName: "ระโนด"
+  enName: "Ranot"
+  province: 90
+-
+  refCode: 9008
+  thName: "กระแสสินธุ์"
+  enName: "Krasae Sin"
+  province: 90
+-
+  refCode: 9009
+  thName: "รัตภูมิ"
+  enName: "Rattaphum"
+  province: 90
+-
+  refCode: 9010
+  thName: "สะเดา"
+  enName: "Sadao"
+  province: 90
+-
+  refCode: 9011
+  thName: "หาดใหญ่"
+  enName: "Hat Yai"
+  province: 90
+-
+  refCode: 9012
+  thName: "นาหม่อม"
+  enName: "Na Mom"
+  province: 90
+-
+  refCode: 9013
+  thName: "ควนเนียง"
+  enName: "Khuan Niang"
+  province: 90
+-
+  refCode: 9014
+  thName: "บางกล่ำ"
+  enName: "Bang Klam"
+  province: 90
+-
+  refCode: 9015
+  thName: "สิงหนคร"
+  enName: "Singhanakhon"
+  province: 90
+-
+  refCode: 9016
+  thName: "คลองหอยโข่ง"
+  enName: "Khlong Hoi Khong"
+  province: 90
+-
+  refCode: 9101
+  thName: "เมืองสตูล"
+  enName: "Mueang Satun"
+  province: 91
+-
+  refCode: 9102
+  thName: "ควนโดน"
+  enName: "Khuan Don"
+  province: 91
+-
+  refCode: 9103
+  thName: "ควนกาหลง"
+  enName: "Khuan Kalong"
+  province: 91
+-
+  refCode: 9104
+  thName: "ท่าแพ"
+  enName: "Tha Phae"
+  province: 91
+-
+  refCode: 9105
+  thName: "ละงู"
+  enName: "La-ngu"
+  province: 91
+-
+  refCode: 9106
+  thName: "ทุ่งหว้า"
+  enName: "Thung Wa"
+  province: 91
+-
+  refCode: 9107
+  thName: "มะนัง"
+  enName: "Manang"
+  province: 91
+-
+  refCode: 9201
+  thName: "เมืองตรัง"
+  enName: "Mueang Trang"
+  province: 92
+-
+  refCode: 9202
+  thName: "กันตัง"
+  enName: "Kantang"
+  province: 92
+-
+  refCode: 9203
+  thName: "ย่านตาขาว"
+  enName: "Yan Ta Khao"
+  province: 92
+-
+  refCode: 9204
+  thName: "ปะเหลียน"
+  enName: "Palian"
+  province: 92
+-
+  refCode: 9205
+  thName: "สิเกา"
+  enName: "Sikao"
+  province: 92
+-
+  refCode: 9206
+  thName: "ห้วยยอด"
+  enName: "Huai Yot"
+  province: 92
+-
+  refCode: 9207
+  thName: "วังวิเศษ"
+  enName: "Wang Wiset"
+  province: 92
+-
+  refCode: 9208
+  thName: "นาโยง"
+  enName: "Na Yong"
+  province: 92
+-
+  refCode: 9209
+  thName: "รัษฎา"
+  enName: "Ratsada"
+  province: 92
+-
+  refCode: 9210
+  thName: "หาดสำราญ"
+  enName: "Hat Samran"
+  province: 92
+-
+  refCode: 9301
+  thName: "เมืองพัทลุง"
+  enName: "Mueang Phatthalung"
+  province: 93
+-
+  refCode: 9302
+  thName: "กงหรา"
+  enName: "Kong Ra"
+  province: 93
+-
+  refCode: 9303
+  thName: "เขาชัยสน"
+  enName: "Khao Chaison"
+  province: 93
+-
+  refCode: 9304
+  thName: "ตะโหมด"
+  enName: "Tamot"
+  province: 93
+-
+  refCode: 9305
+  thName: "ควนขนุน"
+  enName: "Khuan Khanun"
+  province: 93
+-
+  refCode: 9306
+  thName: "ปากพะยูน"
+  enName: "Pak Phayun"
+  province: 93
+-
+  refCode: 9307
+  thName: "ศรีบรรพต"
+  enName: "Si Banphot"
+  province: 93
+-
+  refCode: 9308
+  thName: "ป่าบอน"
+  enName: "Pa Bon"
+  province: 93
+-
+  refCode: 9309
+  thName: "บางแก้ว"
+  enName: "Bang Kaeo"
+  province: 93
+-
+  refCode: 9310
+  thName: "ป่าพยอม"
+  enName: "Pa Phayom"
+  province: 93
+-
+  refCode: 9311
+  thName: "ศรีนครินทร์"
+  enName: "Srinagarindra"
+  province: 93
+-
+  refCode: 9401
+  thName: "เมืองปัตตานี"
+  enName: "Mueang Pattani"
+  province: 94
+-
+  refCode: 9402
+  thName: "โคกโพธิ์"
+  enName: "Khok Pho"
+  province: 94
+-
+  refCode: 9403
+  thName: "หนองจิก"
+  enName: "Nong Chik"
+  province: 94
+-
+  refCode: 9404
+  thName: "ปะนาเระ"
+  enName: "Panare"
+  province: 94
+-
+  refCode: 9405
+  thName: "มายอ"
+  enName: "Mayo"
+  province: 94
+-
+  refCode: 9406
+  thName: "ทุ่งยางแดง"
+  enName: "Thung Yang Daeng"
+  province: 94
+-
+  refCode: 9407
+  thName: "สายบุรี"
+  enName: "Sai Buri"
+  province: 94
+-
+  refCode: 9408
+  thName: "ไม้แก่น"
+  enName: "Mai Kaen"
+  province: 94
+-
+  refCode: 9409
+  thName: "ยะหริ่ง"
+  enName: "Yaring"
+  province: 94
+-
+  refCode: 9410
+  thName: "ยะรัง"
+  enName: "Yarang"
+  province: 94
+-
+  refCode: 9411
+  thName: "กะพ้อ"
+  enName: "Kapho"
+  province: 94
+-
+  refCode: 9412
+  thName: "แม่ลาน"
+  enName: "Mae Lan"
+  province: 94
+-
+  refCode: 9501
+  thName: "เมืองยะลา"
+  enName: "Mueang Yala"
+  province: 95
+-
+  refCode: 9502
+  thName: "เบตง"
+  enName: "Betong"
+  province: 95
+-
+  refCode: 9503
+  thName: "บันนังสตา"
+  enName: "Bannang Sata"
+  province: 95
+-
+  refCode: 9504
+  thName: "ธารโต"
+  enName: "Than To"
+  province: 95
+-
+  refCode: 9505
+  thName: "ยะหา"
+  enName: "Yaha"
+  province: 95
+-
+  refCode: 9506
+  thName: "รามัน"
+  enName: "Raman"
+  province: 95
+-
+  refCode: 9507
+  thName: "กาบัง"
+  enName: "Kabang"
+  province: 95
+-
+  refCode: 9508
+  thName: "กรงปีนัง"
+  enName: "Krong Pinang"
+  province: 95
+-
+  refCode: 9601
+  thName: "เมืองนราธิวาส"
+  enName: "Mueang Narathiwat"
+  province: 96
+-
+  refCode: 9602
+  thName: "ตากใบ"
+  enName: "Tak Bai"
+  province: 96
+-
+  refCode: 9603
+  thName: "บาเจาะ"
+  enName: "Tak Bai"
+  province: 96
+-
+  refCode: 9604
+  thName: "ยี่งอ"
+  enName: "Yi-ngo"
+  province: 96
+-
+  refCode: 9605
+  thName: "ระแงะ"
+  enName: "Ra-ngae"
+  province: 96
+-
+  refCode: 9606
+  thName: "รือเสาะ"
+  enName: "Rueso"
+  province: 96
+-
+  refCode: 9607
+  thName: "ศรีสาคร"
+  enName: "Si Sakhon"
+  province: 96
+-
+  refCode: 9608
+  thName: "แว้ง"
+  enName: "Waeng"
+  province: 96
+-
+  refCode: 9609
+  thName: "สุคิริน"
+  enName: "Sukhirin"
+  province: 96
+-
+  refCode: 9610
+  thName: "สุไหงโก-ลก"
+  enName: "Su-ngai Kolok"
+  province: 96
+-
+  refCode: 9611
+  thName: "สุไหงปาดี"
+  enName: "Su-ngai Padi"
+  province: 96
+-
+  refCode: 9612
+  thName: "จะแนะ"
+  enName: "Chanae"
+  province: 96
+-
+  refCode: 9613
+  thName: "เจาะไอร้อง"
+  enName: "Cho-airong"
+  province: 96
+...

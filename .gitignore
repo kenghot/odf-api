@@ -1,0 +1,14 @@
+.idea/
+.vscode/
+node_modules/
+build/
+tmp/
+temp/
+.data/
+.data-backup/
+logs
+public/
+aws/odf2019d/odf-ssm-param.yml
+jsreport-data/settings
+tmp/*
+.env.development.local

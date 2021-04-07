@@ -1,0 +1,16 @@
+{
+    "shortid": "HJeQ3GhiRE",
+    "name": "personal-request-data",
+    "creationDate": "2019-06-10T10:43:15.316Z",
+    "modificationDate": {
+        "$$date": 1576834998024
+    },
+    "_id": "O1JD2zjV8ogdvNs7",
+    "$entitySet": "data",
+    "entitySet": "data",
+    "type": "entity",
+    "key": "O1JD2zjV8ogdvNs7",
+    "folder": {
+        "shortid": "Xc3sVs8"
+    }
+}

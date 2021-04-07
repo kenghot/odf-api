@@ -1,0 +1,185 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: "Service: odf-api"
+Parameters:
+  ECSClusterName:
+    Type: String
+    Description: "Refer to existing ECSCluster StackName"
+    Default: odf-ecs
+  OdfDBType:
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: TYPEORM_CONNECTION
+  OdfDBHost:
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: TYPEORM_HOST
+  OdfDBUser:
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: TYPEORM_USERNAME
+  OdfDBPassword:
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: TYPEORM_PASSWORD
+  OdfDBName:
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: TYPEORM_DATABASE
+  OdfDBPort:
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: TYPEORM_PORT
+  OdfDBSync:
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: TYPEORM_SYNCHRONIZE
+  OdfDBEntities:
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: TYPEORM_ENTITIES
+  OdfDBMigrations:
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: TYPEORM_MIGRATIONS
+  OdfDBSubscribers:
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: TYPEORM_SUBSCRIBERS
+  OdfDBEntitiesDir:
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: TYPEORM_ENTITIES_DIR
+  OdfDBMigrationsDir:
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: TYPEORM_MIGRATIONS_DIR
+  OdfDBSubscribersDir:
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: TYPEORM_SUBSCRIBERS_DIR
+  OdfJwtSecretKey:
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: WEBSITE_JWT_SECRET_KEY
+  OdfRefreshJwtSecretKey:
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: WEBSITE_REFRESH_JWT_SECRET_KEY
+  OdfJwtExpiredIn:
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: JWT_EXPIRED_IN
+  OdfRefreshJwtExpiredIn:
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: REFRESH_JWT_EXPIRED_IN
+  OdfSaltRounds:
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: SALT_ROUNDS
+  OdfAppEmail:
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: APP_EMAIL
+  OdfAppEmailPassword:
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: APP_EMAIL_PASS
+  OdfAppEmailHost:
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: APP_EMAIL_HOST
+  OdfAppEmailPort:
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: APP_EMAIL_PORT
+  OdfRootUploadPath:
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: ROOT_UPLOAD_PATH
+  OdfAdmin:
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: USER_ADMIN
+  OdfAdminEmail:
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: USER_ADMIN_EMAIL
+  OdfAdminPassword:
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: USER_ADMIN_PASSWORD
+  OdfTaxId:
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: TAX_ID
+  OdfServiceNo:
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: SERVICE_NO
+  # OdfVersion:
+  #   Type: AWS::SSM::Parameter::Value<String>
+  #   Default: VERSION
+Resources:
+  OdfApiTaskDefinition:
+    Type: AWS::ECS::TaskDefinition
+    Properties:
+      Family: odf-api
+      ContainerDefinitions:
+        - Name: odf-api
+          Cpu: 900
+          Essential: "true"
+          Image: 090973633865.dkr.ecr.ap-southeast-1.amazonaws.com/odf-api
+          Memory: 900
+          PortMappings:
+            - ContainerPort: "3000"
+              HostPort: "3000"
+          Environment:
+            - Name: "TYPEORM_CONNECTION"
+              Value: !Ref OdfDBType
+            - Name: "TYPEORM_HOST"
+              Value: !Ref OdfDBHost
+            - Name: "TYPEORM_USERNAME"
+              Value: !Ref OdfDBUser
+            - Name: "TYPEORM_PASSWORD"
+              Value: !Ref OdfDBPassword
+            - Name: "TYPEORM_DATABASE"
+              Value: !Ref OdfDBName
+            - Name: "TYPEORM_PORT"
+              Value: !Ref OdfDBPort
+            - Name: "TYPEORM_SYNCHRONIZE"
+              Value: !Ref OdfDBSync
+            - Name: "TYPEORM_ENTITIES"
+              Value: !Ref OdfDBEntities
+            - Name: "TYPEORM_MIGRATIONS"
+              Value: !Ref OdfDBMigrations
+            - Name: "TYPEORM_SUBSCRIBERS"
+              Value: !Ref OdfDBSubscribers
+            - Name: "TYPEORM_ENTITIES_DIR"
+              Value: !Ref OdfDBEntitiesDir
+            - Name: "TYPEORM_MIGRATIONS_DIR"
+              Value: !Ref OdfDBMigrationsDir
+            - Name: "TYPEORM_SUBSCRIBERS_DIR"
+              Value: !Ref OdfDBSubscribersDir
+            - Name: "WEBSITE_JWT_SECRET_KEY"
+              Value: !Ref OdfJwtSecretKey
+            - Name: "WEBSITE_REFRESH_JWT_SECRET_KEY"
+              Value: !Ref OdfRefreshJwtSecretKey
+            - Name: "JWT_EXPIRED_IN"
+              Value: !Ref OdfJwtExpiredIn
+            - Name: "REFRESH_JWT_EXPIRED_IN"
+              Value: !Ref OdfRefreshJwtExpiredIn
+            - Name: "SALT_ROUNDS"
+              Value: !Ref OdfSaltRounds
+            - Name: "APP_EMAIL"
+              Value: !Ref OdfAppEmail
+            - Name: "APP_EMAIL_PASS"
+              Value: !Ref OdfAppEmailPassword
+            - Name: "APP_EMAIL_HOST"
+              Value: !Ref OdfAppEmailHost
+            - Name: "APP_EMAIL_PORT"
+              Value: !Ref OdfAppEmailPort
+            - Name: "ROOT_UPLOAD_PATH"
+              Value: !Ref OdfRootUploadPath
+            - Name: "USER_ADMIN"
+              Value: !Ref OdfAdmin
+            - Name: "USER_ADMIN_EMAIL"
+              Value: !Ref OdfAdminEmail
+            - Name: "USER_ADMIN_PASSWORD"
+              Value: !Ref OdfAdminPassword
+            - Name: "TAX_ID"
+              Value: !Ref OdfTaxId
+            - Name: "SERVICE_NO"
+              Value: !Ref OdfServiceNo
+            # - Name: "VERSION"
+            #   Value: !Ref OdfVersion
+      Volumes:
+        - Name: odf-api
+  OdfApiService:
+    Type: AWS::ECS::Service
+    Properties:
+      Cluster:
+        Fn::ImportValue: !Sub ${ECSClusterName}-Cluster
+      DeploymentConfiguration:
+        MaximumPercent: "100"
+        MinimumHealthyPercent: "0"
+      DesiredCount: "1"
+      ServiceName: odf-api
+      TaskDefinition: !Ref OdfApiTaskDefinition
+Outputs:
+  PdmoService:
+    Value: !Ref OdfApiService
+    Export:
+      Name: !Sub ${AWS::StackName}-OdfApiService

@@ -1,0 +1,30 @@
+{
+    "name": "ar-page",
+    "recipe": "chrome-pdf",
+    "shortid": "BkgR0iMT5P",
+    "folder": {
+        "shortid": "DhYcEel"
+    },
+    "engine": "handlebars",
+    "chrome": {
+        "printBackground": true,
+        "marginTop": "2.7cm",
+        "marginRight": "2.5cm",
+        "marginBottom": "2.7cm",
+        "marginLeft": "4.5cm",
+        "width": "21cm",
+        "height": "29.7cm",
+        "format": "A4",
+        "displayHeaderFooter": false
+    },
+    "creationDate": "2020-11-26T12:22:34.133Z",
+    "modificationDate": {
+        "$$date": 1606478576114
+    },
+    "pdfOperations": [],
+    "data": {
+        "shortid": "Skl0NWFWWS"
+    },
+    "_id": "eEc0XHpUl83yYvBV",
+    "$entitySet": "templates"
+}

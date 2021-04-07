@@ -1,0 +1,51 @@
+[
+    {
+        "name": "Organization A",
+        "code": "oa",
+        "request_sequence": { "prefix_code": "rb", "prefix_year": "2562" },
+        "agreement_sequence": { "prefix_code": "rb", "prefix_year": "2562" },
+        "address": {
+            "house_no": "111/111",
+            "sub_district_id": 100101,
+            "sub_district": "พระบรมมหาราชวัง",
+            "district_id": 1001,
+            "district": "พระนคร",
+            "province_id": 10,
+            "province": "กรุงเทพมหานคร",
+            "zipcode": "10200"
+        },
+        "agreement_authorized_title": "นาย",
+        "agreement_authorized_firstname": "พล",
+        "agreement_authorized_lastname": "เอก",
+        "agreement_authorized_position": "หัวหน้าหน่วย",
+        "agreement_authorized_command_no": "22/12342",
+        "agreement_authorized_command_date": "2019-01-01",
+        "active": true,
+        "telephone": ""
+    },
+    {
+        "name": "Organization B",
+        "code": "ob",
+        "request_sequence": { "prefix_code": "rb", "prefix_year": "2562" },
+        "agreement_sequence": { "prefix_code": "rb", "prefix_year": "2562" },
+        "address": {
+            "house_no": "222/222",
+            "sub_district_id": 100102,
+            "sub_district": "วังบูรพาภิรมย์",
+            "district_id": 1001,
+            "district": "พระนคร",
+            "province_id": 10,
+            "province": "กรุงเทพมหานคร",
+            "zipcode": "10200"
+        },
+        "agreement_authorized_title": "นาย",
+        "agreement_authorized_firstname": "มานะ",
+        "agreement_authorized_lastname": "มามัน",
+        "agreement_authorized_position": "หัวหน้าหน่วย",
+        "agreement_authorized_command_no": "22/12342",
+        "agreement_authorized_command_date": "2019-01-01",
+        "active": true,
+        "telephone": "",
+        "parent": 1
+    }
+]

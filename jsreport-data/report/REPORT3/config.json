@@ -1,0 +1,26 @@
+{
+    "name": "REPORT3",
+    "recipe": "html-to-xlsx",
+    "shortid": "SJl7hrpuvr",
+    "folder": {
+        "shortid": "THihHg0"
+    },
+    "engine": "handlebars",
+    "chrome": {
+        "printBackground": true
+    },
+    "htmlToXlsx": {
+        "htmlEngine": "chrome",
+        "insertToXlsxTemplate": false,
+        "waitForJS": false
+    },
+    "creationDate": "2019-09-25T10:47:09.747Z",
+    "modificationDate": {
+        "$$date": 1600178383799
+    },
+    "data": {
+        "shortid": "ryxgbFG7KH"
+    },
+    "_id": "lfd5iy8gFuQVGdWh",
+    "$entitySet": "templates"
+}

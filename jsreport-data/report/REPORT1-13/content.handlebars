@@ -1,0 +1,95 @@
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <style>
+        {#asset /asset/table-style.css @encoding=utf8}
+
+        @font-face {
+            font-family: 'THSarabunNew';
+            src: url({#asset /asset/THSarabunNew.ttf @encoding=dataURI});
+            format('truetype');
+        }
+
+        .table-tr-color > th {
+            background-color: WhiteSmoke;
+        }
+
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead> 
+            <tr>
+                <th colspan="19">{{checkEmpty title1}}</th>
+            </tr>
+            <tr>
+                <th colspan="19">{{checkEmpty title2}}</th>
+            </tr>
+            <tr>
+                <th colspan="19">ข้อมูล ณ วันที่ {{reportDataDate}}</th>
+            </tr>
+            <tr class="table-tr-bordered table-tr-color">
+                <th scope="col" rowspan="2">ที่</th>
+                <th scope="col" rowspan="2">เลขที่ใบคำร้อง</th>
+                <th scope="col" rowspan="2">หน่วยงานที่รับผิดชอบ</th>
+                <th scope="col" rowspan="2">เลขบัตรประชาชน</th>
+                <th scope="col" rowspan="2">ชื่อ-สกุล</th>
+                <th scope="col" rowspan="2">อายุ</th>
+                <th scope="col" rowspan="2">วัตถุประสงค์</th>
+                <th scope="col" colspan="2">คุณสมบัติ</th>
+                <th scope="col" colspan="1"></th>
+                <th scope="col" colspan="1"></th>
+                <th scope="col" colspan="1"></th>
+                <th scope="col" colspan="1"></th>
+                <th scope="col" colspan="1"></th>
+                <th scope="col" colspan="1"></th>
+                <th scope="col" colspan="1"></th>
+                <th scope="col" colspan="3">การพิจารณา</th>
+            </tr>
+            <tr class="table-tr-bordered table-tr-color">
+                <th scope="col">ผู้กู้ยืม(100)</th>
+                <th scope="col">ผู้ค้ำประกัน(100)</th>
+                <th scope="col">ผลสอบคุณสมบัติ</th>
+                <th scope="col">ความเห็นเจ้าหน้าที่</th>
+                <th scope="col">ประมาณ คชจ</th>
+                <th scope="col">วงเงินขอสนับสนุน</th>
+                <th scope="col">วงเงินที่ควรพิจารณา</th>
+                <th scope="col">กู้ครั้งที่</th>
+                <th scope="col">สถานะคำร้อง</th>
+                <th scope="col">ผลการพิจารณา</th>
+                <th scope="col">วงเงินอนุมัติ</th>
+                <th scope="col">หมายเหตุ</th>
+            
+            </tr>
+        </thead>
+        <tbody class="table-body-bordered">
+            {{#each data}}
+            <tr>
+                <td class="text-right">{{getOrderNumber @index}}</td>
+                <td class="text-right">{{checkEmpty documentNumber}}</td>
+                <td>{{checkEmpty orgName}}</td>
+                <td class="text-right">{{checkEmpty borrowerIdCardNo}}</td>
+                <td>{{checkEmpty borrowerFullName}}</td>
+                <td class="text-right">{{checkEmpty borrowerAge}}</td>
+                <td>{{checkEmpty requestOccupation}}</td>
+                <td class="text-right">{{checkEmpty borrowerScore}}</td>
+                <td class="text-right">{{checkEmpty guarantorScore}}</td>
+                <td class="text-center">{{qualification}}</td>
+                <td class="text-center">{{factSheetComments}}</td>
+                <td class="text-right">{{currency totalBudget true}}</td>
+                <td class="text-right">{{currency requestBudget true}}</td>
+                <td class="text-right">{{currency considerationBudget true}}</td>
+                <td  class="text-right">{{checkEmpty loanTimes}}</td>
+                <td>{{checkEmpty status}}</td>
+                <td>{{checkEmpty considerationResult}}</td>
+                <td class="text-right">{{currency approveBudget true}}</td>
+                <td>{{checkEmpty resultComments}}</td>
+            </tr>
+            {{/each}}          
+        </tbody>
+    </table>
+</body>
+
+</html>

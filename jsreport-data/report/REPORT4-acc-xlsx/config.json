@@ -1,0 +1,24 @@
+{
+    "name": "REPORT4-acc-xlsx",
+    "recipe": "xlsx",
+    "shortid": "B1xsW9WySD",
+    "folder": {
+        "shortid": "THihHg0"
+    },
+    "engine": "handlebars",
+    "chrome": {
+        "printBackground": true
+    },
+    "data": {
+        "shortid": "rJxT8ftK9B"
+    },
+    "creationDate": "2020-09-16T03:45:01.811Z",
+    "modificationDate": {
+        "$$date": 1600236179411
+    },
+    "xlsxTemplate": {
+        "shortid": "Gl8UkW1"
+    },
+    "_id": "69z9RkFjH5lpd6zN",
+    "$entitySet": "templates"
+}

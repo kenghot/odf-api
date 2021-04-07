@@ -1,0 +1,16 @@
+{
+    "name": "personal-memo-data",
+    "shortid": "r1Uej0KwB",
+    "folder": {
+        "shortid": "Xc3sVs8"
+    },
+    "creationDate": "2019-09-26T06:31:12.807Z",
+    "modificationDate": {
+        "$$date": 1577079231257
+    },
+    "_id": "kBLcrA2WHq64PysT",
+    "$entitySet": "data",
+    "entitySet": "data",
+    "type": "entity",
+    "key": "kBLcrA2WHq64PysT"
+}

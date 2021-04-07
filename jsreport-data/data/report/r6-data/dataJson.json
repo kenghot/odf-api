@@ -1,0 +1,61 @@
+{
+    "title1": "รายงานผลการพิจารณาอนุมัติของ คณะอนุกรรมการกลั่นกรองฯ ประเภทรายบุคคล ประจำปี -",
+    "title2": "จากการประชุม คณะอนุกรรมการกลั่นกรองฯ ครั้งที่ 1",
+    "reportDataDate": "6 พฤษจิกายน 2562",
+    "data": [
+        {
+            "province": "กรุงเทพมหานคร",
+            "region": "-",
+            "totalRequestBudget": "11230.00",
+            "totalPassedQualification": "1",
+            "totalNotPassedQualification": "1",
+            "totalNotCheckedQualification": "0",
+            "totalRequest": "2",
+            "totalPassed65and65": "0",
+            "totalNotPassedBorrower": "2",
+            "totalNotPassedGuarantor": "1",
+            "totalNotPassed": "2",
+            "totalFacesheet": "2",
+            "resultToTalApproveBudget": "11230.00",
+            "resultTotalApprove": "2",
+            "resultTotalReject": "0",
+            "resultTotal": "2"
+        },
+        {
+            "province": "นนทบุรี",
+            "region": "-",
+            "totalRequestBudget": "30000.00",
+            "totalPassedQualification": "0",
+            "totalNotPassedQualification": "0",
+            "totalNotCheckedQualification": "1",
+            "totalRequest": "1",
+            "totalPassed65and65": "0",
+            "totalNotPassedBorrower": "0",
+            "totalNotPassedGuarantor": "0",
+            "totalNotPassed": "0",
+            "totalFacesheet": "0",
+            "resultToTalApproveBudget": "30000.00",
+            "resultTotalApprove": "1",
+            "resultTotalReject": "0",
+            "resultTotal": "1"
+        },
+        {
+            "province": "ปทุมธานี",
+            "region": "-",
+            "totalRequestBudget": "30000.00",
+            "totalPassedQualification": "1",
+            "totalNotPassedQualification": "0",
+            "totalNotCheckedQualification": "0",
+            "totalRequest": "1",
+            "totalPassed65and65": "1",
+            "totalNotPassedBorrower": "0",
+            "totalNotPassedGuarantor": "0",
+            "totalNotPassed": "0",
+            "totalFacesheet": "1",
+            "resultToTalApproveBudget": "5500.00",
+            "resultTotalApprove": "1",
+            "resultTotalReject": "0",
+            "resultTotal": "1"
+        }
+    ]
+}

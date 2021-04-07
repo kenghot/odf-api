@@ -1,0 +1,80 @@
+{{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+<row r="1">
+    <c r="A1" t="inlineStr"><is><t>{{checkEmpty title1}}</t></is></c>
+</row>
+{{/xlsxAdd}}
+{{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+<row r="2">
+    <c r="A2" t="inlineStr"><is><t>{{checkEmpty title2}}</t></is></c>
+</row>
+{{/xlsxAdd}}
+{{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+<row r="3">
+    <c r="A3" t="inlineStr"><is><t>ข้อมูล ณ วันที่ {{reportDataDate}}</t></is></c>
+</row>
+{{/xlsxAdd}}
+
+{{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+<row r="4">
+    <c r="A4" t="inlineStr"><is><t>ภาค</t></is></c>
+    <c r="B4" t="inlineStr"><is><t>หน่วยงานที่รับผิดชอบ (จังหวัด)</t></is></c>
+    <c r="C4" t="inlineStr"><is><t>จ่ายชำระหนี้ในปีงบประมาณ</t></is></c>
+</row>
+{{/xlsxAdd}}
+{{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+<row r="5">
+    <c r="C5" t="inlineStr"><is><t>ช่องทางการชำระเงิน</t></is></c>
+    <c r="D5" t="inlineStr"><is><t>ต.ค.</t></is></c>
+    <c r="E5" t="inlineStr"><is><t>พ.ย.</t></is></c>
+    <c r="F5" t="inlineStr"><is><t>ธ.ค.</t></is></c>
+    <c r="G5" t="inlineStr"><is><t>ม.ค.</t></is></c>
+    <c r="H5" t="inlineStr"><is><t>ก.พ.</t></is></c>
+    <c r="I5" t="inlineStr"><is><t>มี.ค.</t></is></c>
+    <c r="J5" t="inlineStr"><is><t>เม.ย.</t></is></c>
+    <c r="K5" t="inlineStr"><is><t>พ.ค.</t></is></c>
+    <c r="L5" t="inlineStr"><is><t>มิ.ย.</t></is></c>
+    <c r="M5" t="inlineStr"><is><t>ก.ค.</t></is></c>
+    <c r="N5" t="inlineStr"><is><t>ส.ค.</t></is></c>
+    <c r="O5" t="inlineStr"><is><t>ก.ย.</t></is></c>
+    <c r="P5" t="inlineStr"><is><t>ช่องทางการชำระเงิน</t></is></c>
+    <c r="Q5" t="inlineStr"><is><t>รวม</t></is></c>
+</row>
+{{/xlsxAdd}}
+
+{{#xlsxReplace "xl/worksheets/sheet1.xml" "worksheet.mergeCells"}}
+    <mergeCells>
+        <mergeCell ref="A1:Q1"/>
+        <mergeCell ref="A2:Q2"/>
+        <mergeCell ref="A3:Q3"/>
+        <mergeCell ref="A4:A5"/>
+        <mergeCell ref="B4:B5"/>
+        <mergeCell ref="C4:Q4"/>        
+    </mergeCells>
+{{/xlsxReplace}}
+
+{{#each data}}
+    {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+    <row>
+        <c t="inlineStr"><is><t>{{renderRegionText @root.data @index}}</t></is></c>
+        {{!-- <c t="inlineStr"><is><t>{{renderFirstProvinceText @root.data @index}}</t></is></c> --}}
+        <c t="inlineStr"><is><t>{{renderFirstOrgNameText @root.data @index}}</t></is></c>
+        <c t="inlineStr"><is><t>{{paymentType}}</t></is></c>
+        <c t="n" s="7"><v>{{totalPaidOctober}}</v></c>
+        <c t="n" s="7"><v>{{totalPaidNovember}}</v></c>
+        <c t="n" s="7"><v>{{totalPaidDecember}}</v></c>
+        <c t="n" s="7"><v>{{totalPaidJanuary}}</v></c>
+        <c t="n" s="7"><v>{{totalPaidFebruary}}</v></c>
+        <c t="n" s="7"><v>{{totalPaidMarch}}</v></c>
+        <c t="n" s="7"><v>{{totalPaidApril}}</v></c>
+        <c t="n" s="7"><v>{{totalPaidMay}}</v></c>
+        <c t="n" s="7"><v>{{totalPaidJune}}</v></c>
+        <c t="n" s="7"><v>{{totalPaidJuly}}</v></c>
+        <c t="n" s="7"><v>{{totalPaidAugust}}</v></c>
+        <c t="n" s="7"><v>{{totalPaidSeptember}}</v></c>
+        <c t="inlineStr"><is><t>{{paymentType}}</t></is></c>
+        <c t="n" s="7"><v>{{totalPaidAllMonth }}</v></c>        
+    </row>    
+    {{/xlsxAdd}}
+{{/each}}
+
+{{{xlsxPrint}}}

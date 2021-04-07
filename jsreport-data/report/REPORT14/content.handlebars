@@ -1,0 +1,112 @@
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        {#asset /asset/table-style.css @encoding=utf8}
+
+        @font-face {
+            font-family: 'THSarabunNew';
+            src: url({#asset /asset/THSarabunNew.ttf @encoding=dataURI});
+            format('truetype');
+        }
+
+        
+        .table-th-lightgrey {
+            background-color: #ebebeb;
+        }
+
+        .table-th-darkgrey {
+            background-color: #d9d9d9; 
+        }
+
+        .table-th-green {
+            background-color: #d1e6c9; 
+        }
+
+        .table-th-blue {
+            background-color: #bed0f6;
+        }
+
+        .table-th-yellow {
+            background-color: #fff2cc;
+        }
+
+        .table-th-red {
+            background-color: #f0c0c1;
+        }
+
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="17">{{title1}}</th>
+            </tr>
+            <tr>
+                <th colspan="17">{{title2}}</th>
+            </tr>
+            <tr>
+                <th colspan="17">ข้อมูล ณ วันที่ {{reportDataDate}}</th>
+            </tr>
+        </thead>
+        <thead class="table-thread-bordered">
+            <tr>
+                <th class="table-th-lightgrey" rowspan="2" style="width:300px">ภาค</th>
+                <th class="table-th-lightgrey" rowspan="2">หน่วยงานที่รับผิดชอบ (จังหวัด)</th>
+                <th class="table-th-lightgrey" colspan="15">จ่ายชำระหนี้ในปีงบประมาณ {{fiscalYear}}</th>
+            </tr>
+            <tr>
+                {{!-- <th class="table-th-green">เงินสด (C)</th>
+                <th class="table-th-green">KTB (KTB)</th>
+                <th class="table-th-green">เคาท์เตอร์เซอร์วิส (C.S.)</th> --}}
+                <th class="table-th-green">ช่องทางการชำระเงิน</th>
+                <th class="table-th-lightgrey">ต.ค.</th>
+                <th class="table-th-lightgrey">พ.ย.</th>
+                <th class="table-th-lightgrey">ธ.ค.</th>
+                <th class="table-th-lightgrey">ม.ค.</th>
+                <th class="table-th-lightgrey">ก.พ.</th>
+                <th class="table-th-lightgrey">มี.ค.</th>
+                <th class="table-th-lightgrey">เม.ย.</th>
+                <th class="table-th-lightgrey">พ.ค.</th>
+                <th class="table-th-lightgrey">มิ.ย.</th>
+                <th class="table-th-lightgrey">ก.ค.</th>
+                <th class="table-th-lightgrey">ส.ค.</th>
+                <th class="table-th-lightgrey">ก.ย.</th>
+                <th class="table-th-green">ช่องทางการชำระเงิน</th>
+                <th class="table-th-lightgrey">รวม</th>
+               
+            </tr>
+        </thead>
+        <tbody class="table-body-bordered">
+            {{#each data}}
+
+            <tr>
+                <td style="width: 500px">{{renderRegionText @root.data @index}}</td>
+                <td>{{renderFirstProvinceText @root.data @index}}</td>
+           
+                <td class="text-right">{{paymentType}}</td>
+                <td class="text-right">{{currency totalPaidOctober true}}</td>
+                <td class="text-right">{{currency totalPaidNovember true}}</td>
+                <td class="text-right">{{currency totalPaidDecember true}}</td>
+                <td class="text-right">{{currency totalPaidJanuary true}}</td>
+                <td class="text-right">{{currency totalPaidFebruary true}}</td>
+                <td class="text-right">{{currency totalPaidMarch true}}</td>
+                <td class="text-right">{{currency totalPaidApril true}}</td>
+                <td class="text-right">{{currency totalPaidMay true}}</td>
+                <td class="text-right">{{currency totalPaidJune true}}</td>
+                <td class="text-right">{{currency totalPaidJuly true}}</td>
+                <td class="text-right">{{currency totalPaidAugust true}}</td>
+                <td class="text-right">{{currency totalPaidSeptember true}}</td>
+                <td class="text-right">{{paymentType}}</td>
+                <td class="text-right">{{currency totalPaidAllMonth true}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</body>
+
+</html>

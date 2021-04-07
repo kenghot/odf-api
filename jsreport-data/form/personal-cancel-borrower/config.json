@@ -1,0 +1,28 @@
+{
+    "name": "personal-cancel-borrower",
+    "recipe": "chrome-pdf",
+    "shortid": "HJljOw6uIr",
+    "folder": {
+        "shortid": "DhYcEel"
+    },
+    "engine": "handlebars",
+    "chrome": {
+        "printBackground": true,
+        "format": "A4",
+        "width": "21cm",
+        "height": "29.7cm",
+        "marginTop": "2.7cm",
+        "marginRight": "2.5cm",
+        "marginBottom": "2.7cm",
+        "marginLeft": "4.5cm"
+    },
+    "data": {
+        "shortid": "HkxdscfCUH"
+    },
+    "creationDate": "2019-09-13T07:38:29.286Z",
+    "modificationDate": {
+        "$$date": 1585134683278
+    },
+    "_id": "okZhXyKuER4JcbCK",
+    "$entitySet": "templates"
+}

@@ -1,0 +1,53 @@
+{{#xlsxReplace "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row[0].c[0]"}}
+    <c t="inlineStr" s="2"><is><t>รายงานรายละเอียดการขอกู้ยืมเงินทุนประกอบอาชีพประเภทรายบุคคล ในกรณีคำร้องไม่สมบูรณ์ส่งคืน สนง พมจ.</t></is></c>
+{{/xlsxReplace}}
+{{#xlsxReplace "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row[1].c[0]"}}
+    <c t="inlineStr" s="2"><is><t>{{checkEmpty title2}}</t></is></c>
+{{/xlsxReplace}}
+{{#xlsxReplace "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row[2].c[0]"}}
+    <c t="inlineStr" s="2"><is><t>ข้อมูล ณ วันที่ {{reportDataDate}}</t></is></c>
+{{/xlsxReplace}}
+
+{{#each data}}
+    {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+    <row>
+        <c t="inlineStr" s="1"><is><t>{{getOrderNumber @index}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty documentNumber}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty organization}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{formatThaiDate documentDate}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty status}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty borrowerIdCardNo}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty borrowerFullName}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{formatThaiDate borrowerBirthDate}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{formatThaiYear borrowerBirthDate}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty borrowerAge}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty borrowerMarriageStatus}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty borrowerRegisteredAddressProvince}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty borrowerOccupationName}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty borrowerOccupationDescription}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{currency borrowerOccupationSalary true}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty guarantorIdCardNo}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty guarantorFullName}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{formatThaiDate guarantorBirthDate}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{formatThaiYear guarantorBirthDate}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty guarantorAge}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty guarantorRegisteredAddressProvince}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty guarantorBorrowerRelationship}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty guarantorOccupationName}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty guarantorOccupationDescription}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{currency guarantorOccupationSalary true}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty guarantorCompanyName}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty guarantorPosition}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{currency totalBudget true}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{currency requestBudget true}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty facesheetBorrowerScore}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty facesheetGuarantorScore}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty qualification}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty factSheetComments}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty resultResult}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty resultComments}}</t></is></c>
+    </row>    
+    {{/xlsxAdd}}
+{{/each}}
+
+{{{xlsxPrint}}}

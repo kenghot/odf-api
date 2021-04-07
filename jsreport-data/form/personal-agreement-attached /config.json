@@ -1,0 +1,29 @@
+{
+    "name": "personal-agreement-attached ",
+    "recipe": "chrome-pdf",
+    "shortid": "r1xD5O1OXU",
+    "folder": {
+        "shortid": "DhYcEel"
+    },
+    "engine": "handlebars",
+    "chrome": {
+        "printBackground": true,
+        "format": "A4",
+        "width": "21cm",
+        "height": "29.7cm",
+        "marginTop": "2.7cm",
+        "marginRight": "2.5cm",
+        "marginBottom": "2.7cm",
+        "marginLeft": "4.5cm"
+    },
+    "data": {
+        "shortid": "Skl0NWFWWS"
+    },
+    "creationDate": "2020-02-17T10:46:30.906Z",
+    "modificationDate": {
+        "$$date": 1593689959677
+    },
+    "_id": "UJlN1nveHbYnzWFO",
+    "$entitySet": "templates",
+    "pdfOperations": []
+}

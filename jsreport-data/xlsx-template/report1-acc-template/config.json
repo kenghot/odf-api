@@ -1,0 +1,15 @@
+{
+    "name": "report1-acc-template",
+    "creationDate": {
+        "$$date": 1599237153137
+    },
+    "modificationDate": {
+        "$$date": 1599237161664
+    },
+    "shortid": "7NAaM68",
+    "_id": "Q9VfyA2RDJTBZY7e",
+    "$entitySet": "xlsxTemplates",
+    "folder": {
+        "shortid": "Mb34RQ9"
+    }
+}

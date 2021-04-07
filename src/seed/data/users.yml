@@ -1,0 +1,68 @@
+%YAML 1.1
+---
+# odf.users
+- id: 1
+  createdDate: "2019-09-21 03:34:02.896161"
+  updatedDate: "2019-09-21 03:34:02.896161"
+  createdByName: "system"
+  username: "thunwa"
+  email: "thelonewolf.init@gmail.com"
+  password: "$2b$10$eEVrGf/RVReYGc.x8wmYAeJmxQ/vD/IUnUQTeIMHwdN.S/3d4IlMW"
+  resetPasswordToken: ""
+  resetPasswordTokenExpiration: -1
+  firstname: "ธันวา"
+  lastname: "ลักขณาชัย"
+  telephone: 0899278630
+  signinCount: 0
+  lastSigninDate: "2019-07-20"
+  lastSigninIp: "::ffff:49.49.251.87"
+  registrationAgreement: 0
+  title: "นาย"
+  active: true
+  position: "ผู้พัฒนาระบบ"
+  # organization: 1
+  # responsibilityOrganizations: [{ id: 1 }]
+  roles: [{ id: 1 }]
+- id: 2
+  createdDate: "2019-09-21 03:34:02.907355"
+  updatedDate: "2019-09-21 03:34:02.907355"
+  createdByName: "system"
+  username: "pattiya"
+  email: "pattiyaa@gmail.com"
+  password: "$2b$10$4LXe.k9Sy7a0ItEJ85J/VejlJ/k0vDbOJ0YxVYjxXPL6ZzdsujtE2"
+  resetPasswordToken: ""
+  resetPasswordTokenExpiration: -1
+  firstname: "ภัททิยา"
+  lastname: "อัครทวี"
+  telephone: 0883566567
+  signinCount: 0
+  lastSigninDate: "2019-07-20"
+  lastSigninIp: "::ffff:49.49.251.87"
+  registrationAgreement: 0
+  title: "น.ส."
+  active: true
+  position: "ผู้พัฒนาระบบ"
+  # organization: 1
+  # responsibilityOrganizations: [{ id: 1 }]
+  roles: [{ id: 1 }]
+- id: 3
+  createdDate: "2019-09-21 03:34:02.917808"
+  updatedDate: "2019-09-21 03:34:02.917808"
+  createdByName: "system"
+  username: "yoyo"
+  email: "p.daruthep@gmail.com"
+  password: "$2b$10$5HB3LpiDj65mmYkfrZmHV.CYB76jp4GGB8O/3xNL7pH7hYGN0tTsC"
+  resetPasswordToken: ""
+  resetPasswordTokenExpiration: -1
+  firstname: "ปรัชญา"
+  lastname: "ดรุณเทพ"
+  telephone: 9999999999
+  signinCount: 0
+  lastSigninIp: ""
+  registrationAgreement: 0
+  title: "นาย"
+  active: true
+  position: "ผู้ดูแลระบบ"
+  # organization: 1
+  # responsibilityOrganizations: [{ id: 1 }]
+  roles: [{ id: 2 }]

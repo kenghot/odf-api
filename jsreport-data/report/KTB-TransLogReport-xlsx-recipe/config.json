@@ -1,0 +1,22 @@
+{
+    "name": "KTB-TransLogReport-xlsx-recipe",
+    "recipe": "xlsx",
+    "shortid": "S1g8GXfRSL",
+    "folder": {
+        "shortid": "THihHg0"
+    },
+    "engine": "handlebars",
+    "chrome": {
+        "printBackground": true
+    },
+    "creationDate": "2020-03-17T09:06:35.921Z",
+    "modificationDate": {
+        "$$date": 1586178865006
+    },
+    "data": null,
+    "xlsxTemplate": {
+        "shortid": "TdHUZP6"
+    },
+    "_id": "31B6OW3KordvjDJo",
+    "$entitySet": "templates"
+}

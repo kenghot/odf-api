@@ -1,0 +1,178 @@
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+   
+    <style>
+		{#asset /asset/bootstrap.min.css @encoding=utf8}
+		{#asset /asset/main.css @encoding=utf8}
+
+		@font-face {
+			font-family: 'THSarabunNew';
+			src: url({#asset /asset/THSarabunNew.ttf @encoding=dataURI});
+			format('truetype');
+		}
+
+		* {
+			font-family: 'THSarabunNew';
+		}
+
+    </style>
+</head>
+
+<body class="form-body2">
+    <div class="container">
+        <div class="row mb-4">
+            <div class="col-2">
+                
+            </div>
+            <div class="col-8 text-center">
+                <img src="{#asset /asset/logo.png @encoding=dataURI}" />
+                <h1>
+                    หนังสือค้ำประกันการกู้ยืมเงินทุนประกอบอาชีพ<br> กองทุนผู้สูงอายุ ประเภทรายบุคคล 
+                </h1>
+            </div>
+            <div class="col-2">
+                {{!-- <div class="btn btn-outline-secondary  w-100 mb-3" >
+                    <h3>แบบฟอร์มหมายเลข 18</h3>
+                </div> --}}
+                
+            </div> 
+        </div>
+        <div class="row mb-5">
+            <div class="col-6 offset-6 text-right">
+                <div class="ml-6">
+                    หนังสือค้ำประกันเลขที่ <div class="text-underline" style="width:55%" >{{documentNumber}}</div> <br/>
+                    วันที่ <div class="text-underline" style="width:57%" >{{formatThaiDate documentDate}}</div> 
+                </div>  
+            </div>
+        </div>
+    </div>
+    <div class="container">
+         <div class="row" ">
+            <div class="col" >
+                <div class= "indent2 text-justify"  >
+                    <span style="letter-spacing:0.2px;">หนังสือค้ำประกันนี้ทำขึ้น ณ <div class="text-underline"  style="width:66%" >{{checkEmptyReturnDashed signLocation}}</div></span><span style="display: inline-block; width: 100%;"></span>
+                    ตั้งอยู่เลขที่ <div class="text-underline" style="width:45%" >{{checkEmptyReturnDashed signLocationAddress.houseNo}}</div> ถนน <div class="text-underline" style="width:37%" >{{checkEmptyReturnDashed signLocationAddress.street}}</div><span style="display: inline-block; width: 100%;"></span>
+                    แขวง/ตำบล <div class="text-underline" style="width:35%" >{{checkEmptyReturnDashed signLocationAddress.subDistrict}}</div> เขต/อำเภอ <div class="text-underline" style="width:40%" >{{checkEmptyReturnDashed signLocationAddress.district}}</div><span style="display: inline-block; width: 100%;"></span>
+                    จังหวัด <div class="text-underline" style="width:30%" >{{checkEmptyReturnDashed signLocationAddress.province}}</div> โดยข้าพเจ้า <div class="text-underline"  style="width:50%" >{{checkEmptyReturnDashed guarantor.fullName}}</div><span style="display: inline-block; width: 100%;"></span>
+                    เกิดวันที่ <div class="text-underline"  style="width:24%" >{{formatThaiDate guarantor.birthDate true guarantor.isOnlyBirthYear}}</div> อายุ <div class="text-underline"  style="width:8%" >{{checkEmptyReturnDashed guarantor.age}}</div>ปี บัตรประจำตัวประชาชน เลขที่<div class="text-underline"  style="width:22%" >{{checkEmptyReturnDashed guarantor.idCardNo}}</div><span style="display: inline-block; width: 100%;"></span>
+                    อยู่ตามทะเบียนบ้านเลขที่ <div class="text-underline" style="width:18%" >{{checkEmptyReturnDashed guarantorRegisteredAddress.houseNo}}</div> หมู่ที่ <div  class="text-underline" style="width:8%" >{{checkEmptyReturnDashed guarantorRegisteredAddress.hmoo}}</div> ตรอก/ซอย <div  class="text-underline" style="width:30%" >{{checkEmptyReturnDashed guarantorRegisteredAddress.soi}}</div><span style="display: inline-block; width: 100%;"></span> 
+                    <span style="letter-spacing:0px;">ถนน <div  class="text-underline" style="width:26%" >{{checkEmptyReturnDashed guarantorRegisteredAddress.street}}</div> แขวง/ตำบล <div  class="text-underline" style="width:24%" >{{checkEmptyReturnDashed guarantorRegisteredAddress.subDistrict}}</div> เขต/อำเภอ <div  class="text-underline" style="width:22%" >{{checkEmptyReturnDashed guarantorRegisteredAddress.district}}</div></span><span style="display: inline-block; width: 100%;"></span>
+                    <span class= "text-not-justify">จังหวัด <div class="text-underline" style="width:24%" >{{checkEmptyReturnDashed guarantorRegisteredAddress.province}}</div> โทรศัพท์ <div class="text-underline" style="width:23%" >{{checkEmptyReturnDashed guarantorTelephone}}</div></span>
+                    <span style="letter-spacing:1.3px;">ซึ่งต่อไปในหนังสือค้ำประกันเรียกว่า "ผู้ค้ำประกัน" ขอทำหนังสือค้ำประกันฉบับนี้ให้ไว้เพื่อเป็นหลักฐานแก่</span><span style="display: inline-block; width: 100%;"></span>
+                    กรมกิจการผู้สูงอายุซึ่งต่อไปในหนังสือค้ำประกันเรียกว่า "ผู้ให้กู้ยืม" ดังมีข้อความต่อไปนี้
+                </div>  
+                <div class= "indent2 text-justify"  >
+                    ข้อ 1 ตามที่ <div class="text-underline" style="width:44%" >{{checkEmptyReturnDashed borrower.fullName}}</div> ซึ่งต่อไปในหนังสือค้ำประกันนี้เรียกว่า<span style="display: inline-block; width: 100%;"></span>
+                    <span style="letter-spacing:0.5px;">"ผู้กู้ยืม" ได้รับอนุมัติให้กู้ยืมเงินทุนประกอบอาชีพจากคณะกรรมการบริหารกองทุนผู้สูงอายุ และได้ทำสัญญากู้ยืม</span><span style="display: inline-block; width: 100%;"></span>
+                    เงินทุนประกอบอาชีพกองทุนผู้สูงอายุกับผู้ให้กู้ยืม ตามสัญญากู้เลขที่ <div class="text-underline" style="width:36%" >{{checkEmptyReturnDashed agreementDocumentNumber}}</div><span style="display: inline-block; width: 100%;"></span>
+                    <span style="letter-spacing:0px;">ลงวันที่ <div class="text-underline" style="width:20%" >{{formatThaiDate agreementDocumentDate}}</div> เป็นจำนวนเงิน <div class="text-underline" style="width:20%" >{{currency loanAmount}}</div> บาท (<div class="text-underline" style="width:32%" >{{dashed loanAmountText}}</div>)</span>
+                </div>
+                <div class= "indent2 text-justify" >
+                    <span style="letter-spacing:1.9px;">ผู้ค้ำประกันตกลงและยินยอมผูกพันตนที่จะค้ำประกันผู้กู้ยืมตามจำนวนเงินที่ระบุในสัญญากู้ยืม</span><span style="display: inline-block; width: 100%;"></span>
+                    <span style="letter-spacing:1.3px;">โดยเมื่อผู้กู้ยืมผิดนัดชำระหนี้ ผู้ค้ำประกันยินยอมรับผิดชำระหนี้ข้างต้น พร้อมค่าใช้จ่ายอย่างอื่นตามที่ระบุ</span><span style="display: inline-block; width: 100%;"></span>
+                    ในสัญญากู้ยืมข้อ 6 จนกว่าผู้ให้กู้ยืมจะได้รับชำระครบถ้วน
+                </div>           
+                
+                <div class= "indent2 text-justify" >
+                    ข้อ 2 <span style="letter-spacing:0.4px;">ถ้าผู้กู้ยืมผิดนัดชำระหนี้หรือผิดสัญญากู้ยืมไม่่ว่าข้อใดข้อหนึ่ง หรือตกเป็นผู้มีหนี้สินล้นพ้นตัวหรือถูก</span><span style="display: inline-block; width: 100%;"></span>
+                    <span style="letter-spacing:0.4px;">พิทักษ์ทรัพย์ชั่วคราว หรือเด็ดขาด หรือเสียชีวิต หรือเป็นคนไร้ความสามารถ หรือคนเสมือนไร้ความสามารถ หรือ</span><span style="display: inline-block; width: 100%;"></span>
+                    <span style="letter-spacing:0.4px;">เป็นคนสาบสูญ หรือไปเสียจากถิ่นที่อยู่ หรือหาตัวไม่พบ หรือมีกรณีอื่นใด อันเป็นเหตุให้ผู้ให้กู้ยืมไม่ได้รับชำระหนี้</span><span style="display: inline-block; width: 100%;"></span>
+                    ตามสัญญา เมื่อผู้ให้กู้ยืมมีหนังสือบอกกล่าวทวงถามให้ชำระหนี้ไปยังผู้ค้ำประกันโดยชอบ ผู้ค้ำประกันยินยอม<span style="display: inline-block; width: 100%;"></span>
+                    <span style="letter-spacing:0.4px;">ชำระหนี้ที่ค้างชำระ ตามข้อผูกพันที่ระบุไว้ในสัญญากู้ยืมเงินทุนประกอบอาชีพดังกล่าวให้แก่ผู้ให้กู้ยืม ภายในเวลา</span><span style="display: inline-block; width: 100%;"></span>
+                    ที่ระบุไว้ในหนังสือบอกกล่าวทวงถาม โดยผู้ค้ำประกันยินยอมชำระหนี้เงินที่ค้างชำระทั้งหมดในคราวเดียว หรือ<span style="display: inline-block; width: 100%;"></span>
+                    <span style="letter-spacing:0.4px;">ยินยอมชำระหนี้ตามเงื่อนไขและวิธีการชำระหนี้ที่ผู้กู้ยืมมีอยู่กับผู้ให้กู้ยืมก่อนการผิดนัดชำระหนี้เฉพาะในส่วนที่ตน</span><span style="display: inline-block; width: 100%;"></span>
+                    ต้องรับผิดก็ได้ ทั้งนี้ จนกว่าผู้ให้กู้ยืมจะได้รับชำระหนี้ครบถ้วน
+                </div>
+                <div style="page-break-before: always;"></div>
+               
+                <div class= "indent2 text-justify" >
+                    ข้อ 3 <span style="letter-spacing:1.7px;">ผู้ค้ำประกันยอมผูกพันตามหนังสือค้ำประกันนี้และจะไม่ยกเลิกหรือเพิกถอนการค้ำประกัน</span><span style="display: inline-block; width: 100%;"></span>
+                    <span style="letter-spacing:0.4px;">ไม่ว่ากรณีใดๆ ตลอดระยะเวลาที่ผู้กู้ยืมต้องรับผิดตามสัญญากู้ยืมเงินทุนประกอบอาชีพกองทุนผู้สูงอายุตามข้อ 1</span><span style="display: inline-block; width: 100%;"></span>
+                    <span style="letter-spacing:0.4px;">แม้ในขณะที่ผู้กู้ยืมทำสัญญากู้ยืมเงินดังกล่าวนั้น ผู้กู้ยืมจะเข้าทำสัญญาด้วยความสำคัญผิดอย่างใดๆ หรือเพราะ</span><span style="display: inline-block; width: 100%;"></span>
+                    เป็นผู้ไร้ความสามารถ หากผู้ค้ำประกันรู้ถึงเหตุสำคัญผิดหรือไร้ความสามารถนั้น ในขณะทำหนังสือค้ำประกันนี้
+                </div>
+                <div class= "indent2 text-justify" >
+                    <span style="letter-spacing:2px;">ข้อ 4 ที่อยู่ของผู้ค้ำประกันที่ปรากฏในหนังสือค้ำประกันนี้ ให้ถือเป็นภูมิลำเนาของผู้ค้ำประกัน</span><span style="display: inline-block; width: 100%;"></span>
+                    <span style="letter-spacing:0.4px;">การส่งหนังสือบอกกล่าวแจ้งการผิดนัดชำระหนี้ของผู้กู้ยืมให้ผู้ค้ำประกันทราบ หนังสือบอกกล่าวทวงถาม จดหมาย</span><span style="display: inline-block; width: 100%;"></span>
+                    <span style="letter-spacing:0.4px;">หรือเอกสารอื่นใดไปยังผู้ค้ำประกัน ผู้ให้กู้ยืมจะส่งไปยังภูมิลำเนาของผู้ค้ำประกัน และให้ถือว่าเป็นการส่งโดยชอบ</span><span style="display: inline-block; width: 100%;"></span>
+                    <span style="letter-spacing:0.4px;">โดยถือว่าผู้ค้ำประกันได้ทราบข้อความในเอกสารดังกล่าว นับแต่วันที่หนังสือบอกกล่าวแจ้งการผิดนัดชำระหนี้ของ</span><span style="display: inline-block; width: 100%;"></span>
+                    <span style="letter-spacing:0.4px;">ผู้กู้ยืม หนังสือบอกกล่าวทวงถาม จดหมาย หรือเอกสารอื่นใด ไปถึงภูมิลำเนาของผู้ค้ำประกัน ไม่ว่าผู้ค้ำประกัน</span><span style="display: inline-block; width: 100%;"></span>
+                    <span style="letter-spacing:0.4px;">หรือบุคคลอื่นใดที่พำนักอยู่ในภูมิลำเนาของผู้ค้ำประกันจะได้รับหนังสือบอกกล่าวแจ้งการผิดนัดชำระหนี้ของผู้กู้ยืม</span><span style="display: inline-block; width: 100%;"></span>
+                    หนังสือบอกกล่าวทวงถาม จดหมาย หรือเอกสารนั้นไว้หรือไม่ก็ตาม
+                </div>
+                <div class= "indent2 text-justify" >
+                    <span style="letter-spacing:1.8px;">หากผู้ค้ำประกันเปลี่ยนแปลงภูมิลำเนา ผู้ค้ำประกันต้องมีหนังสือแจ้งการเปลี่ยนแปลงภูมิลำเนา</span><span style="display: inline-block; width: 100%;"></span>
+                    <span style="letter-spacing:1.1px;">มายังผู้ให้กู้ยืมหรือได้บันทึกถ้อยคำการเปลี่ยนแปลงภูมิลำเนาไว้กับเจ้าหน้าที่ของผู้ให้กู้ยืม การละเลยไม่แจ้ง</span><span style="display: inline-block; width: 100%;"></span>
+                    <span style="letter-spacing:0.9px;">เปลี่ยนแปลงภูมิลำเนาให้ผู้ให้กู้ยืมทราบ หากผู้ให้กู้ยืมได้ส่งหนังสือบอกกล่าวแจ้งการผิดนัดชำระหนี้ของผู้กู้ยืม</span><span style="display: inline-block; width: 100%;"></span>
+                    <span style="letter-spacing:0.6px;">หนังสือบอกกล่าวทวงถาม จดหมาย หรือเอกสารอื่นใด ไปยังผู้ค้ำประกันตามที่อยู่ที่ปรากฏในหนังสือค้ำประกันนี้</span><span style="display: inline-block; width: 100%;"></span>
+                    ให้ถือเสมือนว่าผู้ค้ำประกันได้ทราบข้อความในเอกสารดังกล่าวโดยชอบแล้ว
+                </div>
+                <div class= "indent2 text-justify" >
+                    ข้อ 5 ขณะทำหนังสือค้ำประกันนี้ ผู้ค้ำประกันมีสติสัมปชัญญะสมบูรณ์พร้อม ไม่เป็นคนวิกลจริต หรือ<span style="display: inline-block; width: 100%;"></span>
+                    จิตฟั่นเฟือน ไม่สมประกอบ หรือเป็นคนไร้ความสามารถ หรือคนเสมือนไร้ความสามารถ หรือบุคคลล้มละลาย<span style="display: inline-block; width: 100%;"></span>
+                </div>
+                <div class= "indent2 text-justify" >
+                    <span style="letter-spacing:0px;">หนังสือค้ำประกันนี้ทำขึ้นสองฉบับ มีข้อความถูกต้องตรงกัน ผู้ค้ำประกันได้อ่านและเข้าใจข้อความในหนังสือ</span><span style="display: inline-block; width: 100%;"></span>
+                    <span style="letter-spacing:0.4px;">ค้ำประกันนี้โดยตลอดครบถ้วนแล้ว จึงได้ลงลายมือชื่อไว้เป็นสำคัญต่อหน้าพยานอย่างน้อยสองคน ณ วัน เดือน ปี</span><span style="display: inline-block; width: 100%;"></span>
+                    ที่ระบุข้างต้น โดยมอบให้ผู้ให้กู้ยืมเก็บรักษาไว้หนึ่งฉบับและผู้ค้ำประกันเก็บรักษาไว้หนึ่งฉบับ
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+      <div class="container">
+        <div class="row text-right">
+            <div class="col-6 ">
+                <div>
+                    ลงชื่อ<div class="d-inline-block border-bottom mb-3 text-center" style="width:70% ;" >
+                        &nbsp
+                    </div>ผู้ให้กู้ยืม <br/>
+                    (<div class="d-inline-block border-bottom mb-3 text-center" style="width:96% ;" >
+                        {{checkEmptyReturnDashed agreementAuthorizedFullName}}
+                    </div>)
+                </div>
+            </div>
+            <div class="col-6 ">
+                <div>
+                    ลงชื่อ<div class="d-inline-block border-bottom mb-3 text-center" style="width:65% ;" >
+                        &nbsp
+                    </div>ผู้ค้ำประกัน
+                    <br/>
+                    (<div class="d-inline-block border-bottom mb-3 text-center" style="width:96% ;" >
+                        {{checkEmptyReturnDashed guarantor.fullName}}
+                    </div>)
+                </div>
+            </div>
+        </div>
+        <br/>
+        <div class="row text-right">
+            <div class="col-6 ">
+                <div>
+                    ลงชื่อ<div class="d-inline-block border-bottom mb-3 text-center" style="width:78% ;" >
+                        &nbsp
+                    </div>พยาน <br/>
+                    (<div class="d-inline-block border-bottom mb-3 text-center" style="width:96% ;" >
+                        {{checkEmptyReturnDashed witness1}}
+                    </div>)
+                </div>
+            </div>
+            <div class="col-6 ">
+                <div>
+                    ลงชื่อ<div class="d-inline-block border-bottom mb-3 text-center" style="width:78% ;" >
+                        &nbsp
+                    </div>พยาน <br/>
+                    (<div class="d-inline-block border-bottom mb-3 text-center" style="width:96% ;" >
+                        {{checkEmptyReturnDashed witness2}}
+                    </div>)
+                </div>
+            </div>
+        </div>
+   
+    </div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+    "name": "r10-data",
+    "shortid": "S1aOxVsOS",
+    "folder": {
+        "shortid": "7m8H~ZG"
+    },
+    "creationDate": "2019-10-09T10:03:35.051Z",
+    "modificationDate": {
+        "$$date": 1573035619206
+    },
+    "_id": "eMLp0Ijod3oGXVBI",
+    "$entitySet": "data",
+    "entitySet": "data",
+    "type": "entity",
+    "key": "eMLp0Ijod3oGXVBI"
+}

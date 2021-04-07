@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://api.olderfund.dop.go.th/counterservice" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="CounterService" targetNamespace="http://api.olderfund.dop.go.th/counterservice">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://api.olderfund.dop.go.th/counterservice">
+     
+     <xsd:element  name="REQUEST" type="tns:REQUESTTEMP" />
+     <xsd:complexType name="REQUESTTEMP" >
+          <xsd:sequence>
+            <xsd:element name="TX_ID" type="xsd:string"/>
+            <xsd:element name="LOG_ID" type="xsd:string" nillable="true"/>
+            <xsd:element name="VENDOR_ID" type="xsd:string" nillable="true"/>
+            <xsd:element name="SERVICE_ID" type="xsd:string" nillable="true"/>
+            <xsd:element name="METHOD" type="xsd:string" nillable="true"/>
+            <xsd:element name="COUNTER_NO" type="xsd:string" nillable="true"/>
+            <xsd:element name="TERM_NO" type="xsd:string" nillable="true"/>
+            <xsd:element name="POS_TAX_ID" type="xsd:string" nillable="true"/>
+            <xsd:element name="SERVICE_RUN_NO" type="xsd:string" nillable="true"/>
+            <xsd:element name="RECORD_STATUS" type="xsd:string" nillable="true"/>
+            <xsd:element name="CLIENT_SERVICE_RUNNO" type="xsd:string" nillable="true"/>
+            <xsd:element name="AMOUNT_RECEIVED" type="xsd:string" nillable="true"/>
+            <xsd:element name="VAT_AMOUNT" type="xsd:string" nillable="true"/>
+            <xsd:element name="BILL_TYPE" type="xsd:string" nillable="true"/>
+            <xsd:element name="REFERENCE_1" type="xsd:string" nillable="true"/>
+            <xsd:element name="REFERENCE_2" type="xsd:string" nillable="true"/>
+            <xsd:element name="REFERENCE_3" type="xsd:string" nillable="true"/>
+            <xsd:element name="REFERENCE_4" type="xsd:string" nillable="true"/>
+            <xsd:element name="CUSTOMER_NAME" type="xsd:string" nillable="true"/>
+            <xsd:element name="CUSTOMER_ADDR_1" type="xsd:string" nillable="true"/>
+            <xsd:element name="CUSTOMER_ADDR_2" type="xsd:string" nillable="true"/>
+            <xsd:element name="CUSTOMER_ADDR_3" type="xsd:string" nillable="true"/>
+            <xsd:element name="CUSTOMER_TEL_NO" type="xsd:string" nillable="true"/>
+            <xsd:element name="ZONE" type="xsd:string"/>
+            <xsd:element name="R_SERVICE_RUNNO" type="xsd:string" nillable="true"/>
+            <xsd:element name="CANCEL_OPERATING" type="xsd:string" nillable="true"/>
+            <xsd:element name="OPERATE_BY_STAFF" type="xsd:string" nillable="true"/>
+            <xsd:element name="SYSTEM_DATE_TIME" type="xsd:string" nillable="true"/>
+            <xsd:element name="USERID" type="xsd:string" nillable="true"/>
+            <xsd:element name="PASSWORD" type="xsd:string" nillable="true"/>
+          </xsd:sequence>
+        </xsd:complexType> 
+     <xsd:element name="RESPONSE">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="TX_ID" type="xsd:string"/>
+            <xsd:element name="LOG_ID" type="xsd:string"/>
+            <xsd:element name="VENDOR_ID" type="xsd:string"/>
+            <xsd:element name="SERVICE_ID" type="xsd:string"/>
+            <xsd:element name="METHOD" type="xsd:string"/>
+            <xsd:element name="SUCCESS" type="xsd:string" nillable="true"/>
+            <xsd:element name="CODE" type="xsd:string" nillable="true"/>
+            <xsd:element name="DESC" type="xsd:string" nillable="true"/>
+            <xsd:element name="REFERENCE_1" type="xsd:string" nillable="true"/>
+            <xsd:element name="REFERENCE_2" type="xsd:string" nillable="true"/>
+            <xsd:element name="REFERENCE_3" type="xsd:string" nillable="true"/>
+            <xsd:element name="REFERENCE_4" type="xsd:string" nillable="true"/>
+            <xsd:element name="CUSTOMER_NAME" type="xsd:string" nillable="true"/>
+            <xsd:element name="CUSTOMER_ADDR_1" type="xsd:string" nillable="true"/>
+            <xsd:element name="CUSTOMER_ADDR_2" type="xsd:string" nillable="true"/>
+            <xsd:element name="CUSTOMER_ADDR_3" type="xsd:string" nillable="true"/>
+            <xsd:element name="CUSTOMER_TEL_NO" type="xsd:string" nillable="true"/>
+            <xsd:element name="RETURN1" type="xsd:string" nillable="true"/>
+            <xsd:element name="RETURN2" type="xsd:string" nillable="true"/>
+            <xsd:element name="RETURN3" type="xsd:string" nillable="true"/>
+            <xsd:element name="AMOUNT_RECEIVED" type="xsd:string" nillable="true"/>
+            <xsd:element name="PRINT_SLIP" type="xsd:string" nillable="true"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+   <wsdl:message name="RequestMessage">
+    <wsdl:part element="tns:REQUEST" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ResponseMessage">
+    <wsdl:part element="tns:RESPONSE" name="parameters"/>
+  </wsdl:message>
+
+  <wsdl:portType name="CounterServiceSoap">
+  <!-- The operation name must be the same as the one specified in the service object -->
+    <wsdl:operation name="CounterServiceOperation">
+      <wsdl:input message="tns:RequestMessage"/>
+      <wsdl:output message="tns:ResponseMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+
+
+  <wsdl:binding name="CounterServiceSoap" type="tns:CounterServiceSoap">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+     <wsdl:operation name="CounterServiceOperation">
+      <soap:operation soapAction="http://api.olderfund.dop.go.th/counterservice/CounterServiceOperation"/>
+      <wsdl:input >
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output >
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+
+
+  <!-- name must be the same as Service -->
+  <wsdl:service name="CounterService">
+    <!-- name must be the same as SoapPort in Service -->
+    <wsdl:port binding="tns:CounterServiceSoap" name="CounterServiceSoap">
+      <!-- Api endpoint for soap -->
+	    <soap:address location="http://localhost:3000/counterservice"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

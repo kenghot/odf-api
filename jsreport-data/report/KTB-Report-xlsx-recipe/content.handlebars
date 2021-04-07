@@ -1,0 +1,31 @@
+{{#xlsxReplace "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row[0].c[0]"}}
+    <c t="inlineStr" s="1"><is><t>{{checkEmpty title1}}</t></is></c>
+{{/xlsxReplace}}
+{{#xlsxReplace "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row[1].c[0]"}}
+    <c t="inlineStr" s="1"><is><t>{{checkEmpty title2}}</t></is></c>
+{{/xlsxReplace}}
+{{#xlsxReplace "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row[2].c[0]"}}
+    <c t="inlineStr" s="1"><is><t>{{paymentTime}}</t></is></c>
+{{/xlsxReplace}}
+
+{{#each data}}
+    {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+    <row>
+        <c t="inlineStr"><is><t>{{getOrderNumber @index}}</t></is></c>
+        <c t="inlineStr"><is><t>{{formatThaiDate paidDate}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[2].$.s}}"><is><t>{{checkEmpty name}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[3].$.s}}"><is><t>{{checkEmpty reference1}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[4].$.s}}"><is><t>{{checkEmpty reference2}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[5].$.s}}"><is><t>{{checkEmpty documentNumber}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[6].$.s}}"><is><t>{{checkEmpty fiscalYear}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[7].$.s}}"><is><t>{{checkEmpty orgCode}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[8].$.s}}"><is><t>{{checkEmpty addressProvince}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[9].$.s}}"><is><t>{{getChannel channel}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[10].$.s}}"><is><t>{{checkEmpty bankRef}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[11].$.s}}"><is><t>{{currency paidAmount true}}</t></is></c>
+    </row>
+    
+    {{/xlsxAdd}}
+{{/each}}
+
+{{{xlsxPrint}}}

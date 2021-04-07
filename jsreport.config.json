@@ -1,0 +1,36 @@
+{
+  "extensions": {
+    "chrome-pdf": {
+      "launchOptions": {
+        "args": ["--no-sandbox"]
+      },
+      "strategy": "chrome-pool"
+    },
+    "fs-store": {
+      "dataDirectory": "jsreport-data",
+      "syncModifications": true
+    }
+  },
+  "store": {
+    "provider": "fs"
+  },
+  "logger": {
+    "console": {
+      "transport": "console",
+      "level": "debug"
+    },
+    "file": {
+      "transport": "file",
+      "level": "info",
+      "filename": "logs/reporter.log"
+    },
+    "error": {
+      "transport": "file",
+      "level": "error",
+      "filename": "logs/error.log"
+    }
+  },
+  "templatingEngines": {
+    "strategy": "in-process"
+  }
+}

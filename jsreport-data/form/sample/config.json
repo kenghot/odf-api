@@ -1,0 +1,20 @@
+{
+    "shortid": "ByeXISp_RH",
+    "name": "sample",
+    "recipe": "chrome-pdf",
+    "engine": "handlebars",
+    "chrome": {
+        "printBackground": true
+    },
+    "creationDate": {
+        "$$date": 1576748396079
+    },
+    "modificationDate": {
+        "$$date": 1576748474092
+    },
+    "_id": "H2FiluU00cCuaAjK",
+    "$entitySet": "templates",
+    "folder": {
+        "shortid": "DhYcEel"
+    }
+}

@@ -1,0 +1,134 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <style>
+		{#asset /asset/bootstrap.min.css @encoding=utf8}
+		{#asset /asset/main.css @encoding=utf8}
+
+		@font-face {
+			font-family: 'THSarabunNew';
+			src: url({#asset /asset/THSarabunNew.ttf @encoding=dataURI});
+			format('truetype');
+		}
+
+		* {
+			font-family: 'THSarabunNew';
+		}
+
+		.border-fit-content {
+			display: inline-block;
+			border: 1px solid;
+			padding-left: 18px;
+			padding-right:18px;
+			padding-top: 40px;
+			padding-bottom: 40px;
+		}
+    </style>
+  </head>
+<body class="form-body">
+	<div class="container">
+		<div class="row mb-4">
+			<div class="col-4">
+				<div style="margin-top: 158px">ที่</div>
+				</div>
+			<div class="col-4 text-center no-margin-padding">
+				<img class="garuda-img" src="{#asset /asset/garuda_logo.png @encoding=dataURI}"/>
+			</div>
+			<div class="col-4">
+				<div class="border-fit-content" style="font-size:100px;margin-left:50px">
+					ผู้กู้ยืม
+				</div>
+				<div class="text-left" style="margin-top:32px">
+					<div style="width:100%">{{checkEmpty organization.address.buildingName}}</div>
+					อำเภอ <div class="text-underline" style="width:79%">{{checkEmptyReturnDashed organization.address.district}}</div>
+					จังหวัด <div class="text-underline" style="width:78%">{{checkEmptyReturnDashed organization.address.province}}</div>
+				</div>  
+			</div> 
+		</div>
+		<div class="row">
+			<div class="col-6"></div>
+			<div class="col-6" style="padding-left:35px">{{checkEmpty letterDocumentDate}}</div>
+		</div>
+	</div>
+	<br/>
+	<div class="container mb-3">
+		<div class="row">
+			<div class="col">
+				เรื่อง แจ้งการผิดนัดชำระหนี้กองทุนผู้สูงอายุ
+			</div> 
+		</div>
+		<div class="row">
+			<div class="col">
+				เรียน <div class="text-underline" style="width:32.5%">{{checkEmptyReturnDashed borrower.fullName}}</div>  
+			</div> 
+		</div>
+		<div class="row">
+			<div class="col">
+				อ้างถึง สัญญากู้ยืมเลขที่ <div class="text-underline" style="width:16%">{{checkEmptyReturnDashed agreementDocumentNumber}}</div>  
+				ลงวันที่ <div class="text-underline" style="width:25%">{{formatThaiDate agreementDocumentDate false}}</div>  
+			</div> 
+		</div>
+	</div>  
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<div class="indent text-justify">
+					<div>ตามสัญญาที่อ้างถึง ท่าน ได้กู้ยืมเงินทุนประกอบอาชีพจากกองทุนผู้สูงอายุไป เป็นเงินจำนวน</div>
+					<div style="text-indent:0%"><div class="text-underline" style="width:20%">{{currency loanAmount}}</div> บาท (<div class="text-underline" style="width:41%">{{dashed loanAmountText}}</div>) โดยมี  <div class="text-underline" style="width:25%">{{checkEmptyReturnDashed guarantor.fullName}}</div></div>
+					เป็นผู้ค้ำประกันการกู้ยืมเงินดังกล่าว นั้น
+				</div>  
+			</div>
+		</div>
+		<div class="row mb-3">
+			<div class="col">
+				<div class="indent text-justify">
+					จังหวัด <div class="text-underline" style="width:34%">{{checkEmptyReturnDashed organization.address.province}}</div> ขอเรียนว่า ท่านมียอดหนี้คงเหลือตามสัญญากู้ยืม
+					เป็นจำนวนทั้งสิ้น <div class="text-underline" style="width:28%">{{currency outstandingDebtBalance}}</div>บาท (<div class="text-underline" style="width:34%">{{dashed outstandingDebtBalanceText}}</div>) โดยข้อมูล ณ วันที่ 
+					<div class="text-underline" style="width:25%">{{formatThaiDate asOfDate false}}</div> ท่านมีเงินงวดผิดนัดค้างชำระรายเดือนจำนวน <div class="text-underline" style="width:30%">{{currency overdueBalance}}</div>บาท 
+					(<div class="text-underline" style="width:45%">{{dashed overdueBalanceText}}</div>) ดังนั้น จึงขอให้ท่านนำเงินงวดผิดนัดค้างชำระรายเดือนจำนวน
+					ดังกล่าว มาชำระคืน ภายใน 10 วัน นับแต่วันที่ได้รับหนังสือนี้ หากพ้นกำหนดแล้ว จังหวัด <div class="text-underline" style="width:22%">{{checkEmptyReturnDashed organization.address.province}}</div>
+					มีความจำเป็นต้องดำเนินการตามขั้นตอนทางกฎหมายต่อไป หากมีข้อสงสัยประการใด กรุณาติดต่อเจ้าหน้าที่กองทุนผู้สูงอายุในวันและเวลาราชการ
+				</div>  
+			</div>
+		</div>
+		<div class="row mb-5">
+			<div class="col">
+					<div class="indent">
+						จึงเรียนมาเพื่อดำเนินการ และขออภัยหากท่านได้ชำระเงินก่อนได้รับหนังสือฉบับนี้
+					</div>
+			</div>
+		</div>
+		<div class="row" style="margin-bottom:120px">
+			<div class="col-6"></div>
+			<div class="col-6 text-left" style="padding:0">
+						ขอแสดงความนับถือ
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-6 text-center">
+					<div>
+						(<div class="text-underline"  style="width:95%">&nbsp</div>)
+					</div>
+					<div>
+							<div class="text-underline" style="width:100%">&nbsp</div>
+					</div>
+					<div>
+							<div class="text-underline" style="width:100%">&nbsp</div>
+					</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>
+	<div class="container footer">
+		<div class="row">
+			<div class="col-12">
+				<div>
+					<div class="text-underline">{{checkEmptyReturnDashed organization.orgName}}</div>
+					<br/>โทร <div class="text-underline" style="width:24%">{{checkEmptyReturnDashed organization.telephone}}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: "ECR: odf-api ECR"
+Resources:
+  MyRepository:
+    Type: AWS::ECR::Repository
+    Properties:
+      RepositoryName: "odf-api"
+      RepositoryPolicyText:
+        Version: "2012-10-17"
+        Statement:
+          - Sid: AllowPushPull
+            Effect: Allow
+            Principal:
+              Service: [
+                "ec2.amazonaws.com",
+                "codepipeline.amazonaws.com",
+                "codebuild.amazonaws.com",
+                "cloudformation.amazonaws.com",
+              ]
+              # AWS:
+              #   - "arn:aws:iam::123456789012:user/Bob"
+              #   - "arn:aws:iam::123456789012:user/Alice"
+            Action:
+              - "ecr:GetDownloadUrlForLayer"
+              - "ecr:BatchGetImage"
+              - "ecr:BatchCheckLayerAvailability"
+              - "ecr:PutImage"
+              - "ecr:InitiateLayerUpload"
+              - "ecr:UploadLayerPart"
+              - "ecr:CompleteLayerUpload"
+Outputs:    
+  Arn:
+    Value: !GetAtt MyRepository.Arn

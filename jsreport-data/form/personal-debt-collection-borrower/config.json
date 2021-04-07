@@ -1,0 +1,28 @@
+{
+    "name": "personal-debt-collection-borrower",
+    "recipe": "chrome-pdf",
+    "shortid": "Hkxw42XDUS",
+    "folder": {
+        "shortid": "DhYcEel"
+    },
+    "engine": "handlebars",
+    "chrome": {
+        "printBackground": true,
+        "format": "A4",
+        "width": "21cm",
+        "height": "29.7cm",
+        "marginTop": "2.7cm",
+        "marginRight": "2.5cm",
+        "marginBottom": "2.7cm",
+        "marginLeft": "4.5cm"
+    },
+    "data": {
+        "shortid": "r1eJANWRLS"
+    },
+    "creationDate": "2019-09-12T02:23:46.357Z",
+    "modificationDate": {
+        "$$date": 1585135738547
+    },
+    "_id": "yk2XIqqSx885S5V4",
+    "$entitySet": "templates"
+}

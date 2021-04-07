@@ -1,0 +1,67 @@
+{{#xlsxReplace "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row[0].c[0]"}}
+    <c t="inlineStr" s="2"><is><t>{{checkEmpty title1}}</t></is></c>
+{{/xlsxReplace}}
+{{#xlsxReplace "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row[1].c[0]"}}
+    <c t="inlineStr" s="2"><is><t>{{checkEmpty title2}}</t></is></c>
+{{/xlsxReplace}}
+{{#xlsxReplace "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row[2].c[0]"}}
+    <c t="inlineStr" s="2"><is><t>ข้อมูล ณ วันที่ {{reportDataDate}}</t></is></c>
+{{/xlsxReplace}}
+
+
+{{#each data}}
+    {{setFactSheetItems faceSheetItems}}    
+    {{#xlsxAdd "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row"}}
+    <row>
+        <c t="inlineStr" s="1"><is><t>{{getOrderNumber @index}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{formatThaiDate documentDate}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{formatThaiDate interviewDate}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty borrowerIdCardNo}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty borrowerFullName}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty borrowerAge}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty requestOccupation}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty guarantorIdCardNo}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty guarantorFullName}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty guarantorAge}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{currency totalBudget true}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{currency requestBudget true}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty (renderPropertiesGroup 0 0)}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty (renderPropertiesGroup 0 1)}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty (renderPropertiesGroup 0 2)}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty (renderPropertiesGroup 0 3)}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty (renderPropertiesGroup 0 4)}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty factSheetBorrowerScore}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty (renderPropertiesGroup 1 0)}}</t></is></c>
+
+
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty (renderPropertiesGroup 1 1)}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty (renderPropertiesGroup 1 2)}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty (renderPropertiesGroup 1 3)}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty (renderPropertiesGroup 1 4)}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty (renderPropertiesGroup 1 5)}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty factSheetGuarantorScore}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty qualification}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty factSheetResult}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty faceSheetComments}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty result1Result}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{currency result1ApproveBudget true}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty result1Comments}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{formatThaiDate result2MeetingDate}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty result2MeetingNumber}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty result2Result}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{currency result2ApproveBudget true}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty result2Comments}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{formatThaiDate result3MeetingDate}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty result3MeetingNumber}}</t></is></c>
+
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty result3Result}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{currency result3ApproveBudget true}}</t></is></c>
+        <c t="inlineStr" s="1"><is><t>{{checkEmpty result3Comments}}</t></is></c>
+    </row>
+    
+    {{/xlsxAdd}}
+{{/each}}
+
+
+
+{{{xlsxPrint}}}

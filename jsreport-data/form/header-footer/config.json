@@ -1,0 +1,23 @@
+{
+    "shortid": "Bye_Jd2sAN",
+    "name": "header-footer",
+    "recipe": "chrome-pdf",
+    "engine": "handlebars",
+    "chrome": {
+        "printBackground": true,
+        "marginRight": "",
+        "marginLeft": ""
+    },
+    "creationDate": "2019-06-10T11:00:26.264Z",
+    "modificationDate": {
+        "$$date": 1601034861371
+    },
+    "_id": "rQrS7NknbHdIoi86",
+    "$entitySet": "templates",
+    "folder": {
+        "shortid": "DhYcEel"
+    },
+    "entitySet": "templates",
+    "type": "entity",
+    "key": "rQrS7NknbHdIoi86"
+}

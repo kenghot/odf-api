@@ -1,0 +1,16 @@
+{
+    "name": "r13-data",
+    "shortid": "B1gE_0O2_B",
+    "folder": {
+        "shortid": "7m8H~ZG"
+    },
+    "creationDate": "2019-10-10T09:48:34.168Z",
+    "modificationDate": {
+        "$$date": 1576729847420
+    },
+    "_id": "6xyJaPp1TCfZGCx7",
+    "$entitySet": "data",
+    "entitySet": "data",
+    "type": "entity",
+    "key": "6xyJaPp1TCfZGCx7"
+}

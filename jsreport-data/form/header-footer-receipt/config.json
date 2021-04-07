@@ -1,0 +1,20 @@
+{
+    "name": "header-footer-receipt",
+    "recipe": "chrome-pdf",
+    "shortid": "BygfTuWYcv",
+    "folder": {
+        "shortid": "DhYcEel"
+    },
+    "engine": "handlebars",
+    "chrome": {
+        "printBackground": true,
+        "marginRight": "",
+        "marginLeft": ""
+    },
+    "creationDate": "2020-11-23T10:04:19.164Z",
+    "modificationDate": {
+        "$$date": 1606845352392
+    },
+    "_id": "lGISgMDeo0KFgibD",
+    "$entitySet": "templates"
+}

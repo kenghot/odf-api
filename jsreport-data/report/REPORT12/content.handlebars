@@ -1,0 +1,171 @@
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <style>
+        {#asset /asset/table-style.css @encoding=utf8}
+
+        @font-face {
+            font-family: 'THSarabunNew';
+            src: url({#asset /asset/THSarabunNew.ttf @encoding=dataURI});
+            format('truetype');
+        }
+
+        
+        .table-th-lightgrey {
+            background-color: #ebebeb;
+        }
+
+        .table-th-darkgrey {
+            background-color: #d9d9d9; 
+        }
+
+        .table-th-green {
+            background-color: #d9ead3; 
+        }
+
+        .table-th-light-blue {
+            background-color: #cfe2f3;
+        }
+
+        .table-th-yellow {
+            background-color: #ffd966;
+        }
+
+        .table-th-red {
+            background-color: #f0c0c1;
+        }
+
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="35">รายงานรายละเอียดการขอกู้ยืมเงินทุนประกอบอาชีพประเภทรายบุคคล ในกรณีคำร้องไม่สมบูรณ์ส่งคืน สนง พมจ.</th>
+            </tr>
+            <tr>
+                <th colspan="35"></th>
+            </tr>
+            <tr>
+                <th colspan="35">ข้อมูล ณ วันที่ {{reportDataDate}}</th>
+            </tr>
+        </thead>
+        <thead class="table-thread-bordered">
+            <tr>
+                <th class="table-th-lightgrey" rowspan="3">ที่</th>
+                <th class="table-th-lightgrey" rowspan="3">เลขที่ใบคำร้อง</th>
+                <th class="table-th-lightgrey" rowspan="3">หน่วยงานที่รับผิดชอบ (จังหวัด)</th>
+                <th class="table-th-lightgrey" rowspan="3">วันที่ยืนคำร้อง</th>
+                <th class="table-th-lightgrey" rowspan="3">สถานะใบคำร้อง</th>
+                <th class="table-th-green" colspan="7" rowspan="2">ข้อมูลผู้ขอกู้</th>
+                <th class="table-th-green" colspan="3" rowspan="2">อาชีพผู้ขอกู้</th>
+                <th class="table-th-light-blue" colspan="6" rowspan="2">ข้อมูลผู้ค้ำ</th>
+                  <th class="table-th-light-blue" rowspan="3">ความสัมพันธ์กับผู้ขอกู้</th>
+                <th class="table-th-light-blue" colspan="5" rowspan="2">อาชีพผู้ค้ำ</th>
+
+                {{!-- ประมาณ คชจ --}}
+                <th class="table-th-lightgrey border-bottom-0"></th>
+                {{!-- วงเงินขอกู้ --}}
+                <th class="table-th-lightgrey border-bottom-0"></th>
+
+                <th class="table-th-yellow" colspan="4">คุณสมบัติ</th>
+                <th class="table-th-lightgrey" colspan="2" rowspan="2">การพิจารณา</th>
+            </tr>
+            <tr>
+                <th class="table-th-lightgrey border-top-0 border-bottom-0">ประมาณ คชจ (บาท)</th>
+                <th class="table-th-lightgrey border-top-0 border-bottom-0">วงเงินขอกู้ (บาท)</th
+
+                <th class="table-th-yellow">คะแนนตามเกณฑ์พิจารณา</th>
+                  <th class="table-th-yellow" colspan="2">คะแนนตามเกณฑ์พิจารณา</th>
+                <th class="table-th-yellow align-bottom border-bottom-0">ผลการประเมินคะแนน</th>
+                <th class="table-th-yellow align-bottom border-bottom-0">หมายเหตุ</th>
+            </tr>
+            <tr>
+                <th class="table-th-green">เลขบัตรประชาชน</th>
+                <th class="table-th-green">ชื่อ-สกุล</th>
+                <th class="table-th-green">วันเกิด</th>
+                <th class="table-th-green">ปีเกิด</th>
+                <th class="table-th-green">อายุ</th>
+                <th class="table-th-green">สถานะภาพผู้ขอกู้</th>
+                <th class="table-th-green">จังหวัด (ทะเบียนบ้าน)</th>
+                <th class="table-th-green">อาชีพ</th>
+                <th class="table-th-green">คำอธิบาย</th>
+                <th class="table-th-green">รายได้ต่อเดือน (บาท)</th>
+
+                <th class="table-th-light-blue">เลขบัตรประชาชน</th>
+                <th class="table-th-light-blue">ชื่อ-สกุล</th>
+                <th class="table-th-light-blue">วันเกิด</th>
+                <th class="table-th-light-blue">ปีเกิด</th>
+                <th class="table-th-light-blue">อายุ</th>
+                <th class="table-th-light-blue">จังหวัด (ทะเบียนบ้าน)</th>
+
+                <th class="table-th-light-blue">อาชีพ</th>
+                <th class="table-th-light-blue">คำอธิบาย</th>
+                <th class="table-th-light-blue">รายได้ต่อเดือน (บาท)</th>
+                <th class="table-th-light-blue">สถานที่ทำงาน</th>
+                <th class="table-th-light-blue">ตำแหน่ง</th>
+
+                {{!-- ประมาณ คชจ --}}
+                <th class="table-th-lightgrey border-top-0"></th>
+                {{!-- วงเงินขอกู้ --}}
+                <th class="table-th-lightgrey border-top-0"></th>
+
+                <th class="table-th-yellow">ผู้กู้ยืม (100)</th>
+                <th class="table-th-yellow">ผู้ค้ำประกัน (100)</th>
+
+                {{!-- ผลการประเมินคะแนน --}}
+                <th class="table-th-yellow border-top-0"></th>
+                {{!-- หมายเหตุ --}}
+                 <th class="table-th-yellow border-top-0"></th>
+
+                <th class="table-th-lightgrey">ผลการพิจารณา</th>
+                <th class="table-th-lightgrey">หมายเหตุ</th>
+            </tr>
+        </thead>
+        <tbody class="table-body-bordered">
+            {{#each data}}
+            <tr>
+                <td class="text-right">{{getOrderNumber @index}}</td>
+                <td class="text-center">{{checkEmpty documentNumber}}</td>
+                <td class="text-center">{{checkEmpty organization}}</td>
+                <td class="text-center">{{formatThaiDate documentDate}}</td>
+                <td class="text-center">{{checkEmpty status}}</td>
+                <td class="text-center">{{checkEmpty borrowerIdCardNo}}</td>
+                <td>{{checkEmpty borrowerFullName}}</td>
+                <td class="text-center">{{formatThaiDate borrowerBirthDate}}</td>
+                <td class="text-center">{{formatThaiYear borrowerBirthDate}}</td>
+                <td class="text-center">{{checkEmpty borrowerAge}}</td>
+                <td class="text-center">{{checkEmpty borrowerMarriageStatus}}</td>
+                <td>{{checkEmpty borrowerRegisteredAddressProvince}}</td>
+                <td>{{checkEmpty borrowerOccupationName}}</td>
+                <td>{{checkEmpty borrowerOccupationDescription}}</td>
+                <td>{{currency borrowerOccupationSalary true}}</td>
+                <td class="text-center">{{checkEmpty guarantorIdCardNo}}</td>
+                <td>{{checkEmpty guarantorFullName}}</td>
+                <td class="text-center">{{formatThaiDate guarantorBirthDate}}</td>
+                <td class="text-center">{{formatThaiYear guarantorBirthDate}}</td>
+                <td class="text-center">{{checkEmpty guarantorAge}}</td>
+                <td>{{checkEmpty guarantorRegisteredAddressProvince}}</td>
+                <td class="text-center">{{checkEmpty guarantorBorrowerRelationship}}</td>
+                <td>{{checkEmpty guarantorOccupationName}}</td>
+                <td>{{checkEmpty guarantorOccupationDescription}}</td>
+                <td>{{currency guarantorOccupationSalary true}}</td>
+                <td>{{checkEmpty guarantorCompanyName}}</td>
+                <td>{{checkEmpty guarantorPosition}}</td>
+                <td class="text-right">{{currency totalBudget true}}</td>
+                <td class="text-right">{{currency requestBudget true}}</td>
+                <td class="text-center">{{checkEmpty facesheetBorrowerScore}}</td>
+                <td class="text-center">{{checkEmpty facesheetGuarantorScore}}</td>
+                <td class="text-center">{{checkEmpty qualification}}</td>
+                <td>{{checkEmpty factSheetComments}}</td>
+                <td>ไม่สมควรให้กู้ยืม</td>
+                <td>{{checkEmpty resultComments}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</body>
+
+</html>

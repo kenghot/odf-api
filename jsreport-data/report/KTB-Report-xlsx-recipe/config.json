@@ -1,0 +1,22 @@
+{
+    "name": "KTB-Report-xlsx-recipe",
+    "recipe": "xlsx",
+    "shortid": "H1gxgtZRHU",
+    "folder": {
+        "shortid": "THihHg0"
+    },
+    "engine": "handlebars",
+    "chrome": {
+        "printBackground": true
+    },
+    "data": null,
+    "creationDate": "2020-03-17T08:43:05.288Z",
+    "modificationDate": {
+        "$$date": 1585365302733
+    },
+    "xlsxTemplate": {
+        "shortid": "rgJ3rNL"
+    },
+    "_id": "Vjfe4aaDAIxlVwEP",
+    "$entitySet": "templates"
+}
