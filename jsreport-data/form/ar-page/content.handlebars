@@ -15,7 +15,10 @@
 		* {
 			font-family: 'THSarabunNew';
 		}
-
+		h1 {
+            font-weight: bold;
+            text-align: center;
+        }
 	</style>
 </head>
 
@@ -48,9 +51,9 @@
 					<span class="text-nowrap">โทรศัพท์ <div class="text-underline"  style="width:20%" >{{agreement.request.guarantorCompanyTelephone}}</div> อาชีพ <div class="text-underline"  style="width:40%" >{{guarantee.guarantorOccupation.name}}</span>
 					</div>			
 				</div>
-				</br>
-				</br>
+				<div style="page-break-before: always;"></div>
 				<div style="border-style: solid; padding: 8px;" >
+					<img src="{#asset /asset/logo.png @encoding=dataURI}"style="display: block; position:absolute;padding-left:160;width: 210px;" />
 					<h1>สมุดคู่บัญชีการชำระเงินกู้ยืม กองทุนผู้สูงอายุ</h1>
 					<div class= "text-justify">
 						ชื่อผู้กู้ <div  class="text-underline"  style="width:45%" >{{agreement.borrower.fullName}}</div></br>
@@ -71,10 +74,8 @@
 						{{!-- </div> --}}
 					</div>
 				</div>
-				
-
-				<div style="page-break-before: always;"></div>
-
+				</br></br></br>
+				<div style="border-style: solid; padding: 8px;" ></br>
 				<div  class="row  " style={{displayBarcode barcode}}><img src="data:image/png;base64, {{barcode}}"></img></div>	
 
 				</br></br></br>
@@ -87,6 +88,7 @@
 					4. ตรวจสอบจำนวนเงินที่ต้องการชำระและยืนยันการชำระ <span style="display: inline-block; width: 100%;"></span>
 
 				</div>		
+				</div>
 				</div>		
        
 	</div>
