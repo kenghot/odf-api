@@ -496,6 +496,7 @@ class AccountReceivableController extends BaseController {
             ...agreementItems[0],
             request: { ...reRest, ...requestItems[0] },
           },
+          agreement_id:agreement.id.toString().padStart(8, "0"),
           guarantee: { ...guRest, ...guaranteeItems[0] },
           barcode,
         },
