@@ -63,8 +63,8 @@ class DebtCollectionReportController extends BaseController {
         .addSelect("collection.debtSue.submitDate", "submitDate")
         .addSelect("collection.debtSue.judgementDate", "judgementDate")
         .addSelect(
-          "collection.debtSue.judgementInterestStartDate",
-          "judgementInterestStartDate"
+          "collection.debtSue.interestStartDate",
+          "interestStartDate"
         )
         .addSelect("collection.debtSue.judgementBalance", "judgementBalance")
         .addSelect("collection.debtSue.lawyerFee", "lawyerFee")
@@ -217,6 +217,9 @@ class DebtCollectionReportController extends BaseController {
           organizationId: organizationIdParam,
         });
       }
+      // status ปิดบัญชี 11
+        accountReceivableQuery.andWhere("accountReceivable.status=11");
+      
 
       const records = await accountReceivableQuery.getRawMany();
       if (!records || records.length <= 0) {
