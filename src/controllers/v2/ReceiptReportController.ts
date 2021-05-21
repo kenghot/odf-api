@@ -145,7 +145,7 @@ class ReceiptReportController extends BaseController {
         //   "cs"
         // )
         .addSelect(
-          "IF((receipt.paymentMethod = 'CASH' OR accTrans.paymentMethod ='CASH') AND receipt.paymentMethod NOT IN ('MONEYORDER','CHECK','TRANSFER') , accTrans.paidAmount, '')",
+          "IF((receipt.paymentMethod = 'CASH' OR accTrans.paymentMethod ='CASH') , accTrans.paidAmount, '')",
           "cash"
         )
         .addSelect(
@@ -165,7 +165,7 @@ class ReceiptReportController extends BaseController {
           "transfer" 
         )
         .addSelect(
-          "IF(accTrans.paymentType NOT IN ('CS','OFFICE', 'KTB') AND receipt.paymentMethod NOT IN ('CASH','MONEYORDER', 'CHECK','TRANSFER') , accTrans.paidAmount, '')",
+          "IF(accTrans.paymentMethod NOT IN ('CASH','MONEYORDER', 'CHECK','TRANSFER')  AND accTrans.paymentType != 'KTB', accTrans.paidAmount, '')",
           "other"
         );
       // .addSelect("item.name");
@@ -190,14 +190,8 @@ class ReceiptReportController extends BaseController {
         .createQueryBuilder("item")
         .leftJoin("item.receipt", "receipt")
         .leftJoin("receipt.organization", "organization")
-        // .leftJoin(
-        //   AccountReceivable,
-        //   "accReceipt",
-        //   "accReceipt.id = item.refId"
-        // )
         .select("organization.orgName", "orgName")
         .addSelect("receipt.paidDate", "paidDate")
-        // .addSelect("accReceipt.documentNumber", "documentNumber")
         .addSelect("item.subtotal", "paidAmount")
         .addSelect("receipt.clientName", "paidByName")
         // .addSelect("accTrans.paymentType", "paymentType")
@@ -391,7 +385,7 @@ class ReceiptReportController extends BaseController {
         //   "cs"
         // )
         .addSelect(
-          "IF((receipt.paymentMethod = 'CASH' OR accTrans.paymentMethod ='CASH') AND receipt.paymentMethod NOT IN ('MONEYORDER','CHECK','TRANSFER') , accTrans.paidAmount, '')",
+          "IF((receipt.paymentMethod = 'CASH' OR accTrans.paymentMethod ='CASH'), accTrans.paidAmount, '')",
           "cash"
         )
         .addSelect(
@@ -411,7 +405,7 @@ class ReceiptReportController extends BaseController {
           "transfer" 
         )
         .addSelect(
-          "IF(accTrans.paymentType NOT IN ('CS','OFFICE', 'KTB') AND receipt.paymentMethod NOT IN ('CASH','MONEYORDER', 'CHECK','TRANSFER') , accTrans.paidAmount, '')",
+          "IF(accTrans.paymentMethod NOT IN ('CASH','MONEYORDER', 'CHECK','TRANSFER')  AND accTrans.paymentType != 'KTB', accTrans.paidAmount, '')",
           "other"
         );
       // .addSelect("item.name");
@@ -482,7 +476,7 @@ class ReceiptReportController extends BaseController {
       //   );
       // }
       reportQuery.andWhere(
-        "accTrans.paidDate BETWEEN :startDocumentDate AND LAST_DATE(:endDocumentDate)",
+        "DATE(receipt.paidDate) BETWEEN :startDocumentDate AND LAST_DAY(:endDocumentDate)",
         {
           startDocumentDate: firstDate,
           endDocumentDate: firstDate,
@@ -964,6 +958,7 @@ class ReceiptReportController extends BaseController {
       .addSelect("voucher.toBankName", "toBankName")
       .addSelect("voucher.toAccountNo", "toAccountNo")
       .addSelect("voucher.documentNumber", "documentNumber")
+      .addSelect("voucher.recieveBankAccountRefNo", "ktbRefNo")
       .addSelect("voucher.toSms", "telephone")
       // .addSelect(
       //   "IF(voucher.payByName IS NOT NULL, voucher.payByName, IF(voucher.updatedByName IS NOT NULL, voucher.updatedByName, voucher.createdByName))",
