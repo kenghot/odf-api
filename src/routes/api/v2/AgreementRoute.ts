@@ -96,6 +96,12 @@ export const subQueries: ISubQuery[] = [
     ],
   },
 ];
+// use multiple times
+const getAgreement= ct.getOne({
+  relations: [
+    "agreementItems"
+  ]
+});
 export const agreementRouter = Router();
 
 agreementRouter
