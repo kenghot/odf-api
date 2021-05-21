@@ -232,16 +232,28 @@ class RequestController extends BaseController {
       ];
       const step5Status = [requestStatusSet.approve3, requestStatusSet.reject];
 
-      const isInStep1 = step1Status.includes(requestDoc.status) ? true : false;
-      const isInStep2 = step2Status.includes(requestDoc.status) ? true : false;
-      const isInStep3 = step3Status.includes(requestDoc.status) ? true : false;
-      const isInStep4 = step4Status.includes(requestDoc.status) ? true : false;
-      const isInStep5 = step5Status.includes(requestDoc.status) ? true : false;
+      const step6Status = [requestStatusSet.done, requestStatusSet.reject];
+
+      let isInStep1 = step1Status.includes(requestDoc.status) ? true : false;
+      let isInStep2 = step2Status.includes(requestDoc.status) ? true : false;
+      let isInStep3 = step3Status.includes(requestDoc.status) ? true : false;
+      let isInStep4 = step4Status.includes(requestDoc.status) ? true : false;
+      let isInStep5 = step5Status.includes(requestDoc.status) ? true : false;
+      let isInStep6 = step6Status.includes(requestDoc.status) ? true : false;
+      if(isInStep6){
+        isInStep1=true;
+        isInStep2=true;
+        isInStep3=true;
+        isInStep4=true;
+        isInStep5=true;
+      }
+      
 
       const resultObj = {
         ["AP"]: "เห็นชอบตามวงเงิน",
         ["AJ"]: "เห็นควรให้ปรับเพิ่ม/ลดวงเงิน",
         ["RJ"]: "ไม่อนุมัติ",
+        ["DN"]: "เตรียมทำสัญญา",
       };
 
       const data = [
@@ -275,6 +287,11 @@ class RequestController extends BaseController {
           step: "5. พิจารณาโดยคณะกรรมการบริหารกองทุนฯ",
           status: isInStep5,
           result: isInStep5 ? resultObj[requestDoc.result3.result] : "",
+        },
+        {
+          step: "6. ส่งทำสัญญา",
+          status: isInStep6,
+          result: isInStep6 ? resultObj["DN"] : "",
         },
       ];
 
