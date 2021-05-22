@@ -225,7 +225,6 @@ class RequestController extends BaseController {
         subQueries_agreement,
         {},
         {
-          relations: ["agreementItems"],
           orderBy: [{ entityField: "documentDate", orderType: "DESC" }],
         }
       );
