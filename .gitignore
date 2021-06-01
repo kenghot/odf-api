@@ -11,4 +11,5 @@ public/
 aws/odf2019d/odf-ssm-param.yml
 jsreport-data/settings
 tmp/*
+.env.development
 .env.development.local
