@@ -84,28 +84,48 @@ export class EmbeddedAddress {
   }
 
   getAddress1() {
-    const houseNo = this.houseNo ? `${this.houseNo} ` : "";
-    const buildingName = this.buildingName ? `${this.buildingName} ` : "";
-    const roomNo = this.roomNo ? `${this.roomNo} ` : "";
-    const floor = this.floor ? `${this.floor} ` : "";
-    const hmoo = this.hmoo ? `${this.hmoo} ` : "";
-    const soi = this.soi ? `${this.soi} ` : "";
-    const street = this.street ? `${this.street} ` : "";
+    const prefixHouseNo = "บ้านเลขที่";
+    const prefixBuildingName = "หมู่บ้าน/อาคาร";
+    const prefixRoomNo = "เลขที่ห้อง";
+    const prefixFloor = "ชั้น";
+    const prefixHmoo = "หมู่ที่";
+    const prefixSoi = "ซอย";
+   
+    const houseNo = this.houseNo ? `${this.houseNo}` : "";
+    const buildingName = this.buildingName
+      ? ` ${prefixBuildingName} ${this.buildingName} `
+      : "";
+    const roomNo = this.roomNo ? ` ${prefixRoomNo} ${this.roomNo} ` : "";
+    const floor = this.floor ? ` ${prefixFloor} ${this.floor} ` : "";
+    const hmoo = this.hmoo ? ` ${prefixHmoo} ${this.hmoo} ` : "";
+    const soi = this.soi ? ` ${prefixSoi} ${this.soi} ` : "";
 
-    return `${houseNo}${buildingName}${roomNo}${floor}${hmoo}${soi}${street}`;
+    return `${houseNo}${buildingName}${roomNo}${floor}${hmoo}${soi}`;
   }
 
   getAddress2() {
-    const subDistrict = this.subDistrict ? `${this.subDistrict} ` : "";
-    const district = this.district ? `${this.district} ` : "";
-
-    return `${subDistrict}${district}`;
+    // const subDistrict = this.subDistrict ? `${this.subDistrict} ` : "";
+    // const district = this.district ? `${this.district} ` : "";
+    // return `${subDistrict}${district}`;
   }
 
-  getAddress3() {
+  getAddress3() { 
+    const prefixStreet = "ถนน";
+    const prefixSubdistrict = "ตำบล/แขวง";
+    const street = this.street ? `${prefixStreet}${this.street} ` : "";
+    const subDistrict = this.subDistrict
+    ? `${prefixSubdistrict} ${this.subDistrict} `
+    : "";
+    return `${street}${subDistrict}`;
+
+  }
+  getAddress4() {
+    const prefixDistrict = "อำเภอ/เขต";
+    const prefixProvince = "จังหวัด";
+    const district = this.district ? `${this.district} ` : "";
     const province = this.province ? `${this.province}` : "";
     const zipcode = this.zipcode ? ` ${this.zipcode}` : "";
 
-    return `${province}${zipcode}`;
+    return `${district}${province}${zipcode}`;
   }
 }

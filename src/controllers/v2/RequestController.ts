@@ -184,6 +184,27 @@ class RequestController extends BaseController {
     ];
     const queries = this.prepareQuery(req.query, requestQueries);
     const subQueries = this.prepareSubQuery(req.query, requestSubQueries);
+
+    const agreement_SubQueries = [
+      {
+        operator: "in",
+        entityField: "id",
+        subEntityClass: "AgreementItem",
+        alias: "agreementItem",
+        subEntityField: "agreementId",
+        queries: [
+          {
+            operator: "=",
+            entityField: "borrower.idCardNo",
+            queryField: "idCardNo",
+          },
+        ],
+      },
+    ];
+    const queries_agreement = this.prepareQuery(req.query, agreementQueries);
+    const subQueries_agreement = this.prepareSubQuery(req.query, agreement_SubQueries);
+
+
     try {
       const [entities, total] = await this.searchRepo.findAndCount(
         "Request",
@@ -196,6 +217,17 @@ class RequestController extends BaseController {
           orderBy: [{ entityField: "documentDate", orderType: "DESC" }],
         }
       );
+
+      const [entities_agreement, total_agreement] = await this.searchRepo.findAndCount(
+        "Agreement",
+        "agreement",
+        queries_agreement,
+        subQueries_agreement,
+        {},
+        {
+          orderBy: [{ entityField: "documentDate", orderType: "DESC" }],
+        }
+      );
       if (!total) {
         return next(
           new NotFoundError({
@@ -203,7 +235,12 @@ class RequestController extends BaseController {
           })
         );
       }
+      let agreementDoc: Agreement;
+      if (total_agreement) {
+        agreementDoc= entities_agreement[0];
+      }
       const requestDoc: Request = entities[0];
+
       const step1Status = [
         requestStatusSet.new,
         requestStatusSet.qualified,
@@ -232,16 +269,45 @@ class RequestController extends BaseController {
       ];
       const step5Status = [requestStatusSet.approve3, requestStatusSet.reject];
 
-      const isInStep1 = step1Status.includes(requestDoc.status) ? true : false;
-      const isInStep2 = step2Status.includes(requestDoc.status) ? true : false;
-      const isInStep3 = step3Status.includes(requestDoc.status) ? true : false;
-      const isInStep4 = step4Status.includes(requestDoc.status) ? true : false;
-      const isInStep5 = step5Status.includes(requestDoc.status) ? true : false;
+      const step6Status = [requestStatusSet.done, requestStatusSet.reject];
+      
+      const step7Status = [agreementStatusSet.done, agreementStatusSet.cancel];
 
+      const step8Status = [agreementStatusSet.duringPayment, agreementStatusSet.cancel];
+
+
+      let isInStep1 = step1Status.includes(requestDoc.status) ? true : false;
+      let isInStep2 = step2Status.includes(requestDoc.status) ? true : false;
+      let isInStep3 = step3Status.includes(requestDoc.status) ? true : false;
+      let isInStep4 = step4Status.includes(requestDoc.status) ? true : false;
+      let isInStep5 = step5Status.includes(requestDoc.status) ? true : false;
+      let isInStep6 = step6Status.includes(requestDoc.status) ? true : false;
+      let isInStep7=false;
+      let isInStep8=false;
+      if (total_agreement) {
+        isInStep7 = step7Status.includes(agreementDoc.status) ? true : false;
+        isInStep8 = step8Status.includes(agreementDoc.status) ? true : false;
+      }
+      
+      if(isInStep6){
+        isInStep1=true;
+        isInStep2=true;
+        isInStep3=true;
+        isInStep4=true;
+        isInStep5=true;
+      }
+      if(isInStep8){
+        isInStep7=true;
+      }
       const resultObj = {
         ["AP"]: "เห็นชอบตามวงเงิน",
         ["AJ"]: "เห็นควรให้ปรับเพิ่ม/ลดวงเงิน",
-        ["RJ"]: "ไม่อนุมัติ",
+        ["RJ"]: "ไม่อนุมัติ"
+      };
+      const agreementObj = {
+        ["NW"]: "เตรียมทำสัญญา",
+        ["DN"]: "ทำสัญญาแล้ว",
+        ["DP"]: "รอโอนเงิน"
       };
 
       const data = [
@@ -275,6 +341,21 @@ class RequestController extends BaseController {
           step: "5. พิจารณาโดยคณะกรรมการบริหารกองทุนฯ",
           status: isInStep5,
           result: isInStep5 ? resultObj[requestDoc.result3.result] : "",
+        },
+        {
+          step: "6. ส่งทำสัญญา",
+          status: isInStep6,
+          result: isInStep6 ? agreementObj["NW"] : "",
+        },
+        {
+          step: "7. ทำสัญญา",
+          status: isInStep7,
+          result: isInStep7 ? agreementObj["DN"] : "",
+        },
+        {
+          step: "8. รอโอนเงิน",
+          status: isInStep8,
+          result: isInStep8 ? agreementObj["DP"] : "",
         },
       ];
 
