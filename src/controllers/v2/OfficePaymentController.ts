@@ -33,8 +33,10 @@ interface ICancelTransaction {
 // map receipt.paymentMethod to tr.paymentMethod
 const officePaymentMethod = {
   [`${officePaymentMethodSet.cash}`]: paymentMethodSet.cash,
-  [`${officePaymentMethodSet.moneyOrder}`]: paymentMethodSet.cash,
-  [`${officePaymentMethodSet.check}`]: paymentMethodSet.transfer
+  [`${officePaymentMethodSet.moneyOrder}`]: paymentMethodSet.moneyOrder,
+  [`${officePaymentMethodSet.check}`]: paymentMethodSet.check,
+  [`${officePaymentMethodSet.transfer}`]: paymentMethodSet.transfer
+
 };
 
 export class OfficeController {

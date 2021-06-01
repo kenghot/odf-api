@@ -105,12 +105,12 @@ class ReceiptReportController extends BaseController {
         // .leftJoin(AccountReceivable, "accountReceivable")
         .leftJoin("accountReceivable.agreement", "agreement")
         .leftJoin("accountReceivable.organization", "organization")
-        .leftJoin(
-          ReceiptItem,
-          "item",
-          "item.refType = 'AR' AND item.refId = accountReceivable.id"
-        )
-        .leftJoin(Receipt, "receipt", "receipt.id = item.receiptId ")
+        // .leftJoin(
+        //   ReceiptItem,
+        //   "item",
+        //   "item.refType = 'AR' AND item.refId = accountReceivable.id"
+        // )
+        .leftJoin(Receipt, "receipt", "receipt.documentNumber= accTrans.paymentReferenceNo")
         .select("organization.orgName", "orgName")
         .addSelect("agreement.documentNumber", "documentNumber")
         .addSelect("accTrans.paidDate", "paidDate")
@@ -131,20 +131,29 @@ class ReceiptReportController extends BaseController {
           END`,
           "documentNote"
         )
+        // .addSelect(
+        //   `CASE  
+        //   WHEN accTrans.paymentType = 'CS' THEN 'C.S'
+        //   WHEN accTrans.paymentType = 'OFFICE' THEN 'OFFICE'
+        //   ELSE accTrans.paymentType 
+        //   END`,
+        //   "cs"
+        // )
+        // .addSelect("accTrans.paymentType", "")
+        // .addSelect(
+        //   "IF(accTrans.paymentType = 'CS', accTrans.paidAmount, '')",
+        //   "cs"
+        // )
         .addSelect(
-          "IF(accTrans.paymentType = 'CS', accTrans.paidAmount, '')",
-          "cs"
-        )
-        .addSelect(
-          "IF(accTrans.paymentType = 'OFFICE' AND accTrans.paymentMethod = 'CASH', accTrans.paidAmount, '')",
+          "IF((receipt.paymentMethod = 'CASH' OR accTrans.paymentMethod ='CASH') , accTrans.paidAmount, '')",
           "cash"
         )
         .addSelect(
-          "IF(accTrans.paymentType = 'OFFICE' AND accTrans.paymentMethod = 'MONEYORDER', accTrans.paidAmount, '')",
+          "IF(receipt.paymentMethod = 'MONEYORDER' OR accTrans.paymentMethod ='MONEYORDER', accTrans.paidAmount, '')",
           "moneyOrder"
         )
         .addSelect(
-          "IF(accTrans.paymentType = 'OFFICE' AND accTrans.paymentMethod = 'CHECK', accTrans.paidAmount, '')",
+          "IF(receipt.paymentMethod = 'CHECK' OR accTrans.paymentMethod ='CHECK', accTrans.paidAmount, '')",
           "check"
         )
         .addSelect(
@@ -152,11 +161,11 @@ class ReceiptReportController extends BaseController {
           "ktb"
         )
         .addSelect(
-          "IF(accTrans.paymentType = 'TRANSFER', accTrans.paidAmount, '')",
-          "transfer"
+          "IF((receipt.paymentMethod = 'TRANSFER' OR accTrans.paymentMethod ='TRANSFER') AND accTrans.paymentType != 'KTB' , accTrans.paidAmount, '')",
+          "transfer" 
         )
         .addSelect(
-          "IF(accTrans.paymentType NOT IN ('CS','OFFICE', 'KTB'), accTrans.paidAmount, '')",
+          "IF(accTrans.paymentMethod NOT IN ('CASH','MONEYORDER', 'CHECK','TRANSFER')  AND accTrans.paymentType != 'KTB', accTrans.paidAmount, '')",
           "other"
         );
       // .addSelect("item.name");
@@ -175,7 +184,8 @@ class ReceiptReportController extends BaseController {
         });
       }
       reportQuery.orderBy("accTrans.paidDate");
-    } else {
+    }
+    else {
       reportQuery = getRepository(ReceiptItem)
         .createQueryBuilder("item")
         .leftJoin("item.receipt", "receipt")
@@ -190,6 +200,10 @@ class ReceiptReportController extends BaseController {
         .addSelect("receipt.createdByName", "createdByName")
         .addSelect("receipt.documentNote", "documentNote")
         // .addSelect("IF(receipt.paymentType = 'CS', 'x', '')", "cs")
+        .addSelect(
+          "IF(receipt.paymentMethod = 'TRANSFER', item.subtotal, '')",
+          "transfer"
+        )
         .addSelect(
           "IF(receipt.paymentMethod = 'CASH', item.subtotal, '')",
           "cash"
@@ -217,6 +231,11 @@ class ReceiptReportController extends BaseController {
       if (organizationIdParam) {
         reportQuery.andWhere("organization.id=:organizationId", {
           organizationId: organizationIdParam,
+        });
+      }
+      if (posRefType) {
+        reportQuery.andWhere("item.refType=:posRefType", {
+          posRefType: posRefType,
         });
       }
       reportQuery.orderBy("receipt.paidDate");
@@ -326,12 +345,12 @@ class ReceiptReportController extends BaseController {
         // .leftJoin(AccountReceivable, "accountReceivable")
         .leftJoin("accountReceivable.agreement", "agreement")
         .leftJoin("accountReceivable.organization", "organization")
-        .leftJoin(
-          ReceiptItem,
-          "item",
-          "item.refType = 'AR' AND item.refId = accountReceivable.id"
-        )
-        .leftJoin(Receipt, "receipt", "receipt.id = item.receiptId ")
+        // .leftJoin(
+        //   ReceiptItem,
+        //   "item",
+        //   "item.refType = 'AR' AND item.refId = accountReceivable.id"
+        // )
+        .leftJoin(Receipt, "receipt", "receipt.documentNumber= accTrans.paymentReferenceNo")
         .select("organization.orgName", "orgName")
         .addSelect("agreement.documentNumber", "documentNumber")
         .addSelect("accTrans.paidDate", "paidDate")
@@ -352,20 +371,29 @@ class ReceiptReportController extends BaseController {
           END`,
           "documentNote"
         )
+        // .addSelect(
+        //   `CASE  
+        //   WHEN accTrans.paymentType = 'CS' THEN 'C.S'
+        //   WHEN accTrans.paymentType = 'OFFICE' THEN 'OFFICE'
+        //   ELSE accTrans.paymentType 
+        //   END`,
+        //   "cs"
+        // )
+        // .addSelect("accTrans.paymentType", "")
+        // .addSelect(
+        //   "IF(accTrans.paymentType = 'CS', accTrans.paidAmount, '')",
+        //   "cs"
+        // )
         .addSelect(
-          "IF(accTrans.paymentType = 'CS', accTrans.paidAmount, '')",
-          "cs"
-        )
-        .addSelect(
-          "IF(accTrans.paymentType = 'OFFICE' AND accTrans.paymentMethod = 'CASH', accTrans.paidAmount, '')",
+          "IF((receipt.paymentMethod = 'CASH' OR accTrans.paymentMethod ='CASH'), accTrans.paidAmount, '')",
           "cash"
         )
         .addSelect(
-          "IF(accTrans.paymentType = 'OFFICE' AND accTrans.paymentMethod = 'MONEYORDER', accTrans.paidAmount, '')",
+          "IF(receipt.paymentMethod = 'MONEYORDER' OR accTrans.paymentMethod ='MONEYORDER', accTrans.paidAmount, '')",
           "moneyOrder"
         )
         .addSelect(
-          "IF(accTrans.paymentType = 'OFFICE' AND accTrans.paymentMethod = 'CHECK', accTrans.paidAmount, '')",
+          "IF(receipt.paymentMethod = 'CHECK' OR accTrans.paymentMethod ='CHECK', accTrans.paidAmount, '')",
           "check"
         )
         .addSelect(
@@ -373,11 +401,11 @@ class ReceiptReportController extends BaseController {
           "ktb"
         )
         .addSelect(
-          "IF(accTrans.paymentType = 'TRANSFER', accTrans.paidAmount, '')",
-          "transfer"
+          "IF((receipt.paymentMethod = 'TRANSFER' OR accTrans.paymentMethod ='TRANSFER') AND accTrans.paymentType != 'KTB', accTrans.paidAmount, '')",
+          "transfer" 
         )
         .addSelect(
-          "IF(accTrans.paymentType NOT IN ('CS','OFFICE', 'KTB'), accTrans.paidAmount, '')",
+          "IF(accTrans.paymentMethod NOT IN ('CASH','MONEYORDER', 'CHECK','TRANSFER')  AND accTrans.paymentType != 'KTB', accTrans.paidAmount, '')",
           "other"
         );
       // .addSelect("item.name");
@@ -420,6 +448,10 @@ class ReceiptReportController extends BaseController {
         .addSelect("receipt.documentNote", "documentNote")
         // .addSelect("IF(receipt.paymentType = 'CS', 'x', '')", "cs")
         .addSelect(
+          "IF(receipt.paymentMethod = 'TRANSFER', item.subtotal, '')",
+          "transfer"
+        )
+        .addSelect(
           "IF(receipt.paymentMethod = 'CASH', item.subtotal, '')",
           "cash"
         )
@@ -444,7 +476,7 @@ class ReceiptReportController extends BaseController {
       //   );
       // }
       reportQuery.andWhere(
-        "accTrans.paidDate BETWEEN :startDocumentDate AND LAST_DATE(:endDocumentDate)",
+        "DATE(receipt.paidDate) BETWEEN :startDocumentDate AND LAST_DAY(:endDocumentDate)",
         {
           startDocumentDate: firstDate,
           endDocumentDate: firstDate,
@@ -453,6 +485,11 @@ class ReceiptReportController extends BaseController {
       if (organizationIdParam) {
         reportQuery.andWhere("organization.id=:organizationId", {
           organizationId: organizationIdParam,
+        });
+      }
+      if (posRefType) {
+        reportQuery.andWhere("item.refType=:posRefType", {
+          posRefType: posRefType,
         });
       }
       reportQuery.orderBy("receipt.paidDate");
@@ -724,12 +761,13 @@ class ReceiptReportController extends BaseController {
       // .leftJoin(AccountReceivable, "accountReceivable")
       .leftJoin("accountReceivable.agreement", "agreement")
       .leftJoin("accountReceivable.organization", "organization")
-      .leftJoin(
-        ReceiptItem,
-        "item",
-        "item.refType = 'AR' AND item.refId = accountReceivable.id"
-      )
-      .leftJoin(Receipt, "receipt", "receipt.id = item.receiptId ")
+      // .leftJoin(
+      //   ReceiptItem,
+      //   "item",
+      //   "item.refType = 'AR' AND item.refId = accountReceivable.id"
+      // )
+      // .leftJoin(Receipt, "receipt", "receipt.id = item.receiptId ")
+      .leftJoin(Receipt, "receipt", "receipt.documentNumber= accTrans.paymentReferenceNo")
       .select("organization.orgName", "orgName")
       .addSelect("agreement.documentNumber", "documentNumber")
       .addSelect("accTrans.paidDate", "paidDate")
@@ -750,20 +788,24 @@ class ReceiptReportController extends BaseController {
           END`,
         "documentNote"
       )
+      // .addSelect(
+        //   `CASE  
+        //   WHEN accTrans.paymentType = 'CS' THEN 'C.S'
+        //   WHEN accTrans.paymentType = 'OFFICE' THEN 'OFFICE'
+        //   ELSE accTrans.paymentType 
+        //   END`,
+        //   "cs"
+        // )
       .addSelect(
-        "IF(accTrans.paymentType = 'CS', accTrans.paidAmount, '')",
-        "cs"
-      )
-      .addSelect(
-        "IF(accTrans.paymentType = 'OFFICE' AND accTrans.paymentMethod = 'CASH', accTrans.paidAmount, '')",
+        "IF((receipt.paymentMethod = 'CASH' OR accTrans.paymentMethod ='CASH') AND receipt.paymentMethod NOT IN ('MONEYORDER','CHECK','TRANSFER') , accTrans.paidAmount, '')",
         "cash"
       )
       .addSelect(
-        "IF(accTrans.paymentType = 'OFFICE' AND accTrans.paymentMethod = 'MONEYORDER', accTrans.paidAmount, '')",
+        "IF(receipt.paymentMethod = 'MONEYORDER' OR accTrans.paymentMethod ='MONEYORDER', accTrans.paidAmount, '')",
         "moneyOrder"
       )
       .addSelect(
-        "IF(accTrans.paymentType = 'OFFICE' AND accTrans.paymentMethod = 'CHECK', accTrans.paidAmount, '')",
+        "IF(receipt.paymentMethod = 'CHECK' OR accTrans.paymentMethod ='CHECK', accTrans.paidAmount, '')",
         "check"
       )
       .addSelect(
@@ -771,11 +813,11 @@ class ReceiptReportController extends BaseController {
         "ktb"
       )
       .addSelect(
-        "IF(accTrans.paymentType = 'TRANSFER', accTrans.paidAmount, '')",
-        "transfer"
+        "IF((receipt.paymentMethod = 'TRANSFER' OR accTrans.paymentMethod ='TRANSFER') AND accTrans.paymentType != 'KTB', accTrans.paidAmount, '')",
+        "transfer" 
       )
       .addSelect(
-        "IF(accTrans.paymentType NOT IN ('CS','OFFICE', 'KTB'), accTrans.paidAmount, '')",
+        "IF(accTrans.paymentType NOT IN ('CS','OFFICE', 'KTB') AND receipt.paymentMethod NOT IN ('CASH','MONEYORDER', 'CHECK','TRANSFER') , accTrans.paidAmount, '')",
         "other"
       );
     // .addSelect("item.name");
@@ -916,6 +958,7 @@ class ReceiptReportController extends BaseController {
       .addSelect("voucher.toBankName", "toBankName")
       .addSelect("voucher.toAccountNo", "toAccountNo")
       .addSelect("voucher.documentNumber", "documentNumber")
+      .addSelect("voucher.recieveBankAccountRefNo", "ktbRefNo")
       .addSelect("voucher.toSms", "telephone")
       // .addSelect(
       //   "IF(voucher.payByName IS NOT NULL, voucher.payByName, IF(voucher.updatedByName IS NOT NULL, voucher.updatedByName, voucher.createdByName))",

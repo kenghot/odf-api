@@ -81,6 +81,8 @@ export enum paymentTypeSet {
 export enum paymentMethodSet {
   cash = "CASH",
   transfer = "TRANSFER",
+  check = "CHECK",
+  moneyOrder = "MONEYORDER",
   directDebit = "DIRECTDEBIT",
   billPayment = "BILLPAYMENT",
   promtPay = "PROMTPAY",
