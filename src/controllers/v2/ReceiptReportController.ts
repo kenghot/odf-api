@@ -171,7 +171,7 @@ class ReceiptReportController extends BaseController {
       // .addSelect("item.name");
       if (startPaidDateParam && endPaidDateParam) {
         reportQuery.andWhere(
-          "accTrans.paidDate BETWEEN :startDocumentDate AND :endDocumentDate",
+          "accTrans.paidDate BETWEEN :startDocumentDate AND :endDocumentDate + INTERVAL 1 DAY",
           {
             startDocumentDate: startPaidDateParam,
             endDocumentDate: endPaidDateParam,
@@ -221,7 +221,7 @@ class ReceiptReportController extends BaseController {
       // .addSelect("item.name");
       if (startPaidDateParam && endPaidDateParam) {
         reportQuery.andWhere(
-          "receipt.paidDate BETWEEN :startDocumentDate AND :endDocumentDate",
+          "receipt.paidDate BETWEEN :startDocumentDate AND :endDocumentDate + INTERVAL 1 DAY",
           {
             startDocumentDate: startPaidDateParam,
             endDocumentDate: endPaidDateParam,
@@ -423,7 +423,7 @@ class ReceiptReportController extends BaseController {
         {
           startDocumentDate: firstDate,
           // endDocumentDate: `LAST_DAY(${firstDate})`,
-          endDocumentDate: firstDate,
+          endDocumentDate: firstDate+" 23:59:00",
         }
       );
       if (organizationIdParam) {
@@ -479,7 +479,7 @@ class ReceiptReportController extends BaseController {
         "DATE(receipt.paidDate) BETWEEN :startDocumentDate AND LAST_DAY(:endDocumentDate)",
         {
           startDocumentDate: firstDate,
-          endDocumentDate: firstDate,
+          endDocumentDate: firstDate+" 23:59:00",
         }
       );
       if (organizationIdParam) {
@@ -642,7 +642,7 @@ class ReceiptReportController extends BaseController {
     });
     if (startPaidDateParam && endPaidDateParam) {
       reportQuery.andWhere(
-        "receipt.paidDate BETWEEN :startDocumentDate AND :endDocumentDate",
+        "receipt.paidDate BETWEEN :startDocumentDate AND :endDocumentDate + INTERVAL 1 DAY",
         {
           startDocumentDate: startPaidDateParam,
           endDocumentDate: endPaidDateParam,
@@ -835,7 +835,7 @@ class ReceiptReportController extends BaseController {
       {
         startDocumentDate: firstDate,
         // endDocumentDate: `LAST_DAY(${firstDate})`,
-        endDocumentDate: firstDate,
+        endDocumentDate: firstDate+" 23:59:00",
       }
     );
     if (organizationIdParam) {
@@ -974,7 +974,7 @@ class ReceiptReportController extends BaseController {
 
     if (startPaidDateParam && endPaidDateParam) {
       reportQuery.andWhere(
-        "voucher.paidDate BETWEEN :startDocumentDate AND :endDocumentDate",
+        "voucher.paidDate BETWEEN :startDocumentDate AND :endDocumentDate + INTERVAL 1 DAY",
         {
           startDocumentDate: startPaidDateParam,
           endDocumentDate: endPaidDateParam,
