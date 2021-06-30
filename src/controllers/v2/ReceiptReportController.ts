@@ -623,7 +623,7 @@ class ReceiptReportController extends BaseController {
       // .addSelect("accTrans.paymentType", "paymentType")
       // .addSelect("receipt.paymentMethod", "paymentMethod")
       .addSelect("receipt.documentNumber", "paymentReferenceNo")
-      .addSelect("receipt.recieveByName", "recieveByName")
+      .addSelect("receipt.updatedByName", "updatedByName")
       .addSelect(
         "receipt.cancelApprovedManagerName",
         "cancelApprovedManagerName"
