@@ -439,12 +439,12 @@ class RequestController extends BaseController {
     }
     try {
       const age = getAge(birthday, new Date());
-      if (age > 59 || age < 20) {
+      if (age > 58 || age < 20) {
         return next(
           new ValidateError({
             name: "DQ1",
             message:
-              "ผู้ค้ำประกันคุณสมบัติไม่ผ่านเนื่องจากอายุน้อยกว่า 20 ปี หรืออายุเกิน 59 ปี",
+              "ผู้ค้ำประกันคุณสมบัติไม่ผ่านเนื่องจากอายุน้อยกว่า 20 ปี หรืออายุเกิน 58 ปี",
           })
         );
       }
