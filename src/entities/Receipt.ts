@@ -248,6 +248,12 @@ export class Receipt extends BaseEntity {
   @Column({ length: 256, default: "", comment: "หมายเหตุภายใน" })
   internalNote: string;
 
+  // ผู้อัพเดตข้อมูลล่าสุด
+  @Column({ nullable: true, comment: "ผู้อัพเดตข้อมูลล่าสุด-รหัสผู้ใช้งาน" })
+  updatedBy: number;
+  @Column({ length: 255, default: "", comment: "ผู้อัพเดตข้อมูลล่าสุด-ชื่อ" })
+  updatedByName: string;
+
   // ผู้รับเงิน
   @Column({ nullable: true, comment: "ผู้ดูแลการรับชำระ-รหัสผู้ใช้งาน" })
   recieveBy: number;
