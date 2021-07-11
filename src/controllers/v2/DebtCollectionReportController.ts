@@ -271,6 +271,7 @@ class DebtCollectionReportController extends BaseController {
     const organizationIdParam = req.query.organizationId;
     const startDocumentDateParam = req.query.startDocumentDate;
     const endDocumentDateParam = req.query.endDocumentDate;
+    const permissonGetAllParam  = req.query.permissonGetAll;
     const lastDate = `${fiscalYearParam - 543}-09-30`;
     try {
       // if (!fiscalYearParam) {
@@ -280,13 +281,13 @@ class DebtCollectionReportController extends BaseController {
       //     })
       //   );
       // }
-      // if (!organizationIdParam) {
-      //   return next(
-      //     new NotFoundError({
-      //       name: "กรุณาเลือกหน่วยงาน",
-      //     })
-      //   );
-      // }
+      if (!organizationIdParam && permissonGetAllParam!="getAll") {
+        return next(
+          new NotFoundError({
+            name: "กรุณาเลือกหน่วยงาน",
+          })
+        );
+      }
       let accountReceivableQuery = await getRepository(AccountReceivable)
         .createQueryBuilder("accountReceivable")
         .leftJoin("accountReceivable.agreement", "agreement")

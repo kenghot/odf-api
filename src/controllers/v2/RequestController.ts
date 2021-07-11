@@ -968,11 +968,21 @@ class RequestController extends BaseController {
       const committeeParam = req.query.committee;
       const meetingNumberParam = req.query.meetingNumber;
       const fiscalYearParam = req.query.fiscalYear;
+      const organizationIdParam  = req.query.organizationId;
+      const permissonGetAllParam  = req.query.permissonGetAll;
+
 
       if (!fiscalYearParam) {
         return next(
           new NotFoundError({
             name: "กรุณาเลือกปีงบประมาณ",
+          })
+        );
+      }
+      if (!organizationIdParam && permissonGetAllParam!="getAll") {
+        return next(
+          new NotFoundError({
+            name: "กรุณาเลือกหน่วยงาน",
           })
         );
       }
@@ -1041,6 +1051,13 @@ class RequestController extends BaseController {
         } else if (committeeParam === "คณะกรรมการบริหารกองทุนฯ") {
           resultColumn = "result3";
         }
+        
+        // Oganization
+      if (organizationIdParam || permissonGetAllParam!="getAll") {
+        requestsQuery.andWhere("requests.organizationId=:organizationId", {
+          organizationId: organizationIdParam,
+        });
+      }
 
         requestsQuery.andWhere(`requests.${resultColumn}.result IS NOT NULL`);
         requestsQuery = addSelectGroupResultByMeeting(
