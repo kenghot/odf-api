@@ -115,15 +115,15 @@ export class PaymentService {
       const transactionRepo = getRepository(AccountReceivableTransaction);
 
       // check if it already been done
-      const [records, total] = await transactionRepo.findAndCount({
-        accountReceivableId: ar.id,
-        paymentReferenceNo,
-        status: arTransactionStatusSet.normal
-      });
+      // const [records, total] = await transactionRepo.findAndCount({
+      //   accountReceivableId: ar.id,
+      //   paymentReferenceNo,
+      //   status: arTransactionStatusSet.normal
+      // });
 
-      if (total > 0) {
-        return [404, null, null, null, null];
-      }
+      // if (total > 0) {
+      //   return [404, null, null, null, null];
+      // }
 
       // prepare transaction
       const tr: DeepPartial<AccountReceivableTransaction> = {
