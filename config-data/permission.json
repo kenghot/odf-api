@@ -28,7 +28,7 @@
       { "code": "REQUEST.CREATE", "description": "สร้างคำร้อง" },
       {
         "code": "REQUEST.VIEW",
-        "description": "ดูข้้อมูลคำร้อง"
+        "description": "ดูข้อมูลคำร้อง"
       },
       {
         "code": "REQUEST.EDIT",
@@ -583,6 +583,55 @@
       {
         "code": "DONATE.ANALYSIS.ACCESS",
         "description": "เข้าใช้้งานระบบวิเคราะข้อมูลการบริจาคเข้ากองทุน"
+      }
+    ]
+  },
+  {
+    "icon": "address card outline",
+    "color": "green",
+    "title": "ระบบการกู้ยืมเงินออนไลน์",
+    "description": "ระบบการกู้ยืมเงินออนไลน์",
+    "permissions": [
+      {
+        "code": "REQUEST.ONLINE.ACCESS",
+        "description": "เข้าถึงระบบงานคำร้องขอกู้ยืมฯออนไลน์"
+      },
+      { "code": "REQUEST.ONLINE.CREATE", "description": "สร้างคำร้องออนไลน์" },
+      {
+        "code": "REQUEST.ONLINE.VIEW",
+        "description": "ดูข้อมูลคำร้องออนไลน์"
+      },
+      {
+        "code": "REQUEST.ONLINE.EDIT",
+        "description": "แก้ไขข้อมูลคำร้องออนไลน์"
+      },
+      {
+        "code": "AGREEMENT.ONLINE.ACCESS",
+        "description": "เข้าถึงระบบงานสัญญากู้ยืมฯออนไลน์"
+      },
+      {
+        "code": "AGREEMENT.ONLINE.VIEW",
+        "description": "ดูข้อมููลสัญญาออนไลน์"
+      },
+      {
+        "code": "GUANRANTEE.ONLINE.ACCESS",
+        "description": "เข้าถึงระบบงานหนังสือสัญญาค้ำประกันการกู้ยืมฯออนไลน์"
+      },
+      {
+        "code": "GUANRANTEE.ONLINE.VIEW",
+        "description": "ดูข้อมูลผู้ใช้งานสัญญาค้ำประกันการกู้ยืมฯออนไลน์"
+      },
+      {
+        "code": "AR.ONLINE.ACCESS",
+        "description": "เข้าถึงระบบบัญชีลูกหนี้"
+      },
+      {
+        "code": "AR.ONLINE.VIEW",
+        "description": "ดูข้อมูลบัญชีลูกหนี้"
+      },
+      {
+        "code": "AR.TRANSACTION.ONLINE.VIEW",
+        "description": "ดูรายการชำระเงินกู้ย้อนหลัง"
       }
     ]
   }
