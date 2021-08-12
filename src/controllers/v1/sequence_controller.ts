@@ -195,6 +195,8 @@ export class SequenceController {
     switch (sequenceType) {
       case sequenceTypeSet.request:
         return RequestSequenceRepository;
+      case sequenceTypeSet.requestOnline:
+        return RequestSequenceRepository;
       case sequenceTypeSet.agreement:
         return AgreementSequenceRepository;
       case sequenceTypeSet.guarantee:

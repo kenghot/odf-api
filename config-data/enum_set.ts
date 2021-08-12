@@ -41,34 +41,36 @@ export const enum_set = [
     items: [
       { key: "0", text: "แบบร่างคำร้อง", value: requestStatusSet.draft },
       { key: "1", text: "ยื่นคำร้องใหม่", value: requestStatusSet.new },
+      { key: "2", text: "แบบร่างคำร้องออนไลน์", value: requestStatusSet.draftOnline },
+      { key: "3", text: "ยื่นคำร้องใหม่ออนไลน์", value: requestStatusSet.newOnline },
       {
-        key: "2",
+        key: "4",
         text: "ตรวจสอบผ่านคุณสมบัติ",
         value: requestStatusSet.qualified
       },
       {
-        key: "3",
+        key: "5",
         text: "อนุมัติโดยหัวหน้างาน/กลุ่ม",
         value: requestStatusSet.approve1
       },
       {
-        key: "4",
+        key: "6",
         text: "อนุมัติโดยคณะอนุกรรมการกลั่นกรอง",
         value: requestStatusSet.approve2
       },
       {
-        key: "5",
+        key: "7",
         text: "อนุมัติโดยคณะกรรมการบริหารกองทุนฯ",
         value: requestStatusSet.approve3
       },
-      { key: "6", text: "ส่งทำสัญญา", value: requestStatusSet.done },
-      { key: "7", text: "ยกเลิกคำร้อง", value: requestStatusSet.cancel },
+      { key: "8", text: "ส่งทำสัญญา", value: requestStatusSet.done },
+      { key: "9", text: "ยกเลิกคำร้อง", value: requestStatusSet.cancel },
       {
-        key: "8",
+        key: "10",
         text: "ไม่ผ่านคุณสมบัติ",
         value: requestStatusSet.disqualified
       },
-      { key: "9", text: "คำร้องไม่อนุมัติ", value: requestStatusSet.reject }
+      { key: "11", text: "คำร้องไม่อนุมัติ", value: requestStatusSet.reject }
     ]
   },
   {
@@ -265,18 +267,19 @@ export const enum_set = [
     type: "sequenceType",
     items: [
       { key: "0", text: "เอกสารคำร้อง", value: sequenceTypeSet.request },
+      { key: "1", text: "เอกสารคำร้องออนไลน์", value: sequenceTypeSet.requestOnline },
       {
-        key: "1",
+        key: "2",
         text: "เอกสารสัญญาเงินกู้",
         value: sequenceTypeSet.agreement
       },
       {
-        key: "2",
+        key: "3",
         text: "เอกสารสัญญาค้ำประกัน",
         value: sequenceTypeSet.guarantee
       },
       {
-        key: "3",
+        key: "4",
         text: "เอกสารใบสำคัญรับ/จ่าย",
         value: sequenceTypeSet.voucher
       }
