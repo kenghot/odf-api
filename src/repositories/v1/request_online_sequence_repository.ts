@@ -6,15 +6,15 @@ import {
 } from "typeorm";
 
 import { ISequenceQuery } from "../../controllers/v1/sequence_controller";
-import { RequestSequence } from "../../entities/RequestSequence";
+import { RequestOnlineSequence } from "../../entities/RequestOnlineSequence";
 import { DBError } from "../../middlewares/error/error-type";
 
-@EntityRepository(RequestSequence)
-class RequestOnlineSequenceRepository extends Repository<RequestSequence> {
+@EntityRepository(RequestOnlineSequence)
+class RequestOnlineSequenceRepository extends Repository<RequestOnlineSequence> {
   async findSequencies(
     qs: ISequenceQuery,
     relations?: string[]
-  ): Promise<[RequestSequence[], number]> {
+  ): Promise<[RequestOnlineSequence[], number]> {
     const { currentPage = 1, perPage = 10, ...searchConditions } = qs;
     const skip = (+currentPage - 1) * +perPage;
     try {

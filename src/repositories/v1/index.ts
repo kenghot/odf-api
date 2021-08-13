@@ -8,6 +8,9 @@ export {
   default as RequestSequenceRepository
 } from "./request_sequence_repository";
 export {
+  default as RequestOnlineSequenceRepository
+} from "./request_online_sequence_repository";
+export {
   default as AgreementSequenceRepository
 } from "./agreement_sequence_repository";
 export {

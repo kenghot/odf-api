@@ -6,6 +6,7 @@ import { EmbeddedAddress } from "./embedded/EmbeddedAddress";
 import { GuaranteeSequence } from "./GuaranteeSequence";
 import { BaseEntity } from "./inherited/BaseEntity";
 import { RequestSequence } from "./RequestSequence";
+import { RequestOnlineSequence } from "./RequestOnlineSequence";
 import { VoucherSequence } from "./VoucherSequence";
 import { bankSet } from "../enumset";
 
@@ -80,6 +81,9 @@ export class Organization extends BaseEntity {
 
   @ManyToOne(() => RequestSequence, { cascade: ["update"] })
   requestSequence: RequestSequence;
+
+  @ManyToOne(() => RequestOnlineSequence, { cascade: ["update"] })
+  requestOnlineSequence: RequestOnlineSequence;
 
   @ManyToOne(() => AgreementSequence, { cascade: ["update"] })
   agreementSequence: AgreementSequence;
