@@ -471,7 +471,8 @@ class VoucherController extends BaseController {
 
       const successVouchers: Voucher[] = [];
       const failedVouchers: Voucher[] = [];
-
+      const successAgreement: Agreement[] = [];
+      
       const fiscalYear = getFiscalYear(new Date());
 
       for (const v of voucherData) {
@@ -548,8 +549,9 @@ class VoucherController extends BaseController {
             // getRepository(AccountReceivable).create(arData)
             arEntity
           );
-
+          
           successVouchers.push(voucher);
+          successAgreement.push(agreement)
         } catch (e) {
           voucher.error = {
             message: e.message,
@@ -560,7 +562,7 @@ class VoucherController extends BaseController {
 
       await deleteFile(req.files.ktb[0].path);
 
-      res.send({ data: { successVouchers, failedVouchers }, success: true });
+      res.send({ data: { successVouchers, failedVouchers,successAgreement}, success: true});
     } catch (e) {
       e.message = `ไม่สามารถทำรายการได้ ${e.message}`;
       next(e);
