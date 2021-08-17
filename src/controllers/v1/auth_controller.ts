@@ -46,7 +46,36 @@ export class AuthController {
       next(e);
     }
   };
+  static registerUser: RequestHandler = async (req, res, next) => {
+    const {
+      password,
+      confirmPassword,
+      resetPasswordToken,
+      resetPasswordTokenExpiration,
+      ...rest
+    } = req.body as User;
+    const {username} = req.body ;
+    try {
+      const checkuser = await UserRepository.findOne({ username });
 
+      if (checkuser) {
+        return next(
+          new ValidateError({
+            message: "มีผู้ใช้รหัสผู้ใช้งานนี้แล้วหรือลงทะเบียนผู้ใช้งานแล้ว, กรุณาเปลี่ยนรหัสผู้ใช้งานและลองใหม่อีกครั้ง",
+            name: "พบรหัสผู้ใช้งานซ้ำ"
+          })
+        );
+      }
+      // console.log(rest)
+      const user = UserRepository.create(rest);
+      user.active = true;
+      const entity = await UserRepository.createUser(user);
+
+      res.send({ data: entity, success: true });
+    } catch (e) {
+      next(e);
+    }
+  };
   static signin: RequestHandler = async (req, res, next) => {
     const user: DeepPartial<User> = req.user;
     const { id, permissions, responsibilityOrganizationIds } = user;
@@ -169,7 +198,7 @@ export class AuthController {
       next(e);
     }
   };
-
+  
   static resetPassword: RequestHandler = async (req, res, next) => {
     const uid = req.get("uid");
     const { password, confirmPassword } = req.body;

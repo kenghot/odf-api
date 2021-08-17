@@ -8,6 +8,7 @@ import { JwtGenerator } from "../services/JwtGenerator";
 import { AuthAppController } from "../controllers/v2/AuthAppController";
 
 const {
+  registerUser,
   signup,
   signin,
   getResetPasswordToken,
@@ -21,6 +22,8 @@ const jwtGenerator = new JwtGenerator();
 const authAppController = new AuthAppController(jwtGenerator);
 
 export const authRouter = Router();
+
+authRouter.post("/register_user", registerUser);
 
 authRouter.post("/signup", signup);
 
