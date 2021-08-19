@@ -46,7 +46,7 @@ export class AuthController {
       next(e);
     }
   };
-  static registerUser: RequestHandler = async (req, res, next) => {
+  static checkUser: RequestHandler = async (req, res, next) => {
     const {
       password,
       confirmPassword,
@@ -56,6 +56,7 @@ export class AuthController {
     } = req.body as User;
     const {username} = req.body ;
     try {
+      
       const checkuser = await UserRepository.findOne({ username });
 
       if (checkuser) {
@@ -66,12 +67,58 @@ export class AuthController {
           })
         );
       }
+      
+      res.send({ success: true });
+    } catch (e) {
+      next(e);
+    }
+  };
+  static registerUser: RequestHandler = async (req, res, next) => {
+    const {
+      ...rest
+    } = req.body as User;
+    const {username} = req.body ;
+    try {
+     
       // console.log(rest)
       const user = UserRepository.create(rest);
       user.active = true;
       const entity = await UserRepository.createUser(user);
-
+      
       res.send({ data: entity, success: true });
+    } catch (e) {
+      next(e);
+    }
+  };
+  static registerPassword: RequestHandler = async (req, res, next) => {
+    const { uid,password, confirmPassword } = req.body;
+    try {
+      if (!uid) {
+        return next(
+          new ValidateError({
+            name: "ไม่สามารถเซ็ทรหัสผ่านได้",
+            message: "ไม่สามารถเซ็ทรหัสผ่านได้เนื่องจากไม่พบค่า uid"
+          })
+        );
+      }
+
+      const user = await UserRepository.findOne({ id: +uid });
+
+      if (!user) {
+        return next(
+          new ValidateError({
+            name: "ไม่สามารถเซ็ทรหัสผ่านได้",
+            message: "ไม่สามารถเซ็ทรหัสผ่านได้เนื่องจากค่า uid ไม่ถูกต้อง"
+          })
+        );
+      }
+
+      user.password = password;
+      user.confirmPassword = confirmPassword;
+
+      await UserRepository.save(user);
+
+      res.send({ success: true });
     } catch (e) {
       next(e);
     }
@@ -159,7 +206,7 @@ export class AuthController {
       await UserRepository.save(user);
       await AuthController.sendResetEmail(user.email, resetPasswordToken);
 
-      res.send({ data: { email: user.email }, success: true });
+      res.send({ data: { email: user.email,telephone:user.telephone,otp:resetPasswordToken }, success: true });
     } catch (e) {
       next(e);
     }
