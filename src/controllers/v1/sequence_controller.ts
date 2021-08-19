@@ -3,6 +3,7 @@ import { DeepPartial, getRepository } from "typeorm";
 import { AgreementSequence } from "../../entities/AgreementSequence";
 import { GuaranteeSequence } from "../../entities/GuaranteeSequence";
 import { RequestSequence } from "../../entities/RequestSequence";
+import { RequestOnlineSequence } from "../../entities/RequestOnlineSequence";
 import { VoucherSequence } from "../../entities/VoucherSequence";
 import { sequenceTypeSet } from "../../enumset";
 import {
@@ -15,6 +16,7 @@ import {
   GuaranteeSequenceRepository,
   ReceiptSequenceRepository,
   RequestSequenceRepository,
+  RequestOnlineSequenceRepository,
   VoucherSequenceRepository
 } from "../../repositories/v1";
 import PosRepository from "../../repositories/v2/PosRepository";
@@ -66,7 +68,7 @@ export class SequenceController {
   static create: RequestHandler = async (req, res, next) => {
     const { sequenceType, ...rest } = req.body;
     const body: DeepPartial<
-      RequestSequence | AgreementSequence | GuaranteeSequence | VoucherSequence
+      RequestSequence | RequestOnlineSequence | AgreementSequence | GuaranteeSequence | VoucherSequence
     > = rest;
 
     const sequenceRepository = SequenceController.getRepo(sequenceType);
@@ -140,7 +142,7 @@ export class SequenceController {
   static update: RequestHandler = async (req, res, next) => {
     const { sequenceType, ...rest } = req.body;
     const body: DeepPartial<
-      RequestSequence | AgreementSequence | GuaranteeSequence | VoucherSequence
+      RequestSequence | RequestOnlineSequence| AgreementSequence | GuaranteeSequence | VoucherSequence
     > = rest;
 
     const sequenceRepository = SequenceController.getRepo(sequenceType);
@@ -195,6 +197,8 @@ export class SequenceController {
     switch (sequenceType) {
       case sequenceTypeSet.request:
         return RequestSequenceRepository;
+      case sequenceTypeSet.requestOnline:
+        return RequestOnlineSequenceRepository;
       case sequenceTypeSet.agreement:
         return AgreementSequenceRepository;
       case sequenceTypeSet.guarantee:

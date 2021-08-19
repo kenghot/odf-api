@@ -75,9 +75,10 @@ export class Request extends BaseEntity {
   requestLocation: string;
 
   // สถานะคำร้อง
+  // requestStatusSet.draft
   @Column({
-    default: requestStatusSet.draft,
-    comment: `สถานะคำร้อง draft = "DF", new = "NW", qualified = "QF", approve1 = "AP1", approve2 = "AP2", approve3 = "AP3", done = "DN", cancel = "CL", disqualified = "DQF", reject = "RJ",`
+    default: "",
+    comment: `สถานะคำร้อง draft = "DF", new = "NW",draftonline = "DFO", newonline = "NWO", qualified = "QF", approve1 = "AP1", approve2 = "AP2", approve3 = "AP3", done = "DN", cancel = "CL", disqualified = "DQF", reject = "RJ",`
   })
   status: requestStatusSet;
 

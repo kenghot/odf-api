@@ -23,6 +23,7 @@ organizationRouter
     controller.getOne({
       relations: [
         "requestSequence",
+        "requestOnlineSequence",
         "agreementSequence",
         "guaranteeSequence",
         "voucherSequence",

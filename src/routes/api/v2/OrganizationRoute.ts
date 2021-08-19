@@ -61,6 +61,7 @@ organizationRouter.put("/:id/donation_authorization", [
   ct.getOne({
     relations: [
       "requestSequence",
+      "requestOnlineSequence",
       "agreementSequence",
       "guaranteeSequence",
       "voucherSequence",
@@ -93,6 +94,7 @@ organizationRouter
     ct.getOne({
       relations: [
         "requestSequence",
+        "requestOnlineSequence",
         "agreementSequence",
         "guaranteeSequence",
         "voucherSequence",

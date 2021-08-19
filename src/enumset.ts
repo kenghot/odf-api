@@ -11,6 +11,8 @@ export enum resultTypeSet {
 export enum requestStatusSet {
   draft = "DF",
   new = "NW",
+  draftOnline = "DFO",
+  newOnline = "NWO",
   qualified = "QF",
   approve1 = "AP1",
   approve2 = "AP2",
@@ -148,6 +150,7 @@ export enum bankSet {
 
 export enum sequenceTypeSet {
   request = "request",
+  requestOnline = "requestOnline",
   agreement = "agreement",
   guarantee = "guarantee",
   voucher = "voucher",

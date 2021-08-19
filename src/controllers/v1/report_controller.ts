@@ -292,13 +292,13 @@ export class ReportController {
         const raw = await getRepository(AgreementItem)
           .createQueryBuilder("ai")
           .select("COUNT(agreementId)", "count")
-          .where("ai.borrower.firstname like :firstname", {
-            firstname: requestItems[0].borrower.firstname,
-          })
-          .andWhere("ai.borrower.lastname like :lastname", {
-            lastname: requestItems[0].borrower.lastname,
-          })
-          .andWhere("ai.borrower.idCardNo like :idCardNo", {
+          // .where("ai.borrower.firstname like :firstname", {
+          //   firstname: requestItems[0].borrower.firstname,
+          // })
+          // .andWhere("ai.borrower.lastname like :lastname", {
+          //   lastname: requestItems[0].borrower.lastname,
+          // })
+          .where("ai.borrower.idCardNo like :idCardNo", {
             idCardNo: requestItems[0].borrower.idCardNo,
           })
           .getRawMany();

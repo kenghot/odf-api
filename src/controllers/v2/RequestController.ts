@@ -100,7 +100,7 @@ class RequestController extends BaseController {
       request.fiscalYear = `${fiscalYear}`;
 
       // prevent error from status not DF
-      delete request.status;
+      // delete request.status;
 
       const entity = await this.createRepo.create(this.entityClass, request);
 
@@ -149,6 +149,30 @@ class RequestController extends BaseController {
             entity,
             "RequestSequence",
             organization.requestSequence,
+            { o2ms, m2ms }
+          );
+        }else if(!entity.documentNumber && entity.status === requestStatusSet.newOnline){
+          organization = await getRepository(Organization).findOne(
+            { id: entity.organizationId },
+            { relations: ["requestOnlineSequence"] }
+          );
+
+          const fiscalYear = getFiscalYear(entity.documentDate as Date);
+
+          if (fiscalYear !== +organization.requestOnlineSequence.prefixYear) {
+            return next(
+              new ValidateError({
+                name: "ไม่สามารถสร้างเอกสารคำร้องได้",
+                message:
+                  "ตัวจัดการเลขที่เอกสารปัจจุบันไม่ตรงกับปีงบประมาณ กรุณาติดต่อผู้ดูแลระบบ",
+              })
+            );
+          }
+
+          await RequestRepository.updateRequest(
+            entity,
+            "RequestOnlineSequence",
+            organization.requestOnlineSequence,
             { o2ms, m2ms }
           );
         } else {

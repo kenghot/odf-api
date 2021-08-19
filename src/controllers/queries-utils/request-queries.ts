@@ -39,6 +39,8 @@ export const addSelectStatus2 = (requests: SelectQueryBuilder<Request>) => {
     `CASE  requests.status
       WHEN "DF" THEN "แบบร่างคำร้อง"
       WHEN "NW" THEN "ยื่นคำร้องใหม่"
+      WHEN "DFO" THEN "แบบร่างคำร้องออนไลน์"
+      WHEN "NWO" THEN "ยื่นคำร้องใหม่ออนไลน์"
       WHEN "QF" THEN "ตรวจสอบผ่านคุณสมบัติ"
       WHEN "AP1" THEN "อนุมัติโดยหัวหน้างาน"
       WHEN "AP2" THEN "อนุมัติโดยคณะอนุฯ"
