@@ -43,64 +43,85 @@ class DonationAllowanceController extends BaseController {
       }
       const donationRepo = getRepository(DonationAllowance);
       records.forEach((rec) => {
-        const donation = donationRepo.create({
-          organizationId: req.body.organizationId,
-          receiptOrganization: rec[0],
-          posId: req.body.posId,
-          paidAmount: rec[13] || 0.0,
-          donationDate: rec[15]
+        if(rec[2]){
+          const donation = donationRepo.create({
+            organizationId: req.body.organizationId,
+            receiptOrganization: rec[0],
+            posId: req.body.posId,
+            paidAmount: rec[13] || 0.0,
+            donationDate: rec[15]
             ? moment(rec[15], "DD/MM/YYYY", true)
-                .subtract(543, "year")
-                .format("YYYY-MM-DD")
-            : null,
-          receiptDate: rec[14]
+            .subtract(543, "year")
+            .format("YYYY-MM-DD").toString() != 'Invalid date' ? 
+            moment(rec[15], "DD/MM/YYYY", true)
+            .subtract(543, "year")
+            .format("YYYY-MM-DD")
+            :
+            null
+            :
+            null,
+            receiptDate: rec[14]
             ? moment(rec[14], "DD/MM/YYYY", true)
-                .subtract(543, "year")
-                .format("YYYY-MM-DD")
-            : null,
-          donator: {
-            idCardNo: rec[4],
-            title: rec[1],
-            firstname: rec[2],
-            lastname: rec[3],
-            birthDate:
+              .subtract(543, "year")
+              .format("YYYY-MM-DD").toString() != 'Invalid date' ? 
+              moment(rec[14], "DD/MM/YYYY", true)
+              .subtract(543, "year")
+              .format("YYYY-MM-DD")
+              :
+              null
+              :
+              null,
+            donator: {
+              idCardNo: rec[4],
+              title: rec[1],
+              firstname: rec[2],
+              lastname: rec[3],
+              birthDate:rec[16] 
+              ? moment(rec[16], "DD/MM/YYYY", true)
+              .subtract(543, "year")
+              .format("YYYY-MM-DD").toString() != 'Invalid date' ? 
               moment(rec[16], "DD/MM/YYYY", true)
-                .subtract(543, "year")
-                .format("YYYY-MM-DD") ||
-              moment().subtract(543, "year").format("YYYY-MM-DD"),
-            idCardLifetime: false,
-            idCardAddress: {
-              houseNo: rec[5],
-              buildingName: "",
-              roomNo: "",
-              floor: "",
-              hmoo: rec[8],
-              soi: rec[6],
-              street: rec[7],
-              subDistrict: rec[9],
-              district: rec[10],
-              province: rec[11],
-              zipcode: rec[12],
+              .subtract(543, "year")
+              .format("YYYY-MM-DD")
+              :
+              null
+              :
+              null,
+              isOnlyBirthYear:rec[17]? true:false  ,
+              idCardLifetime: rec[16] instanceof Date,
+              idCardAddress: {
+                houseNo: rec[5],
+                buildingName: "",
+                roomNo: "",
+                floor: "",
+                hmoo: rec[8],
+                soi: rec[6],
+                street: rec[7],
+                subDistrict: rec[9],
+                district: rec[10],
+                province: rec[11],
+                zipcode: rec[12],
+              },
+              documentDeliveryAddress: {
+                houseNo: rec[19],
+                buildingName: "",
+                roomNo: "",
+                floor: "",
+                hmoo: rec[22],
+                soi: rec[20],
+                street: rec[21],
+                subDistrict: rec[23],
+                district: rec[24],
+                province: rec[25],
+                zipcode: rec[26],
+              },
             },
-            documentDeliveryAddress: {
-              houseNo: rec[19],
-              buildingName: "",
-              roomNo: "",
-              floor: "",
-              hmoo: rec[22],
-              soi: rec[20],
-              street: rec[21],
-              subDistrict: rec[23],
-              district: rec[24],
-              province: rec[25],
-              zipcode: rec[26],
-            },
-          },
-        });
-        donation.logCreatedBy(req.body);
-        promises.push(
-          this.createRepo.create(this.entityClass, donation as any)
-        );
+          });
+          donation.logCreatedBy(req.body);
+          promises.push(
+            this.createRepo.create(this.entityClass, donation as any)
+          );
+        }
       });
       await Promise.all(promises);
       next();
