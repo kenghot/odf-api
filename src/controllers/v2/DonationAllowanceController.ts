@@ -43,7 +43,7 @@ class DonationAllowanceController extends BaseController {
       }
       const donationRepo = getRepository(DonationAllowance);
       records.forEach((rec) => {
-        if(rec[2]){
+        if(rec[2] || rec[3]){
           const donation = donationRepo.create({
             organizationId: req.body.organizationId,
             receiptOrganization: rec[0],
@@ -76,7 +76,16 @@ class DonationAllowanceController extends BaseController {
               title: rec[1],
               firstname: rec[2],
               lastname: rec[3],
-              birthDate:rec[16] 
+              birthDate:rec[17] ? 
+              moment(rec[17], "DD/MM/YYYY", true)
+              .subtract(543, "year")
+              .format("YYYY-MM-DD").toString() != 'Invalid date' ? 
+              moment(rec[17], "DD/MM/YYYY", true)
+              .subtract(543, "year")
+              .format("YYYY-MM-DD")
+              :
+              null
+              :rec[16] 
               ? moment(rec[16], "DD/MM/YYYY", true)
               .subtract(543, "year")
               .format("YYYY-MM-DD").toString() != 'Invalid date' ? 
@@ -88,7 +97,7 @@ class DonationAllowanceController extends BaseController {
               :
               null,
               isOnlyBirthYear:rec[17]? true:false  ,
-              idCardLifetime: rec[16] instanceof Date,
+              idCardLifetime: false,
               idCardAddress: {
                 houseNo: rec[5],
                 buildingName: "",

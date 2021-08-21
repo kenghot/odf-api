@@ -29,7 +29,7 @@
 	<div class="container">
 		<div class="row mb-4">
 			<div class="col-4">
-				<div style="margin-top: 158px">ที่</div>
+				<div style="margin-top: 158px">ที่ พม <div class="text-underline" style="width:25%"></div>/(เลขหนังสือออก)</div>
 				</div>
 			<div class="col-4 text-center no-margin-padding">
 				<img class="garuda-img" src="{#asset /asset/garuda_logo.png @encoding=dataURI}"/>
@@ -39,9 +39,12 @@
 					ผู้ค้ำประกัน
 				</div>
 				<div class="text-left" style="margin-top:32px">
-					<div style="width:100%">{{checkEmpty organization.address.buildingName}}</div>
-					อำเภอ <div class="text-underline" style="width:79%">{{checkEmptyReturnDashed organization.address.district}}</div>
-					จังหวัด <div class="text-underline" style="width:78%">{{checkEmptyReturnDashed organization.address.province}}</div>
+						<div style="width:100%">{{checkEmpty organization.orgName}}</div>
+					{{!-- <div>{{checkEmptyReturnDashed organization.address.houseNo}}&nbsp;{{checkEmpty organization.address.buildingName}}</div>
+					<div>หมู่&nbsp;{{checkEmptyReturnDashed organization.address.hmoo}}&nbsp;&nbsp;ถนน{{checkEmptyReturnDashed organization.address.street}}</div> --}}
+					<div >ตำบล/แขวง&nbsp;{{checkEmptyReturnDashed organization.address.subDistrict}}</div>	
+					<div>อำเภอ/เขต&nbsp;{{checkEmptyReturnDashed organization.address.district}}</div>
+					<div >{{checkEmpty organization.address.province}}&nbsp;{{checkEmpty organization.address.zipcode}}</div>
 				</div>  
 			</div> 
 		</div>
@@ -54,7 +57,7 @@
 	<div class="container mb-3">
 		<div class="row">
 			<div class="col">
-				เรื่อง แจ้งให้นำเงินมาชำระหนี้แทนผู้กู้ยืม
+				เรื่อง แจ้งการผิดนัดชำระหนี้กองทุนผู้สูงอายุ
 			</div> 
 		</div>
 		<div class="row">
@@ -73,7 +76,7 @@
 		<div class="row">
 			<div class="col">
 				<div class="indent text-justify">
-					<div>ตามหนังสือที่อ้างถึง ท่านได้ค้ำประกันการกู้ยืมเงินทุนประกอบอาชีพของ</div>
+					<div>ตามหนังสือที่อ้างถึง ท่านได้ค้ำประกันการกู้ยืมเงินทุนประกอบอาชีพจากกองทุนผู้สูงอายุของ</div>
 					<div class="text-underline" style="width:32%">{{checkEmptyReturnDashed borrower.fullName}}</div> ตามสัญญากู้ยืมเลขที่ <div class="text-underline" style="width:17%">{{checkEmptyReturnDashed agreementDocumentNumber}}</div> ลงวันที่ <div class="text-underline" style="width:23%">{{formatThaiDate agreementDocumentDate false}}</div>
 					เป็นเงินจำนวน <div class="text-underline" style="width:28%">{{currency loanAmount}}</div> บาท (<div class="text-underline" style="width:38%">{{dashed loanAmountText}}</div>) นั้น
 				</div>
@@ -82,25 +85,22 @@
 		<div class="row mb-3">
 			<div class="col">
 				<div class="indent text-justify">
-					จังหวัด <div class="text-underline" style="width:33%">{{checkEmptyReturnDashed organization.address.province}}</div> ขอแจ้งว่าผู้กู้ยืมมียอดหนี้คงเหลือตามสัญญาทั้งสิ้น
-					จำนวน <div class="text-underline" style="width:30%">{{currency outstandingDebtBalance}}</div>บาท (<div class="text-underline" style="width:54%">{{dashed outstandingDebtBalanceText}}</div>) 
-					โดยข้อมูล ณ วันที่ <div class="text-underline" style="width:25%">{{formatThaiDate asOfDate false}}</div> 
-					ผู้กู้ยืมมีเงินงวดผิดนัดค้างชำระรายเดือนกับกองทุนผู้สูงอายุจำนวน <div class="text-underline" style="width:38%">{{currency overdueBalance}}</div>บาท 
-					(<div class="text-underline" style="width:55%">{{dashed overdueBalanceText}}</div>) 
-					ดังนั้น จึงขอแจ้งให้ท่านในฐานะผู้ค้ำประกันทราบและนำเงินมาชำระหนี้
-					แทนผู้กู้ยืม ภายใน 10 วัน นับแต่วันที่ได้รับหนังสือนี้ หากพ้นกำหนดแล้ว จังหวัด <div class="text-underline" style="width:30%">{{checkEmptyReturnDashed organization.address.province}}</div>
-					มีความจำเป็นต้องดำเนินการตามขั้นตอนทางกฎหมายต่อไป หากมีข้อสงสัยประการใด กรุณาติดต่อเจ้าหน้าที่กองทุนผู้สูงอายุในวันและเวลาราชการ
+					{{checkEmptyReturnDashed organization.orgName}}&nbsp;ขอแจ้งท่านในฐานะผู้ค้ำประกันทราบว่าขณะนี้ผู้กู้ยืมผิดนัดชำระหนี้    ไม่เป็นไปตามสัญญากู้ยืมเงินทุนประกอบอาชีพจากกองทุนผู้สูงอายุ โดยข้อมูล ณ วันที่
+					<div class="text-underline" style="width:25%">{{formatThaiDate asOfDate false}}</div> 
+					เป็นเงินคงเหลือทั้งหมดจำนวน <div class="text-underline" style="width:38%">{{currency outstandingDebtBalance}}</div>บาท (<div class="text-underline" style="width:54%">{{dashed outstandingDebtBalanceText}}</div>) 
+					ดังนั้น จึงขอให้ท่านและหรือผู้กู้ยืมนำเงินไปชำระหนี้คืนกองทุนผู้สูงอายุทั้งหมด ภายใน 10 วัน นับแต่วันที่ได้รับหนังสือฉบับนี้ ที่ร้านสะดวกซื้อ 7-Eleven ทุกสาขาทั่วประเทศ หรือร้านค้าที่มีตราสัญลักษณ์เคาน์เตอร์เซอร์วิส โดยแจ้งเลขที่บัตรประจำตัวประชาชนของผู้กู้ยืมพร้อมจำนวนเงินที่ต้องชำระคืน หากพ้นกำหนดเวลาดังกล่าว แล้วท่านและหรือผู้กู้ยืมยังคงเพิกเฉยไม่ชำระหนี้คืนกองทุนผู้สูงอายุ 
+					{{checkEmptyReturnDashed organization.orgName}}มีความจำเป็นต้องดำเนินการทางกฎหมายต่อไป
 				</div>
 			</div>
 		</div>
 		<div class="row mb-5">
 			<div class="col">
 				<div class="indent">
-					จึงเรียนมาเพื่อดำเนินการ และขออภัยหากท่านได้ชำระเงินก่อนได้รับหนังสือฉบับนี้
+					จึงเรียนมาเพื่อดำเนินการ และ<div class="text-underline">ขออภัยหากท่านและหรือผู้กู้ยืมได้ชำระเงินก่อนได้รับหนังสือฉบับนี้</div>
 				</div>
 			</div>
 		</div>
-		<div class="row" style="margin-bottom:120px">
+		<div class="row" style="margin-bottom:50px">
 			<div class="col-6"></div>
 			<div class="col-6 text-left" style="padding:0">
 						ขอแสดงความนับถือ
@@ -110,13 +110,13 @@
 			<div class="col-4"></div>
 			<div class="col-6 text-center">
 					<div>
-						(<div class="text-underline"  style="width:95%">&nbsp</div>)
+						<div  style="width:95%">(&nbsp{{checkEmpty organization.agreementAuthorizedTitle}}{{checkEmpty organization.agreementAuthorizedFirstname}}&nbsp&nbsp{{checkEmpty organization.agreementAuthorizedLastname}}&nbsp)</div>
 					</div>
 					<div>
-							<div class="text-underline" style="width:100%">&nbsp</div>
+							<div  style="width:100%">{{checkEmpty organization.agreementAuthorizedPosition}}</div>
 					</div>
 					<div>
-							<div class="text-underline" style="width:100%">&nbsp</div>
+							{{!-- <div class="text-underline" style="width:100%">&nbsp</div> --}}
 					</div>
 			</div>
 			<div class="col-2"></div>
