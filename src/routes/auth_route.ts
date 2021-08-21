@@ -6,6 +6,7 @@ import { authentication } from "../middlewares/app-authentication";
 import { SimpleAppStrategy } from "../middlewares/app-authentication/strategy/SimpleAppStrategy";
 import { JwtGenerator } from "../services/JwtGenerator";
 import { AuthAppController } from "../controllers/v2/AuthAppController";
+import { controller as voucherct } from "../controllers/v2/VoucherController";
 
 const {
   checkUser,
@@ -24,8 +25,6 @@ const jwtGenerator = new JwtGenerator();
 const authAppController = new AuthAppController(jwtGenerator);
 
 export const authRouter = Router();
-
-authRouter.get("/list_org", checkUser);
 
 authRouter.post("/check_user", checkUser);
 
@@ -46,6 +45,8 @@ authRouter.post("/reset_password", authenticate("jwt"), resetPassword);
 authRouter.post("/renew_access_token", renewToken);
 
 authRouter.post("/signout", signout);
+
+authRouter.route("/ktb_create").post(voucherct.createKTBFileApi);
 
 authRouter
   .route("/app_signin")

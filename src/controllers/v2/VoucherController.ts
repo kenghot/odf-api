@@ -296,12 +296,128 @@ class VoucherController extends BaseController {
           })
         );
       }
-
+      
       // const data = this.prepareKTBData(vouchers, total, req.body.effectiveDate);
       const data = this.prepareKTBData(vouchers, total);
-
+    
       const filename = await this.createFile(data);
 
+      res
+        .header("Content-Disposition", `attachment; filename=${filename}`)
+        .header("filename", `${filename}`)
+        .sendFile(path.join(process.cwd(), `/tmp/ktb/${filename}`));
+    } catch (e) {
+      e.message = `ไม่สามารถสร้างไฟล์ทำรายการจ่ายKTB ${e.message}`;
+      next(e);
+    }
+  };
+
+  createKTBFileApi = async (req, res, next) => {
+    try {
+      // console.log(req.body)
+      const vouchers : Voucher[] =req.body.data;
+      const date = moment(new Date()).format("DDMMYYYY");
+      let totalAmountBatch = 0.0;
+      const records =vouchers.map(
+        (voucher, i): IKTBRecord => {
+
+          // แปลงค่าเฉพาะ KTB
+                const receivingBank =
+                voucher.toBankName === bankSet.KTB
+                  ? bankCode[voucher.toBankName]
+                  : voucher.toBankName;
+
+              let receivingBranchCode = "";
+              let receivingAccount = "";
+
+              receivingBranchCode = voucher.toBranchCode.padStart(4, "0");
+
+              const length = voucher.toAccountNo.length;
+              const isMoreThan11 = length - 11;
+
+              // กรณีเลขที่บัญชีธนาคารยาวเกิน11หลัก
+              if (isMoreThan11 > 0) {
+                receivingAccount = voucher.toAccountNo
+                  .substr(isMoreThan11)
+                  .padStart(11, "0");
+              } else {
+                // receivingBranchCode = "0000";
+                receivingAccount = voucher.toAccountNo.padStart(11, "0");
+              }
+
+          totalAmountBatch += +voucher.totalAmount;
+        return {
+          fileType: "10",
+          recordType: "2",
+          batchNo: "000001",
+          receivingBank,
+          receivingBranchCode,
+          receivingAccount,
+          // sendingBankCode: "006",
+          // sendingBankCode: bankCode[voucher.fromAccountRef1],
+          sendingBankCode: voucher.fromAccountRef1
+            .trim()
+            .slice(0, 3)
+            .padStart(3, "0"),
+          // sendingBranchCode: "0021".padStart(4), // 0021
+          sendingBranchCode: voucher.fromAccountRef3
+            .trim()
+            .slice(0, 4)
+            .padStart(4), // 0021
+          // sendingAccount: "00216053706",
+          sendingAccount: voucher.fromAccountRef2
+            .trim()
+            .slice(0, 11)
+            .padStart(11, "0"),
+          effectiveDate: date,
+          serviceType: "14",
+          clearingHouseCode: "00",
+          amount: `${+voucher.totalAmount * 100}`.padStart(17, "0"), // totalAmount
+          receiverInfo: "".padEnd(8),
+          receiverId: "".padStart(10, "0"),
+          receiverName: `${voucher.toAccountName.trim().slice(0, 100)}`.padEnd(
+            100
+          ), // title firstname lastname toAccountName
+          // senderName: "กองทุนผู้สูงอายุ/706".padEnd(100),
+          senderName: `${voucher.fromAccountRef4.trim().slice(0, 100)}`.padEnd(
+            100
+          ),
+          otherInfo1: "".padEnd(40),
+          ddaRef1: "".padStart(18),
+          reserveField1: "".padStart(2),
+          ddaRef2: "".padStart(18),
+          reserveField2: "".padStart(2),
+          otherInfo2: "".padEnd(20),
+          refRunningNumber: `${i + 1}`.padStart(6, "0"),
+          status: "09",
+          email: `${
+            voucher.toEmail ? voucher.toEmail.trim().slice(0, 40) : ""
+          }`.padEnd(40),
+          sms: voucher.toSms.trim().slice(0, 20).padStart(20), // mobilephone toSms
+          receivingSubBranchCode: "0000",
+          fillers: "".padEnd(34),
+          carriageReturn: os.EOL,
+        };
+     });
+  
+      // console.log(records)
+      const ktbData: IKTB = {
+        fileType: "10",
+        recordType: "1",
+        batchNumber: "000001",
+        sendingBankCode: "006",
+        totalTransactionInBatch: `${vouchers.length}`.padStart(7, "0"),
+        totalAmount: `${totalAmountBatch * 100}`.padStart(19, "0"),
+        effectiveDate: date,
+        transactionCode: "C",
+        receiverNo: "0".padEnd(8, "0"),
+        companyId: "001".padEnd(16),
+        userId: "".padEnd(20),
+        fillers: "".padEnd(407),
+        carriageReturn: os.EOL,
+        records,
+      };
+      const filename = await this.createFile(ktbData);
       res
         .header("Content-Disposition", `attachment; filename=${filename}`)
         .header("filename", `${filename}`)
@@ -385,7 +501,7 @@ class VoucherController extends BaseController {
         };
       }
     );
-
+    
     const ktbData: IKTB = {
       fileType: "10",
       recordType: "1",
@@ -404,7 +520,7 @@ class VoucherController extends BaseController {
     };
     return ktbData;
   };
-
+  
   private createFile = (data: IKTB) => {
     return new Promise((resolve, reject) => {
       const { records, ...rest } = data;
