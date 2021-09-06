@@ -32,14 +32,22 @@ class DonationAllowanceController extends BaseController {
         0
       );
       if (!req.body.organizationId) {
-        throw new ValidateError({
-          message: `ไม่สามารถสร้างรายการรับบริจาคได้เนื่องจากไม่พบข้อมูลหน่วยงานที่รับบริจาค`,
-        });
+        return next(
+          new ValidateError({
+            name: "ไม่พบข้อมูลหน่วยงานที่รับบริจาค",
+            message:
+              "ม่สามารถสร้างรายการรับบริจาคได้เนื่องจากไม่พบข้อมูลหน่วยงานที่รับบริจาค"
+          })
+        );
       }
       if (!req.body.posId) {
-        throw new ValidateError({
-          message: `ไม่สามารถสร้างรายการรับบริจาคได้เนื่องจากไม่พบข้อหมูลจุดรับชำระ`,
-        });
+        return next(
+          new ValidateError({
+            name: "ไม่พบข้อมูลจุดรับชำระ",
+            message:
+              "ไม่สามารถสร้างรายการรับบริจาคได้เนื่องจากไม่พบข้อมูลจุดรับชำระ"
+          })
+        );
       }
       const donationRepo = getRepository(DonationAllowance);
       records.forEach((rec) => {
@@ -127,12 +135,30 @@ class DonationAllowanceController extends BaseController {
             },
           });
           donation.logCreatedBy(req.body);
+          
           promises.push(
             this.createRepo.create(this.entityClass, donation as any)
           );
         }
       });
-      await Promise.all(promises);
+      try{
+          await Promise.all(promises);
+         console.log('try');
+
+      }catch (e) {
+         console.log(e);
+         return next(
+          new ValidateError({
+            name: "พบข้อมูลไม่ถูกต้อง",
+            message:
+              "ไม่สามารถสร้างรายการรับบริจาคได้เนื่องจากพบข้อมูลไม่ถูกต้องหรือรูปแบบข้อมูลไม่ถูกต้อง โปรดตรวจสอบข้อมูล"
+          })
+        );
+
+      }finally {
+        
+      }
+      // await Promise.all(promises);
       next();
     } catch (err) {
       throw err;
