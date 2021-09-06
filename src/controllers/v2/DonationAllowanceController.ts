@@ -143,7 +143,6 @@ class DonationAllowanceController extends BaseController {
       });
       try{
           await Promise.all(promises);
-         console.log('try');
 
       }catch (e) {
          console.log(e);
