@@ -59,14 +59,14 @@ class ReceiptController extends BaseController {
         receipt.documentDate as Date
       );
 
-      if (err) {
-        return next(
-          new ValidateError({
-            name: `ไม่สามารถสร้างเอกสาร${this.entityInfo}`,
-            message: `ไม่สามารถสร้างเอกสาร${this.entityInfo} ${message}`
-          })
-        );
-      }
+      // if (err) {
+      //   return next(
+      //     new ValidateError({
+      //       name: `ไม่สามารถสร้างเอกสาร${this.entityInfo}`,
+      //       message: `ไม่สามารถสร้างเอกสาร${this.entityInfo} ${message}`
+      //     })
+      //   );
+      // }
 
       shift.expectedDrawerAmount = +shift.expectedDrawerAmount + +receipt.total;
 

@@ -164,17 +164,17 @@ class VoucherController extends BaseController {
 
         const fiscalYear = getFiscalYear(voucherData.documentDate as Date);
 
-        if (fiscalYear !== +organization.voucherSequence.prefixYear) {
+        // if (fiscalYear !== +organization.voucherSequence.prefixYear) {
           // failedAgreements.push(agreement);
           // continue;
-          return next(
-            new ValidateError({
-              name: "ไม่สามารถสร้างเอกสารใบสำคัญจ่ายได้",
-              message:
-                "ตัวจัดการเลขที่เอกสารปัจจุบันไม่ตรงกับปีงบประมาณ กรุณาติดต่อผู้ดูแลระบบ"
-            })
-          );
-        }
+        //   return next(
+        //     new ValidateError({
+        //       name: "ไม่สามารถสร้างเอกสารใบสำคัญจ่ายได้",
+        //       message:
+        //         "ตัวจัดการเลขที่เอกสารปัจจุบันไม่ตรงกับปีงบประมาณ กรุณาติดต่อผู้ดูแลระบบ"
+        //     })
+        //   );
+        // }
 
         voucherData.fiscalYear = `${fiscalYear}`;
 
