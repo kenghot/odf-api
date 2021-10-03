@@ -47,6 +47,8 @@ import {
 } from "../queries-utils/request-queries";
 import { BaseController } from "./BaseController";
 import { Agreement } from "../../entities/Agreement";
+import { transporter } from "../../utils/email-helper";
+import { UserRepository } from "../../repositories/v1";
 
 class RequestController extends BaseController {
   private reportNotFoundMessage =
@@ -106,6 +108,37 @@ class RequestController extends BaseController {
 
       res.locals.data = entity;
 
+      if(request.status=="DFO"){
+        const id = entity.organization.id;
+        const rolesId = 4;
+        const records = await UserRepository.createQueryBuilder("user")
+          .leftJoinAndSelect("user.roles", "roles")
+          .where("user.organizationId = :id", { id })
+          .andWhere("roles.id = :rolesId", { rolesId })
+          .getRawMany();
+        for (let i = 0; i < records.length; i++) {
+          const mailOptions = {
+            from: process.env.APP_EMAIL,
+            to: records[i].user_email,
+            subject:
+              "มีการยื่นแบบร่างคำร้องออนไลน์",
+            html: `
+            <br/>เรียน  ${records[i].roles_description}
+            <br/>เรื่อง  มีการยื่นแบบร่างคำร้องออนไลน์เข้ามาในระบบให้บริการกู้ยืมเงินทุนประกอบการอาชีพ
+            <br/><br/>ข้อมูลผู้ยื่นคำร้องออนไลน์ 
+            <br/>เลขบัตรประชาชน ${entity.requestItems[0].borrower.idCardNo.slice(0, -3)}xxx 
+            <br/> ชื่อ-นามสกุล ${entity.requestItems[0].borrower.title}${entity.requestItems[0].borrower.firstname} ${entity.requestItems[0].borrower.lastname} 
+            <br/> เบอร์โทร ${entity.requestItems[0].borrower.telephone}
+            <br/> วันที่ยื่นคำร้อง ${entity.documentDate}
+            <br/> Click-link http://odf.dop.go.th/loan/request/view/${entity.requestItems[0].requestId}/P  `
+          };
+          try {
+            await transporter.sendMail(mailOptions);
+          } catch (e) {
+            throw e;
+          }
+      }
+      }
       next();
     } catch (err) {
       err.message = `ไม่สามารถสร้าง${this.entityInfo} ${err.message}`;
