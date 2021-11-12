@@ -163,7 +163,7 @@ class VoucherController extends BaseController {
         }
 
         const fiscalYear = getFiscalYear(voucherData.documentDate as Date);
-
+        //ฟังก์ชันล็อคปีงบประมาณ
         // if (fiscalYear !== +organization.voucherSequence.prefixYear) {
           // failedAgreements.push(agreement);
           // continue;

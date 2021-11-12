@@ -116,16 +116,17 @@ class RequestController extends BaseController {
       }
 
       const fiscalYear = getFiscalYear(request.documentDate as Date);
+      //ฟังก์ชันล็อคปีงบประมาณ userต้องการปิด beer12112021
 
-      if (fiscalYear !== +organization.requestSequence.prefixYear) {
-        return next(
-          new ValidateError({
-            name: "ไม่สามารถสร้างเอกสารคำร้องได้",
-            message:
-              "ตัวจัดการเลขที่เอกสารปัจจุบันไม่ตรงกับปีงบประมาณ กรุณาติดต่อผู้ดูแลระบบ"
-          })
-        );
-      }
+      // if (fiscalYear !== +organization.requestSequence.prefixYear) {
+      //   return next(
+      //     new ValidateError({
+      //       name: "ไม่สามารถสร้างเอกสารคำร้องได้",
+      //       message:
+      //         "ตัวจัดการเลขที่เอกสารปัจจุบันไม่ตรงกับปีงบประมาณ กรุณาติดต่อผู้ดูแลระบบ"
+      //     })
+      //   );
+      // }
 
       request.fiscalYear = `${fiscalYear}`;
 
@@ -178,16 +179,17 @@ class RequestController extends BaseController {
         );
 
         const fiscalYear = getFiscalYear(request.documentDate as Date);
+      //ฟังก์ชันล็อคปีงบประมาณ userต้องการปิด beer12112021
 
-        if (fiscalYear !== +organization.requestSequence.prefixYear) {
-          return next(
-            new ValidateError({
-              name: "ไม่สามารถสร้างเอกสารคำร้องได้",
-              message:
-                "ตัวจัดการเลขที่เอกสารปัจจุบันไม่ตรงกับปีงบประมาณ กรุณาติดต่อผู้ดูแลระบบ"
-            })
-          );
-        }
+        // if (fiscalYear !== +organization.requestSequence.prefixYear) {
+        //   return next(
+        //     new ValidateError({
+        //       name: "ไม่สามารถสร้างเอกสารคำร้องได้",
+        //       message:
+        //         "ตัวจัดการเลขที่เอกสารปัจจุบันไม่ตรงกับปีงบประมาณ กรุณาติดต่อผู้ดูแลระบบ"
+        //     })
+        //   );
+        // }
       }else if(!request.documentNumber && request.status === requestStatusSet.newOnline){
         organization = await OrganizationRepository.findOne(
           // { id: request.organization.id },
@@ -196,16 +198,17 @@ class RequestController extends BaseController {
         );
 
         const fiscalYear = getFiscalYear(request.documentDate as Date);
+      //ฟังก์ชันล็อคปีงบประมาณ userต้องการปิด beer12112021
 
-        if (fiscalYear !== +organization.requestOnlineSequence.prefixYear) {
-          return next(
-            new ValidateError({
-              name: "ไม่สามารถสร้างเอกสารคำร้องได้",
-              message:
-                "ตัวจัดการเลขที่เอกสารปัจจุบันไม่ตรงกับปีงบประมาณ กรุณาติดต่อผู้ดูแลระบบ"
-            })
-          );
-        }
+        // if (fiscalYear !== +organization.requestOnlineSequence.prefixYear) {
+        //   return next(
+        //     new ValidateError({
+        //       name: "ไม่สามารถสร้างเอกสารคำร้องได้",
+        //       message:
+        //         "ตัวจัดการเลขที่เอกสารปัจจุบันไม่ตรงกับปีงบประมาณ กรุณาติดต่อผู้ดูแลระบบ"
+        //     })
+        //   );
+        // }
       }
 
       const _attachedFiles = [];
