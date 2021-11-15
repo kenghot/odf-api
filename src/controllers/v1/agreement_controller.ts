@@ -94,14 +94,14 @@ class AgreementController extends BaseController {
       );
 
       const fiscalYear = getFiscalYear(agreement.documentDate as Date);
-
-      if (fiscalYear !== +organization.agreementSequence.prefixYear) {
-        throw new ValidateError({
-          name: "ไม่สามารถสร้างเอกสารสัญญาเงินกู้ได้ได้",
-          message:
-            "ตัวจัดการเลขที่เอกสารปัจจุบันไม่ถูกต้อง กรุณาติดต่อผู้ดูแลระบบ"
-        });
-      }
+      //ฟังก์ชันล็อคปีงบประมาณ userต้องการปิด beer12112021
+      // if (fiscalYear !== +organization.agreementSequence.prefixYear) {
+      //   throw new ValidateError({
+      //     name: "ไม่สามารถสร้างเอกสารสัญญาเงินกู้ได้ได้",
+      //     message:
+      //       "ตัวจัดการเลขที่เอกสารปัจจุบันไม่ถูกต้อง กรุณาติดต่อผู้ดูแลระบบ"
+      //   });
+      // }
 
       const a = await AgreementRepository.findOne({
         request: agreement.request as any
@@ -173,16 +173,17 @@ class AgreementController extends BaseController {
         }
 
         const fiscalYear = getFiscalYear(agreementData.documentDate as Date);
+      //ฟังก์ชันล็อคปีงบประมาณ userต้องการปิด beer12112021
 
-        if (fiscalYear !== +organization.agreementSequence.prefixYear) {
-          return next(
-            new ValidateError({
-              name: "ไม่สามารถสร้างเอกสารสัญญาเงินกู้ได้",
-              message:
-                "ตัวจัดการเลขที่เอกสารปัจจุบันไม่ตรงกับปีงบประมาณ กรุณาติดต่อผู้ดูแลระบบ"
-            })
-          );
-        }
+        // if (fiscalYear !== +organization.agreementSequence.prefixYear) {
+        //   return next(
+        //     new ValidateError({
+        //       name: "ไม่สามารถสร้างเอกสารสัญญาเงินกู้ได้",
+        //       message:
+        //         "ตัวจัดการเลขที่เอกสารปัจจุบันไม่ตรงกับปีงบประมาณ กรุณาติดต่อผู้ดูแลระบบ"
+        //     })
+        //   );
+        // }
 
         agreementData.fiscalYear = `${fiscalYear}`;
         guaranteeData.fiscalYear = `${fiscalYear}`;

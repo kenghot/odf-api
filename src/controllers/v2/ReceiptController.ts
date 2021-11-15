@@ -175,13 +175,14 @@ class ReceiptController extends BaseController {
     }
 
     const fiscalYear = getFiscalYear(date);
+      //ฟังก์ชันล็อคปีงบประมาณ userต้องการปิด beer12112021
 
-    if (fiscalYear !== +sequence.prefixYear) {
-      return [
-        true,
-        "ตัวจัดการเลขที่เอกสารปัจจุบันไม่ตรงกับปีงบประมาณ กรุณาติดต่อผู้ดูแลระบบ"
-      ];
-    }
+    // if (fiscalYear !== +sequence.prefixYear) {
+    //   return [
+    //     true,
+    //     "ตัวจัดการเลขที่เอกสารปัจจุบันไม่ตรงกับปีงบประมาณ กรุณาติดต่อผู้ดูแลระบบ"
+    //   ];
+    // }
 
     return [null, "", fiscalYear];
   };
