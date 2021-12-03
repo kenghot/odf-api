@@ -891,7 +891,7 @@ class AccountReceivableController extends BaseController {
         .addGroupBy("agreement.endDate")
         .addGroupBy("agreement.installmentTimes")
         .addGroupBy("agreement.installmentLastAmount")
-        .orderBy("agreement.id")
+        .orderBy("agreement.documentNumber")
         .getRawMany();
 
       // res.send(accountReceivable);
