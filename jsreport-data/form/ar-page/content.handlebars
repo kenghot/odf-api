@@ -67,7 +67,7 @@
                     <div  class= "text-not-justify"  >
 					จังหวัด <div class="text-underline"  style="width:32%" >{{checkEmptyReturnDashed agreement.borrowerRegisteredAddress.province}}</div> โทรศัพท์ <div class="text-underline-left"  style="width:56%" >{{checkEmptyReturnDashed agreement.borrowerTelephone}}</div><span style="display: inline-block; width: 100%;"></span>
 					</div>
-					วัตถุประสงค์ที่ขอกู้ <div class="text-underline-left"  style="width:86%" >{{checkOccupationDescription agreement.request.requestOccupation.name agreement.request.requestOccupation.description}}</div><span style="display: inline-block; width: 100%;"></span>
+					วัตถุประสงค์ที่ขอกู้ <div class="text-underline-left"  style="width:86%" >{{agreement.request.requestOccupation.description}}</div><span style="display: inline-block; width: 100%;"></span>
 					ชื่อผู้ค้ำประกัน <div class="text-underline-left"  style="width:40%" >{{guarantee.guarantor.fullName}}</div> บัตรประจำตัวประชาชนเลขที่ <div class="text-underline" style="width:29%" >{{guarantee.guarantor.idCardNo}}</div><span style="display: inline-block; width: 100%;"></span>
 					บ้านเลขที่ <div  class="text-underline"  style="width:12%" >{{checkEmptyReturnDashed guarantee.guarantorRegisteredAddress.houseNo}}</div> หมู่ที่ <div class="text-underline"  style="width:5%" >{{checkEmptyReturnDashed guarantee.guarantorRegisteredAddress.hmoo}}</div> ตรอก/ซอย <div class="text-underline"  style="width:27%" >{{checkEmptyReturnDashed guarantee.guarantorRegisteredAddress.soi}}</div>ถนน <div class="text-underline"  style="width:32%" >{{checkEmptyReturnDashed guarantee.guarantorRegisteredAddress.street}}</div><span style="display: inline-block; width: 100%;"></span>
 					แขวง/ตำบล <div class="text-underline" style="width:40%" >{{checkEmptyReturnDashed guarantee.guarantorRegisteredAddress.subDistrict}}</div> เขต/อำเภอ <div class="text-underline"  style="width:40%" >{{checkEmptyReturnDashed guarantee.guarantorRegisteredAddress.district}}</div><span style="display: inline-block; width: 100%;"></span>
@@ -109,7 +109,7 @@
 				<div style="border-style: solid; padding: 8px;" >
 				<h1>ชำระเงินผ่านระบบอินเตอร์เน็ตแบงค์กิ้งธนาคารกรุงไทย</h1>
 				<div class= "text-not-justify" >
-					1. เลขที่บัตรประชาชนของลูกหนี้ <div  class="text-underline-left" style="width:60%" >{{agreement.borrower.idCardNo}}</div><span style="display: inline-block; width: 100%;"></span>
+					1. เลขที่บัตรประชาชนของลูกหนี้ <div  class="text-underline-left" style="width:60%" >{{agreement.borrower.idCardNo}}      ({{agreement.documentNumber}})</div><span style="display: inline-block; width: 100%;"></span>
 					2. เลขจ่ายเงิน <div  class="text-underline-left" style="width:74%" >{{agreement_id}}</div><span style="display: inline-block; width: 100%;"></span>
 					3. จำนวนเงิน <div  class="text-underline-left" style="width:81%" >{{currency agreement.installmentAmount true}}</div><span style="display: inline-block; width: 100%;"></span>
 					4. ตรวจสอบจำนวนเงินที่ต้องการชำระและยืนยันการชำระ <span style="display: inline-block; width: 100%;"></span>
