@@ -476,7 +476,41 @@ class AccountReceivableController extends BaseController {
       guarantee.setThaiFormatForReport();
       const { agreementItems, request, ...agRest } = agreement;
       const { guaranteeItems, ...guRest } = guarantee;
-      const { requestItems, ...reRest } = request;
+      if(request!=null){
+        const { requestItems, ...reRest } = request;
+
+        // const cr = os.EOL;
+        const cr = "\r";
+        const text = `|${process.env.TAX_ID}${
+          process.env.SERVICE_NO
+        }${cr}${idCardNo}${cr}${agreement.id.toString().padStart(8, "0")}${cr}${
+          +agreement.installmentAmount * 100
+        }`;
+        const barcode = await generateBarcode(text);
+  
+        const resp = await jsreport.render({
+          template: { name: "ar-page" },
+          data: {
+            ...rest,
+            agreement: {
+              ...agRest,
+              ...agreementItems[0],
+              request: { ...reRest, ...requestItems[0] },
+            },
+            agreement_id:agreement.id.toString().padStart(8, "0"),
+            guarantee: { ...guRest, ...guaranteeItems[0] },
+            barcode,
+          },
+        });
+  
+        const filename = `ar${new Date().toISOString()}.pdf`;
+  
+        res
+          .header("Content-Disposition", `attachment; filename=${filename}`)
+          .header("filename", filename)
+          .send(resp.content);
+      }else{
+        // const { requestItems, ...reRest } = request;
 
       // const cr = os.EOL;
       const cr = "\r";
@@ -494,7 +528,7 @@ class AccountReceivableController extends BaseController {
           agreement: {
             ...agRest,
             ...agreementItems[0],
-            request: { ...reRest, ...requestItems[0] },
+            request: { },
           },
           agreement_id:agreement.id.toString().padStart(8, "0"),
           guarantee: { ...guRest, ...guaranteeItems[0] },
@@ -508,6 +542,7 @@ class AccountReceivableController extends BaseController {
         .header("Content-Disposition", `attachment; filename=${filename}`)
         .header("filename", filename)
         .send(resp.content);
+      }
     } catch (e) {
       next(e);
     }
@@ -891,7 +926,7 @@ class AccountReceivableController extends BaseController {
         .addGroupBy("agreement.endDate")
         .addGroupBy("agreement.installmentTimes")
         .addGroupBy("agreement.installmentLastAmount")
-        .orderBy("agreement.id")
+        .orderBy("agreement.documentNumber")
         .getRawMany();
 
       // res.send(accountReceivable);
