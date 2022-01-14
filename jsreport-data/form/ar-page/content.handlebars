@@ -55,7 +55,7 @@
 			<div class="col">
 				<div  class= "text-justify"  >
 					<div style="border-style: solid; padding: 8px;width:970px;;height:340px;" >
-					สัญญากู้เลขที่ <div class="text-underline" style="width:25%" >{{agreement.documentNumber}}</div> ลงวันที่ <div class="text-underline" style="width:25%" ></div> รับเงินวันที่ <div class="text-underline" style="width:25%" >{{formatThaiDate startDate}}</div><span style="display: inline-block; width: 100%;"></span>
+					สัญญากู้เลขที่ <div class="text-underline" style="width:25%" >{{agreement.documentNumber}}</div> ลงวันที่ <div class="text-underline" style="width:25%" ></div> รับเงินวันที่ <div class="text-underline" style="width:25%" >{{formatThaiDate agreement.startDate}}</div><span style="display: inline-block; width: 100%;"></span>
 					จำนวนเงิน <div class="text-underline" style="width:23%" >{{currency agreement.loanAmount true}}</div> บาท	ผ่อนชำระ <div class="text-underline" style="width:25%" >{{agreement.installmentTimes}}</div> งวด งวดละ <div class="text-underline"style="width:20%" >{{agreement.installmentPeriodValue}}</div> เดือน <span style="display: inline-block; width: 100%;"></span>
 					งวดละ <div class="text-underline" style="width:20%" >{{currency agreement.installmentAmount true}}</div> บาท ผ่อนชำระงวดแรกวันที่ <div  class="text-underline" style="width:25%" >{{formatThaiDate agreement.installmentFirstDate}}</div> จำนวน <div class="text-underline"  style="width:20%" >{{currency agreement.installmentAmount true}}</div> บาท <span style="display: inline-block; width: 100%;"></span>
                     <span class="text-not-justify">งวดสุดท้ายวันที่ <div class="text-underline" style="width:32%" >{{formatThaiDate agreement.installmentLastDate}}</div> จำนวน <div class="text-underline" style="width:48%" >{{currency (getInstallmentLastAmount agreement.installmentAmount agreement.installmentLastAmount) true}}</div> บาท</span>
@@ -83,15 +83,15 @@
 					<img src="{#asset /asset/logo.png @encoding=dataURI}"style="display: block; position:absolute;padding-left:60;width: 90px;" />
 					<h1>สมุดคู่บัญชีการชำระเงินกู้ยืม กองทุนผู้สูงอายุ</h1>
 					<div class= "text-justify">
-						ชื่อผู้กู้ <div  class="text-underline-left"  style="width:91%" >{{agreement.borrower.fullName}}</div></br>
-						บ้านเลขที่ <div  class="text-underline"  style="width:12%" >{{checkEmptyReturnDashed agreement.borrowerRegisteredAddress.houseNo}}</div> หมู่ที่ <div class="text-underline"  style="width:6%" >{{checkEmptyReturnDashed agreement.borrowerRegisteredAddress.hmoo}}</div> ตรอก/ซอย <div class="text-underline"  style="width:20%" >{{checkEmptyReturnDashed agreement.borrowerRegisteredAddress.soi}}</div>ถนน <div class="text-underline"  style="width:22%" >{{checkEmptyReturnDashed agreement.borrowerRegisteredAddress.street}}</div><span style="display: inline-block; width: 100%;"></span>
-						แขวง/ตำบล <div class="text-underline" style="width:35%" >{{checkEmptyReturnDashed agreement.borrowerRegisteredAddress.subDistrict}}</div> เขต/อำเภอ <div class="text-underline"  style="width:35%" >{{checkEmptyReturnDashed agreement.borrowerRegisteredAddress.district}}</div><span style="display: inline-block; width: 100%;"></span>
-						<div  class= "text-not-justify"  >จังหวัด <div class="text-underline"  style="width:32%" >{{checkEmptyReturnDashed agreement.borrowerRegisteredAddress.province}}</div> โทรศัพท์ <div class="text-underline-left"  style="width:46%" >{{checkEmptyReturnDashed agreement.borrowerTelephone}}</div><span style="display: inline-block; width: 100%;"></span></div>
+						ชื่อผู้กู้ <div  class="text-underline-left"  style="width:55%" >{{agreement.borrower.fullName}}</div>โทรศัพท์ <div class="text-underline"  style="width:25%" >{{checkEmptyReturnDashed agreement.borrowerTelephone}}</div><br>
+						บ้านเลขที่ <div  class="text-underline"  style="width:12%" >{{checkEmptyReturnDashed agreement.borrowerRegisteredAddress.houseNo}}</div> หมู่ที่ <div class="text-underline"  style="width:6%" >{{checkEmptyReturnDashed agreement.borrowerRegisteredAddress.hmoo}}</div> ตรอก/ซอย <div class="text-underline"  style="width:48%" >{{checkEmptyReturnDashed agreement.borrowerRegisteredAddress.soi}}</div><span style="display: inline-block; width: 100%;"></span>
+						ถนน <div class="text-underline"  style="width:37%" >{{checkEmptyReturnDashed agreement.borrowerRegisteredAddress.street}}</div>แขวง/ตำบล <div class="text-underline" style="width:42%" >{{checkEmptyReturnDashed agreement.borrowerRegisteredAddress.subDistrict}}</div><span style="display: inline-block; width: 100%;"></span>
+						เขต/อำเภอ <div class="text-underline"  style="width:41%" >{{checkEmptyReturnDashed agreement.borrowerRegisteredAddress.district}}</div>จังหวัด <div class="text-underline"  style="width:37%" >{{checkEmptyReturnDashed agreement.borrowerRegisteredAddress.province}}</div> <span style="display: inline-block; width: 100%;"></span>
 					</div>           
 					
 					<h1>รายการกู้ยืมเงิน</h1>
 					<div class= "text-justify"  >
-						เลขที่สัญญา<div class="text-underline-left" style="width:85%" >{{agreement.documentNumber}}</div><span style="display: inline-block; width: 100%;"></span>
+						เลขที่สัญญา<div class="text-underline-left" style="width:70%" >{{agreement.documentNumber}}</div><span style="display: inline-block; width: 100%;"></span>
 						จำนวนเงินกู้ยืม<div class="text-underline" style="width:25%" >{{currency loanAmount true}}</div>บาท(<div class="text-underline" style="width:50%" >{{agreement.loanAmountText}}</div>)<span style="display: inline-block; width: 100%;"></span>
 						{{!-- <div  class= "text-not-justify"  > --}}
 						จำนวนงวดที่ชำระ<div class="text-underline" style="width:22%" >{{agreement.installmentTimes}}</div>งวด <span style="display: inline-block; width: 100%;"></span>

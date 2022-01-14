@@ -142,12 +142,12 @@ class ReceiptReportController extends BaseController {
         //   "cs"
         // )
         // .addSelect("accTrans.paymentType", "")
-        // .addSelect(
-        //   "IF(accTrans.paymentType = 'CS', accTrans.paidAmount, '')",
-        //   "cs"
-        // )
         .addSelect(
-          "IF((receipt.paymentMethod = 'CASH' OR accTrans.paymentMethod ='CASH') , accTrans.paidAmount, '')",
+          "IF(accTrans.paymentType = 'CS', accTrans.paidAmount, '')",
+          "cs"
+        )
+        .addSelect(
+          "IF((receipt.paymentMethod = 'CASH' OR accTrans.paymentMethod ='CASH')AND accTrans.paymentType != 'CS', accTrans.paidAmount, '')",
           "cash"
         )
         .addSelect(
@@ -163,7 +163,7 @@ class ReceiptReportController extends BaseController {
           "ktb"
         )
         .addSelect(
-          "IF((receipt.paymentMethod = 'TRANSFER' OR accTrans.paymentMethod ='TRANSFER') AND accTrans.paymentType != 'KTB' , accTrans.paidAmount, '')",
+          "IF((receipt.paymentMethod = 'TRANSFER' OR accTrans.paymentMethod ='TRANSFER') AND accTrans.paymentType != 'KTB' AND accTrans.paymentType != 'CS', accTrans.paidAmount, '')",
           "transfer" 
         )
         .addSelect(
@@ -173,7 +173,7 @@ class ReceiptReportController extends BaseController {
       // .addSelect("item.name");
       if (startPaidDateParam && endPaidDateParam) {
         reportQuery.andWhere(
-          "accTrans.paidDate BETWEEN :startDocumentDate AND :endDocumentDate + INTERVAL 1 DAY",
+          "accTrans.paidDate BETWEEN :startDocumentDate AND :endDocumentDate ",
           {
             startDocumentDate: startPaidDateParam,
             endDocumentDate: endPaidDateParam,
