@@ -389,6 +389,10 @@
       {
         "code": "POS.RECEIPTCONTROLS.APPROVE",
         "description": "อนุมัติการเบิก/จ่าย กระดาษใบเสร็จ"
+      },
+      {
+        "code": "POS.RECEIPTS.CANCEL",
+        "description": "ยกเลิกใบเสร็จรับเงิน"
       }
     ]
   },
