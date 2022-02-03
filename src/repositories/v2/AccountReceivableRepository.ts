@@ -471,7 +471,7 @@ class AccountReceivableRepository extends Repository<AccountReceivable> {
         );
       }
 
-      queryBuilder.orderBy("ar.tentativeOverdueDate", "DESC");
+      queryBuilder.orderBy("agreement.documentNumber", "ASC");
 
       const [entities, total] = await queryBuilder
         .skip(skip)
