@@ -126,10 +126,11 @@ class DebtCollectionVisitController extends BaseController {
         jsreportData.overDueBalance = control ? control.overDueBalance : 0;
         jsreportData.occupationName = debtCollectionVisit.isWorking
           ? `${debtCollectionVisit.occupation.name} ${debtCollectionVisit.occupation.description}`
-          : "ไม่ได้ประกอบอาชีพ";
+          : "";
         jsreportData.occupationSalary = debtCollectionVisit.occupation.salary;
         jsreportData.extraIncome = debtCollectionVisit.hasExtraIncome
           ? debtCollectionVisit.extraIncome
+          
           : 0;
         jsreportData.extraIncomeDescription =
           debtCollectionVisit.extraIncomeDescription;

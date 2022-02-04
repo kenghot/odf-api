@@ -63,7 +63,7 @@
 				รหัสไปรษณีย์ <div class="text-underline" style="width:18%">{{checkEmptyReturnDashed borrowerAddress.zipcode}}</div> โทรศัพท์/โทรศัพท์มือถือ <div class="text-underline" style="width:47%">{{checkEmptyReturnDashed borrowerTelephone}}</div><br/>
 				สัญญากู้ยืมเงินกองทุนผู้สูงอายุเลขที่ <div class="text-underline" style="width:24%">{{checkEmptyReturnDashed agreementDocumentNumber}}</div> ลงวันที่ <div class="text-underline" style="width:36%">{{formatThaiDate agreementDocumentDate}}</div><br/>
 				เป็นจำนวนเงิน <div class="text-underline" style="width:24%">{{currency loanAmount}}</div> บาท กู้ยืมเงินเพื่อประกอบอาชีพ <div class="text-underline" style="width:33%">{{checkEmptyReturnDashed requestOccupation.name}} {{requestOccupation.description}}</div><br/>
-				ค้างชำระเงินกู้ยืมทั้งหมดจำนวน <div class="text-underline" style="width:9.5%">{{checkEmptyReturnDashed overDueInstallmentTimes}}</div> งวด
+				ค้างชำระเงินกู้ยืมทั้งหมดจำนวน <div class="text-underline" style="width:9.5%">{{naiveRound overDueInstallmentTimes }}</div> งวด
 				เป็นจำนวนเงิน <div class="text-underline" style="width:39%">{{currency overDueBalance}}</div> บาท<br/>
 			</div> 
 		</div>
@@ -74,10 +74,10 @@
 		</div>
 		<div class="row mb-4">
 			<div class="col" style="text-align:justify">
-				ปัจจุบันประกอบอาชีพ <div class="text-underline" style="width:37%">{{checkEmptyReturnDashed occupationName}}</div> รายได้ต่อเดือน <div class="text-underline" style="width:24%">{{currency occupationSalary}}</div> บาท
-				รายได้อื่นๆ <div class="text-underline" style="width:27%">{{currency extraIncome}}</div> บาท จากการประกอบอาชีพ <div class="text-underline" style="width:36%">{{checkEmptyReturnDashed extraIncomeDescription}}</div> 
-				สมาชิกในครอบครัวจำนวน <div class="text-underline" style="width:8%">{{checkEmptyReturnDashed familyMember}}</div> คน ประกอบด้วย <div class="text-underline" style="width:51%">{{checkEmptyReturnDashed familyMemberDescription}}</div> 
-				ภาระที่ต้องรับผิดชอบค่าใช้จ่าย <div class="text-underline" style="width:72%">{{checkEmptyReturnDashed expenseDeclaration}}</div>
+				ปัจจุบันประกอบอาชีพ <div class="text-underline" style="width:37%">{{checkEmpty occupationName}}</div> รายได้ต่อเดือน <div class="text-underline" style="width:24%">{{currencyCheckEmpty occupationSalary}}</div> บาท
+				รายได้อื่นๆ <div class="text-underline" style="width:27%">{{currencyCheckEmpty extraIncome}}</div> บาท จากการประกอบอาชีพ <div class="text-underline" style="width:36%">{{checkEmpty extraIncomeDescription}}</div> 
+				สมาชิกในครอบครัวจำนวน <div class="text-underline" style="width:8%">{{checkEmptyNotZero familyMember}}</div> คน ประกอบด้วย <div class="text-underline" style="width:51%">{{checkEmpty familyMemberDescription}}</div> 
+				ภาระที่ต้องรับผิดชอบค่าใช้จ่าย <div class="text-underline" style="width:72%">{{checkEmpty expenseDeclaration}}</div>
 			</div> 
 		</div>
 		<div class="row mb-2">
