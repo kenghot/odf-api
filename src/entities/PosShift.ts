@@ -75,10 +75,20 @@ export class PosShift extends BaseEntity {
   // comment: "จำนวนเงินที่รับชำระทั้งหมด"
   transactionAmount: number;
 
+    // comment: "จำนวนครั้งที่ยกเลิกรับชำระ"
+    transactionCancelCount: number;
+    // comment: "จำนวนเงินที่ยกเลิกรับชำระทั้งหมด"
+    transactionCancelAmount: number;
+
   // comment: "จำนวนครั้งที่รับชำระด้่วยเงินสด"
   transactionCashCount: number;
   // comment: "จำนวนเงินที่รับชำระด้วยเงินสด"
   transactionCashAmount: number;
+
+    // comment: "จำนวนครั้งที่รับชำระด้่วยเงินโอน"
+    transactionTransferCount: number;
+    // comment: "จำนวนเงินที่รับชำระด้วยเงินโอน"
+    transactionTransferAmount: number;
 
   // comment: "จำนวนครั้งที่รับชำระด้่วยเงินสด"
   transactionMoneyOrderCount: number;
