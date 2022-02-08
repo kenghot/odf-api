@@ -31,17 +31,20 @@
 			<div class="col-4">
 				<div style="margin-top: 158px">ที่</div>
 				</div>
-			<div class="col-4 text-center no-margin-padding">
+			<div class="col-3 text-center no-margin-padding">
 				<img class="garuda-img" src="{#asset /asset/garuda_logo.png @encoding=dataURI}"/>
 			</div>
-			<div class="col-4">
-				<div class="border-fit-content" style="font-size:70px">
+			<div class="col-5">
+				{{!-- <div class="border-fit-content" style="font-size:70px">
 					บอกเลิกผู้กู้ยืม
-				</div>
+				</div> --}}
 				<div class="text-left" style="margin-top:32px">
-					<div style="width:100%">{{checkEmptyReturnDashed organization.address.buildingName}}</div>
-					อำเภอ <div class="text-underline" style="width:79%">{{checkEmptyReturnDashed organization.address.district}}</div>
-					จังหวัด <div class="text-underline" style="width:78%">{{checkEmptyReturnDashed organization.address.province}}</div>
+					<div style="width:100%">{{checkEmpty organization.orgName}}</div>
+					<div>{{checkEmptyReturnDashed organization.address.houseNo}}&nbsp;{{checkEmpty organization.address.buildingName}}
+					หมู่&nbsp;{{checkEmptyReturnDashed organization.address.hmoo}}&nbsp;&nbsp;ถนน{{checkEmptyReturnDashed organization.address.street}}
+					{{checkEmptyReturnDashed organization.address.subDistrict}}
+					{{checkEmptyReturnDashed organization.address.district}}
+					{{checkEmptyReturnDashed organization.address.province}} {{checkEmptyReturnDashed organization.address.zipcode}}</div>
 				</div>  
 			</div> 
 		</div>
@@ -73,30 +76,31 @@
 		<div class="row">
 			<div class="col">
 				<div class="indent text-justify">
-					<div>ตามสัญญาที่อ้างถึง ท่าน ได้กู้ยืมเงินทุนประกอบอาชีพจากกองทุนผู้สูงอายุไป เป็นจำนวน</div>
-					<div class="text-underline" style="width:18%">{{currency loanAmount}}</div>บาท (<div class="text-underline" style="width:41%">{{dashed loanAmountText}}</div>) โดยมี <div class="text-underline" style="width:25%">{{checkEmptyReturnDashed guarantor.fullName}}</div> 
-					<div style="text-indent:0%">เป็นผู้ค้ำประกัน ตกลงผ่อนชำระเป็นรายเดือน เดือนละงวด เป็นเงินงวดละ <div class="text-underline" style="width:19.5%">{{currency installmentAmount}}</div>บาท งวดแรกชำระ </div>
-					<div style="text-indent:0%">ภายในวันที่ <div class="text-underline" style="width:42%">{{checkEmptyReturnDashed installmentFirstDate}}</div> งวดต่อไป ชำระภายในวันที่ 5 ของทุกเดือน รวมทั้งสิ้น </div>
-					<div class="text-underline" style="width:10%">{{checkEmptyReturnDashed installmentTimes}}</div> เดือน นั้น
+					<div>ตามที่อ้างถึง ท่านได้กู้ยืมเงินทุนประกอบอาชีพจากกองทุนผู้สูงอายุเป็นจำนวน
+					{{currency loanAmount}} บาท ( {{dashed loanAmountText}} ) โดยมี {{checkEmptyReturnDashed guarantor.fullName}} 
+					เป็นผู้ค้ำประกัน ตกลงผ่อนชำระเป็นรายเดือน เดือนละงวดเป็นเงิน งวดละ {{currency installmentAmount}} บาท งวดแรกชำระ 
+					ภายในวันที่ {{checkEmptyReturnDashed installmentFirstDate}} งวดต่อไป ชำระภายในวันที่ 5 ของทุกเดือน รวมทั้งสิ้น
+					{{checkEmptyReturnDashed installmentTimes}} งวด/เดือน นั้น</div>
 				</div>
 			</div>
 		</div>
 		<div class="row mb-3">
 			<div class="col">
 				<div class="indent text-justify">
-					<div>บัดนี้ ท่านผิดนัดชำระหนี้ไม่นำเงินมาผ่อนชำระตามกำหนดเวลาดังกล่าว เป็นเหตุให้กองทุน </div>
-					ผู้สูงอายุได้รับความเสียหาย จังหวัด <div class="text-underline" style="width:29%">{{checkEmptyReturnDashed organization.address.province}}</div> จึงขอบอกเลิกสัญญาโดยให้มีผลเป็นผลเป็นอัน
-					สิ้นสุดลง นับแต่วันที่ได้รับหนังสือฉบับนี้ และขอให้ท่านนำเงินคงเหลือทั้งสิ้นจำนวน <div class="text-underline" style="width:24.5%">{{currency outstandingDebtBalance}}</div>บาท 
-					(<div class="text-underline" style="width:38%">{{dashed outstandingDebtBalanceText}}</div>) มาชำระภายใน 15 วัน นับแต่วันที่ได้รับหนังสือนี้ หากพ้นกำหนดแล้ว
-					ท่านยังเพิกเฉยหรือไม่ชำระหนี้ จังหวัด <div class="text-underline" style="width:31%">{{checkEmptyReturnDashed organization.address.province}}</div> มีความจำเป็นต้องฟ้องร้องดำเนินคดีตาม
-					ขั้นตอนกฎหมาย เพื่อบังคับชำระหนี้ต่อไป
+					{{checkEmptyReturnDashed organization.orgName}} ขอแจ้งว่าท่านผิดนัดชำระหนี้สัญญากู้ยืมเงินทุนประกอบอาชีพจากกองทุนผู้สูงอายุ เป็นเหตุให้{{checkEmptyReturnDashed organization.orgName}}
+					ได้รับความเสียหาย ในการนี้{{checkEmptyReturnDashed organization.orgName}}จึงขอบอกเลิกสัญญากับท่าน
+					โดยให้สัญญามีผลเป็นอันสิ้นสุดลงนับแต่ได้รับหนังสือฉบับนี้ และขอให้ท่านชำระหนี้คืนกองทุนผู้สูงอายุเป็นเงินจำนวนทั้งสิ้น 
+					{{ currency outstandingDebtBalance}} บาท 
+					( {{dashed outstandingDebtBalanceText}} ) ภายใน 10 วัน นับแต่วันที่ได้รับหนังสือฉบับนี้ ตามวิธีการชำระหนี้ของกองทุนผู้สูงอายุซึ่งท่านทราบดีแล้ว
+					หากพ้นกำหนดเวลา ท่านยังคงเพิกเฉยไม่ชำระหนี้ให้เสร็จสิ้น {{checkEmptyReturnDashed organization.orgName}}มีความจำเป็นต้องดำเนินการทางกฎหมายกับท่านต่อไป 
+					
 				</div>
 			</div>
 		</div>
 		<div class="row mb-5">
 			<div class="col">
 				<div class="indent">
-					จึงเรียนมาเพื่อทราบและดำเนินการ
+					จึงเรียนมาเพื่อดำเนินการ และขออภัยหากท่านชำระเงินแล้วก่อนได้รับหนังสือฉบับนี้
 				</div>
 			</div>
 		</div>
@@ -109,14 +113,14 @@
 		<div class="row">
 			<div class="col-4"></div>
 			<div class="col-6 text-center">
-					<div>
-						(<div class="text-underline"  style="width:95%">&nbsp</div>)
+				<div>
+						<div  style="width:95%">(&nbsp{{checkEmpty organization.agreementAuthorizedTitle}}{{checkEmpty organization.agreementAuthorizedFirstname}}&nbsp&nbsp{{checkEmpty organization.agreementAuthorizedLastname}}&nbsp)</div>
 					</div>
 					<div>
-							<div class="text-underline" style="width:100%;height:35px">&nbsp</div>
+							<div  style="width:100%">{{checkEmpty organization.agreementAuthorizedPosition}}</div>
 					</div>
 					<div>
-							<div class="text-underline" style="width:100%;height:43px">&nbsp</div>
+							{{!-- <div class="text-underline" style="width:100%">&nbsp</div> --}}
 					</div>
 			</div>
 			<div class="col-2"></div>
