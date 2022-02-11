@@ -38,6 +38,17 @@
 				{{!-- <div class="border-fit-content" style="font-size:70px">
 					บอกเลิกผู้กู้ยืม
 				</div> --}}
+				{{#if organizationCenter }}
+				<div class="text-left" style="margin-top:32px">
+					<div style="width:100%">กรมกิจการผู้สูงอายุ</div>
+					<div style="width:100%">กองบริหารกองทุนผู้สูงอายุ (กบท.)</div>
+					<div style="width:100%">1034 อาคารกระทรวงการพัฒนาสังคม</div>
+					<div style="width:100%">และความมั่นคงของมนุษย์ (อาคารใหม่) ชั้น 6</div>
+					<div style="width:100%">ถนนกรุงเกษม แขวงคลองมหานาค</div>
+					<div style="width:100%">เขตป้อมปราบศัตรูพ่าย</div>
+					<div style="width:100%">กรุงเทพมหานคร 10100</div>
+				</div>
+				{{else}}
 				<div class="text-left" style="margin-top:32px">
 					<div style="width:100%">{{checkEmpty organization.orgName}}</div>
 					<div>{{checkEmptyReturnDashed organization.address.houseNo}}&nbsp;{{checkEmpty organization.address.buildingName}}
@@ -46,6 +57,7 @@
 					{{checkEmptyReturnDashed organization.address.district}}
 					{{checkEmptyReturnDashed organization.address.province}} {{checkEmptyReturnDashed organization.address.zipcode}}</div>
 				</div>  
+				{{/if}}
 			</div> 
 		</div>
 		<div class="row">

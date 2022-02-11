@@ -201,6 +201,7 @@ class DebtCollectionLetterController extends BaseController {
 
         const jsreportData: any = {};
         jsreportData.organization = organization;
+        jsreportData.organizationCenter = organization.orgCode=='10' ? true : false;
         jsreportData.formDataDate = getThaiPartialDate(moment().format());
         jsreportData.borrower = agreementItem.borrower;
         jsreportData.agreementDocumentNumber = agreement.documentNumber;
@@ -278,6 +279,7 @@ class DebtCollectionLetterController extends BaseController {
 
         const jsreportData: any = {};
         jsreportData.organization = organization;
+        jsreportData.organizationCenter = organization.orgCode=='10' ? true : false;
         jsreportData.formDataDate = getThaiPartialDate(moment().format());
         jsreportData.guarantor = agreementItem.guarantor;
         jsreportData.guaranteeDocumentNumber =
