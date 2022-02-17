@@ -48,6 +48,9 @@ export class DebtCollectionLetter extends BaseEntity {
   @Column({ nullable: true, comment: "ติดต่อชำระเงิน / ไม่ติดต่อชำระเงิน" })
   isCollectable: boolean;
 
+  @Column({ length: 48, comment: "เลขที่หนังสือ" })
+  documentNumber: string;
+
   attachedFiles: AttachedFile[];
 
   setThaiFormatForReport() {

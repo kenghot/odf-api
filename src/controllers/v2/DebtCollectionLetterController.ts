@@ -115,6 +115,7 @@ class DebtCollectionLetterController extends BaseController {
 
         const jsreportData: any = {};
         jsreportData.organization = organization;
+        jsreportData.letterDocumentNumber = letter.documentNumber;
         jsreportData.letterDocumentDate = letter.documentDate;
         jsreportData.borrower = agreementItem.borrower;
         jsreportData.agreementDocumentNumber = agreement.documentNumber;
