@@ -54,7 +54,84 @@
 		</div>
 	</div>
 	<br/>
-	<div class="container mb-3">
+{{#if letterTypeCSG}}
+			<div class="container mb-3">
+		<div class="row">
+			<div class="col">
+				เรื่อง แจ้งทายาทผู้ค้ำประกันให้ชำระหนี้กองทุนผู้สูงอายุ
+			</div> 
+		</div>
+		<div class="row">
+			<div class="col">
+				เรียน <div class="text-underline" style="width:50%">ทายาทโดยธรรมของ {{checkEmptyReturnDashed guarantor.fullName}}</div>  
+			</div> 
+		</div>
+		<div class="row">
+			<div class="col">
+				สิ่งที่ส่งมาด้วย 1.สำเนาสัญญากู้ยืมเลขที่<div class="text-underline" style="width:20%">{{checkEmptyReturnDashed agreementDocumentNumber}}</div>  
+				ลงวันที่ <div class="text-underline" style="width:25%">{{formatThaiDate agreementDocumentDate false}}</div>  
+			</div> 
+		</div>
+		<div class="row">
+			<div class="col" style="margin-left: 122px;">
+				2.สำเนาหนังสือค้ำประกันเลขที่ <div class="text-underline" style="width:20%">{{checkEmptyReturnDashed guaranteeDocumentNumber}}</div>  
+				ลงวันที่ <div class="text-underline" style="width:25%">{{formatThaiDate guaranteeDocumentDate false}}</div>  
+			</div> 
+		</div>
+	</div>  
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<div class="indent text-justify">
+					<div>ตามที่ {{checkEmptyReturnDashed guarantor.fullName}}  ได้ค้ำประกันการกู้ยืมเงินทุนประกอบอาชีพจากกองทุนผู้สูงอายุ ของ
+						 {{checkEmptyReturnDashed borrower.fullName}} เป็นผู้กู้ยืม ในสัญญากู้ยืมเลขที่ {{checkEmptyReturnDashed agreementDocumentNumber}} ลงวันที่ {{formatThaiDate agreementDocumentDate false}}
+					เป็นเงินจำนวนทั้งสิ้น {{currency loanAmount}} บาท ( {{dashed loanAmountText}} ) 
+					รายละเอียดตามสิ่งที่ส่งมาด้วย โดยตกลงว่าจะชำระหนี้แทนผู้กู้ยืมเมื่อผู้กู้ยืมผิดนัดชำระหนี้ ต่อมาผู้ค้ำประกันเสียชีวิต ซึ่งท่านทราบดีแล้ว นั้น  </div>
+				</div>  
+			</div>
+		</div>
+		<div class="row mb-3">
+			<div class="col">
+				<div class="indent text-justify">
+					{{checkEmptyReturnDashed organization.orgName}} ขอแจ้งท่านในฐานะทายาทโดยธรรมที่มีสิทธิรับมรดกของผู้ค้ำประกันทราบว่า ขณะนี้ผู้กู้ยืมผิดนัดชำระหนี้สัญญากู้ยืมเงินทุนประกอบอาชีพจากกองทุนผู้สูงอายุ โดยข้อมูล ณ วันที่ 
+					{{formatThaiDate asOfDate false}} เป็นเงินจำนวนทั้งสิ้น 
+					{{currency outstandingDebtBalance}} บาท ( {{dashed outstandingDebtBalanceText}} ) 
+					ดังนั้น จึงขอให้ท่านนำเงินไปชำระหนี้คืนกองทุนผู้สูงอายุทั้งหมด ภายใน 10 วัน นับแต่วันที่ได้รับหนังสือฉบับนี้ ที่ร้านสะดวกซื้อ 7-Eleven ทุกสาขาทั่วประเทศ หรือร้านค้าที่มีตราสัญลักษณ์เคาน์เตอร์เซอร์วิส โดยให้ท่านแจ้งเลขบัตรประจำตัวประชาชนของผู้กู้ยืม พร้อมจำนวนเงินที่ต้องชำระหนี้คืนกับพนักงานร้านสะดวกซื้อหรือร้านค้าดังกล่าว หากพ้นกำหนดเวลาแล้ว ท่านยังคงเพิกเฉยไม่ชำระหนี้คืนกองทุนผู้สูงอายุ
+					{{checkEmptyReturnDashed organization.orgName}} มีความจำเป็นต้องดำเนินการทางกฎหมายกับท่านต่อไป
+				</div>  
+			</div>
+		</div>
+		<div class="row mb-5">
+			<div class="col">
+					<div class="indent">
+						จึงเรียนมาเพื่อดำเนินการ และ<div class="text-underline">ขออภัยหากท่านได้ชำระเงินก่อนได้รับหนังสือฉบับนี้ </div>
+					</div>
+			</div>
+		</div>
+		<div class="row" style="margin-bottom:50px">
+			<div class="col-6"></div>
+			<div class="col-6 text-left" style="padding:0">
+						ขอแสดงความนับถือ
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-6 text-center">
+					<div>
+						<div  style="width:95%">(&nbsp{{checkEmpty organization.agreementAuthorizedTitle}}{{checkEmpty organization.agreementAuthorizedFirstname}}&nbsp&nbsp{{checkEmpty organization.agreementAuthorizedLastname}}&nbsp)</div>
+					</div>
+					<div>
+							<div  style="width:100%">{{checkEmpty organization.agreementAuthorizedPosition}}</div>
+					</div>
+					<div>
+							{{!-- <div class="text-underline" style="width:100%">&nbsp</div> --}}
+					</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>			
+				{{else}}
+				<div class="container mb-3">
 		<div class="row">
 			<div class="col">
 				เรื่อง แจ้งการผิดนัดชำระหนี้กองทุนผู้สูงอายุ
@@ -123,6 +200,8 @@
 		</div>
 	</div>
 
+				{{/if}}
+	
 	<div class="container footer">
 		<div class="row">
 			<div class="col-12">

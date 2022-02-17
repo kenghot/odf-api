@@ -141,14 +141,25 @@ class DebtCollectionLetterController extends BaseController {
         // res.send(jsreportData);
 
         const letterType: string = letter.letterType;
+        jsreportData.letterTypeCSB= letterType === "CSB"?true:false;
+        jsreportData.letterTypeCSG= letterType === "CSG"?true:false;
+        jsreportData.letterTypeCLR= letterType === "CLR"?true:false;
+
+
         let formName;
         let pdfName;
-        if (letterType === "CLB") {
+        if (letterType === "CLB" || letterType === "CSB") {
           formName = "personal-debt-collection-borrower";
           pdfName = `borrower-letter${new Date().toISOString()}.pdf`;
-        } else if (letterType === "CLG") {
+        } else if (letterType === "CLG" || letterType === "CSG") {
           formName = "personal-debt-collection-guarantor";
           pdfName = `guarantor-letter${new Date().toISOString()}.pdf`;
+        }else{
+          return next(
+            new NotFoundError({
+              name: "ไม่พบ template เอกสาร"
+            })
+          );
         }
         const resp = await jsreport.render({
           template: { name: formName },
