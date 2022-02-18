@@ -51,15 +51,20 @@ class DebtCollectionLetterController extends BaseController {
         // กรณีสืบหาทายาท
         if (
           [
-            letterTypeSet.searchingHeritage,
-            letterTypeSet.searchingManager
+            letterTypeSet.searchingManager,
+            letterTypeSet.searchingBorrower,
+            letterTypeSet.searchingGuarantor,
           ].includes(letterType) &&
           debtCollection.step < 1
         ) {
           debtCollection.step = 1;
           // กรณีแจ้งทายาท
         } else if (
-          letterType === letterTypeSet.notification &&
+          [
+            letterTypeSet.notificationManager,
+            letterTypeSet.notificationHeirBorrower,
+            letterTypeSet.notificationHeirGuarantor
+          ].includes(letterType) &&
           debtCollection.step < 2
         ) {
           debtCollection.step = 2;
@@ -143,15 +148,16 @@ class DebtCollectionLetterController extends BaseController {
         const letterType: string = letter.letterType;
         jsreportData.letterTypeCSB= letterType === "CSB"?true:false;
         jsreportData.letterTypeCSG= letterType === "CSG"?true:false;
-        jsreportData.letterTypeCLR= letterType === "CLR"?true:false;
+        jsreportData.letterTypeCNB= letterType === "CNB"?true:false;
+        jsreportData.letterTypeCNG= letterType === "CNG"?true:false;
 
 
         let formName;
         let pdfName;
-        if (letterType === "CLB" || letterType === "CSB") {
+        if (letterType === "CLB" || letterType === "CSB" || letterType === "CNB") {
           formName = "personal-debt-collection-borrower";
           pdfName = `borrower-letter${new Date().toISOString()}.pdf`;
-        } else if (letterType === "CLG" || letterType === "CSG") {
+        } else if (letterType === "CLG" || letterType === "CSG" || letterType === "CNG") {
           formName = "personal-debt-collection-guarantor";
           pdfName = `guarantor-letter${new Date().toISOString()}.pdf`;
         }else{
