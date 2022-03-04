@@ -29,7 +29,7 @@
 	<div class="container">
 		<div class="row mb-4">
 			<div class="col-4">
-				<div style="margin-top: 158px">ที่ พม <div class="text-underline" style="width:25%"></div>/(เลขหนังสือออก)</div>
+				<div style="margin-top: 158px">ที่ <div class="text-underline" style="width:50%">{{checkEmpty letterDocumentNumber}}</div></div>
 				</div>
 			<div class="col-4 text-center no-margin-padding">
 				<img class="garuda-img" src="{#asset /asset/garuda_logo.png @encoding=dataURI}"/>
@@ -54,7 +54,160 @@
 		</div>
 	</div>
 	<br/>
-	<div class="container mb-3">
+	{{#if letterTypeCNB}}
+			<div class="container mb-3">
+		<div class="row">
+			<div class="col">
+				เรื่อง ขอสืบค้นรายการทะเบียนราษฎร
+			</div> 
+		</div>
+		<div class="row">
+			<div class="col">
+				เรียน ผู้อำนวยการเขต/นายอำเภอ
+			</div> 
+		</div>
+		<div class="row">
+			<div class="col">
+				สิ่งที่ส่งมาด้วย 1.สำเนาบัตรประจำตัวประชาชน จำนวน 1 ฉบับ 
+			</div> 
+		</div>
+		<div class="row">
+			<div class="col" style="margin-left: 122px;">
+				2.สำเนาทะเบียนบ้าน จำนวน 1 ฉบับ
+			</div> 
+		</div>
+	</div>  
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<div class="indent text-justify">
+					<div>{{checkEmptyReturnDashed organization.orgName}} มีภารกิจในการให้บริการกู้ยืมเงินจากกองทุนผู้สูงอายุ 
+						เพื่อเป็นทุนประกอบอาชีพให้กับผู้สูงอายุทั้งส่วนกลางและส่วนภูมิภาค ปัจจุบันมีลูกหนี้กองทุนผู้สูงอายุกระทำผิดสัญญากู้ยืมเงินเป็นจำนวนมาก 
+						จึงต้องเร่งรัดติดตามให้ลูกหนี้ส่งใช้เงินคืนกองทุนผู้สูงอายุ เพื่อเป็นทุนหมุนเวียนสำหรับผู้สูงอายุรายอื่น ๆ 
+						ได้มีโอกาสกู้ยืมเงินเป็นทุนประกอบอาชีพจากกองทุนผู้สูงอายุ</div>
+				</div>  
+			</div>
+		</div>
+		<div class="row mb-3">
+			<div class="col">
+				<div class="indent text-justify">
+					{{checkEmptyReturnDashed organization.orgName}} จึงมีความประสงค์  
+					สำนักงานเขต/ที่ว่าการอำเภอ ขอสืบค้นรายการทะเบียนราษฎร และขอแบบรับรองรายการทะเบียนราษฎรของ
+					{{checkEmptyReturnDashed borrower.fullName}} เลขประจำตัวประชาชน {{checkEmptyReturnDashed borrower.idCardNo}}
+					ซึ่งเป็นลูกหนี้กองทุนผู้สูงอายุที่เสียชีวิตแล้ว ได้แก่ แบบรับรองรายการทะเบียนราษฎรของผู้ตาย ใบมรณบัตร ใบเปลี่ยนชื่อตัว ชื่อสกุล (ถ้ามี) 
+					แบบรับรองรายการทะเบียนราษฎรหรือสูติบัตรของทายาทโดยธรรมของผู้ตาย (ถ้ามี) ตามประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 1629 
+					เช่น ภรรยาหรือสามี แล้วแต่กรณี บิดา มารดา และบุตรทุกคนของผู้ตาย เป็นต้น รวมถึงใบสำคัญการสมรสของผู้ตาย (ถ้ามี)  ทั้งนี้ 
+					เพื่อประโยชน์ในการดำเนินงานของทางราชการต่อไป
+				</div>  
+			</div>
+		</div>
+		<div class="row mb-5">
+			<div class="col">
+					<div class="indent">
+						จึงเรียนมาเพื่อโปรดพิจารณา และผลเป็นประการใดกรุณาแจ้งให้ทราบด้วย และขอขอบคุณ มา ณ โอกาสนี้
+					</div>
+			</div>
+		</div>
+		<div class="row" style="margin-bottom:50px">
+			<div class="col-6"></div>
+			<div class="col-6 text-left" style="padding:0">
+						ขอแสดงความนับถือ
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-6 text-center">
+					<div>
+						<div  style="width:95%">(&nbsp{{checkEmpty organization.agreementAuthorizedTitle}}{{checkEmpty organization.agreementAuthorizedFirstname}}&nbsp&nbsp{{checkEmpty organization.agreementAuthorizedLastname}}&nbsp)</div>
+					</div>
+					<div>
+							<div  style="width:100%">{{checkEmpty organization.agreementAuthorizedPosition}}</div>
+					</div>
+					<div>
+							{{!-- <div class="text-underline" style="width:100%">&nbsp</div> --}}
+					</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>			
+	{{else if letterTypeCSB}}
+			<div class="container mb-3">
+		<div class="row">
+			<div class="col">
+				เรื่อง แจ้งทายาทผู้กู้ยืมให้ชำระหนี้กองทุนผู้สูงอายุ
+			</div> 
+		</div>
+		<div class="row">
+			<div class="col">
+				เรียน <div class="text-underline" style="width:50%">ทายาทโดยธรรมของ {{checkEmptyReturnDashed borrower.fullName}}</div>  
+			</div> 
+		</div>
+		<div class="row">
+			<div class="col">
+				สิ่งที่ส่งมาด้วย 1.สำเนาสัญญากู้ยืมเลขที่ <div class="text-underline" style="width:20%">{{checkEmptyReturnDashed agreementDocumentNumber}}</div>  
+				 ลงวันที่ <div class="text-underline" style="width:25%">{{formatThaiDate agreementDocumentDate false}}</div>  
+			</div> 
+		</div>
+		<div class="row">
+			<div class="col" style="margin-left: 122px;">
+				2.สำเนาหนังสือค้ำประกันเลขที่ <div class="text-underline" style="width:20%">{{checkEmptyReturnDashed guaranteeDocumentNumber}}</div>  
+				 ลงวันที่ <div class="text-underline" style="width:25%">{{formatThaiDate guaranteeDocumentDate false}}</div>  
+			</div> 
+		</div>
+	</div>  
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<div class="indent text-justify">
+					<div>ตามที่ {{checkEmptyReturnDashed borrower.fullName}}  ได้กู้ยืมเงินทุนประกอบอาชีพจากกองทุนผู้สูงอายุ เมื่อวันที่
+					{{formatThaiDate agreementDocumentDate false}}  โดยมี {{checkEmptyReturnDashed guarantor.fullName}} เป็นผู้ค้ำประกัน เป็นจำนวนเงินทั้งสิ้น
+					{{currency loanAmount}} บาท ( {{dashed loanAmountText}} ) 
+					รายละเอียดตามสิ่งที่ส่งมาด้วย 1 และ 2 ต่อมาผู้กู้ยืมเสียชีวิต ซึ่งท่านทราบดีแล้ว นั้น </div>
+				</div>  
+			</div>
+		</div>
+		<div class="row mb-3">
+			<div class="col">
+				<div class="indent text-justify">
+					{{checkEmptyReturnDashed organization.orgName}} ขอแจ้งท่านในฐานะทายาทโดยธรรมที่มีสิทธิรับมรดกของผู้กู้ยืมทราบว่า โดยข้อมูล ณ วันที่ 
+					{{formatThaiDate asOfDate false}} ผู้กู้ยืมดังกล่าวยังมีหนี้ค้างชำระเป็นเงินจำนวนทั้งสิ้น {{currency outstandingDebtBalance}} บาท 
+					( {{dashed outstandingDebtBalanceText}} ) 
+					ดังนั้น จึงขอให้ท่านนำเงินไปชำระหนี้คืนกองทุนผู้สูงอายุทั้งหมด ภายใน 10 วัน นับแต่วันที่ได้รับหนังสือฉบับนี้ ที่ร้านสะดวกซื้อ 7-Eleven ทุกสาขาทั่วประเทศ หรือร้านค้าที่มีตราสัญลักษณ์เคาน์เตอร์เซอร์วิส โดยให้ท่านแจ้งเลขบัตรประจำตัวประชาชนของผู้กู้ยืมที่เสียชีวิต พร้อมจำนวนเงินที่ต้องชำระหนี้คืนกับพนักงานร้านสะดวกซื้อหรือร้านค้าดังกล่าว หากพ้นกำหนดเวลาแล้ว ท่านยังคงเพิกเฉยไม่ชำระหนี้คืนกองทุนผู้สูงอายุ 
+					{{checkEmptyReturnDashed organization.orgName}} มีความจำเป็นต้องดำเนินการทางกฎหมายกับท่านต่อไป
+				</div>  
+			</div>
+		</div>
+		<div class="row mb-5">
+			<div class="col">
+					<div class="indent">
+						จึงเรียนมาเพื่อดำเนินการ และ<div class="text-underline">ขออภัยหากท่านได้ชำระเงินก่อนได้รับหนังสือฉบับนี้ </div>
+					</div>
+			</div>
+		</div>
+		<div class="row" style="margin-bottom:50px">
+			<div class="col-6"></div>
+			<div class="col-6 text-left" style="padding:0">
+						ขอแสดงความนับถือ
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-4"></div>
+			<div class="col-6 text-center">
+					<div>
+						<div  style="width:95%">(&nbsp{{checkEmpty organization.agreementAuthorizedTitle}}{{checkEmpty organization.agreementAuthorizedFirstname}}&nbsp&nbsp{{checkEmpty organization.agreementAuthorizedLastname}}&nbsp)</div>
+					</div>
+					<div>
+							<div  style="width:100%">{{checkEmpty organization.agreementAuthorizedPosition}}</div>
+					</div>
+					<div>
+							{{!-- <div class="text-underline" style="width:100%">&nbsp</div> --}}
+					</div>
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>			
+	{{else}}
+		<div class="container mb-3">
 		<div class="row">
 			<div class="col">
 				เรื่อง แจ้งการผิดนัดชำระหนี้กองทุนผู้สูงอายุ
@@ -121,7 +274,8 @@
 			</div>
 			<div class="col-2"></div>
 		</div>
-	</div>
+	</div>		
+	{{/if}}
 	<div class="container footer">
 		<div class="row">
 			<div class="col-12">

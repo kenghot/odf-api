@@ -3,6 +3,6 @@ function checkMemoInformerRelationshipType(memoInformer, selectedValue, value) {
        return value;
     }
     else {
-        return "-"
+        return ""
     }
 }

@@ -1,4 +1,5 @@
 import { getRepository } from "typeorm";
+import { AccountReceivable } from "../../entities/AccountReceivable";
 import { DebtCollection } from "../../entities/DebtCollection";
 import { Memo } from "../../entities/Memo";
 import { jsreport } from "../../jsreport";
@@ -52,12 +53,77 @@ class MemoController extends BaseController {
       // res.send(debtCollectionMemo);
 
       if (!debtCollectionMemo) {
-        return next(
-          new NotFoundError({
-            name: "ไม่พบเอกสาร"
-            // message: "ไม่พบใบบันทึกถ้อยคำ"
-          })
+        const accountReceivable: any = await getRepository(DebtCollection)
+        .createQueryBuilder("debt")
+        .leftJoinAndMapOne(
+          "debt.accountReceivable",
+          "AccountReceivable",
+          "accountReceivable",
+          "accountReceivable.id = debt.accountReceivableId"
+        )
+        .leftJoinAndSelect("accountReceivable.agreement", "agreement")
+        .leftJoinAndSelect("agreement.guarantee", "guarantee")
+        .leftJoinAndSelect("accountReceivable.controls", "controls")
+        .where("debt.id = :id", { id: req.params.id })
+        .orderBy("controls.createdDate", "DESC")
+        .getOne();
+        // console.log(accountReceivable);
+        if(!accountReceivable){
+          return next(
+            new NotFoundError({
+              name: "ไม่พบเอกสาร"
+              // message: "ไม่พบใบบันทึกถ้อยคำ"
+            })
+          );
+        }else{
+          const control = accountReceivable.accountReceivable.controls[0];
+
+        const jsreportData: any = {};
+        jsreportData.location = "";
+        jsreportData.documentDate = "";
+        jsreportData.agreementDocumentNumber =
+          accountReceivable.memoInformer === "B" ||
+          accountReceivable.memoInformer === "BW"
+            ? accountReceivable.accountReceivable.agreement.documentNumber
+            : accountReceivable.accountReceivable.agreement.guarantee
+                .documentNumber;
+        jsreportData.agreementDocumentDate = getThaiPartialDate(
+          accountReceivable.memoInformer === "B" ||
+            accountReceivable.memoInformer === "BW"
+            ? accountReceivable.accountReceivable.agreement.documentDate
+            : accountReceivable.accountReceivable.agreement.guarantee
+                .documentDate
         );
+        jsreportData.overDueBalance = control ? control.overDueBalance : 0;
+        jsreportData.memoInformer = "";
+        jsreportData.memoInformerRelationship ="";
+        jsreportData.fullName = "";
+        jsreportData.title = "";
+        jsreportData.firstname = "";
+        jsreportData.lastname = "";
+        jsreportData.age = "";
+        jsreportData.occupation = "";
+        jsreportData.currentAddress = "";
+        jsreportData.mobilePhone = "";
+        jsreportData.memoTitle = "";
+        jsreportData.memoNote = "";
+        jsreportData.interviewerName = "";
+        jsreportData.interviewerPosition ="";
+
+        // res.send(jsreportData);
+
+        const resp = await jsreport.render({
+          template: { name: "personal-memo" },
+          data: jsreportData
+        });
+
+        const filename = `personal-memo${new Date().toISOString()}.pdf`;
+
+        res
+          .header("Content-Disposition", `attachment; filename=${filename}`)
+          .header("filename", filename)
+          .send(resp.content);
+        }
       } else {
         const control = debtCollectionMemo.accountReceivable.controls[0];
 

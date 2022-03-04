@@ -31,18 +31,33 @@
 			<div class="col-4">
 				<div style="margin-top: 158px">ที่</div>
 				</div>
-			<div class="col-4 text-center no-margin-padding">
+			<div class="col-3 text-center no-margin-padding">
 				<img class="garuda-img" src="{#asset /asset/garuda_logo.png @encoding=dataURI}"/>
 			</div>
-			<div class="col-4">
-				<div class="border-fit-content" style="font-size:62px">
+			<div class="col-5">
+				{{!-- <div class="border-fit-content" style="font-size:62px">
 					บอกผู้ค้ำประกัน
-				</div>
+				</div> --}}
+				{{#if organizationCenter }}
 				<div class="text-left" style="margin-top:32px">
-					<div style="width:100%">{{checkEmptyReturnDashed organization.address.buildingName}}</div>
-					อำเภอ <div class="text-underline" style="width:79%">{{checkEmptyReturnDashed organization.address.district}}</div>
-					จังหวัด <div class="text-underline" style="width:78%">{{checkEmptyReturnDashed organization.address.province}}</div>
+					<div style="width:100%">กรมกิจการผู้สูงอายุ</div>
+					<div style="width:100%">กองบริหารกองทุนผู้สูงอายุ (กบท.)</div>
+					<div style="width:100%">1034 อาคารกระทรวงการพัฒนาสังคม</div>
+					<div style="width:100%">และความมั่นคงของมนุษย์ (อาคารใหม่) ชั้น 6</div>
+					<div style="width:100%">ถนนกรุงเกษม แขวงคลองมหานาค</div>
+					<div style="width:100%">เขตป้อมปราบศัตรูพ่าย</div>
+					<div style="width:100%">กรุงเทพมหานคร 10100</div>
+				</div>
+				{{else}}
+				<div class="text-left" style="margin-top:32px">
+					<div style="width:100%">{{checkEmpty organization.orgName}}</div>
+					<div>{{checkEmptyReturnDashed organization.address.houseNo}}&nbsp;{{checkEmpty organization.address.buildingName}}
+					หมู่&nbsp;{{checkEmptyReturnDashed organization.address.hmoo}}&nbsp;&nbsp;ถนน{{checkEmptyReturnDashed organization.address.street}}
+					{{checkEmptyReturnDashed organization.address.subDistrict}}
+					{{checkEmptyReturnDashed organization.address.district}}
+					{{checkEmptyReturnDashed organization.address.province}} {{checkEmptyReturnDashed organization.address.zipcode}}</div>
 				</div>  
+				{{/if}}
 			</div> 
 		</div>
 		<div class="row">
@@ -54,7 +69,7 @@
 	<div class="container mb-3">
 		<div class="row">
 			<div class="col">
-				เรื่อง แจ้งให้ผู้ค้ำประกันนำเงินมาชำระหนี้แทนผู้กู้ยืม
+				เรื่อง บอกเลิกสัญญา และให้ผู้ค้ำประกันชำระหนี้แทนผู้กู้ยืม
 			</div> 
 		</div>
 		<div class="row">
@@ -70,11 +85,11 @@
 		</div>
 		<div class="row">
 			<div class="col">
-				<div class="d-inline-block" style="width:16%">สิ่งที่ส่งมาด้วย</div>1. สำเนาสัญญากู้ยืมเลขที่ <div class="text-underline" style="width:20%">{{checkEmptyReturnDashed agreementDocumentNumber}}</div> 
-				ลงวันที่ <div class="text-underline" style="width:20%">{{formatThaiDate agreementDocumentDate}}</div>  
+				<div class="d-inline-block" style="width:16%">สิ่งที่ส่งมาด้วย</div>สำเนาหนังสือกรมกิจการผู้สูงอายุ ที่  <div class="text-underline" style="width:20%"></div> 
+				ลงวันที่ <div class="text-underline" style="width:20%"></div>  
 			</div> 
 		</div>
-		<div class="row">
+		{{!-- <div class="row">
 			<div class="col">
 				<div class="indent text-justify">
 					2. สำเนาหนังสือจังหวัด <div class="text-underline" style="width:16%"></div>  
@@ -82,34 +97,35 @@
 					ลงวันที่ <div class="text-underline" style="width:20%"></div>  
 				</div>
 			</div> 
-		</div>
+		</div> --}}
 	</div>  
 	<div class="container">
 		<div class="row">
 			<div class="col">
 				<div class="indent text-justify">
-					<div>ตามหนังสือที่อ้างอิง ท่านได้ค้ำประกันการกู้ยืมเงินทุนประกอบอาชีพของ</div>
-					<div class="text-underline" style="width:30%">{{checkEmptyReturnDashed borrower.fullName}}</div> ตามสัญญากู้ยืมเลขที่ <div class="text-underline" style="width:22%">{{checkEmptyReturnDashed agreementDocumentNumber}}</div> ลงวันที่ <div class="text-underline" style="width:20%">{{formatThaiDate agreementDocumentDate}}</div>
-					เป็นเงินจำนวน <div class="text-underline" style="width:20%">{{currency loanAmount}}</div>บาท (<div class="text-underline" style="width:36%">{{dashed loanAmountText}}</div>) โดยท่านตกลงยินยอมรับผิด
-					ชำระหนี้ พร้อมค่าใช้จ่ายอย่างอื่นแทนผู้กู้ยืม เมื่อผู้กู้ยืมผิดนัดชำระหนี้ นั้น
+					<div>ตามที่อ้างถึง ท่านได้ผู้ค้ำประกันการกู้ยืมเงินทุนประกอบอาชีพจากกองทุนผู้สูงอายุ เป็นเงินจำนวน {{currency loanAmount}} บาท ({{dashed loanAmountText}})
+					ของ {{checkEmptyReturnDashed borrower.fullName}} ในสัญญากู้ยืมเลขที่ {{checkEmptyReturnDashed agreementDocumentNumber}} ลงวันที่ {{formatThaiDate agreementDocumentDate}}
+					ต่อมาผู้กู้ยืมผิดสัญญาทำให้มีหนี้ค้างชำระเป็นเงินจำนวนทั้งสิ้น {{currency outstandingDebtBalance}} บาท ({{dashed outstandingDebtBalanceText}})
+					เป็นเหตุให้กรมกิจการผู้สูงอายุได้รับความเสียหาย นั้น    </div>
 				</div>
 			</div>
 		</div>
 		<div class="row mb-3">
 			<div class="col">
 				<div class="indent text-justify">
-					<div> บัดนี้ ผู้กู้ยืมผิดนัดชำระกับกองทุนผู้สูงอายุ และจังหวัด <div class="text-underline" style="width:36%">{{checkEmptyReturnDashed organization.address.province}}</div></div>
-					ได้มีหนังสือบอกเลิกสัญญากับผู้กู้ยืมแล้ว จึงขอให้ท่านในฐานะผู้ค้ำประกันนำเงินจำนวน <div class="text-underline" style="width:20%">{{currency outstandingDebtBalance}}</div>บาท 
-					(<div class="text-underline text-center" style="width:36%">{{dashed outstandingDebtBalanceText}}</div>) มาชำระหนี้แทนผู้กู้ยืม ภายใน 15 วัน นับแต่วันที่ได้รับหนังสือนี้ หากพ้น
-					กำหนดแล้ว ท่านยังเพิกเฉยหรือไม่ชำระหนี้ จังหวัด <div class="text-underline" style="width:33%">{{checkEmptyReturnDashed organization.address.province}}</div>มีความจำเป็นต้องฟ้องร้อง
-					ดำเนินคดีตามขั้นตอนกฎหมาย เพื่อบังคับชำระหนี้ต่อไป
+					<div> {{checkEmptyReturnDashed organization.orgName}} ขอแจ้งว่าขณะนี้ได้มีหนังสือบอกเลิกสัญญาไปยังผู้กู้ยืมแล้ว รายละเอียดตามสิ่งที่ส่งมาด้วย 
+					ดังนั้น จึงขอให้ท่านชำระหนี้แทนผู้กู้ยืมในฐานะท่านเป็นผู้ค้ำประกัน 
+					ซึ่งมีหน้าที่ที่ต้องรับผิดในหนี้รายนี้ด้วย โดยข้อมูล ณ วันที่ {{checkEmptyReturnDashed formDataDate}} 
+					เป็นเงินจำนวนทั้งสิ้น  {{currency outstandingDebtBalance}}บาท 
+					( {{dashed outstandingDebtBalanceText}}) ภายใน 10 วัน นับแต่วันที่ได้รับหนังสือฉบับนี้ ตามวิธีการชำระหนี้ของกองทุนผู้สูงอายุซึ่งท่านทราบดีแล้ว หากพ้นกำหนดเวลา ท่านยังคงเพิกเฉยไม่ชำระหนี้ให้เสร็จสิ้น  {{checkEmptyReturnDashed organization.orgName}} 
+					มีความจำเป็นต้องดำเนินการทางกฎหมายกับท่านต่อไป</div>
 				</div>
 			</div>
 		</div>
 		<div class="row mb-5">
 			<div class="col">
 				<div class="indent">
-					จึงเรียนมาเพื่อทราบและดำเนินการ
+					จึงเรียนมาเพื่อดำเนินการ และขออภัยหากท่านชำระเงินแล้วก่อนได้รับหนังสือฉบับนี้
 				</div>
 			</div>
 		</div>
@@ -123,13 +139,13 @@
 			<div class="col-4"></div>
 			<div class="col-6 text-center">
 					<div>
-						(<div class="text-underline"  style="width:95%">&nbsp</div>)
+						<div  style="width:95%">(&nbsp{{checkEmpty organization.agreementAuthorizedTitle}}{{checkEmpty organization.agreementAuthorizedFirstname}}&nbsp&nbsp{{checkEmpty organization.agreementAuthorizedLastname}}&nbsp)</div>
 					</div>
 					<div>
-							<div class="text-underline" style="width:100%;height:35px">&nbsp</div>
+							<div  style="width:100%">{{checkEmpty organization.agreementAuthorizedPosition}}</div>
 					</div>
 					<div>
-							<div class="text-underline" style="width:100%;height:43px">&nbsp</div>
+							{{!-- <div class="text-underline" style="width:100%">&nbsp</div> --}}
 					</div>
 			</div>
 			<div class="col-2"></div>

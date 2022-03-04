@@ -73,8 +73,20 @@ class PosShiftRepository extends Repository<PosShift> {
         return qb
           .select("COUNT(receipt.id)")
           .from(Receipt, "receipt")
+          .where("receipt.posShiftId = shift.id AND receipt.status ='CL'");
+      }, "transactionCancelCount")
+      .addSelect((qb) => {
+        return qb
+          .select("SUM(IF(receipt.total, receipt.total, 0))")
+          .from(Receipt, "receipt")
+          .where("receipt.posShiftId = shift.id AND receipt.status ='CL'");
+      }, "transactionCancelAmount")
+      .addSelect((qb) => {
+        return qb
+          .select("COUNT(receipt.id)")
+          .from(Receipt, "receipt")
           .where(
-            "receipt.posShiftId = shift.id AND receipt.paymentMethod LIKE 'CASH'"
+            "receipt.posShiftId = shift.id AND receipt.paymentMethod LIKE 'CASH' AND receipt.status ='PD'"
           );
       }, "transactionCashCount")
       .addSelect((qb) => {
@@ -82,7 +94,7 @@ class PosShiftRepository extends Repository<PosShift> {
           .select("IFNULL(SUM(receipt.total), 0)")
           .from(Receipt, "receipt")
           .where(
-            "receipt.posShiftId = shift.id AND receipt.paymentMethod LIKE 'CASH'"
+            "receipt.posShiftId = shift.id AND receipt.paymentMethod LIKE 'CASH' AND receipt.status ='PD'"
           );
       }, "transactionCashAmount")
       .addSelect((qb) => {
@@ -90,7 +102,23 @@ class PosShiftRepository extends Repository<PosShift> {
           .select("COUNT(receipt.id)")
           .from(Receipt, "receipt")
           .where(
-            "receipt.posShiftId = shift.id AND receipt.paymentMethod LIKE 'MONEYORDER'"
+            "receipt.posShiftId = shift.id AND receipt.paymentMethod LIKE 'TRANSFER' AND receipt.status ='PD'"
+          );
+      }, "transactionTransferCount")
+      .addSelect((qb) => {
+        return qb
+          .select("IFNULL(SUM(receipt.total), 0)")
+          .from(Receipt, "receipt")
+          .where(
+            "receipt.posShiftId = shift.id AND receipt.paymentMethod LIKE 'TRANSFER' AND receipt.status ='PD'"
+          );
+      }, "transactionTransferAmount")
+      .addSelect((qb) => {
+        return qb
+          .select("COUNT(receipt.id)")
+          .from(Receipt, "receipt")
+          .where(
+            "receipt.posShiftId = shift.id AND receipt.paymentMethod LIKE 'MONEYORDER' AND receipt.status ='PD'"
           );
       }, "transactionMoneyOrderCount")
       .addSelect((qb) => {
@@ -98,7 +126,7 @@ class PosShiftRepository extends Repository<PosShift> {
           .select("IFNULL(SUM(receipt.total), 0)")
           .from(Receipt, "receipt")
           .where(
-            "receipt.posShiftId = shift.id AND receipt.paymentMethod LIKE 'MONEYORDER'"
+            "receipt.posShiftId = shift.id AND receipt.paymentMethod LIKE 'MONEYORDER' AND receipt.status ='PD'"
           );
       }, "transactionMoneyOrderAmount")
       .addSelect((qb) => {
@@ -106,7 +134,7 @@ class PosShiftRepository extends Repository<PosShift> {
           .select("COUNT(receipt.id)")
           .from(Receipt, "receipt")
           .where(
-            "receipt.posShiftId = shift.id AND receipt.paymentMethod LIKE 'CHECK'"
+            "receipt.posShiftId = shift.id AND receipt.paymentMethod LIKE 'CHECK' AND receipt.status ='PD'"
           );
       }, "transactionCheckCount")
       .addSelect((qb) => {
@@ -114,7 +142,7 @@ class PosShiftRepository extends Repository<PosShift> {
           .select("IFNULL(SUM(receipt.total), 0)")
           .from(Receipt, "receipt")
           .where(
-            "receipt.posShiftId = shift.id AND receipt.paymentMethod LIKE 'CHECK'"
+            "receipt.posShiftId = shift.id AND receipt.paymentMethod LIKE 'CHECK' AND receipt.status ='PD'"
           );
       }, "transactionCheckAmount")
       .addSelect(

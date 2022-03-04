@@ -32,8 +32,8 @@ class UserRepository extends Repository<User> {
         firstname: `%${firstname.trim()}%`
       });
     }
-    queryBuilder.andWhere("user.active = true");
-
+    queryBuilder.andWhere("user.active = true")
+    queryBuilder.andWhere("user.email != 'registeronline@odf.dop.go.th'");
     try {
       const [users, total] = await queryBuilder.getManyAndCount();
       return [users, total];

@@ -149,8 +149,20 @@ class PosRepository extends Repository<Pos> {
         return qb
           .select("COUNT(receipt.id)")
           .from(Receipt, "receipt")
+          .where("receipt.posShiftId = shift.id AND receipt.status ='CL'");
+      }, "transactionCancelCount")
+      .addSelect((qb) => {
+        return qb
+          .select("IFNULL(SUM(receipt.total), 0)")
+          .from(Receipt, "receipt")
+          .where("receipt.posShiftId = shift.id AND receipt.status ='CL'");
+      }, "transactionCancelAmount")
+      .addSelect((qb) => {
+        return qb
+          .select("COUNT(receipt.id)")
+          .from(Receipt, "receipt")
           .where(
-            "receipt.posShiftId = shift.id AND receipt.paymentMethod LIKE 'CASH'"
+            "receipt.posShiftId = shift.id AND receipt.paymentMethod LIKE 'CASH' AND receipt.status ='PD'"
           );
       }, "transactionCashCount")
       .addSelect((qb) => {
@@ -158,7 +170,7 @@ class PosRepository extends Repository<Pos> {
           .select("IFNULL(SUM(receipt.total), 0)")
           .from(Receipt, "receipt")
           .where(
-            "receipt.posShiftId = shift.id AND receipt.paymentMethod LIKE 'CASH'"
+            "receipt.posShiftId = shift.id AND receipt.paymentMethod LIKE 'CASH' AND receipt.status ='PD'"
           );
       }, "transactionCashAmount")
       .addSelect((qb) => {
@@ -166,7 +178,23 @@ class PosRepository extends Repository<Pos> {
           .select("COUNT(receipt.id)")
           .from(Receipt, "receipt")
           .where(
-            "receipt.posShiftId = shift.id AND receipt.paymentMethod LIKE 'MONEYORDER'"
+            "receipt.posShiftId = shift.id AND receipt.paymentMethod LIKE 'TRANSFER' AND receipt.status ='PD' "
+          );
+      }, "transactionTransferCount")
+      .addSelect((qb) => {
+        return qb
+          .select("IFNULL(SUM(receipt.total), 0)")
+          .from(Receipt, "receipt")
+          .where(
+            "receipt.posShiftId = shift.id AND receipt.paymentMethod LIKE 'TRANSFER' AND receipt.status ='PD'"
+          );
+      }, "transactionTransferAmount")
+      .addSelect((qb) => {
+        return qb
+          .select("COUNT(receipt.id)")
+          .from(Receipt, "receipt")
+          .where(
+            "receipt.posShiftId = shift.id AND receipt.paymentMethod LIKE 'MONEYORDER' AND receipt.status ='PD'"
           );
       }, "transactionMoneyOrderCount")
       .addSelect((qb) => {
@@ -174,7 +202,7 @@ class PosRepository extends Repository<Pos> {
           .select("IFNULL(SUM(receipt.total), 0)")
           .from(Receipt, "receipt")
           .where(
-            "receipt.posShiftId = shift.id AND receipt.paymentMethod LIKE 'MONEYORDER'"
+            "receipt.posShiftId = shift.id AND receipt.paymentMethod LIKE 'MONEYORDER' AND receipt.status ='PD'"
           );
       }, "transactionMoneyOrderAmount")
       .addSelect((qb) => {
@@ -182,7 +210,7 @@ class PosRepository extends Repository<Pos> {
           .select("COUNT(receipt.id)")
           .from(Receipt, "receipt")
           .where(
-            "receipt.posShiftId = shift.id AND receipt.paymentMethod LIKE 'CHECK'"
+            "receipt.posShiftId = shift.id AND receipt.paymentMethod LIKE 'CHECK' AND receipt.status ='PD'"
           );
       }, "transactionCheckCount")
       .addSelect((qb) => {
@@ -190,7 +218,7 @@ class PosRepository extends Repository<Pos> {
           .select("IFNULL(SUM(receipt.total), 0)")
           .from(Receipt, "receipt")
           .where(
-            "receipt.posShiftId = shift.id AND receipt.paymentMethod LIKE 'CHECK'"
+            "receipt.posShiftId = shift.id AND receipt.paymentMethod LIKE 'CHECK' AND receipt.status ='PD'"
           );
       }, "transactionCheckAmount")
       .addSelect(
@@ -247,6 +275,8 @@ class PosRepository extends Repository<Pos> {
         pos.lastestPosShift.transactionCashCount = raw[0].transactionCashCount;
         pos.lastestPosShift.transactionCashAmount =
           raw[0].transactionCashAmount;
+        pos.lastestPosShift.transactionTransferCount=raw[0].transactionTransferCount;
+        pos.lastestPosShift.transactionTransferAmount=raw[0].transactionTransferAmount;
         pos.lastestPosShift.transactionMoneyOrderCount =
           raw[0].transactionMoneyOrderCount;
         pos.lastestPosShift.transactionMoneyOrderAmount =
@@ -258,6 +288,8 @@ class PosRepository extends Repository<Pos> {
         pos.lastestPosShift.dropAmount = raw[0].dropAmount;
         pos.lastestPosShift.addAmount = raw[0].addAmount;
         pos.lastestPosShift.overShortAmount = raw[0].overShortAmount;
+        pos.lastestPosShift.transactionCancelCount=raw[0].transactionCancelCount;
+        pos.lastestPosShift.transactionCancelAmount=raw[0].transactionCancelAmount;
       }
 
       return pos;

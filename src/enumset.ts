@@ -169,9 +169,12 @@ export enum letterTypeSet {
   collectionLetterGuarantor = "CLG",
   cancelationLetterBorrower = "CCB",
   cancelationLetterGuarantor = "CCG",
-  searchingHeritage = "CSH",
+  searchingBorrower= "CSB",
+  searchingGuarantor  = "CSG",
   searchingManager = "CSM",
-  notification = "CLR",
+  notificationManager = "CNM",
+  notificationHeirBorrower = "CNB",
+  notificationHeirGuarantor  = "CNG",
 }
 export enum visitTypeSet {
   debtCollectionBorrower = "DCB",

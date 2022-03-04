@@ -597,6 +597,61 @@ class RequestController extends BaseController {
         );
       }
 
+
+      const requestSubQueries = [
+        {
+          operator: "in",
+          entityField: "id",
+          subEntityClass: "RequestItem",
+          alias: "requestItem",
+          subEntityField: "requestId",
+          queries: [
+            {
+              operator: "=",
+              entityField: "guarantor.idCardNo",
+              queryField: "idCardNo",
+            },
+          ],
+        },
+      ];
+
+      const requestSubQueriesCheck = this.prepareSubQuery(
+        { idCardNo },
+        requestSubQueries
+      );
+
+      const [entitiesRequest, totalRequest] = await this.searchRepo.findAndCount(
+        "Request",
+        "request",
+        requestQueries,
+        requestSubQueriesCheck
+      );
+      let totalCheckStatus =0;
+      entitiesRequest.forEach(function (value){
+        if (value.status ==requestStatusSet.draft
+          || value.status ==requestStatusSet.draftOnline
+          || value.status ==requestStatusSet.new
+          || value.status ==requestStatusSet.newOnline
+          || value.status ==requestStatusSet.qualified
+          || value.status ==requestStatusSet.approve1
+          || value.status ==requestStatusSet.approve2
+          || value.status ==requestStatusSet.approve3
+          ) {
+            totalCheckStatus = totalCheckStatus+1;
+        }
+      });
+      // console.log(totalCheckStatus)
+      if(totalCheckStatus>0)
+      {
+        return next(
+          new ValidateError({
+            name: "DQ3",
+            message:
+              "ผู้ขอค้ำคุณสมบัติไม่ผ่านเนื่องจากยังติดสถานะยื่นคำร้องอยู่และยังไม่ได้ส่งทำสัญญา",
+          })
+        );
+      }
+
       res.send({ success: true });
     } catch (err) {
       err.message = `ไม่สามารถสร้าง${this.entityInfo} ${err.message}`;

@@ -169,3 +169,34 @@ function isShowTotal(){
   }
 
 }
+
+function naiveRound(num) {
+  if(num){
+    var p = Math.pow(10, 2);
+    return Math.round(num * p) / p;
+  }else{
+    return checkEmpty(num);
+  }
+}
+
+function currencyCheckEmpty(value, hideDashed=false) {
+  const _n = 2;
+  const _x = 3;
+  if (value && (value!="0" && value!="0.00" && value!=0)) {
+    const calVal = value instanceof Number ? value : +value;
+    const re = "\\d(?=(\\d{" + _x + "})+" + (_n > 0 ? "\\." : "$") + ")";
+    const curVal = calVal
+      .toFixed(Math.max(0, ~~_n))
+      .replace(new RegExp(re, "g"), "$&,");
+      
+    if (curVal === null || curVal === "NaN") return hideDashed === true ? "0.00" : dashed("0.00");
+
+    return hideDashed === true? curVal : dashed(curVal);
+  } else {
+    return "";
+  }
+}
+
+function checkEmptyNotZero(value) {
+  return value && (value!="0" && value!="0.00" && value!=0)? value :  "";
+}

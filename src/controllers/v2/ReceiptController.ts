@@ -67,8 +67,9 @@ class ReceiptController extends BaseController {
       //     })
       //   );
       // }
-
-      shift.expectedDrawerAmount = +shift.expectedDrawerAmount + +receipt.total;
+      if(receipt.paymentMethod!= 'TRANSFER'){
+        shift.expectedDrawerAmount = +shift.expectedDrawerAmount + +receipt.total;
+      }
 
       const log = getRepository(PosShiftLogs).create({
         transactionAmount: receipt.total,
@@ -124,8 +125,9 @@ class ReceiptController extends BaseController {
         where: { id: receipt.posShiftId }
       });
 
+      if(receipt.paymentMethod!= 'TRANSFER'){
       shift.expectedDrawerAmount = +shift.expectedDrawerAmount - +receipt.total;
-
+      }
       const log = getRepository(PosShiftLogs).create({
         transactionAmount: receipt.total,
         expectedDrawerAmount: shift.expectedDrawerAmount,

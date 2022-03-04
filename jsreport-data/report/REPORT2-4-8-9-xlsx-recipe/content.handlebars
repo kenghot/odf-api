@@ -11,6 +11,12 @@
 {{#xlsxReplace "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row[3].c[9]"}}
         <c t="inlineStr" s="2"><is><t>จ่ายชำระหนี้ในปีงบประมาณ {{fiscalYear}}</t></is></c>
 {{/xlsxReplace}}
+{{#xlsxReplace "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row[4].c[82]"}}
+        <c t="inlineStr" s="12"><is><t>จำนวนเงินที่ต้องชำระ</t></is></c>
+{{/xlsxReplace}}
+{{#xlsxReplace "xl/worksheets/sheet1.xml" "worksheet.sheetData[0].row[4].c[84]"}}
+        <c t="inlineStr" s="12"><is><t>จำนวนเงินที่ต้องชำระ</t></is></c>
+{{/xlsxReplace}}
 
 {{#each data}}
 

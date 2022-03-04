@@ -51,15 +51,20 @@ class DebtCollectionLetterController extends BaseController {
         // กรณีสืบหาทายาท
         if (
           [
-            letterTypeSet.searchingHeritage,
-            letterTypeSet.searchingManager
+            letterTypeSet.searchingManager,
+            letterTypeSet.searchingBorrower,
+            letterTypeSet.searchingGuarantor,
           ].includes(letterType) &&
           debtCollection.step < 1
         ) {
           debtCollection.step = 1;
           // กรณีแจ้งทายาท
         } else if (
-          letterType === letterTypeSet.notification &&
+          [
+            letterTypeSet.notificationManager,
+            letterTypeSet.notificationHeirBorrower,
+            letterTypeSet.notificationHeirGuarantor
+          ].includes(letterType) &&
           debtCollection.step < 2
         ) {
           debtCollection.step = 2;
@@ -115,6 +120,7 @@ class DebtCollectionLetterController extends BaseController {
 
         const jsreportData: any = {};
         jsreportData.organization = organization;
+        jsreportData.letterDocumentNumber = letter.documentNumber;
         jsreportData.letterDocumentDate = letter.documentDate;
         jsreportData.borrower = agreementItem.borrower;
         jsreportData.agreementDocumentNumber = agreement.documentNumber;
@@ -140,14 +146,26 @@ class DebtCollectionLetterController extends BaseController {
         // res.send(jsreportData);
 
         const letterType: string = letter.letterType;
+        jsreportData.letterTypeCSB= letterType === "CSB"?true:false;
+        jsreportData.letterTypeCSG= letterType === "CSG"?true:false;
+        jsreportData.letterTypeCNB= letterType === "CNB"?true:false;
+        jsreportData.letterTypeCNG= letterType === "CNG"?true:false;
+
+
         let formName;
         let pdfName;
-        if (letterType === "CLB") {
+        if (letterType === "CLB" || letterType === "CSB" || letterType === "CNB") {
           formName = "personal-debt-collection-borrower";
           pdfName = `borrower-letter${new Date().toISOString()}.pdf`;
-        } else if (letterType === "CLG") {
+        } else if (letterType === "CLG" || letterType === "CSG" || letterType === "CNG") {
           formName = "personal-debt-collection-guarantor";
           pdfName = `guarantor-letter${new Date().toISOString()}.pdf`;
+        }else{
+          return next(
+            new NotFoundError({
+              name: "ไม่พบ template เอกสาร"
+            })
+          );
         }
         const resp = await jsreport.render({
           template: { name: formName },
@@ -201,6 +219,7 @@ class DebtCollectionLetterController extends BaseController {
 
         const jsreportData: any = {};
         jsreportData.organization = organization;
+        jsreportData.organizationCenter = organization.orgCode=='10' ? true : false;
         jsreportData.formDataDate = getThaiPartialDate(moment().format());
         jsreportData.borrower = agreementItem.borrower;
         jsreportData.agreementDocumentNumber = agreement.documentNumber;
@@ -278,6 +297,7 @@ class DebtCollectionLetterController extends BaseController {
 
         const jsreportData: any = {};
         jsreportData.organization = organization;
+        jsreportData.organizationCenter = organization.orgCode=='10' ? true : false;
         jsreportData.formDataDate = getThaiPartialDate(moment().format());
         jsreportData.guarantor = agreementItem.guarantor;
         jsreportData.guaranteeDocumentNumber =
