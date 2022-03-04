@@ -274,23 +274,13 @@
       },
       {
         "key": "1",
-        "text": "โอนเงิน",
+        "text": "เงินโอน",
         "value": "TRANSFER"
       },
       {
         "key": "2",
-        "text": "หักบัญชีอัตโนมัติ",
-        "value": "DIRECTDEBIT"
-      },
-      {
-        "key": "3",
-        "text": "ชำระค่าสินค้าและบริการ",
-        "value": "BILLPAYMENT"
-      },
-      {
-        "key": "4",
-        "text": "พรอมเพย์",
-        "value": "PROMTPAY"
+        "text": "ไปรษณีย์ธนาณัติ",
+        "value": "MONEYORDER"
       }
     ]
   },
