@@ -113,8 +113,14 @@
         <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency totalPaidAllMonth true}}</t></is></c>
         <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency outstandingDebtBalance true}}</t></is></c>
         <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{formatThaiDate documentDate}}</t></is></c>
-        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{formatThaiDate startDate}}</t></is></c>
-        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{formatThaiDate endDate}}</t></is></c>
+
+        {{!--start ให้ดึงกำหนดชำระงวดแรก และงวดสุดท้ายแทน 2022-03-16 --}}
+        {{!-- <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{formatThaiDate startDate}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{formatThaiDate endDate}}</t></is></c> --}}
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{formatThaiDate installmentFirstDate}}</t></is></c>
+        <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{formatThaiDate installmentLastDate}}</t></is></c>
+        {{!-- end ให้ดึงกำหนดชำระงวดแรก และงวดสุดท้ายแทน 2022-03-16 --}}
+
         <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{checkEmpty installmentTimes}}</t></is></c>
         <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{currency installmentLastAmount true}}</t></is></c>
         <c t="inlineStr" s="{{@root.$removedItem.c.[0].$.s}}"><is><t>{{formatThaiDate lastPaidDate}}</t></is></c>
