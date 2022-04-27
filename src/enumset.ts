@@ -79,6 +79,7 @@ export enum paymentTypeSet {
   ktb = "KTB",
   counterService = "CS",
   system = "SYSTEM",
+  office_m = "OFFICE-M",
 }
 export enum paymentMethodSet {
   cash = "CASH",

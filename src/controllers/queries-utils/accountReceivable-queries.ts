@@ -94,15 +94,35 @@ export const addSelectTotalPaidByMonthByPaymentType = (
       const monthIndex = index + 1;
       let isMinus = [10, 11, 12].includes(monthIndex);
       let oneOrZero = isMinus ? 1 : 0;
-      qb.addSelect(
-        `SUM(IF(MONTH(accTrans.paidDate) = ${monthIndex} AND YEAR(accTrans.paidDate) = ${
-          fiscalYearParam - 543 - oneOrZero
-          // fiscalYearParam - 1
-        } AND accTrans.paymentType = '${
-          payment.value
-        }'  , accTrans.paidAmount, 0))`,
-        `totalPaid${item.text}${payment.value}`
-      );
+      if(payment.value=="OFFICE"){
+        qb.addSelect(
+          `SUM(IF(MONTH(accTrans.paidDate) = ${monthIndex} AND YEAR(accTrans.paidDate) = ${
+            fiscalYearParam - 543 - oneOrZero
+            // fiscalYearParam - 1
+          } AND (accTrans.paymentType ='OFFICE' OR accTrans.paymentType ='OFFICE-M')  , accTrans.paidAmount, 0))`,
+          `totalPaid${item.text}${payment.value=='OFFICE-M'?'OFFICE_M':payment.value}`
+        );
+      }else{
+        qb.addSelect(
+          `SUM(IF(MONTH(accTrans.paidDate) = ${monthIndex} AND YEAR(accTrans.paidDate) = ${
+            fiscalYearParam - 543 - oneOrZero
+            // fiscalYearParam - 1
+          } AND accTrans.paymentType = '${
+            payment.value
+          }'  , accTrans.paidAmount, 0))`,
+          `totalPaid${item.text}${payment.value=='OFFICE-M'?'OFFICE_M':payment.value}`
+        );
+      }
+      //----old code 27042022----
+      // qb.addSelect(
+      //   `SUM(IF(MONTH(accTrans.paidDate) = ${monthIndex} AND YEAR(accTrans.paidDate) = ${
+      //     fiscalYearParam - 543 - oneOrZero
+      //     // fiscalYearParam - 1
+      //   } AND accTrans.paymentType = '${
+      //     payment.value
+      //   }'  , accTrans.paidAmount, 0))`,
+      //   `totalPaid${item.text}${payment.value}`
+      // );
     });
   });
 
