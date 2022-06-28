@@ -63,7 +63,7 @@ class RequestController extends BaseController {
     const { organization, documentDate } = request;
 
     const [err, message] = this.validateCreateReq(request);
-
+    
     if (err) {
       return next(
         new ValidateError({
@@ -95,6 +95,61 @@ class RequestController extends BaseController {
           new ValidateError({
             name: "ไม่สามารถสร้างเอกสารคำร้องได้",
             message,
+          })
+        );
+      }
+
+      //check คุณสมบัติไม่ผ่านเนื่องจากยังติดภาระผูกพันจากการกู้ยืมอยู่
+      const idCardNo =request.requestItems[0].borrower.idCardNo;
+      const requestSubQueries = [
+        {
+          operator: "in",
+          entityField: "id",
+          subEntityClass: "RequestItem",
+          alias: "requestItem",
+          subEntityField: "requestId",
+          queries: [
+            {
+              operator: "=",
+              entityField: "borrower.idCardNo",
+              queryField: "idCardNo",
+            },
+          ],
+        },
+      ];
+      const requestSubQueriesCheck = this.prepareSubQuery(
+        { idCardNo },
+        requestSubQueries
+      );
+
+      const [entitiesRequest, totalRequest] = await this.searchRepo.findAndCount(
+        "Request",
+        "request",
+        requestQueries,
+        requestSubQueriesCheck
+      );
+      let totalCheckStatus =0;
+      entitiesRequest.forEach(function (value){
+        if (value.status ==requestStatusSet.draft
+          || value.status ==requestStatusSet.draftOnline
+          || value.status ==requestStatusSet.new
+          || value.status ==requestStatusSet.newOnline
+          || value.status ==requestStatusSet.qualified
+          || value.status ==requestStatusSet.approve1
+          || value.status ==requestStatusSet.approve2
+          || value.status ==requestStatusSet.approve3
+          ) {
+            totalCheckStatus = totalCheckStatus+1;
+        }
+      });
+      //  console.log(totalCheckStatus)
+      if(totalCheckStatus>0)
+      {
+        return next(
+          new ValidateError({
+            name: "DQ3",
+            message:
+              "ไม่ผ่านเนื่องจากยังติดสถานะยื่นคำร้องอยู่และยังไม่ได้ส่งทำสัญญา โปรดตรวจสอบสถานะคำร้อง",
           })
         );
       }
@@ -134,8 +189,9 @@ class RequestController extends BaseController {
           };
           try {
             await transporter.sendMail(mailOptions);
-          } catch (e) {
-            throw e;
+          } catch (error) {
+              // Error sending this specific email, just report it and ignore
+            console.log(error);
           }
       }
       }
