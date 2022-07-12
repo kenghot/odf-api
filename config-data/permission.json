@@ -171,6 +171,14 @@
         "description": "ทำรายการชำระเงินกู้"
       },
       {
+        "code": "AR.LOANPAYMENT.EDIT",
+        "description": "แก้ไขรายการชำระเงินกู้"
+      },
+      {
+        "code": "AR.LOANPAYMENT.DEL",
+        "description": "ลบรายการชำระเงินกู้"
+      },
+      {
         "code": "AR.TRANSACTION.VIEW",
         "description": "ดูรายการชำระเงินกู้ย้อนหลัง"
       },

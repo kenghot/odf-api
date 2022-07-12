@@ -835,8 +835,12 @@ class AccountReceivableController extends BaseController {
       // Agreement details
       accountReceivableQuery = accountReceivableQuery
         .addSelect("agreement.documentDate", "documentDate")
-        .addSelect("agreement.startDate", "startDate")
-        .addSelect("agreement.endDate", "endDate")
+        // -----edit 2022-03-15-------
+        // .addSelect("agreement.startDate", "startDate")
+        // .addSelect("agreement.endDate", "endDate")
+        .addSelect("agreement.installmentFirstDate", "installmentFirstDate")
+        .addSelect("agreement.installmentLastDate", "installmentLastDate")
+        // -----end 2022-03-15-------
         // .addSelect("accountReceivable.endDate", "endDate")
         .addSelect("agreement.installmentTimes", "installmentTimes")
         .addSelect("agreement.installmentPeriodValue", "installmentPeriodValue")
@@ -922,8 +926,12 @@ class AccountReceivableController extends BaseController {
         // .addGroupBy("accTrans.paymentType")
         // .addGroupBy("accountReceivable.outstandingDebtBalance")
         .addGroupBy("agreement.documentDate")
-        .addGroupBy("agreement.startDate")
-        .addGroupBy("agreement.endDate")
+        // -----edit 2022-03-15-------
+        // .addGroupBy("agreement.startDate")
+        // .addGroupBy("agreement.endDate")
+        .addGroupBy("agreement.installmentFirstDate")
+        .addGroupBy("agreement.installmentLastDate")
+        // -----end 2022-03-15-------
         .addGroupBy("agreement.installmentTimes")
         .addGroupBy("agreement.installmentLastAmount")
         .orderBy("agreement.documentNumber")
@@ -1053,8 +1061,12 @@ class AccountReceivableController extends BaseController {
       // Agreement details
       accountReceivableQuery = accountReceivableQuery
         .addSelect("agreement.documentDate", "documentDate")
-        .addSelect("agreement.startDate", "startDate")
-        .addSelect("agreement.endDate", "endDate")
+         // -----edit 2022-03-15-------
+        // .addSelect("agreement.startDate", "startDate")
+        // .addSelect("agreement.endDate", "endDate")
+        .addSelect("agreement.installmentFirstDate", "installmentFirstDate")
+        .addSelect("agreement.installmentLastDate", "installmentLastDate")
+        // -----end 2022-03-15-------
         .addSelect("agreement.installmentTimes", "installmentTimes")
         .addSelect("agreement.installmentPeriodValue", "installmentPeriodValue")
         .addSelect("agreement.installmentLastAmount", "installmentLastAmount");
@@ -1170,8 +1182,12 @@ class AccountReceivableController extends BaseController {
         // .addGroupBy("accTrans.paymentType")
         .addGroupBy("accountReceivable.outstandingDebtBalance")
         .addGroupBy("agreement.documentDate")
-        .addGroupBy("agreement.startDate")
-        .addGroupBy("agreement.endDate")
+         // -----edit 2022-03-15-------
+        // .addGroupBy("agreement.startDate")
+        // .addGroupBy("agreement.endDate")
+        .addGroupBy("agreement.installmentFirstDate")
+        .addGroupBy("agreement.installmentLastDate")
+        // -----end 2022-03-15-------
         .addGroupBy("agreement.installmentTimes")
         .addGroupBy("agreement.installmentLastAmount")
         .orderBy("agreement.id")
@@ -1287,8 +1303,12 @@ class AccountReceivableController extends BaseController {
       // Agreement details
       accountReceivableQuery = accountReceivableQuery
         .addSelect("agreement.documentDate", "documentDate")
-        .addSelect("agreement.startDate", "startDate")
-        .addSelect("agreement.endDate", "endDate")
+         // -----edit 2022-03-15-------
+        // .addSelect("agreement.startDate", "startDate")
+        // .addSelect("agreement.endDate", "endDate")
+        .addSelect("agreement.installmentFirstDate", "installmentFirstDate")
+        .addSelect("agreement.installmentLastDate", "installmentLastDate")
+        // -----end 2022-03-15-------
         .addSelect("agreement.installmentTimes", "installmentTimes")
         .addSelect("agreement.installmentPeriodValue", "installmentPeriodValue")
         .addSelect("agreement.installmentLastAmount", "installmentLastAmount");
@@ -1344,8 +1364,12 @@ class AccountReceivableController extends BaseController {
         .addGroupBy("agreement.InstallmentAmount")
         .addGroupBy("accountReceivable.outstandingDebtBalance")
         .addGroupBy("agreement.documentDate")
-        .addGroupBy("agreement.startDate")
-        .addGroupBy("agreement.endDate")
+         // -----edit 2022-03-15-------
+        // .addGroupBy("agreement.startDate")
+        // .addGroupBy("agreement.endDate")
+        .addGroupBy("agreement.installmentFirstDate")
+        .addGroupBy("agreement.installmentLastDate")
+        // -----end 2022-03-15-------
         .addGroupBy("agreement.installmentTimes")
         .addGroupBy("agreement.installmentLastAmount")
         .orderBy("agreement.id")
@@ -1453,8 +1477,12 @@ class AccountReceivableController extends BaseController {
       // Agreement details
       accountReceivableQuery = accountReceivableQuery
         .addSelect("agreement.documentDate", "documentDate")
-        .addSelect("agreement.startDate", "startDate")
-        .addSelect("agreement.endDate", "endDate")
+         // -----edit 2022-03-15-------
+        // .addSelect("agreement.startDate", "startDate")
+        // .addSelect("agreement.endDate", "endDate")
+        .addSelect("agreement.installmentFirstDate", "installmentFirstDate")
+        .addSelect("agreement.installmentLastDate", "installmentLastDate")
+        // -----end 2022-03-15-------
         .addSelect("agreement.installmentTimes", "installmentTimes")
         .addSelect("agreement.installmentPeriodValue", "installmentPeriodValue")
         .addSelect("agreement.installmentLastAmount", "installmentLastAmount");
@@ -1537,8 +1565,12 @@ class AccountReceivableController extends BaseController {
         // .addGroupBy("accTrans.paymentType")
         .addGroupBy("accountReceivable.outstandingDebtBalance")
         .addGroupBy("agreement.documentDate")
-        .addGroupBy("agreement.startDate")
-        .addGroupBy("agreement.endDate")
+         // -----edit 2022-03-15-------
+        // .addGroupBy("agreement.startDate")
+        // .addGroupBy("agreement.endDate")
+        .addGroupBy("agreement.installmentFirstDate")
+        .addGroupBy("agreement.installmentLastDate")
+        // -----end 2022-03-15-------
         .addGroupBy("agreement.installmentTimes")
         .addGroupBy("agreement.installmentLastAmount")
         .orderBy("agreement.id")

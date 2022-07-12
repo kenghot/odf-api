@@ -135,10 +135,11 @@ export const enum_set = [
       { key: "0", text: "สำนักงาน", value: paymentTypeSet.office },
       { key: "1", text: "กรุงไทย", value: paymentTypeSet.ktb },
       {
-        key: "0",
+        key: "2",
         text: "เคาเตอร์เซอร์วิส",
         value: paymentTypeSet.counterService
-      }
+      },
+      { key: "3", text: "สำนักงาน(เป็นการกรอกข้อมูล)", value: paymentTypeSet.office_m},
     ]
   },
   {

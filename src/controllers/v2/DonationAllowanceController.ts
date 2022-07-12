@@ -189,8 +189,9 @@ class DonationAllowanceController extends BaseController {
       }
 
       const pos = await PosRepository.findOnePos(donation.posId);
-      pos.lastestPosShift.expectedDrawerAmount =
-        +pos.lastestPosShift.expectedDrawerAmount + +donation.paidAmount;
+      // ไม่นับเงินบริจาคที่เป็นเงินโอน เข้าไปบวกยอดเงินรวมในจุดชำระ
+      // pos.lastestPosShift.expectedDrawerAmount =
+      //   +pos.lastestPosShift.expectedDrawerAmount + +donation.paidAmount;
 
       const log = getRepository(PosShiftLogs).create({
         transactionAmount: +donation.paidAmount,
